@@ -11,8 +11,4 @@ public class TestController {
         return "test/test";
     }
 
-    @GetMapping("/store")
-    public String store() {
-        return "auth/store";
-    }
 }

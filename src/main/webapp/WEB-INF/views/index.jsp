@@ -46,7 +46,7 @@
             </div>
             <div class="btn-signin_group">
               <a href="#" class="btn-signin_join">회원가입</a>
-              <a href="#" class="btn-signin_login">로그인</a>
+              <a href="/auth/login" class="btn-signin_login">로그인</a>
             </div>
           </div>
           
@@ -78,7 +78,7 @@
             소중한 사람에게 마음을 전하는 가장 좋은 방법 스타벅스 카드</div>
           <div class="fav_img"></div>
           <div class="btn_fav_prod" style="opacity: 1;">
-            <a href="#" class="btn_fav_prod_a">자세히 보기</a>
+            <a href="/menu" class="btn_fav_prod_a">자세히 보기</a>
           </div>
       </div>
   </section>

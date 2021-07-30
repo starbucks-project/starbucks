@@ -15,6 +15,16 @@ public class UserController {
     return "auth/managerLoginForm";
   }
 
+  @GetMapping("/menu")
+  public String menu() {
+    return "auth/menu";
+  }
+
+  @GetMapping("/store")
+  public String store() {
+    return "auth/store";
+  }
+
   @GetMapping("/manager")
   public String managerHome() {
     return "manager/managerHome";
