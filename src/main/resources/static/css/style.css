@@ -2,9 +2,12 @@
 # General
 --------------------------------------------------------------*/
 body {
+  border: 0;
+  margin: 0;
+  padding: 0;
   font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
-  
-  color: #444444;
+  background: #fff;
+  color: #555;
 }
 
 a {
@@ -71,8 +74,13 @@ input {
 header, nav, section, article, aside, footer {
   display: block;
 }
-
-
+.body-inner {
+  position: relative;
+  overflow: hidden;
+}
+nav ul, li {
+  list-style: none;
+}
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -3446,3 +3454,1556 @@ i.pin_general {
   text-indent: -20000px;
   width: 100%;
 }
+
+/*마이페이지 부분 start -------------------------------------*/
+/* Sub Pages
+================================================== */
+/*-- Title border --*/
+
+/*-- Banner --*/
+#container {
+  width: 100%;
+}
+
+.banner-area {
+  position: relative;
+  color: #fff;
+  background-position: 50% 50%;
+  background-size: cover;
+}
+
+.ms_sub_tit_wrap {
+  background: #231a11;
+  height: 178px;
+  position: relative;
+  width: 100%;
+}
+.ms_sub_tit_wrap div.ms_sub_tit_inner {
+  height: 74px;
+  margin: 0 auto;
+  padding-top: 104px;
+  position: relative;
+  width: 1100px;
+}
+
+.ms_sub_tit_bg{
+  background: url("/images/banner.jpg");
+  height: 178px;
+  left: 50%;
+  margin-left: -1000px;
+  position: absolute;
+  top: 0;
+  width: 2000px;
+}
+.ms_sub_tit_wrap h4 {
+  font: bold 36px Avenir, Arial, georgia;
+  color: #fefefe;
+  position: relative;
+}
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+.container {
+  display: flex;
+  align-items: flex-start;
+  padding: 40px 0 0 0;
+}
+.ms_cont {
+  flex: 3;
+  width: 830px;
+  margin-bottom: 90px;
+}
+.ms_nav {
+  flex: 1;
+  font-weight: bold;
+  width: 220px;
+  margin-bottom: 90px;
+}
+
+
+
+/* News Listing
+================================================== */
+
+.ms_user_info {
+  background: url("/images/ms_user_info_bg.jpg");
+  border-radius: 3px;
+  height: 230px;
+  padding: 30px 0 30px 30px;
+  width: 800px;
+}
+.ms_user_info.ms_user_add {
+  width: 830px;
+  height: 290px;
+  padding: 30px;
+  box-sizing: border-box;
+}
+.entry-header .entry-title {
+  font-size: 24px;
+  margin: 5px 0 15px;
+  position: relative;
+  line-height: 34px;
+  text-transform: capitalize;
+}
+.ms_user_info .ms_user_add .ms_user_info_left {
+  width: 50%;
+  box-sizing: border-box;
+}
+.ms_user_info_left {
+  border-right: 1px solid #dddddb;
+  float: left;
+  height: 230px;
+  position: relative;
+  width: 385px;
+}
+
+.ms_user_info.ms_user_add .ms_user_starbg { 
+  background:url("/images/ms_myreward_star_bg.png"); 
+  background-size:137px auto; 
+  color:#222; font-size:44px; font-weight:bold; 
+  height:122px; left:141px; line-height:136px; 
+  position:absolute; text-align:center; 
+  top:12px; width:137px; }
+  .ms_user_info.ms_user_add .ms_user_starbg {
+    display:block; width:67.5%; height:70.1%; 
+    position:relative; top:inherit; left:inherit; 
+    line-height:inherit; background-size:100%; 
+    background-position: 50% 50%; 
+    background-repeat: no-repeat; margin:0 auto;}
+.ms_user_info_left figure{
+  overflow: hidden;
+}
+.ms_user_info.ms_user_add .ms_user_starbg span {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding-top: 13%;
+  margin-left: -1%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+
+
+.ms_user_info.ms_user_add .ms_user_info_right {
+  width:50%; box-sizing: border-box; padding:50px 0 0 50px;}
+.ms_user_info.ms_user_add .ms_user_info_right .ms_user_stat {
+  position: relative; height:auto; top: inherit; 
+  font-size: 22px; line-height: 37px; text-align: center;}
+.ms_user_info.ms_user_add .ms_user_info_right .ms_user_stat span {
+  display:block;}
+.ms_user_info_right {
+    float: left;
+    height: 230px;
+    position: relative;
+}
+h5, strong {
+  font-weight: bold;
+}
+.userName{
+  color: #0d5f34;
+}
+
+
+.ms_user_info.ms_user_add .ms_user_info_right .ms_user_stat_btns {
+  position: relative;
+  width: 100%;
+  height: auto;
+  margin: 20px 0 0 0;
+  top: inherit;
+  left: inherit;
+  bottom: inherit;
+}
+.ms_user_info.ms_user_add .ms_user_info_right .ms_user_stat_btns ul {
+  display: flex;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  overflow: hidden;
+  margin-left: -10px;
+}
+.ms_user_info.ms_user_add .ms_user_info_right .ms_user_stat_btns ul li {
+  margin: 10px 0 0 10px;
+}
+.ms_user_info.ms_user_add .ms_user_info_right .ms_user_stat_btns ul li.btn_black {
+  flex: 1;
+  background: #222222;
+  border: 1px solid #222222;
+}
+.ms_user_info.ms_user_add .ms_user_info_right .ms_user_stat_btns ul li.btn_black a {
+  color: #ffffff;
+}
+
+.ms_user_info.ms_user_add .ms_user_info_right .ms_user_stat_btns ul li.btn_gray {
+  flex: 1;
+  background: #777777;
+  border: 1px solid #777777;
+}
+.ms_user_info.ms_user_add .ms_user_info_right .ms_user_stat_btns ul li.btn_gray a {
+  color: #ffffff;
+}
+
+.ms_user_stat_btns ul li a {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  height: 100%;
+  line-height: 28px;
+  text-align: center;
+  width: 100%;
+}
+
+
+
+
+/* my ms card part*/
+.my_ms_card {
+  background: url("/images/card_wave_pattern.png") center bottom no-repeat;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  height: 350px;
+  margin-top: 40px;
+  width: 800px;
+}
+.my_ms_card_inner {
+  float: left;
+  height: 230px;
+  margin: 29px 0 0 29px;
+  width: 770px;
+}
+.my_ms_card header {
+  display: flex;
+  border-bottom: 1px solid #eae9e6;
+  height: 38px;
+  width: 770px;
+}
+.card_header_box_one{
+  display: flex;
+  flex: 4;
+}
+.card_header_box_two{
+  display: flex;
+  flex: 1;
+}
+.my_ms_card header h5 {
+  flex: 1;
+  color: #222;
+  font-size: 18px;
+}
+.my_ms_card p.recent_card {
+  flex: 3;
+  color: #555;
+  font-size: 12px;
+  line-height: 18px;
+  margin-left: 10px;
+}
+.my_ms_card aside {
+
+  float: right;
+  height: 19px;
+  width: 71px;
+}
+.my_ms_card aside span {
+  color: #777;
+  font-size: 12px;
+  height: 19px;
+  line-height: 19px;
+  text-align: center;
+  width: 32px;
+}
+.my_ms_card aside span strong {
+  color: #222;
+}
+
+.my_ms_card aside p {
+  background: url("/images/btn_square_arrows.png");
+  float: right;
+  height: 19px;
+  width: 39px;
+}
+.my_ms_card aside p a {
+  float: left;
+  height: 19px;
+  overflow: hidden;
+  text-indent: -20000px;
+}
+.my_ms_card aside p a.back {
+  width: 20px;
+}
+.my_ms_card aside p a.forward {
+  width: 19px;
+}
+.my_ms_card aside p a {
+  float: left;
+  height: 19px;
+  overflow: hidden;
+  text-indent: -20000px;
+}
+
+.my_ms_card_inner .card_list_btn1 {
+  float: right;
+  margin: -8px 8px 0 0;
+  width: 30px;
+}
+
+.my_ms_card_cont {
+  width: 100%;
+  height: 191px;
+  width: 770px;
+}
+.my_ms_card_cont ul li {
+  height: 191px;
+  position: relative;
+  width: 770px;
+}
+.my_ms_card_cont figure {
+  height: 163px;
+  left: 122px;
+  position: absolute;
+  top: 15px;
+  width: 264px;
+}
+.bx-wrapper {
+  position: relative;
+  margin: 0 auto 60px;
+  padding: 40px 0 0 20px;
+  *zoom: 1;
+}
+.my_ms_card_cont .representative_icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 10;
+  width: 35px;
+  height: 35px;
+}
+.representative_icon {
+  background: url("/images/representative_icon.png") 0 0 no-repeat;
+  background-size: 100% auto;
+  width: 25px;
+  height: 25px;
+  display: block;
+  position: absolute;
+  top: -8px;
+  left: -8px;
+}
+.my_ms_card_cont figure img {
+  width: 100%;
+}
+.bx-wrapper img {
+  max-width: 100%;
+  display: block;
+}
+.my_ms_card_info {
+  position: absolute;
+  right: 10px;
+  text-align: center;
+
+}
+.my_ms_card_id, .my_ms_card_id_modify {
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 3px 0;
+}
+.icon_pencil {
+  background: url("/images/icon_pencil.png");
+  display: inline-block;
+  height: 19px;
+  overflow: hidden;
+  margin-bottom: -4px;
+  text-indent: -20000px;
+  width: 19px;
+}
+.my_ms_card_date {
+  font-size: 12px;
+  height: 16px;
+  line-height: 16px;
+  margin-top: 6px;
+}
+.my_ms_card_price {
+  height: 33px;
+  line-height: 33px;
+  margin-top: 10px;
+}
+.my_ms_card_price strong {
+  font-size: 30px;
+  color: #0d5f34;
+}
+.my_ms_card_btns {
+  height: 30px;
+  margin-top: 19px;
+  text-align: center;
+}
+.my_ms_card_btns p.my_ms_card_btn1 {
+  background: #222;
+  border: 1px solid #222;
+  margin: 0 5px;
+}
+.my_ms_card_btns p.my_ms_card_btn1 a, .my_ms_card_btns p.my_ms_card_btn3 a {
+  color: #fff;
+}
+.my_ms_card_btns p.my_ms_card_btn2 a {
+  color: #222;
+}
+.my_ms_card_btns p {
+  border-radius: 3px;
+  display: inline-block;
+  height: 28px;
+  width: 82px;
+}
+.my_ms_card_btns p a {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  width: 82px;
+}
+.my_ms_card_btns p.my_ms_card_btn2 {
+  background: #e2c383;
+  border: 1px solid #bb9f65;
+  margin: 0 5px;
+}
+
+.my_ms_card_cont .bx-wrapper .bx-controls-direction a.bx-prev {
+  background: url("/images/msc_arrow_l.png");
+}
+.my_ms_card_cont .bx-wrapper .bx-controls-direction a {
+  height: 42px;
+  margin-top: -21px;
+  width: 26px;
+  z-index: 10;
+}
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+.bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  z-index: 9999;
+}
+.bx-wrapper .bx-prev {
+  left: 10px;
+}
+.my_ms_card_cont .bx-wrapper .bx-controls-direction a.bx-next {
+  background: url("/images/msc_arrow_r.png");
+}
+.bx-wrapper .bx-next {
+  right: 10px;
+}
+/* Sidebar
+================================================== */
+
+.ms_nav > ul {
+
+  border-top: 2px solid #222;
+}
+
+.ms_nav > ul > li {
+  border-bottom: 1px solid #ddd;
+  width: 220px;
+}
+
+.ms_nav > ul > li > a {
+  color: #444;
+  display: block;
+  font-size: 14px;
+  padding: 20px 30px 20px 15px;
+  position: relative;
+  width: 220px;
+}
+.ms_nav > ul > li > a span.sbox_arrow_down {
+  background: url("/images/sbox_arrow_up.png");
+}
+.ms_nav > ul > li > a > span {
+  height: 7px;
+  margin-top: -3px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  width: 12px;
+}
+.ms_nav > ul > li > ul {
+  border: none;
+  display: none;
+  padding-bottom: 14px;
+}
+.ms_nav > ul > li > ul > li {
+  width: 220px;
+}
+.ms_nav > ul > li > ul > li > a {
+  color: #444;
+  display: block;
+  font-size: 12px;
+  padding: 6px 0 6px 15px;
+  width: 205px;
+}
+
+
+/* ------------------my_ms_index_slide*/
+.ms_cont .my_ms_index_slide {
+  border-radius: 3px;
+  height: 597px;
+  width: 800px;
+}
+.my_ms_index_slide header {
+  height: 76px;
+  position: absolute;
+  text-align: center;
+  top: 50px;
+}
+.ms_cont .my_ms_index_slide header h5 {
+    color: #fff;
+    font-size: 24px;
+    margin: 10px auto;
+}
+.ms_cont .my_ms_index_slide header strong {
+  color: #fff;
+  font-size: 16px;
+  margin: 0 auto;
+}
+
+.my_ms_slide_wrap {
+    height: 597px;
+    position: relative;
+    width: 800px;
+}
+.my_ms_slide_wrap .card_list_btn2 {
+  position: absolute;
+  top: 21px;
+  right: 21px;
+  z-index: 2;
+  width: 30px;
+}
+.my_ms_slider {
+  height: 584px;
+  overflow: hidden;
+  width: 800px;
+}
+.my_ms_slider div.swiper-container {
+  background: #f6f5ef;
+  border-radius: 3px;
+  position: relative;
+  width: 800px;
+}
+.swiper-container {
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  z-index: 1;
+}
+.my_ms_slider div.swiper-container a.arrow-left {
+  left: 30px;
+}
+.my_ms_slider div.swiper-container a.my_ms_slider_arrow {
+  height: 55px;
+  position: absolute;
+  top: 227px;
+  width: 55px;
+  z-index: 7;
+}
+.my_ms_slider div.swiper-container a img {
+  left: 0;
+  position: absolute;
+  transition: opacity .5s ease-in-out;
+  -webkit-transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  -o-transition: opacity .5s ease-in-out;
+}
+.my_ms_slider div.swiper-container a img.arrow_on {
+  opacity: 0;
+}
+.my_ms_slider div.swiper-container a img {
+  left: 0;
+  position: absolute;
+  transition: opacity .5s ease-in-out;
+  -webkit-transition: opacity .5s ease-in-out;
+  -moz-transition: opacity .5s ease-in-out;
+  -o-transition: opacity .5s ease-in-out;
+}
+.my_ms_slider div.swiper-container a.arrow-right {
+  right: 30px;
+  position: absolute;
+}
+.my_ms_slider div.swiper-wrapper {
+  margin-top: 0;
+  width: 800px;
+  height: 584px;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  z-index: 5;
+}
+.swiper-wrapper {
+  position: relative;
+  width: 100%;
+  box-sizing: content-box;
+}
+.swiper-slide {
+  float: left;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+.my_ms_slider div.swiper-wrapper div.swiper-slide.swiper-slide-active {
+  opacity: 1;
+}
+.my_ms_slider div.swiper-wrapper div.swiper-slide {
+  width: 800px;
+  height: 524px;
+  padding-top: 60px;
+  position: relative;
+  width: 800px;
+  -webkit-transition: .3s;
+  -moz-transition: .3s;
+  -ms-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+  opacity: 0.4;
+}
+.my_ms_slider div.swiper-wrapper div.swiper-slide div.swiper_slide_inner {
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  width: 800px;
+  z-index: 5;
+}
+.my_ms_slider div.swiper-wrapper div.swiper-slide.swiper-slide-active div figure {
+  margin-top: 90px;
+  width: 305px !important;
+}
+.my_ms_slider div.swiper-wrapper div.swiper-slide div.swiper_slide_inner figure {
+  margin: 0 auto;
+  margin-top: 90px;
+  width: 320px !important;
+  -webkit-transition: width 1s;
+  transition: width 1s;
+}
+.swiper-slide_img {
+  position: relative;
+}
+.swiper_slide_inner .representative_icon {
+  position: absolute;
+  top: 5%;
+  left: 3%;
+  z-index: 10;
+  width: 35px;
+  height: 35px;
+}
+div.my_ms_slider_txt {
+  height: 70px;
+  position: absolute;
+  top: 438px;
+  width: 100%;
+  -webkit-transition: .7s;
+  -moz-transition: .7s;
+  -ms-transition: .7s;
+  -o-transition: .7s;
+  transition: .7s;
+}
+.my_ms_slider_txt_l {
+  background: url("/images/my_ms_slider_sep.gif") right center no-repeat;
+  float: left;
+  height: 70px;
+  padding: 10px 0 0 3%;
+  width: 47%;
+}
+
+.my_ms_slider_txt_l strong {
+  color: #555;
+  float: left;
+}
+
+element.style {
+  display: block;
+}
+.icon_pencil_g {
+  display: block;
+  background: url("/images/icon_pencil.png");
+  float: left;
+  height: 19px;
+  margin: 0 0 0 5px;
+  overflow: hidden;
+  text-indent: -20000px;
+  width: 19px;
+}
+.my_ms_slider_txt_l .my_ms_card_slider_id_modify {
+  display: none;
+  color: #444;
+  float: left;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: -6px;
+}
+.my_ms_slider_txt_l p {
+  color: #555;
+  float: left;
+  font-size: 16px;
+  margin-top: 10px;
+  text-align: left;
+  width: 100%;
+}
+
+.my_ms_slider_txt_r {
+  color: #222;
+  font-size: 16px;
+  float: left;
+  font-weight: bold;
+  height: 70px;
+  line-height: 70px;
+  position: relative;
+  text-align: left;
+  width: 50%;
+}
+.my_ms_slider_txt_r strong {
+  color: #006541;
+  font-size: 26px;
+  font-family: arial, HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+}
+.my_ms_slider_txt_r ul.op0 {
+  height: 30px;
+  position: absolute;
+  right: 3%;
+  top: 20px;
+  width: 178px;
+  -webkit-transition: .7s;
+  -moz-transition: .7s;
+  -ms-transition: .7s;
+  -o-transition: .7s;
+  transition: .7s;
+}
+.my_ms_card_btns {
+  height: 30px;
+  margin-top: 19px;
+}
+.my_ms_slider_txt_r ul.op0 li.card_charge_btn {
+  background: #e2c383;
+  border: 1px solid #bb9f65;
+}
+.my_ms_slider_txt_r ul.op0 li {
+  border-radius: 3px;
+  float: left;
+  height: 28px;
+  width: 81px;
+}
+div.my_ms_slider_txt li {
+  color: #555;
+  float: left;
+  height: 42px;
+  line-height: 42px;
+  text-align: center;
+}
+.my_ms_slider_txt_r ul.op0 li.card_charge_btn2 a, .my_ms_slider_txt_r ul.op0 li.card_charge_btn a {
+  color: #222;
+}
+
+.my_ms_slider_txt_r ul.op0 li a {
+  display: block;
+  font-size: 12px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  text-indent: 0;
+  width: 85px;
+}.my_ms_slider_txt_r ul.op0 li.card_manage_btn {
+  background: #222;
+  border: 1px solid #222;
+  color: #fff;
+  margin-left: 4px;
+}
+.my_ms_slider_txt_r ul.op0 li.card_manage_btn a, .my_ms_slider_txt_r ul.op0 li.card_manage_btn2 a {
+  color: #fff;
+}
+
+
+element.style {
+  display: block;
+  background: #626260;
+}
+
+.card-actions {
+  width: 828px;
+  display: block;
+  background: #626260;
+  height: 483px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  z-index: 4;
+}
+
+
+/*---------------카드등록*/
+
+.my_card_info_wrap {
+  height: 248px;
+  position: relative;
+  width: 830px;
+}
+.my_card_info_wrap header {
+  position: relative;
+  height: 40px;
+}
+.my_card_info_wrap header h6 {
+  color: #222;
+  float: left;
+  font-size: 18px;
+}
+.my_card_info_wrap header h6 + a.btnScardInfo, .card_tab_cont a.btnScardInfo {
+  font-size: 0;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  background: #fff url(https://image.istarbucks.co.kr/upload/common/img/icon/ico_card_info.png) no-repeat 0 0;
+  background-size: 26px;
+  vertical-align: middle;
+  margin: -4px 0 0 10px;
+}
+.my_card_info_wrap header span {
+  background: url("/img/common/bullet_star_red.gif") no-repeat;
+  bottom: 0;
+  color: #666;
+  font-size: 12px;
+  position: absolute;
+  right: 0;
+  text-indent: 12px;
+}
+section .card_regi_tbl {
+  border-bottom: 1px solid #222;
+  border-top: 1px solid #222;
+  margin-top: 10px;
+}
+
+.card_regi_dl {
+  border-bottom: 1px solid #e0e0e0;
+  height: 48px;
+  line-height: 30px;
+  
+}
+.card_regi_dl dt {
+  background: #f4f4f2;
+  color: #222;
+  font-weight: bold;
+  width: 27%;
+  height: 98%;
+}
+.card_regi_dl dt, .card_regi_dl dd {
+  float: left;
+  font-size: 14px;
+  padding: 9px 0 9px 2%;
+}
+.card_regi_dl dt label {
+  float: left;
+}
+.card_regi_dl dd {
+  color: #ccc;
+  width: 67%;
+  margin: 0;
+}
+.card_regi_dl dd input.card_regi_input1 {
+  margin-right: 7px;
+  width: 300px;
+}
+.card_regi_dl dd input.card_regi_input1, .card_regi_dl dd input.card_regi_input2 {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  color: #666;
+  float: left;
+  height: 26px;
+}
+input[type=text], input[type=number], input[type=password], input[type=tel], input[type=email] {
+  display: block;
+  width: 100%;
+  height: 34px;
+  line-height: 34px;
+  padding-left: 10px;
+  /* padding-bottom: 2px; */
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  color: #545454;
+  font-size: 11px;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+input {
+  outline: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  vertical-align: middle;
+  margin: 0;
+  padding: 0;
+  font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+}
+.card_regi_dl dd span {
+  color: #666;
+  font-size: 12px;
+}
+.card_regi_dl dt img {
+  float: left;
+  margin: 10px 0 0 3px;
+}
+.card_regi_dl dd input.card_regi_input2 {
+  width: 60px;
+}
+.card_regi_dl dd input.card_regi_input1, .card_regi_dl dd input.card_regi_input2 {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  color: #666;
+  float: left;
+  height: 26px;
+}
+input[type=text], input[type=number], input[type=password], input[type=tel], input[type=email] {
+  display: block;
+  width: 100%;
+  height: 34px;
+  line-height: 34px;
+  padding-left: 10px;
+  /* padding-bottom: 2px; */
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  color: #545454;
+  font-size: 11px;
+  font-weight: bold;
+  box-sizing: border-box;
+}
+
+.hyphen_bg17 {
+  background: url("/images/hyphen_bg17.gif") no-repeat;
+  float: left;
+  height: 30px;
+  width: 17px;
+}
+
+.card_regi_tbl .cahrge_page_ck {
+  margin-left: 2%;
+  margin-top: 10px;
+  line-height: 10px;
+}
+.cahrge_page_ck {
+  margin-top: 10px;
+}
+.ez-checkbox, .ez-radio {
+  zoom: 1;
+  *display: inline;
+  height: 30px;
+}
+.ez-checkbox {
+  background: transparent url("/images/ck_icon.jpg") 0 0 no-repeat;
+  display: inline-block;
+  margin-right: 5px;
+}
+
+/* 카드 충전 -----------------*/
+.card_charge_wrap {
+  position: relative;
+}
+.card_charge_wrap h5 {
+  display: block;
+  position: absolute;
+  top: 0;
+  background: #006633;
+  border: 1px solid #006633;
+  
+}
+.card_charge_wrap h5 .card_charge_regular {
+  border-radius: 3px 0 0 3px;
+  left: 0;
+}
+.card_charge_wrap h5 a {
+  border: 1px solid #ddd;
+  color: #fff;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  width: 413px;
+}
+
+.card_charge_wrap h5.card_charge_regular a {
+  border-radius: 3px 0 0 3px;
+}
+
+
+.card_charge_wrap article {
+  padding-top: 70px;
+}
+.paymentSlideArea {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 165px;
+  margin-bottom: 40px;
+}
+.paymentSlideArea .bxslide-main {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+.paymentSlideArea .bxslide-main .bx-wrapper{
+  max-width: 100%;
+}
+.paymentSlideArea .bxslide-main .bx-wrapper .bx-viewport{
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  height: 165px;
+}
+.paymentSlideArea .bxslide-main .bx-wrapper .bx-viewport ul{
+  width: 315%;
+  position: relative;
+  transition-duration: 0s;
+  transform: translate3d(-830px, 0px, 0px);
+}
+
+.paymentSlideArea .bxslide-main .bx-wrapper .bx-viewport ul.payment_slider li{
+  float: left;
+  list-style: none;
+  position: relative;
+  width: 690px;
+  height: 165px;
+}
+.paymentSlideArea .bxslide-main .bx-wrapper .bx-viewport ul.payment_slider li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.paymentSlideArea .bxslide-main .bx-wrapper .bx-viewport ul.payment_slider li a img {
+  width: 100%;
+  height: 100%;
+}
+.bx-wrapper .bx-controls-direction a.disabled {
+  display: none;
+}
+.bx-wrapper .bx-controls-direction a {
+  position: absolute;
+  top: 50%;
+  margin-top: -16px;
+  outline: 0;
+  width: 32px;
+  height: 32px;
+  text-indent: -9999px;
+  z-index: 9999;
+}
+.payment_slider_control_pager {
+  position: absolute;
+  bottom: 14px;
+  width: 100%;
+  text-align: center;
+}
+.payment_slider_controls {
+  display: inline-block;
+  height: 15px;
+  position: relative;
+  width: 9px;
+  vertical-align: middle;
+}
+.payment_slider_controls div.bx-controls-auto {
+  position: absolute;
+}
+.payment_slider_controls div.bx-controls-auto a.bx-stop {
+  background: url("/images/pause.png") 0 0;
+  height: 15px;
+  width: 15px;
+}
+.payment_slider_controls div.bx-controls-auto a {
+  display: block;
+  overflow: hidden;
+  text-indent: -20000px;
+}
+.payment_slider_pagers {
+  display: inline-block;
+  height: 15px;
+}
+.payment_slider_pagers div.bx-pager div.bx-pager-item {
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: middle;
+}
+.payment_slider_pagers div.bx-pager div.bx-pager-item a.bx-pager-link.active {
+  width: 15px;
+  height: 15px;
+  background: transparent;
+  border: 3px solid #006c3e;
+}
+.payment_slider_pagers div.bx-pager div.bx-pager-item a.bx-pager-link {
+  width: 15px;
+  height: 15px;
+  margin: 0 2px;
+  background: #b2b2b2;
+  border: none;
+  border-radius: 50%;
+  box-sizing: border-box;
+}
+.payment_slider_pagers div.bx-pager div.bx-pager-item a {
+  display: block;
+  overflow: hidden;
+  text-indent: -20000px;
+}
+.paymentSlideArea .payslide_btn_wrap {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  z-index: 2;
+}
+.paymentSlideArea .prevBtn {
+  left: 15px;
+}
+.paymentSlideArea .prevBtn, .paymentSlideArea .nextBtn {
+  position: absolute;
+  top: 50%;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  background: rgba(0, 0, 0, .15);
+  border-radius: 50%;
+  box-sizing: border-box;
+  transform: translateY(-50%);
+}
+.paymentSlideArea .prevBtn a, .paymentSlideArea .nextBtn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-indent: -2000px;
+}
+.paymentSlideArea .nextBtn {
+  right: 15px;
+}
+.paymentSlideArea .prevBtn, .paymentSlideArea .nextBtn {
+  position: absolute;
+  top: 50%;
+  width: 36px;
+  height: 36px;
+  margin: 0;
+  background: rgba(0, 0, 0, .15);
+  border-radius: 50%;
+  box-sizing: border-box;
+  transform: translateY(-50%);
+}
+.paymentSlideArea .prevBtn a, .paymentSlideArea .nextBtn a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-indent: -2000px;
+}
+.paymentSlideArea.type1.mobile, .paymentSlideArea.type2.mobile, .paymentSlideArea.type3.mobile {
+  display: none;
+}
+.paymentSlideArea .bxslide-main {
+  position: relative;
+  width: 100%;
+  z-index: 1;
+}
+.card_charge_wrap article table {
+  border-top: 1px solid #333;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.card_charge_wrap article table caption {
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  text-indent: -20000px;
+  width: 0;
+}
+tbody {
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
+}
+tr {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+}
+.regular_charge.chargeWh tr th, .lowest_limit.chargeWh tr th {
+  width: 200px;
+}
+.regular_charge tr th, .lowest_limit tr th, .monthly_fixed tr th {
+  background: #f4f4f2;
+  color: #222;
+  line-height: 18px;
+}
+.regular_charge tr th, .regular_charge tr td, .lowest_limit tr th, .lowest_limit tr td, .monthly_fixed tr th, .monthly_fixed tr td {
+  font-size: 14px;
+  border-bottom: 1px solid #e0e0e0;
+  height: 25px;
+  padding: 9px 0 9px 20px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.regular_charge.chargeWh tr td, .lowest_limit.chargeWh tr td {
+  width: 630px;
+}
+.regular_charge tr td, .lowest_limit tr td, .monthly_fixed tr td {
+  background: #fff;
+  color: #666;
+}
+.card_charge_wrap article table tr td div.sel_wrap {
+  height: 28px;
+  position: relative;
+  width: 100%;
+}
+.user_sel_wrap {
+  background: url("/images/sbox_arrow_down.png") 223px 10px no-repeat #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  float: left;
+  height: 26px;
+  margin: 0;
+  width: 240px;
+}
+.user_sel_wrap label {
+  color: #444;
+  font-size: 12px;
+  font-weight: bold;
+  left: 5px;
+  line-height: 14px;
+  position: absolute;
+  top: 8px;
+}
+.user_sel_wrap select {
+  height: 26px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  width: 100%;
+}
+select:not(:-internal-list-box) {
+  overflow: visible !important;
+}
+
+
+.user_card_wrap {
+    display: table;
+    height: 125px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 590px;
+}
+.user_card_wrap figure {
+  float: left;
+  height: 125px;
+  margin-right: -93px;
+  width: 206px;
+  position: relative;
+}
+.user_card_wrap .representative_icon {
+  left: 5px;
+  top: 5px;
+}
+.representative_icon a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.user_card_wrap figure img {
+  width: 100%;
+}
+.user_card_wrap p {
+  display: table-cell;
+  vertical-align: middle;
+  float: right;
+  width: 364px;
+  line-height: 1.4;
+}
+.user_card_wrap p strong {
+  color: #444;
+  font-size: 16px;
+}
+.en {
+  font-family: arial, HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+}
+.card_charge_wrap article table tr td div.sel_wrap {
+  height: 28px;
+  position: relative;
+  width: 100%;
+}
+.card_charge_wrap article table tr td div.sel_wrap p.charge_change {
+  float: left;
+  line-height: 28px;
+  margin-left: 10px;
+}
+.charge_change {
+  font-size: 14px;
+  color: #444;
+}
+.card_charge_wrap article table tr td div.sel_wrap p.charge_change span {
+  font-size: 14px;
+  font-weight: bold;
+}
+.t_006633 {
+  color: #006633;
+}
+.charge_options {
+  display: block;
+}
+.charge_options li {
+  float: left;
+  font-size: 14px;
+  padding: 0 3px 5px 3px;
+}
+.charge_options li label {
+  display: block;
+  margin-top: 8px;
+}
+.charge_options li input[type=radio] {
+  margin: 0 3px;
+}
+.charge_options li input[type=text] {
+  box-sizing: border-box;
+  width: 90px;
+  height: 28px;
+  padding: 10px 30px 10px 8px;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  font-size: 12px;
+  letter-spacing: -0.05em;
+  background: url("/images/charge_price_bg.gif") 90% center no-repeat;
+  margin-top: 2px;
+}
+.txt_red {
+  color: #a52035;
+  background: url("/images/bullet_star_red.gif");
+}
+.charge_level_guide {
+  float: left;
+  line-height: 16px;
+  margin-top: 10px;
+  padding-left: 14px;
+}
+ol.charge_warn {
+  margin-bottom: 5px;
+}
+ol.charge_warn li {
+  color: #444;
+  font-size: 12px;
+  font-weight: bold;
+  line-height: 26px;
+  margin-top: 5px;
+}
+ol.charge_warn li ul li {
+  background: url("/images/bullet_grey.gif") 0 5px no-repeat;
+  font-weight: normal;
+  line-height: 16px;
+  margin-top: 5px;
+  padding-left: 10px;
+}
+ol.charge_warn li ul li ul li {
+  background: url("/images/bullet_hyphen.gif") 0 7px no-repeat;
+  font-weight: normal;
+  line-height: 16px;
+  margin-top: 5px;
+  padding-left: 10px;
+}
+/*구매내역 ===============*/
+.my_card_pick_period {
+  background: #f4f4f2;
+  border-radius: 3px;
+  min-height: 60px;
+  margin-top: 30px;
+  width: 830px;
+}
+.my_ms_rank form fieldset legend, .my_card_pick_period form fieldset legend, .ms_cont form fieldset legend {
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  text-indent: -20000px;
+  width: 0;
+}
+.my_card_pick_bg {
+  background: url("/images/my_card_pick_bg.gif") 0 0;
+  float: left;
+  height: 28px;
+  margin: 16px 0 0 30px;
+  width: 298px;
+}
+.my_card_pick_bg dt {
+  color: #222;
+  font-size: 14px;
+  font-weight: bold;
+  height: 30px;
+  line-height: 30px;
+  width: 48px;
+}
+.my_card_pick_bg dt, .my_card_pick_bg dd, .my_card_pick_bg dd input, .my_card_pick_bg dd label {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+.my_card_pick_bg dd {
+  color: #444;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  width: 230px;
+}
+.my_card_pick_bg dt, .my_card_pick_bg dd, .my_card_pick_bg dd input, .my_card_pick_bg dd label {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+dd {
+  display: block;
+  margin-inline-start: 40px;
+}
+.my_card_pick_bg dd input {
+  height: 13px;
+  margin: 8px 0 0 13px;
+  width: 13px;
+}
+.my_card_pick_bg dt, .my_card_pick_bg dd, .my_card_pick_bg dd input, .my_card_pick_bg dd label {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+.my_card_pick_bg dd label {
+  margin: 0 0 0 5px;
+}
+.my_card_pick_bg dt, .my_card_pick_bg dd, .my_card_pick_bg dd input, .my_card_pick_bg dd label {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+.my_card_pick_date {
+  float: right;
+  height: 28px;
+  margin: 16px 30px 0 0;
+  width: 394px;
+}
+.my_card_pick_date dt {
+  color: #222;
+  font-size: 14px;
+  font-weight: bold;
+  height: 30px;
+  line-height: 30px;
+  width: 48px;
+}
+.my_card_pick_date dt, .my_card_pick_date dd, .my_card_pick_date dd input {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+.my_card_pick_date dd {
+  color: #444;
+  font-size: 12px;
+  height: 30px;
+  line-height: 30px;
+  width: 338px;
+}
+.my_card_pick_date dt, .my_card_pick_date dd, .my_card_pick_date dd input {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+.my_card_pick_date dd div.pick_date_each {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  float: left;
+  height: 26px;
+  width: 133px;
+}
+.pick_date_each_left {
+  border-right: 1px solid #ddd;
+  float: left;
+  height: 26px;
+  width: 102px;
+}
+.my_card_pick_date input[type="text"] {
+  outline: none;
+}
+.my_card_pick_date dd input {
+  border: none;
+  height: 22px;
+  line-height: 28px;
+  text-indent: 10px;
+  width: 100px;
+  padding-top: 4px;
+}
+.my_card_pick_date dt, .my_card_pick_date dd, .my_card_pick_date dd input {
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+.pick_date_each_right {
+  float: left;
+  height: 26px;
+  width: 26px;
+}
+.pick_date_each_right label {
+  background: url("/images/icon_calendar.gif");
+  cursor: pointer;
+  float: left;
+  height: 14px;
+  margin: 6px 0 0 8px;
+  overflow: hidden;
+  text-indent: -20000px;
+  width: 14px;
+}
+.hyphen_bg {
+  background: url("/images/hyphen_bg.gif");
+  float: left;
+  height: 28px;
+  width: 16px;
+}
+.my_card_pick_date dd div.pick_date_each {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  float: left;
+  height: 26px;
+  width: 133px;
+}
+
+.btn_pick_date {
+  float: right;
+  height: 28px;
+  width: 40px;
+}
+.btn_pick_date a {
+  background: #777;
+  border-radius: 3px;
+  color: #fff;
+  display: block;
+  line-height: 28px;
+  text-align: center;
+  width: 100%;
+}
+.my_card_date_refer {
+  font-size: 12px;
+  padding-top: 10px;
+  text-align: right;
+}
+.eGift_list_wrap {
+  width: 100%;
+  margin-top: 30px;
+}
+.no_egiftcard_list {
+  color: #666;
+  font-size: 14px;
+  padding: 50px 0;
+  text-align: center;
+} 

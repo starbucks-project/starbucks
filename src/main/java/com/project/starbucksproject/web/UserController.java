@@ -44,5 +44,5 @@ public class UserController {
   public String updateProductForm() {
     return "manager/uploadProduct";
   }
-
+                     
 }
