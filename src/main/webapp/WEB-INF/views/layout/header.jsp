@@ -22,6 +22,9 @@
     href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
     rel="stylesheet">
 
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
+
   <!-- Vendor CSS Files -->
   <link href="../plugins/vendor/animate.css/animate.min.css" rel="stylesheet">
   <link href="../plugins/vendor/aos/aos.css" rel="stylesheet">
