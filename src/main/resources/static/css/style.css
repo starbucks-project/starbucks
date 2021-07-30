@@ -2,21 +2,74 @@
 # General
 --------------------------------------------------------------*/
 body {
-  font-family: "Open Sans", sans-serif;
-
+  font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+  
+  color: #444444;
 }
 
 a {
+  color: #5fcf80;
   text-decoration: none;
 }
 
 a:hover {
-  color: #306e2a;
+  color: #86db9f;
   text-decoration: none;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Raleway", sans-serif;
+}
+h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+h4 {
+  display: block;
+  margin-block-start: 1.33em;
+  margin-block-end: 1.33em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+dd {
+  display: block;
+  margin-inline-start: 40px;
+}
+label {
+  cursor: default;
+}
+ul {
+  display: block;
+  list-style-type: disc;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  padding-inline-start: 40px;
+}
+input {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+  vertical-align: top;
+  border-radius: 0;
+  font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+}
+header, nav, section, article, aside, footer {
+  display: block;
 }
 
 
@@ -985,7 +1038,7 @@ div.product_view_detail div.product_select_wrap2 > div {
 }
 div.product_info_content {
   width: 100%;
-  background: url(/img/drink-detail/detail_bg.jpg) center 0 repeat-y;
+  background: url(/images/drink-detail/detail_bg.jpg) center 0 repeat-y;
   margin: 20px 0;
 }
 div.product_info_content:after {
@@ -1137,12 +1190,12 @@ dl.product_view_tab > dt {
   z-index: 1;
 }
 dl.product_view_tab> dt.dt1 a.selected {
-  background: #666 url(/img/drink_list/icon_pic_on.png) 9px center no-repeat;
+  background: #666 url(/images/drink_list/icon_pic_on.png) 9px center no-repeat;
   color: #fff;
 }
 dl.product_view_tab > dt.dt1 a {
   width: 80px;
-  background: url(/img/drink_list/icon_pic.png) 9px center no-repeat;
+  background: url(/images/drink_list/icon_pic.png) 9px center no-repeat;
 }
 dl.product_view_tab > dt a {
   display: block;
@@ -1313,10 +1366,10 @@ dt {
 }
 dl.product_view_tab > dt.dt2 a {
   width: 92px;
-  background: url(/img/drink_list/icon_ante.png) 9px center no-repeat;
+  background: url(/images/drink_list/icon_ante.png) 9px center no-repeat;
 }
 dl.product_view_tab > dt.dt2 a.selected {
-  background: #666 url(/img/drink_list/icon_ante_on.png) 9px center no-repeat;
+  background: #666 url(/images/drink_list/icon_ante_on.png) 9px center no-repeat;
   color: #fff;
 }
 dl.product_view_tab > dt a {
@@ -1333,4 +1386,2063 @@ dl.product_view_tab > dt a {
 }
 a:hover {
   text-decoration: none;
+}
+
+
+/*--------------------------------------------------------------
+# Index - 메인페이지
+--------------------------------------------------------------*/
+.main-visual_wrap {
+  height:646px; 
+  background-image:url("/images/2021_summer3_bg.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.main-visual_inner {
+  position: relative;
+  box-sizing: border-box;
+  max-width: 1080px;
+  height: 100%;
+  margin: 0 auto;
+}
+.main-visual_slogan {width:42%;padding-top:10.5%;padding-left:7.2%;}
+ 
+.set_common {
+      position: absolute;
+      opacity: 0;
+  }
+  .set_common img {
+    width: 100%;
+}
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+.set_common:after {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 10;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    }
+    
+    .set_01 {bottom:23%;left:56.6%;width:20%;max-width:208px;}
+    .set_02 {bottom:15.9%;left:42.8%;width:18%;max-width:185px;}
+    .set_03 {bottom:14.2%;right:1.7%;width:19%;max-width:202px;}                    
+
+    .set_01:after {top:1.6%;left:-98.1%;width:91%;max-width:189px;background-image:url("../images/2021_summer3_blended_tit.png");}
+    .set_02:after {bottom:19.2%;left:-117.3%;width:110%;max-width:203px;background-image:url("../images/2021_summer3_coldbrew_tit.png");}
+    .set_03:after {top:-19%;left:-18.4%;width:111%;max-width:223px;background-image:url("../images/2021_summer3_tea_tit.png");}
+
+    .set_01 img {position:relative; z-index:10;}
+    .set_02 img {position:relative; z-index:10;}
+    .set_02:before {
+      content:'';
+      z-index:9;
+      position:absolute;
+      top:65.9%;
+      right:-18.7%;
+      display:block;
+      max-width:249px;
+      width:134.6%;
+      height:117px;
+      background:url('https://image.istarbucks.co.kr/upload/common/img/main/2021/2021_summer3_coldbrew_shadow.png') left top no-repeat;background-size:100% auto;}
+
+/* media queries pc */
+@media screen and (max-width:960px) {
+  .main-visual_wrap {height:600px}
+}
+@media screen and (max-width:800px) {
+  .main-visual_wrap {height:520px;background-color:#f5ecd9;background-position:center bottom;background-size:auto 92%;}
+  .main-visual_slogan {width:20%;padding-left:4.2%;}
+
+  .set_01 {left:55.6%;width:21%;}
+  .set_02 {bottom:12.9%;left:40.8%;width:19%;}
+  .set_03 {width:20%;}
+
+  .set_01:after {width:95%;}
+  .set_02:after {bottom:12.2%;width:111%;}
+  .set_03:after {width:114%;}
+
+}
+
+/*------- 메인 스타벅스 리워드 리뉴얼 시작-------- */
+.new-rewards_wrap {
+  padding-top: 30px;
+  padding-bottom: 40px;
+  background-color: #1e3932;
+}
+.new-rewards_inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.new-rewards_inner:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.new-rewards_logo {
+  float: left;
+  width: 16.3%;
+  margin-left: 40px;
+  margin-right: 40px;
+  text-align: center;
+}
+.new-rewards_logo img {
+  width: 176px;
+}
+img {
+  vertical-align: top;
+  max-width: 100%;
+}
+.new-rewards_conts {
+  box-sizing: border-box;
+  float: left;
+  width: calc(83.7% - 80px);
+  padding-right: 30px;
+  color: #fff;
+  letter-spacing: 0.5px;
+}
+.new-rewards_conts .info-cont {
+  position: relative;
+  margin-bottom: 22px;
+  border-bottom: 1px solid #4b615b;
+}
+.new-rewards_conts .info-cont_txt {
+  margin-bottom: 12px;
+}
+.new-rewards_conts .info-cont_txt h2 {
+  line-height: 1.4;
+  margin-bottom: 12px;
+  font-size: 26px;
+  font-weight: normal;
+}
+.new-rewards_inner .pc-br, .new-rewards_inner .mobile-br {
+  display: none;
+}
+.new-rewards_conts .info-cont_txt p {
+  line-height: 1.4;
+  font-size: 17px;
+}
+.btn-signin_group {
+  margin-bottom: 15px;
+}
+
+.new-rewards_conts .btn-signin_group a {
+  box-sizing: border-box;
+  display: inline-block;
+  height: 38px;
+  line-height: 36px;
+  padding-left: 18.5px;
+  padding-right: 18.5px;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.new-rewards_conts .btn-signin_join {
+  background-color: #00704a;
+  border: 2px solid #00704a;
+}
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  text-decoration: none;
+  vertical-align: baseline;
+  color: #666;
+  background: transparent;
+  cursor: pointer;
+}
+a:hover{
+  text-decoration: underline;
+}
+.new-rewards_conts .btn-signin_login {
+  margin-left: 9px;
+  background-color: transparent;
+  border: 2px solid #fff;
+}
+.new-rewards_conts .gift-cont {
+  position: relative;
+}
+.new-rewards_conts .gift-cont_txt p {
+  line-height: 1.4;
+  font-size: 14px;
+}
+.gift-cont_text p {
+  display: block;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+}
+.new-rewards_conts .btn_egift {
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 183px;
+  height: 38px;
+  line-height: 36px;
+  text-align: center;
+  font-size: 14px;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  letter-spacing: 0.5px;
+}
+.btn_egift a {
+  box-sizing: border-box;
+  display: inline-block;
+  height: 38px;
+  line-height: 36px;
+  padding-left: 18.5px;
+  padding-right: 18.5px;
+  font-size: 14px;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.btn_egift a:hover {
+  text-decoration: underline;
+}
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+/*------- 메인 스타벅스 리워드 리뉴얼 끝-------- */
+
+/*------- pick your favorite 시작-------- */
+#favWrap {
+  background: url("../images/fav_prod_bg_new.jpg") center center fixed no-repeat #45434c;
+  background-size: auto 100%;
+  height: 800px;
+  padding: 0;
+  position: relative;
+}
+#favWrap .wrap_inner {
+    bottom: 0;
+}
+.wrap_inner {
+  left: 50%;
+  margin-left: -640px;
+  position: absolute;
+  top: 0;
+  width: 1280px;
+}
+
+.fav_prod_txt01 {
+  background: url(../images/fav_prod_txt01.png) no-repeat;
+  height: 204px;
+  left: 200px;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -20000px;
+  top: 120px;
+  width: 258px;
+  z-index: 7;
+}
+.fav_prod_txt02 {
+  background: url(../images/fav_prod_txt02.png) no-repeat;
+  height: 156px;
+  left: 92px;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -20000px;
+  top: 370px;
+  width: 362px;
+  z-index: 7;
+}
+
+
+.fav_img {
+  top: 100px;
+  right: -10px;
+  width: 672px;
+  height: 458px;
+  background-image: url(https://image.istarbucks.co.kr/upload/common/img/main/2021/2021_summer3_fav.png);
+}
+.fav_img {
+  position: absolute;
+  background-size: 100% !important;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: 7;
+}
+.btn_fav_prod {
+  width: 125px;
+  height: 38px;
+  border-width: 0;
+}
+.btn_fav_prod {
+  border: 2px solid #fff;
+  border-radius: 5px;
+  height: 34px;
+  left: 328px;
+  position: absolute;
+  top: 570px;
+  width: 121px;
+  z-index: 7;
+
+  left: 378px;
+  top: 570px;
+}
+.btn_fav_prod a {
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  height: 100%;
+  line-height: 34px;
+  text-align: center;
+  width: 100%;
+  -webkit-transition: background-color .7s, color .7s;
+  transition: background-color .7s, color .7s;
+}
+
+.btn_fav_prod_a:hover {
+  color: #111;
+  background: #fff;
+  text-decoration: underline;
+}
+/*------- pick your favorite 끝-------- */
+
+/*------- StoreWrap 시작-------- */
+#storeWrap {
+  background: url(../images/store_bg.jpg);
+  background-size: 100% auto;
+  height: 400px;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.wrap_inner {
+    left: 50%;
+    margin-left: -640px;
+    position: absolute;
+    top: 0;
+    width: 1280px;
+}
+.wrap_inner {
+  left: 50%;
+  margin-left: -640px;
+  position: absolute;
+  top: 0;
+  width: 1280px;
+}
+
+.store_exp_img01 {
+  background: url(../images/store_exp_img01.png);
+  height: 228px;
+  left: 390px;
+  position: absolute;
+  top: 149px;
+  width: 228px;
+  z-index: 5;
+}
+.store_exp_img02 {
+  background: url(../images/store_exp_img02.png);
+  height: 312px;
+  left: 160px;
+  position: absolute;
+  top: 0;
+  width: 366px;
+  z-index: 4;
+}
+.store_exp_img03 {
+  background: url(../images/store_exp_img03.png);
+  height: 142px;
+  left: 520px;
+  position: absolute;
+  top: -60px;
+  width: 343px;
+  z-index: 4;
+}
+
+.store_exp_img04 {
+  background: url(../images/store_exp_img04.png);
+  height: 102px;
+  position: absolute;
+  right: 190px;
+  top: 298px;
+  width: 230px;
+  z-index: 4;
+}
+.store_txt01 {
+  background: url(../images/store_txt01.png);
+  height: 54px;
+  position: absolute;
+  right: 260px;
+  overflow: hidden;
+  text-indent: -20000px;
+  top: 100px;
+  width: 385px;
+  z-index: 4;
+}
+.store_txt02 {
+  background: url(../images/store_txt02.png);
+  height: 61px;
+  position: absolute;
+  right: 278px;
+  overflow: hidden;
+  text-indent: -20000px;
+  top: 168px;
+  width: 366px;
+  z-index: 4;
+}
+.store_btn {
+  border: 2px solid #222;
+  border-radius: 3px;
+  height: 38px;
+  line-height: 34px;
+  position: absolute;
+  right: 512px;
+  top: 258px;
+  width: 125px;
+  z-index: 4;
+}
+.store_btn a {
+  color: #222;
+  display: block;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  -webkit-transition: background-color .7s, color .7s;
+  transition: background-color .7s, color .7s;
+}
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  text-decoration: none;
+  vertical-align: baseline;
+  color: #666;
+  background: transparent;
+  cursor: pointer;
+}
+.store_btn a:hover {
+  color: #fff;
+  background: #111;
+  text-decoration: underline;
+}
+/*------- StoreWrap 끝-------- */
+
+/*--------------------------------------------------------------
+# MENU
+--------------------------------------------------------------*/
+/* MENU subtitle */
+.menu_container {
+  width: 100%;
+  margin-top: 73px;
+}
+.sub_tit_wrap {
+  width: 100%;
+  height: 98px;
+  background: #ffffff;
+
+}
+.sub_tit_wrap .sub_tit_inner {
+  width: 1100px;
+  height: 91px;
+  margin: 0 auto;
+  position: relative;
+}
+.sub_tit_wrap h2 {
+  font: bold 36px Avenir, Arial, georgia;
+  color: #222222;
+  padding-top: 30px;
+  position: relative;
+}
+h2 {
+  display: block;
+  font-size: 1.5em;
+  margin-block-start: 0.83em;
+  margin-block-end: 0.83em;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
+  font-weight: bold;
+}
+img {
+  vertical-align: center;
+  max-width: 100%;
+  
+}
+
+/* menu main */
+
+.menuMain {
+  width: 100%;
+  height: 430px;
+  background: url(/images/menu_main/menu_slide_back.jpg) 80% 50% no-repeat;
+  background-size: cover;
+}
+
+/* menu drink section */
+.menu_drink_section {
+  width: 100%;
+  height: 430px;
+  background: url(/images/menu_main/menu_bimg1.jpg) 20% 50% no-repeat;
+  position: relative;
+  background-size: cover;
+}
+.menu_section_inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+img.m_pic {
+    vertical-align: top;
+    max-width: 100%;
+}
+.menu_drink_txt01 {
+  width: 279px;
+  position: absolute;
+  left: 760px;
+  top: 115px;
+}
+.menu_drink_btn01 {
+  width: 121px;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  height: 34px;
+  line-height: 34px;
+  position: absolute;
+  left: 760px;
+  top: 253px;
+}
+.menu_drink_btn01 a {
+  color: #fff;
+  display: block;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  -webkit-transition: background-color .7s, color .7s;
+  transition: background-color .7s, color .7s;
+
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  text-decoration: none;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+}
+.menu_drink_btn01 a:hover {
+  color: #111;
+  background: #fff;
+  text-decoration: underline;
+}
+
+/* menu food section */
+.menu_food_section {
+  width: 100%;
+  height: 430px;
+  background: url(/images/menu_main/menu_bimg2.jpg) 80% 50% no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.menu_section_inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+.menu_food_txt01 {
+  width: 412px;
+  position: absolute;
+  left: 5%;
+  top: 65px;
+}
+.w_pic {
+  display: block;
+}
+.w_pic img {
+  vertical-align: top;
+  max-width: 100%;
+}
+.menu_food_btn01 {
+  width: 121px;
+  border: 2px solid #222;
+  border-radius: 3px;
+  height: 34px;
+  line-height: 34px;
+  position: absolute;
+  left: 5%;
+  top: 206px;
+}
+.menu_food_btn01 a {
+  color: #222;
+  display: block;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  -webkit-transition: background-color .7s, color .7s;
+  transition: background-color .7s, color .7s;
+
+  padding: 0;
+  font-size: 100%;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+}
+.menu_food_btn01 a:hover {
+  color: #fff;
+  background: #111;
+  text-decoration: underline;
+}
+/* End menu food section */
+
+/* menu product section */
+.menu_product_section {
+  width: 100%;
+  height: 430px;
+  background: url(/images/menu_main/menu_bimg3.jpg) 20% 50% no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.menu_section_inner {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+.menu_product_txt01 {
+  width: 337px;
+  position: absolute;
+  left: 65%;
+  top: 65px;
+}
+.w_pic img {
+  vertical-align: top;
+  max-width: 100%;
+}
+.menu_product_btn01 {
+  width: 121px;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  height: 34px;
+  line-height: 34px;
+  position: absolute;
+  left: 65%;
+    top: 206px;
+}
+.menu_product_btn01 a {
+  color: #fff;
+  display: block;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  -webkit-transition: background-color .7s, color .7s;
+  transition: background-color .7s, color .7s;
+}
+.menu_product_btn01 a:hover {
+  color: #111;
+  background: #fff;
+  text-decoration: underline;
+}
+/* End menu product section */
+
+/* menu card section */
+.menu_card_section {
+  width: 100%;
+  height: 430px;
+  background: url(/images/menu_main/menu_bimg4.jpg) 80% 50% no-repeat;
+  background-size: cover;
+  position: relative;
+}
+.menu_section_inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+.menu_card_txt01 {
+  width: 353px;
+  position: absolute;
+  left: 0;
+  top: 140px;
+}
+.menu_card_btn01 {
+  width: 121px;
+  border: 2px solid #222;
+  border-radius: 3px;
+  height: 34px;
+  line-height: 34px;
+  position: absolute;
+  left: 0;
+  top: 278px;
+}
+.menu_card_btn01 a {
+  color: #222;
+  display: block;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  -webkit-transition: background-color .7s, color .7s;
+  transition: background-color .7s, color .7s;
+
+  padding: 0;
+  font-size: 100%;
+  text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+}
+.menu_card_btn01 a:hover {
+  color: #fff;
+  background: #111;
+  text-decoration: underline;
+}
+/* End menu card section */
+/*--------------------------------------------------------------
+# Mymenu Register
+--------------------------------------------------------------*/
+.only_my_dimm {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0907;
+  z-index: 99;
+  opacity: 0.7;
+  filter: alpha(opacity=70);
+  display: none;
+}
+.only_my_drink {
+  position: absolute;
+  left: 50%;
+  top: 150px;
+  margin-left: -210px;
+  width: 440px;
+  border-radius: 3px;
+  overflow: hidden;
+  z-index: 10001;
+  min-width: 320px;
+}
+.only_my_drink div.only_my_head {
+  height: 56px;
+  line-height: 56px;
+  position: relative;
+  background: #8c8279;
+}
+.only_my_drink div.only_my_head p.tit {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  padding-left: 30px;
+}
+.only_my_drink div.only_my_head p.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+.only_my_drink div.only_my_head p.close a {
+  display: block;
+  width: 22px;
+  height: 22px;
+  transition: transform 1s;
+}
+
+/* STEP1 */
+.only_my_drink div.only_my_cont {
+  background: #fff;
+  padding: 30px;
+}
+.only_my_drink dl.my_sel_drink {
+  width: 100%;
+}
+.only_my_drink dl.my_sel_drink:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.only_my_drink dl.my_sel_drink dt {
+  width: 37%;
+  float: left;
+}
+.only_my_drink dl.my_sel_drink dd {
+  width: 58%;
+  float: right;
+}
+.only_my_drink dl.my_sel_drink dd p.t1 {
+  font-size: 16px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 20px;
+}
+.only_my_drink dl.my_sel_drink dd p.t1 span {
+  font-size: 14px;
+  color: #666;
+  font-family: "Arial";
+}
+.only_my_drink dl.my_sel_drink div.select_box {
+  height: 28px;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  position: relative;
+  top: 4px;
+  width: 100%;
+  background: #fff url(/images/mymenu-register/select_arrow.png) no-repeat 96% center;
+}
+.a11y {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  position: absolute;
+}
+.only_my_drink dl.my_sel_drink div.select_box select {
+  padding: 0 10px 0 10px;
+  height: 28px;
+  text-align: left;
+  line-height: 28px;
+  font-size: 12px;
+  /* color: #b7312c; */
+  border: 0;
+  background: transparent;
+  appearance: none;
+  font-family: "nbg";
+  width: 100%;
+}
+select:not(:-internal-list-box) {
+  overflow: visible !important;
+}
+select {
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  box-sizing: border-box;
+  align-items: center;
+  white-space: pre;
+  -webkit-rtl-ordering: logical;
+  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+  cursor: default;
+  margin: 0em;
+  font: 400 13.3333px Arial;
+  border-radius: 0px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-image: initial;
+}
+option {
+  font-weight: normal;
+  display: block;
+  white-space: nowrap;
+  min-height: 1.2em;
+  padding: 0px 2px 1px;
+}
+.only_my_drink dl.my_sel_drink:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.only_my_drink div.personal_opt {
+  margin: 20px 0;
+  padding: 20px 0;
+  border-top: 1px solid #222;
+  border-bottom: 1px solid #ddd;
+}
+.only_my_drink ul.btn_list {
+  border-top: 1px solid #ddd;
+  width: 100%;
+  margin: 20px auto 0;
+  padding-top: 20px;
+}
+.only_my_drink ul.btn_list:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.only_my_drink ul.btn_list li {
+  float: left;
+  width: 48%;
+  margin: 0 1%;
+}
+.only_my_drink ul.btn_list li.li1 a {
+  background: #006633;
+}
+.only_my_drink ul.btn_list li.li1 a:hover {
+  text-decoration: underline;
+}
+.only_my_drink ul.btn_list li a {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 3px;
+  text-decoration: none;
+}
+.only_my_drink ul.btn_list li.li2 a {
+  background: #222;
+}
+.only_my_drink ul.btn_list li.li2 a:hover {
+  text-decoration: underline;
+}
+/* STEP1 end*/
+
+/*--------------------------------------------------------------
+# Mymenu Register2
+--------------------------------------------------------------*/
+.only_my_drink2 {
+  position: absolute;
+  left: 50%;
+  top: 270px;
+  margin-left: -170px;
+  width: 340px;
+  border-radius: 3px;
+  overflow: hidden;
+  z-index: 10001;
+  min-width: 320px;
+}
+.only_my_drink2 div.only_my_head {
+  height: 56px;
+  line-height: 56px;
+  position: relative;
+  background: #8c8279;
+}
+.only_my_drink2 div.only_my_head p.tit {
+  font-size: 16px;
+  font-weight: bold;
+  color: #fff;
+  padding-left: 30px;
+}
+.only_my_drink2 div.only_my_head p.close {
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+.only_my_drink2 div.only_my_head p.close a {
+  display: block;
+  width: 22px;
+  height: 22px;
+  transition: transform 1s;
+}
+.only_my_drink2 div.only_my_cont {
+  background: #fff;
+  padding: 30px;
+}
+.only_my_drink2 div.only_my_cont .drink2_cont_input {
+  background: #fff;
+  padding: 0 0 30px 0;
+}
+.only_my_drink2 div.only_my_cont .drink2_cont_input input {
+  border: 1px solid #dddddd;
+  border-radius: 3px;
+  width: 100%;
+  height: 28px;
+}
+.only_my_drink2 div.only_my_cont .drink2_cont_input input {
+  text-rendering: auto;
+  color: -internal-light-dark(black, white);
+  letter-spacing: normal;
+  word-spacing: normal;
+  text-transform: none;
+  text-indent: 0px;
+  text-shadow: none;
+  display: inline-block;
+  text-align: start;
+  appearance: auto;
+  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
+  -webkit-rtl-ordering: logical;
+  cursor: text;
+  margin: 0em;
+  font: 400 13.3333px Arial;
+}
+.only_my_drink2 ul.btn_list {
+  width: 70%;
+  margin: 0 auto;
+}
+.only_my_drink2 ul.btn_list:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.only_my_drink2 ul.btn_list li {
+  float: left;
+  width: 48%;
+  margin: 0 1%;
+}
+.only_my_drink2 ul.btn_list li.li1 a {
+  background: #006633;
+}
+.only_my_drink2 ul.btn_list li a {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 3px;
+  text-decoration: none;
+}
+.only_my_drink2 ul.btn_list li.li2 a {
+  background: #222;
+}
+.only_my_drink2 ul.btn_list li a {
+  display: block;
+  height: 30px;
+  line-height: 30px;
+  font-size: 12px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 3px;
+  text-decoration: none;
+}
+.only_my_drink2 ul.btn_list li a:hover {
+  text-decoration: underline;
+}
+
+/*--------------------------------------------------------------
+# Store
+--------------------------------------------------------------*/
+.store_container {
+  width: 100%;
+}
+
+/* storeSlideArea */
+.storeSlideArea {
+  width: 100%;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+.storeSlideArea .bxslide-main {
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.temporary_store_bnr {
+  background: #fff;
+}
+.bnr_temp_store {
+  background: url(/images/store/bnr_temp_store.jpg) center top no-repeat;
+  height: 400px;
+  position: relative;
+}
+.bnr_temp_store_inner {
+  height: 100%;
+  left: 50%;
+  margin-left: -550px;
+  position: absolute;
+  top: 0;
+  width: 1100px;
+}
+.bnr_temp_store_txt_wrap {
+  height: 220px;
+  left: -21px;
+  position: absolute;
+  top: 80px;
+  width: 492px;
+}
+.bnr_temp_store_txt {
+  background: url(/images/store/bnr_temp_store_txt.png) no-repeat;
+  background-size: 100% auto;
+  height: 172px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  text-indent: -20000px;
+  top: 0;
+  width: 492px;
+}
+/* storeSlideArea  End*/
+
+/* 매장찾기 store_bn1_section */
+section.store_bn1_section {
+  width: 100%;
+  height: 430px;
+  background: url(/images/store/store_bn1_171109.jpg) 20% 50% no-repeat;
+  background-size: auto 100%;
+  background-size: cover;
+  position: relative;
+}
+article.store_bn_inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+div.store_bn1_txt {
+  width: 330px;
+  position: absolute;
+  left: 760px;
+  top: 98px;
+}
+div.store_bn1_btn {
+  width: 121px;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  height: 34px;
+  line-height: 34px;
+  position: absolute;
+  left: 760px;
+  top: 253px;
+}
+div.store_bn1_btn a {
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  transition: background-color .7s, color .7s;
+  text-decoration: none;
+}
+div.store_bn1_btn a:hover {
+  background-color: #fff;
+  color: #111;
+  text-decoration: underline;
+}
+/* 매장찾기 store_bn1_section End*/
+
+/* 드라이브스루 매장 store_bn2_section */
+section.store_bn2_section {
+  width: 100%;
+  height: 430px;
+  background: url(/images/store/store_bn2_img01.jpg) 80% 50% no-repeat;
+  background-size: auto 100%;
+  background-size: cover;
+  position: relative;
+}
+article.store_bn_inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+div.store_bn2_txt {
+  width: 366px;
+  position: absolute;
+  left: 0;
+  top: 129px;
+}
+div.store_bn2_btn {
+  width: 121px;
+  border: 2px solid #222;
+  border-radius: 3px;
+  height: 34px;
+  line-height: 34px;
+  position: absolute;
+  left: 0;
+  top: 262px;
+}
+div.store_bn2_btn a {
+  color: #222;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  transition: background-color .7s, color .7s;
+  text-decoration: none;
+}
+div.store_bn2_btn a:hover {
+  background-color: #111;
+  color: #fff;
+  text-decoration: underline;
+}
+/* 드라이브스루 매장 store_bn2_section End */
+
+/* 리저브 매장 store_bn3_section */
+section.store_bn3_section {
+  width: 100%;
+  height: 430px;
+  background: url(/images/store/store_bn3_img01.jpg) 20% 50% no-repeat;
+  background-size: auto 100%;
+  background-size: cover;
+  position: relative;
+}
+article.store_bn_inner {
+  width: 1100px;
+  margin: 0 auto;
+  position: relative;
+}
+div.store_bn3_txt {
+  width: 325px;
+  position: absolute;
+  left: 760px;
+  top: 129px;
+}
+div.store_bn3_btn {
+  width: 121px;
+  border: 2px solid #fff;
+  border-radius: 3px;
+  height: 34px;
+  line-height: 34px;
+  position: absolute;
+  left: 760px;
+  top: 264px;
+}
+div.store_bn3_btn a {
+  color: #fff;
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  -webkit-transition: background-color .7s, color .7s;
+  transition: background-color .7s, color .7s;
+  text-decoration: none;
+}
+div.store_bn3_btn a:hover {
+  background-color: #fff;
+  color: #111;
+  text-decoration: underline;
+}
+/* 리저브 매장 store_bn3_section End */
+
+/*--------------------------------------------------------------
+# Store Drive 드라이브스루 매장
+--------------------------------------------------------------*/
+/* 매장소개 */
+.store_drive_container {
+  width: 100%;
+}
+.st_cont {
+  left: 50%;
+  margin: 0 0 0 -550px;
+  position: relative;
+  width: 1100px;
+}
+article.full_text figure.full_img {
+  margin: 25px 0;
+}
+strong.dt_emphasis {
+  color: #006633;
+  font-size: 20px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.3;
+}
+article.full_text p {
+  font-size: 14px;
+  color: #666;
+  line-height: 22px;
+}
+article.full_text p span {
+  color: #555;
+}
+
+/* 드라이브스루 트랙 */
+.drive_through_track {
+  width: 100%;
+  height: 663px;
+  background: url(/images/store/drive_through_bg.jpg) 0 0 repeat;
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+}
+.drive_through_rail {
+  width: 1414px;
+  height: 663px;
+  background: url(/images/store/drive_through_rail2.png) 0 0 no-repeat;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -707px;
+}
+.drive_through_inner {
+  width: 1414px;
+  height: 663px;
+  position: relative;
+}
+
+.drive_tit {
+  position: absolute;
+  left: 250px;
+  top: 30px;
+}
+.step1_obj {
+  position: absolute;
+  left: 354px;
+  top: 139px;  
+  z-index: 3;
+}
+.step1_txt {
+  position: absolute;
+  left: 552px;
+  top: 116px;  
+  z-index: 3;
+}
+.step2_obj {
+  position: absolute;
+  left: 848px;
+  top: 80px;  
+  z-index: 3;
+}
+.step2_txt {
+  position: absolute;
+  left: 848px;
+  top: 241px;  
+  z-index: 3;
+}
+.step3_obj {
+  position: absolute;
+  left: 528px;
+  top: 378px;  
+  z-index: 3;
+}
+.step3_txt {
+  position: absolute;
+  left: 741px;
+  top: 526px;  
+  z-index: 3;
+}
+.step1_flag {
+  position: absolute;
+  left: 558px;
+  top: 188px;  
+  z-index: 1;
+}
+.step2_flag {
+  position: absolute;
+  left: 1073px;
+  top: 188px;  
+  z-index: 1;
+}
+.step3_flag {
+  position: absolute;
+  left: 752px;
+  top: 401px;  
+  z-index: 3;
+}
+.store_bg {
+  position: absolute;
+  right: 85px;
+  bottom: 0px;  
+}
+
+/* 매장 지도 */
+.driveStore_ber_wrap {
+  position: relative;
+  height: 80px;
+  background: #006633;
+}
+.driveStore_ber_innner {
+  left: 50%;
+  margin-left: -550px;
+  position: absolute;
+  top: 0;
+  width: 1100px;
+}
+article.driveStore_ber_innner dl dt {
+  float: left;
+}
+article.driveStore_ber_innner dl dd {
+  float: left;
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 76px;
+  height: 76px;
+  padding: 4px 0 0 10px;
+}
+article.driveStore_ber_innner dl:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* 지도영역 */
+.store_map_wrap {
+  height: 631px;
+  width: 100%;
+}
+
+/*--------------------------------------------------------------
+# Store Reserve 리저브 매장
+--------------------------------------------------------------*/
+
+/* reserve_store_full */
+.reserve_store_full {
+  margin-bottom: 40px;
+}
+.st_cont {
+  left: 50%;
+  margin: 0 0 0 -550px;
+  position: relative;
+  width: 1100px;
+}
+.reserve_store_full p.f_img {
+  margin-bottom: 30px;
+}
+.st_cont .f_text {
+  text-align: center;
+}
+.f_text h3 {
+  font-size: 18px;
+  color: #222222;
+  font-weight: bold;
+  padding-top: 20px;
+  padding-bottom: 25px;
+}
+.f_text dl dt {
+  font-size: 20px;
+  color: #b06546;
+  padding-bottom: 20px;
+  font-style: italic;
+}
+.f_text dl dd p {
+  max-width: 980px;
+  margin: 0 auto;
+  padding-bottom: 10px;
+  font-size: 14px;
+  color: #444444;
+  line-height: 1.6;
+}
+
+/* reserve_store_middle01 */
+.reserve_store_middle01 {
+  position: relative;
+  background-color: #f7f6f3;
+  /* background: url(../img/store/reserve_middle_bimg01.png) center top no-repeat; */
+}
+.reserve_store_middle01 h3 {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  font-size: 16px;
+  color: #222222;
+  font-weight: bold;
+  padding: 0 0 16px 0;
+  background: url(/images/store/reserve_store_tit_bg.png) no-repeat 0 bottom;
+}
+.reserveStore_middle01 {
+  background-image: url(/images/store/YjLYqU_20210405101532228.png);
+  padding-top: 76px;
+  height: 260px;
+  background-position: 103% 62%;
+  background-repeat: no-repeat;
+}
+.rs_middle01 {
+  padding: 55px 0 20px 0;
+  width: 560px;
+}
+.rs_middle01 dt {
+  font-size: 16px;
+  color: #222;
+  font-weight: bold;
+}
+.rs_middle01 dd strong {
+  color: #b06546;
+  display: block;
+  font-size: 20px;
+  font-style: italic;
+  font-weight: normal;
+  margin: 15px 0 10px;
+  line-height: 1.8;
+}
+.for_web {
+  display: block;
+}
+.rs_middle01 dd p.t2 {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+  padding-bottom: 20px;
+  word-break: keep-all;
+}
+
+/* reserve_store_middle02 */
+.reserve_store_middle02 {
+  background: #fff;
+  padding: 60px 0 20px;
+}
+.reserve_store_middle02 .st_cont h3 {
+  font-size: 18px;
+  text-align: center;
+}
+.reserve_store_middle02 .m_t30 {
+  margin-top: 30px;
+}
+
+/* reserve_store_bottom */
+.reserve_store_bottom {
+  padding: 40px 0 160px;
+}
+.reserve_store_bottom h3 {
+  font-size: 22px;
+  color: #222222;
+  font-weight: normal;
+  background: #f4f4f2;
+  padding-bottom: 20px;
+}
+.reserveStore_bottom01 {
+  height: 260px;
+  background: url(/images/store/reserveStore_bottom01_bg.png) 0 0 no-repeat;
+}
+.en {
+  font-family: arial, HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+}
+.reserveStore_bottom01 h4 {
+  font-size: 16px;
+  color: #222222;
+  font-weight: bold;
+  padding: 20px 0 10px 425px;
+}
+dl.rs_bottom01 {
+  padding: 0 0 0 425px;
+  margin-top: 0;
+}
+dl.rs_bottom01 dt {
+  color: #b06546;
+  font-size: 20px;
+  font-style: italic;
+  margin: 10px 0;
+  line-height: 1.2;
+  letter-spacing: -0.5px;
+}
+dl.rs_bottom01 dd p {
+  color: #666;
+  font-size: 14px;
+  line-height: 23px;
+  letter-spacing: -0.8px;
+}
+
+/* reserve_store_bottom */
+.reserve_beverage {
+  width: 100%;
+  background: url(/images/store/reserve_beverage_bg.png);
+  background-size: cover;
+}
+.reserve_bev_wrap {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+}
+.reserve_bev_wrap h5 {
+  text-align: center;
+  padding-top: 190px;
+  color: #af6445;
+  font-size: 17px;
+  line-height: 1;
+  background: url(/images/store/reserve_logo.png) 50% 45% no-repeat;
+}
+.reserve_bev_wrap p {
+  color: #ddd;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  padding: 15px 0;
+  font-weight: 400;
+}
+.reserve_bev_wrap p strong {
+  font-weight: 900;
+}
+.beverage_slide_wrap {
+  /* height: 334px; */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 20px;
+}
+.beverage_slide_wrap:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 133px;
+  top: 0;
+  bottom: 0;
+  opacity: .7;
+  background: #000 url(/images/store/reserve_beverage_bg.png);
+  z-index: 5;
+}
+.beverage_slide_wrap:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 133px;
+  top: 0;
+  bottom: 0;
+  opacity: .7;
+  background: #000 url(/images/store/reserve_beverage_bg.png);
+  z-index: 5;
+}
+.beverage_slide_wrap .swiper-wrapper {
+  margin-bottom: 20px;
+}
+.beverage_slide_wrap .swiper-slide {
+  float: left;
+  width: 258px !important;
+  padding: 10px;
+}
+.beverage_slide_wrap .swiper-slide img {
+  max-height: 268px;
+}
+.beverage_slide_wrap .bev_name {
+  font-weight: bold;
+  color: #ddd;
+  display: block;
+  font-size: 15px;
+  margin-top: 15px;
+  text-align: center;
+}
+.beverage_slide_wrap .swiper-container-horizontal > .swiper-scrollbar {
+  background: #ddd;
+  height: 3px;
+}
+.swiper-container-horizontal > .swiper-scrollbar {
+  position: absolute;
+  left: 1%;
+  bottom: 3px;
+  z-index: 10;
+  height: 5px;
+  width: 98%;
+}
+.swiper-scrollbar {
+  border-radius: 10px;
+  position: relative;
+  background: rgba(0, 0, 0, 0.1);
+}
+.beverage_slide_wrap .swiper-scrollbar-drag {
+  background: #754737;
+}
+.swiper-scrollbar-drag {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  left: 0;
+  top: 0;
+}
+.beverage_slide_wrap:after {
+  content: '';
+  position: absolute;
+  right: 0;
+  width: 133px;
+  top: 0;
+  bottom: 0;
+  opacity: .7;
+  background: #000 url(/images/store/reserve_beverage_bg.png);
+  z-index: 5;
+}
+
+
+/* 매장지도 */
+.reserveStore_ber_wrap {
+  position: relative;
+  height: 77px;
+  background: #000000;
+}
+.reserveStore_ber_innner {
+  left: 50%;
+  margin: 0 0 0 -550px;
+  position: relative;
+  width: 1100px;
+}
+.reserveStore_ber_innner dl {
+  font-size: 0;
+  position: relative;
+}
+.reserveStore_ber_innner dl dt {
+  display: inline-block;
+  font-size: 0;
+  vertical-align: middle;
+}
+.reserveStore_ber_innner dl dt .reserve_store_ico {
+  display: inline-block;
+  vertical-align: middle;
+}
+.reserveStore_ber_innner dl dt .reserve_store_ico img {
+  display: block;
+  width: 100%;
+  max-width: none;
+}
+.reserveStore_ber_innner dl dt p {
+  color: #b06546;
+  display: inline-block;
+  font-family: 'Arial';
+  font-size: 18px;
+  font-weight: 700;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+.reserveStore_ber_innner dl dt:after {
+  clear: both;
+  content: "";
+  display: block;
+}
+.reserveStore_ber_innner dl dd {
+  display: inline-block;
+  font-size: 14px;
+  color: #b2b2b2;
+  line-height: 77px;
+  height: 77px;
+  padding-left: 15px;
+  position: relative;
+  vertical-align: middle;
+}
+.reserveStore_ber_innner dl dd:before {
+  background-color: #373737;
+  content: "";
+  display: block;
+  height: 12px;
+  left: 7px;
+  position: absolute;
+  top: 32px;
+  width: 1px;
+}
+.reserveStore_ber_innner dl dd span {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* 지도 */
+/* @media screen and (min-width: 641px) and (max-width: 1600px) */
+.store_map_wrap {
+    height: 631px;
+}
+
+/*--------------------------------------------------------------
+# Store Map
+--------------------------------------------------------------*/
+.store_height_wrap {
+  left: 0;
+  position: absolute;
+  top: 120px;
+}
+.store_map_layer {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 2px 0px 3px 0px rgb(0 0 0 / 20%);
+  -webkit-box-shadow: 2px 0px 3px 0px rgb(0 0 0 / 20%);
+  left: 20px;
+  position: absolute;
+  top: 20px;
+  width: 300px;
+  z-index: 7;
+}
+.find_store_wrap {
+  background: #fff;
+  border-radius: 3px;
+  height: 118px;
+  position: relative;
+}
+.find_store_header {
+  border-top-left-radius: 3px;
+  float: left;
+  height: 58px;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 50%;
+}
+.find_store_header h2.btn_find_store {
+  border-top-left-radius: 3px;
+  height: 58px;
+  width: 100%;
+}
+.btn_find_store {
+  margin: 0;
+}
+.find_store_header h2, .btn_find_store a {
+  background: url(/images/store/btn_find_store_on.png) center center no-repeat #006633;
+  border-top-left-radius: 3px;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  text-indent: -20000px;
+  width: 100%;
+}
+
+.find_store_wrap > article {
+  left: 0;
+  position: absolute;
+  top: 58px;
+  width: 100%;
+}
+.find_store_cont_header {
+  background: #fff;
+}
+.find_store_cont_header, .find_road_cont_header {
+  height: 60px;
+  position: relative;
+  background: #fff;
+}
+.btn_opt_chk {
+  background: url(/images/store/icon_opt_chk.png) 10px 12px no-repeat #fff;
+  border: 1px solid #222;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px 0px rgb(0 0 0 / 20%);
+  -webkit-box-shadow: 2px 2px 2px 0px rgb(0 0 0 / 20%);
+  /* display: none; */
+  height: 33px;
+  left: 10px;
+  line-height: 33px;
+  position: absolute;
+  top: 11px;
+  width: 90px;
+  z-index: 7;
+}
+p.btn_opt_chk a {
+  color: #666;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  height: 100%;
+  text-indent: 30px;
+  width: 100%;
+}
+.map_layer_toggle, .road_layer_toggle {
+  height: 44px;
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  width: 44px;
+}
+.map_layer_toggle a, .road_layer_toggle a {
+  background: url(/images/store/map_layer_arrow_u.png);
+  background-size: 100% auto;
+  display: block;
+  height: 44px;
+  overflow: hidden;
+  text-indent: -20000px;
+  width: 44px;
+}
+
+
+.store_map_layer_cont {
+  background: #fff;
+  height: 551px;
+  position: relative;
+  width: 300px;
+}
+.store_map_layer_cont header.quick_search {
+  left: 0;
+}
+.store_map_layer_cont header.quick_search, .store_map_layer_cont header.loca_search {
+  border-right: 1px solid #ddd;
+}
+.store_map_layer_cont header {
+  float: left;
+  height: 40px;
+  position: absolute;
+  top: 0;
+  width: 50%;
+}
+.store_map_layer_cont header h3 {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  width: 100%;
+}
+
+.store_map_layer_cont header h3.on {
+  background: #006633;
+  border-color: #006633;
+  height: 38px;
+  line-height: 38px;
+}
+.store_map_layer_cont article {
+  padding: 40px 0 0 0;
+}
+.quick_search_input {
+  background: #006633;
+  height: 60px;
+  width: 100%;
+}
+.store_map_layer_cont header h3.on a {
+  color: #fff;
+}
+.store_map_layer_cont header h3 a {
+  display: block;
+  color: #444;
+  font-size: 12px;
+  height: 100%;
+  width: 100%;
+}
+
+.store_map_layer_cont article {
+  padding: 40px 0 0 0;
+}
+.quick_search_input {
+  background: #006633;
+  height: 60px;
+  width: 100%;
+}
+.quick_search_inner {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  float: left;
+  height: 38px;
+  margin: 10px 0 0 10px;
+  position: relative;
+  width: 278px;
+}
+.quick_search_inner input {
+  border: none;
+  float: left;
+  height: 100%;
+  margin-left: 2%;
+  padding: 0;
+  width: 96%;
+}
+input {
+  vertical-align: middle;
+}
+.quick_search_inner a {
+  background: url(/images/store/icon_magnifier.png);
+  display: block;
+  height: 23px;
+  overflow: hidden;
+  position: absolute;
+  right: 7px;
+  top: 7px;
+  text-indent: -20000px;
+  width: 19px;
+}
+
+.result_num_wrap.myStoreInfo {
+  line-height: inherit;
+  height: 22px;
+  padding-top: 5px;
+}
+.result_num_wrap, .result_num_wrap2 {
+  background: #f4f4f2;
+  color: #444;
+  font-size: 14px;
+  height: 54px;
+  line-height: 54px;
+  position: relative;
+  text-indent: 10px;
+  width: 100%;
+}
+.result_num_wrap strong, .result_num_wrap2 strong, .result_num_wrap3 strong {
+  font-size: 14px;
+}
+.t_006633 {
+  color: #006633;
+}
+.en {
+  font-family: arial, HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+}
+.result_list_wrap {
+  background: #fff;
+  @height: 404px;
+  position: relative;
+  width: 100%;
+}
+/* @media screen and (min-width: 641px) and (max-width: 1600px) */
+.result_list {
+    height: 300px;
+    width: 100%;
+}
+.mCustomScrollbar {
+  /* -ms-touch-action: none; */
+  touch-action: none;
+}
+.result_list .mCustomScrollBox, .result_list2 .mCustomScrollBox, .result_list3 .mCustomScrollBox {
+  height: 98%;
+  padding-bottom: 0;
+}
+.mCustomScrollBox {
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+  max-width: 100%;
+  outline: none;
+  direction: ltr;
+}
+.result_list .mCSB_inside > .mCSB_container, .result_list2 .mCSB_inside > .mCSB_container, .result_list3 .mCSB_inside > .mCSB_container {
+  margin-right: 0;
+}
+.mCSB_container {
+  overflow: hidden;
+  width: auto;
+  height: auto;
+}
+.result_list ul, .result_list2 ul, .result_list3 ul {
+  margin: 0 auto;
+  width: 280px;
+}
+.result_list ul li, .result_list2 ul li, .result_list3 ul li {
+  border-bottom: 1px solid #ddd;
+  height: 100px;
+  position: relative;
+  width: 270px;
+}
+.result_list ul li strong, .result_list2 ul li strong, .result_list3 ul li strong {
+  color: #444;
+  float: left;
+  font-size: 14px;
+  height: 20px;
+  line-height: 20px;
+  margin-top: 8px;
+  width: 100%;
+}
+.result_list ul li p.result_details, .result_list2 ul li p.result_details, .result_list3 ul li p.result_details {
+  color: #666;
+  float: left;
+  font-size: 12px;
+  margin-top: 5px;
+  line-height: 1.4;
+  width: 80%;
+}
+.result_list ul li i, .result_list2 ul li i, .result_list3 ul li i {
+  background-size: 100% auto;
+  display: block;
+  height: 60px;
+  overflow: hidden;
+  position: absolute;
+  right: 5px;
+  text-indent: -20000px;
+  top: 22px;
+  width: 38px;
+}
+i.pin_reserve {
+  background: url(/images/store/pin/pin_reserve.png) no-repeat;
+}
+i.pin_general {
+  background: url(/images/store/pin/pin_general.png) no-repeat;
+}
+/* ========find road======== */
+.find_road_header {
+  border-top-right-radius: 3px;
+  float: right;
+  height: 58px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 50%;
+}
+.find_road_header h2.btn_find_road {
+  border-top-right-radius: 3px;
+  height: 58px;
+  width: 100%;
+}
+.btn_find_road {
+  margin: 0;
+}
+.find_road_header h2.btn_find_road a {
+  background: url(/images/store/btn_find_road_off.png) center center no-repeat #f4f4f2;
+  border-top-right-radius: 3px;
+  display: block;
+  height: 100%;
+  overflow: hidden;
+  text-indent: -20000px;
+  width: 100%;
 }
