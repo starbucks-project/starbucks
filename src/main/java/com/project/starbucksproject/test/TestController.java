@@ -11,11 +11,6 @@ public class TestController {
         return "test/test";
     }
 
-    @GetMapping("/store")
-    public String store() {
-        return "auth/store";
-    }
-
     @GetMapping("/mypage")
     public String mypage() {
         return "user/mypage";
