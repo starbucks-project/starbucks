@@ -1,46 +1,24 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
+<%@include file="./layout/header.jsp"%>
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-  <title>Mentor Bootstrap Template - Index</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-  <!-- Template Main CSS File -->
-  <link href="/css/style.css" rel="stylesheet">
-</head>
-
-<body>
-  <!-- ======= Header ======= -->
-
-  <!-- End Header -->
-
-  <!-- ======= main - visual ======= -->
   <div class="main-visual_wrap">
     <div class="main-visual_inner">
         <div class="main-visual_slogan" style="opacity: 1;">
-            <img src="/img/2021_summer3_slogan.png" alt="FOUND HAPPY PLACE" class="pc-slogan">
+            <img src="/images/2021_summer3_slogan.png" alt="FOUND HAPPY PLACE" class="pc-slogan">
 
         </div>
 
         <div class="main-visual_set">
             <div class="set_common set_01" style="opacity: 1;">
-                <img src="/img/2021_summer3_blended.png" alt="트윙클 스타 핑크 블렌디드" class="pc-drink">
+                <img src="/images/2021_summer3_blended.png" alt="트윙클 스타 핑크 블렌디드" class="pc-drink">
 
             </div>    
             <div class="set_common set_02" style="opacity: 1;">
-                <img src="/img/2021_summer3_coldbrew.png" alt="아이스크림 블렌딩 콜드 브루" class="pc-drink">
+                <img src="/images/2021_summer3_coldbrew.png" alt="아이스크림 블렌딩 콜드 브루" class="pc-drink">
 
             </div>                                                    
             <div class="set_common set_03" style="opacity: 1;">
-                <img src="/img/2021_summer3_tea.png" alt="유자&amp;유스베리 티" class="pc-drink">
+                <img src="/images/2021_summer3_tea.png" alt="유자&amp;유스베리 티" class="pc-drink">
             </div>
         </div>
     </div>
@@ -51,7 +29,7 @@
     <section class="new-rewards_wrap">
       <div class="new-rewards_inner">
         <div class="new-rewards_logo">
-          <img src="/img/rewards-logo.png" alt="Starbucks Rewards"> 
+          <img src="/images/rewards-logo.png" alt="Starbucks Rewards"> 
         </div>
         
         <div class="new-rewards_conts">
@@ -122,5 +100,4 @@
 
   </main><!-- End #main -->
 
-</body>
-</html>
+<%@include file="./layout/footer.jsp"%>
