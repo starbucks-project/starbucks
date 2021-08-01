@@ -1,22 +1,22 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@include file="../layout/header.jsp"%>
-<div class="manage-User-container">
+<div class="manage_User_container">
 <!-- LoginForm -->
-	<div class="manageUser-page-box">
+	<div class="manageUser_page_box">
 		<!-- section title -->
-		<div class="manageUser-title-box">
-		<div class="manageUser-title" >
+		<div class="manageUser_title_box">
+		<div class="manageUser_title" >
 			<a><strong>판매현황</strong></a>				
 		</div> <!-- end userinfo-title-box-->
 		</div> <!-- end userinfo-title-->
 		<!-- /section title -->
         <hr />   
-        <div class="manageUser-bottom-area">
-        <div class="top-box">
-        <div class="category-area-box">
-            <div class="category-box">
-                <select class="category-select">
+        <div class="manageUser_bottom_area">
+        <div class="top_box">
+        <div class="category_area_box">
+            <div class="category_box">
+                <select class="category_select">
                     <option value="">--카테고리--</option>
                     <option value="drink">Drink</option>
                     <option value="food">Food</option>
@@ -25,12 +25,12 @@
             </div> <!-- end cateogry-box-->
         </div> <!-- end search-area-box-->
 
-        <div class="search-area-box">
+        <div class="search_area_box">
             <form>
-            <div class="search-input-box">
+            <div class="search_input_box">
                 <input type="text" name="search" placeholder="검색어를 입력해주세요." />
             </div>
-            <div class="search-btn-box">
+            <div class="search_btn_box">
                 <input type="button" name="search_btn" value="검색"/>
             </div>
             </form>
@@ -38,8 +38,8 @@
 
     </div>
 
-        <div class="user-list-area-box">
-            <table class="userlist-tb">
+        <div class="user_list_area_box">
+            <table class="userlist_tb">
                 <colgroup>
                     <col width="10%">
                     
@@ -93,7 +93,7 @@
                         <td>4,500</td> 
                         <td>2</td>
                     </tr>
-                    <tr class="last-tr">     
+                    <tr class="last_tr">     
                         <td>고객번호</td>     
                         <td>상품명</td>     
                         <td>구매일</td>     
