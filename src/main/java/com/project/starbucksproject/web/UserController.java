@@ -23,7 +23,7 @@ public class UserController {
   @GetMapping("/store")
   public String store() {
     return "auth/store";
-  }
+  } 
 
   @GetMapping("/manager")
   public String managerHome() {
