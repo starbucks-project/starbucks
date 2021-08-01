@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="./layout/header.jsp"%>
 
+  <main id="main">
   <div class="main-visual_wrap">
     <div class="main-visual_inner">
         <div class="main-visual_slogan" style="opacity: 1;">
@@ -24,7 +25,6 @@
     </div>
 </div><!-- End main-visual -->
 
-  <main id="main">
     <!--메인 스타벅스 리워드 리뉴얼-->
     <section class="new-rewards_wrap">
       <div class="new-rewards_inner">
@@ -93,7 +93,7 @@
       <div class="store_exp_img04" style="opacity: 1;"></div>
       <div class="store_txt01" style="opacity: 1; right: 260px;">스타벅스를 가까이에서 경험해보세요. 고객님과 가장 가까이 있는 매장을 찾아보세요!</div>
       <div class="store_txt02" style="opacity: 1; right: 278px;">차별화된 커피 경험을 누릴 수 있는 리저브 매장, 다양한 방법으로 편리하게 즐길 수 있는 드라이브 스루 매장, 함께해서 더 따뜻할수 있는 지역사회 소통 공간 커뮤니티 매장</div>
-      <div class="store_btn" style="opacity: 1; right: 512px;"><a href="/store_map">매장 찾기</a></div>
+      <div class="store_btn" style="opacity: 1; right: 512px;"><a href="/store">매장 찾기</a></div>
     </div>
   </section>
 <!--storeWrap 끝-->

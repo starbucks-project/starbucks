@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="../layout/header.jsp"%>
 
-<!-- container -->
-  <div id="container">
+<!-- main -->
+  <main id="main">
     <!-- 서브 타이틀 -->
     <div class="sub_tit_wrap">
       <div class="sub_tit_inner">
-        <h2><img src="/img/drink_list/menu_tit1.jpg" alt="음료"></h2>
+        <h2><img src="/images/drink_list/menu_tit1.jpg" alt="음료"></h2>
       </div>
     </div>
     <!-- 서브 타이틀 end -->
@@ -27,7 +27,7 @@
                   <dt style="display: block;">
                     <a href="javascript:void(0);">콜드 브루 커피</a>
                     <i class="summaryIcon">
-                      <img src="/img/drink_list/logo_decaf.png" alt=""></i>
+                      <img src="/images/drink_list/logo_decaf.png" alt=""></i>
                       <span class="summary">디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)</span>
                   </dt>
                   <dd style="display: block;">
@@ -35,10 +35,10 @@
                       <li class="menuDataSet" new="Y" sell="" recomm="0" sold="N">                 <dl>                     
                         <dt>                         
                           <a href="javascript:void(0)" class="goDrinkView" prod="9200000003643">
-                            <img src="/img/drink_list/아이스크림 블렌딩 콜드 브루.jpg" alt="아이스크림 블렌딩 콜드 브루">
+                            <img src="/images/drink_list/아이스크림 블렌딩 콜드 브루.jpg" alt="아이스크림 블렌딩 콜드 브루">
                           </a>                                                  <ul>                                                          
                             <li>
-                              <img src="/img/drink_list/mark01_new.png" alt="NEW">
+                              <img src="/images/drink_list/mark01_new.png" alt="NEW">
                             </li>
                           </ul>                                              
                         </dt>                     
@@ -384,7 +384,7 @@
       </div>
       <!-- 음료 리스트(카테고리 별) end -->
     </div>
-  </div>
-<!-- container  end-->
+  </main>
+<!-- main  end-->
 
 <%@include file="../layout/footer.jsp"%>

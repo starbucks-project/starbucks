@@ -21,7 +21,7 @@
       <div class="menu_drink_txt01">
         <img class="w_pic" src="/images/menu_main/menu_btxt1.png" alt="음료 스타벅스의 특별함을 경험해보세요. 특별한 스타벅스 경험을 고객 한 분, 한 분에게 한잔의 음료를 통해 전달합니다.">
       </div>
-      <div class="menu_drink_btn01"><a href="/drink_list" title="스타벅스 음료 자세히 보기">자세히 보기</a></div>
+      <div class="menu_drink_btn01"><a href="/auth/drink_list" title="스타벅스 음료 자세히 보기">자세히 보기</a></div>
     </div>
   </div>
 

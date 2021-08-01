@@ -25,6 +25,16 @@ public class UserController {
     return "auth/store";
   }
 
+  @GetMapping("/auth/drink_list")
+  public String drinkList() {
+    return "auth/drink_list";
+  }
+
+  @GetMapping("/auth/drink_detail")
+  public String drinkDetail() {
+    return "auth/drink_detail";
+  }
+
   @GetMapping("/manager")
   public String managerHome() {
     return "manager/managerHome";
@@ -44,5 +54,5 @@ public class UserController {
   public String updateProductForm() {
     return "manager/uploadProduct";
   }
-                     
+
 }

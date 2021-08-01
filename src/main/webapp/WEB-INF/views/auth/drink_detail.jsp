@@ -17,13 +17,13 @@
           <div class="product_big_pic">
             <p>
               <a href="javascript:void(0)" tabindex="-1" aria-hidden="true" role="presentation"><!-- 접근성_20171123 tabindex, aria, role 추가 -->
-              <img class="zoomImg" src="/img/drink-detail/아이스크림 블렌딩 콜드 브루.jpg" 
+              <img class="zoomImg" src="/images/drink-detail/아이스크림 블렌딩 콜드 브루.jpg" 
               data-zoom-image="https://image.istarbucks.co.kr/upload/store/skuimg/2021/06/[9200000003643]_20210623101238875.jpg" alt="상세이미지">
             </a>
           </p>
             <p class="more_btn">
               <a href="javascript:void(0)" tabindex="-1" aria-hidden="true" role="presentation">
-                <img src="/img/drink-detail/more.png" alt="상세이미지">
+                <img src="/images/drink-detail/more.png" alt="상세이미지">
             </a><!-- 접근성_20171123 alt 추가 -->
           </p>
           </div>
