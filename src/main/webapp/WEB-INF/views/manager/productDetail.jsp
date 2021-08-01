@@ -124,7 +124,7 @@
                 </div>
                 <div class="edit-btn-box">
                   <div class="edit-btn">
-                    <a href="/manager/update_product">수정</a>
+                    <a href="/manager/updateForm">수정</a>
                   </div>
                   <div class="edit-btn">
                     <a href="#">삭제</a>

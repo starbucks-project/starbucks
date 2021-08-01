@@ -10,13 +10,14 @@
   
   <meta name="author" content="Themefisher.com">
 
-  <title>header</title>
+  <title>starbucks</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
   <!-- Favicons -->
   <link href="../images/starbuckslogo.png" rel="icon">
   <link href="../images/starbuckslogo.png" rel="apple-touch-icon">
+  <link rel="shortcut icon"	href="https://image.istarbucks.co.kr/common/img/common/favicon.ico?v=200828"	type="image/ico">
 
   <!-- Google Fonts -->
   <link
@@ -69,11 +70,11 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <div class="upper">
         <div class="upper-nav">
-            <div class="upper-nav-item"><a class="active" href="index.html">Home</a></div>
-            <div class="upper-nav-item"><a href="#">Login</a></div>
-            <div class="upper-nav-item"><a href="#">cart</a></div>
-            <div class="upper-nav-item"><a href="#">mystarbucks</a></div>
-            <div class="upper-nav-item"><a href="#">find a store</a></div>
+            <div class="upper-nav-item"><a class="active" href="/">Home</a></div>
+            <div class="upper-nav-item"><a href="/auth/login">Login</a></div>
+            <div class="upper-nav-item"><a href="/user/cart">cart</a></div>
+            <div class="upper-nav-item"><a href="/user/mypage">mystarbucks</a></div>
+            <div class="upper-nav-item"><a href="/store">find a store</a></div>
          
         </div><!-- end upper-nav-->
       </div> <!-- end upper-->
@@ -81,7 +82,7 @@
         
         <div class="dropdown"><a href="#"><span>Menu</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a href="#">Drink</a></li>
+            <li><a href="/auth/drink_list">Drink</a></li>
 
             <li><a href="#">Food</a></li>
             <li><a href="#">Product</a></li>
@@ -90,10 +91,10 @@
         </div> <!-- end dropdown-->
         <div class="dropdown"><a href="#"><span>Store</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a href="#">매장 찾기</a></li>
+            <li><a href="/store">매장 찾기</a></li>
 
-            <li><a href="#">드라이브 스루</a></li>
-            <li><a href="#">리저브 매장</a></li>
+            <li><a href="/auth/store_drive">드라이브 스루</a></li>
+            <li><a href="/auth/store_reserve">리저브 매장</a></li>
           </ul>
           
 <%-- 

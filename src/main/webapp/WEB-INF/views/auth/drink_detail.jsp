@@ -41,7 +41,7 @@
             <p class="t1">콜드 브루와 바닐라빈이 콕콕 박힌 아이스크림이 블렌딩 되어 진하고 부드러운 콜드 브루 풍미를 느낄 수 있는 콜드 브루
             <br> * 아이스크림 블렌딩 콜드 브루는 BOGO쿠폰, 무료음료 쿠폰 등 일부 쿠폰 사용이 제한됩니다</p>
             <div class="myDrink">
-              <a href="javascript:void(0)" role="button" title="나만의 음료 등록 옵션 열기">나만의 음료로 등록</a><!-- 접근성_20171123 role, title 추가 -->
+              <a href="/user/mymenu_re1" role="button" title="나만의 음료 등록 옵션 열기">나만의 음료로 등록</a><!-- 접근성_20171123 role, title 추가 -->
             </div>
           </div>
 
@@ -126,7 +126,7 @@
                   <p>알레르기 유발요인 : 대두 / 우유</p>
                 </div>
                 <div class="cart_wrap">
-                  <a href="#">장바구니 담기</a>
+                  <a href="/user/cart">장바구니 담기</a>
                 </div>
               </div>
             </fieldset>
@@ -149,7 +149,7 @@
               <li>해당 상품과 관련된 진행 중인 프로모션이 없습니다.</li>
             </ul>
             <p class="more"><a href="#">
-              <img src="/img/drink-detail/news_more.png" alt="프로모션 새소식 더보기"></a></p>
+              <img src="/images/drink-detail/news_more.png" alt="프로모션 새소식 더보기"></a></p>
           </div>
           <div class="productView_top_right">
             <dl>

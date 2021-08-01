@@ -74,7 +74,9 @@
 
             <div>
                 <div class="savebtn-box">
-                    <input type="button" name="saveBtn" value="등록">
+                    <a href="/manager">
+                        <input type="button" name="saveBtn" value="등록">
+                    </a>
                 </div>
             </div>
         </form>

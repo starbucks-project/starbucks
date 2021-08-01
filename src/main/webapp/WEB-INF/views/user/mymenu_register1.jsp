@@ -46,7 +46,7 @@
         </dd>
       </dl>
       <ul class="btn_list">
-        <li class="li1"><a href="javascript:void(0)" class="btn_go_my_drink_step3" role="button">나만의 음료에 등록</a></li>
+        <li class="li1"><a href="/user/mymenu_re2" class="btn_go_my_drink_step3" role="button">나만의 음료에 등록</a></li>
         <li class="li2"><a href="javascript:void(0)" class="btn_close" role="button">취소</a></li>
       </ul>
     </div>

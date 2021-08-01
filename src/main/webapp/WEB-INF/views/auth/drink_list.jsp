@@ -34,7 +34,7 @@
                     <ul class="product_cold_brew">
                       <li class="menuDataSet" new="Y" sell="" recomm="0" sold="N">                 <dl>                     
                         <dt>                         
-                          <a href="javascript:void(0)" class="goDrinkView" prod="9200000003643">
+                          <a href="/auth/drink_detail" class="goDrinkView" prod="9200000003643">
                             <img src="/images/drink_list/아이스크림 블렌딩 콜드 브루.jpg" alt="아이스크림 블렌딩 콜드 브루">
                           </a>                                                  <ul>                                                          
                             <li>

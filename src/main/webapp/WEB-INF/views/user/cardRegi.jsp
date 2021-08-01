@@ -1,35 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-
-  <!-- Basic Page Needs
-================================================== -->
-  <meta charset="utf-8">
-  <title>카드등록</title>
-
-  <!-- Mobile Specific Metas
-================================================== -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Construction Html5 Template">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-
-  <!-- Favicon
-================================================== -->
-  <link rel="shortcut icon" href="https://image.istarbucks.co.kr/common/img/common/favicon.ico?v=200828"
-    type="image/ico">
-
-  <!-- CSS
-================================================== -->
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-  <!-- Template styles-->
-  <link rel="stylesheet" href="css/style.css">
-
-</head>
-
-<body>
+<%@include file="../layout/header.jsp"%>
+<main id="main">
   <div class="body-inner">
 
     <div id="banner-area" class="banner-area">
@@ -176,7 +147,5 @@
 
 
   </div><!-- Body inner end -->
-  <script src="js/script.js"></script>
-</body>
-
-</html>
+</main>	
+<%@include file="../layout/footer.jsp"%>

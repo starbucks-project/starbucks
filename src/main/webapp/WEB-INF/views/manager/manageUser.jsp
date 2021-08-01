@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@include file="../layout/header.jsp"%>
+<main id="main">
 <div class="manage-User-container">
 <!-- LoginForm -->
 	<div class="manageUser-page-box">
@@ -95,4 +96,5 @@
     </div>
 </div> <!-- end manageUser-page-box-->
 </div> <!-- end div -contatiner-->
+</main>
 <%@include file="../layout/footer.jsp"%>

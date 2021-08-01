@@ -23,7 +23,22 @@ public class UserController {
   @GetMapping("/store")
   public String store() {
     return "auth/store";
-  } 
+  }
+
+  @GetMapping("/auth/store_map")
+  public String storeMap() {
+    return "auth/store_map";
+  }
+
+  @GetMapping("/auth/store_drive")
+  public String storeDrive() {
+    return "auth/store_drive";
+  }
+
+  @GetMapping("/auth/store_reserve")
+  public String storeReserve() {
+    return "auth/store_reserve";
+  }
 
   @GetMapping("/auth/drink_list")
   public String drinkList() {
@@ -35,6 +50,7 @@ public class UserController {
     return "auth/drink_detail";
   }
 
+  // manager
   @GetMapping("/manager")
   public String managerHome() {
     return "manager/managerHome";
@@ -55,11 +71,9 @@ public class UserController {
     return "manager/uploadProduct";
   }
 
-<<<<<<< HEAD
-=======
-  @GetMapping("/manager/saled-product")
+  @GetMapping("/manager/saledProduct")
   public String saledProductForm() {
     return "manager/saledProduct";
   }
->>>>>>> 66a0eaf2d4907c962ab050e9a8aeeb819241b329
+
 }

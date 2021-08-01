@@ -11,33 +11,48 @@ public class TestController {
         return "test/test";
     }
 
-    @GetMapping("/mypage")
+    @GetMapping("/user/mypage")
     public String mypage() {
         return "user/mypage";
     }
 
-    @GetMapping("/cardCharge")
+    @GetMapping("/user/cardCharge")
     public String cardCharge() {
         return "user/cardCharge";
     }
 
-    @GetMapping("/cardRegi")
+    @GetMapping("/user/cardRegi")
     public String cardRegi() {
         return "user/cardRegi";
     }
 
-    @GetMapping("/inMyCard")
+    @GetMapping("/user/inMyCard")
     public String inMyCard() {
         return "user/inMyCard";
     }
-     
-    @GetMapping("/cart")
+
+    @GetMapping("/user/cart")
     public String cart() {
-        return "user/Cart"; 
+        return "user/Cart";
     }
 
-    @GetMapping("/purchaseHistory")
+    @GetMapping("/user/purchaseHistory")
     public String purchaseHistory() {
         return "user/purchaseHistory";
+    }
+
+    @GetMapping("/user/userinfo")
+    public String userInfo() {
+        return "user/userinfoUpdateForm";
+    }
+
+    @GetMapping("/user/mymenu_re1")
+    public String mymenuRegister1() {
+        return "user/mymenu_register1";
+    }
+
+    @GetMapping("/user/mymenu_re2")
+    public String mymenuRegister2() {
+        return "user/mymenu_register2";
     }
 }

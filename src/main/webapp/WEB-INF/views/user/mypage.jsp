@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="../layout/header.jsp"%>
+<main id="main">
   <div class="body-inner">
 
     <div id="banner-area" class="banner-area">
@@ -174,15 +175,15 @@
                   <ul style="display: block;">
                     
                     <li>
-                      <a href="#" required="login" data-href="#">
+                      <a href="/user/cardRegi" required="login" data-href="#">
                         · 카드 등록</a>
                     </li>
                     <li>
-                      <a href="#" required="login" data-href="#">
+                      <a href="/user/cardCharge" required="login" data-href="#">
                         · 카드 충전</a>
                     </li>
                     <li>
-                      <a href="#" required="login" data-href="#">
+                      <a href="/user/inMyCard" required="login" data-href="#">
                         · 보유카드</a>
                     </li>
                   </ul>
@@ -220,7 +221,7 @@
                   <ul style="display: block;">
                     
                     <li>
-                      <a href="#" required="login" data-href="#">
+                      <a href="/user/userinfo" required="login" data-href="#">
                         · 개인정보 확인 및 수정</a>
                     </li>
                    
@@ -232,16 +233,6 @@
 
       </div><!-- Container end -->
     </div><!-- ms cont wrap end -->
-
-
-
-    <!-- Javascript Files
-  ================================================== -->
-
-    <!-- Template custom -->
-    <script src="js/script.js"></script>
-
   </div><!-- Body inner end -->
-</body>
-
-</html>
+</main>	
+<%@include file="../layout/footer.jsp"%>

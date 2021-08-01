@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@include file="../layout/header.jsp"%>
-
+<main id="main">
 <!-- LoginForm -->
 	<div class="page_box">
     
@@ -47,5 +47,5 @@
 			</div> <!-- end login-box-->
 		</div> <!--end outer-login-box-->
 	</div> <!-- end page-box -->
-
+</main>
 <%@include file="../layout/footer.jsp"%>

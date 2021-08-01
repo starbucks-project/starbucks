@@ -1,26 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>장바구니 내역</title>
-<!-- Favicon
-================================================== -->
-<link rel="shortcut icon"
-	href="https://image.istarbucks.co.kr/common/img/common/favicon.ico?v=200828"
-	type="image/ico">
+<%@include file="../layout/header.jsp"%>
 
-<!-- CSS
-================================================== -->
-<!-- Bootstrap -->
-<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-<!-- Template styles-->
-<link rel="stylesheet" href="css/style.css">
-</head>
-<body>
+<main id="main">
 	<div class="body-inner">
-
 		<div id="banner-area" class="banner-area">
 			<div id="container">
 				<div class="row">
@@ -227,7 +210,6 @@
 
 
 	</div>
-	<!-- Body inner end -->
-	<script src="js/script.js"></script>
-</body>
-</html>
+</main>	
+
+<%@include file="../layout/footer.jsp"%>
