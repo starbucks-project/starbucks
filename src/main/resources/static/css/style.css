@@ -199,6 +199,7 @@ nav ul, li {
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
   border-radius: 4px;
+  text-decoration: none;
 }
 
 .dropdown{
@@ -401,16 +402,18 @@ iframe {
 /* =======================
 ========로그인===========*/
 
-.page-box{
+.page_box{
   background-image: url("../images/login_bg.jpg");
   height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.outer-login-box{
+.outer_login_box{
   background-color: white;
   width: 550px;
-  display: block;
-  
+  display: flex;
+  justify-content: center;
   text-align: center;
   border-radius: 2px;
   border: 0px;
@@ -426,7 +429,7 @@ iframe {
   padding-top: 20px;
 }
 
-.greeting-box{
+.greeting_box{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -441,19 +444,7 @@ iframe {
   
 }
 
-.welcome-starbucks-box{
-  padding-top: 20px;
-  color: #a8a8a8;
-}
-
-.welcom-starbucks{
-  color: #a8a8a8;
-  font-size: 17px;
-  font-weight: 600;
-  padding-top: 20px;
-}
-
-.login-title{
+.login_title{
   display: block;
 }
 
@@ -464,15 +455,16 @@ iframe {
   font-size: 14px;
 }
 
-.login-box{
+.login_box{
   display: block;
+  margin: 0px 0px 40px 0px;
 }
 
 .manager-login-form{
   display: flex;
 }
 
-.login-form{
+.login_form{
   display: block;
   text-align: center;
   border: 0px;
@@ -480,23 +472,23 @@ iframe {
   width: 550px;
 }
 
-.kakaologin-button{
+.kakaologin_button{
   display: flex;
   justify-content: center;
 }
 
-.kakaologin-button img{
+.kakaologin_button img{
   height: 50px;
   width: 200px;
 }
 
-.managerlogin-button-box{
+.managerlogin_button_box{
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-.managerlogin-button{
+.managerlogin_button{
   background-color: #006633;
   height: 35px;
   width: 100px;
@@ -512,11 +504,11 @@ iframe {
   align-items: center;
 }
 
-.manager-login-button a{
+.managerlogin_button {
   color: white;
 }
 
-.form-box{
+.form_box{
   padding: 1px 30px 20px 30px;
 }
 
@@ -864,16 +856,16 @@ tbody tr:nth-child(2n+1) {
 /*=========saledProduct
 ============================*/
  
-.top-box{
+.top_box{
   display: flex;
   justify-content: space-between;
 }
 
-.category-box{
+.category_box{
   display: flex;
 }
 
-.last-tr{
+.last_tr{
   font-weight: bold;
 }
 

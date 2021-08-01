@@ -1,4 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -68,15 +69,16 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <div class="upper">
         <div class="upper-nav">
-          <div class="upper-nav-item"><a class="active" href="index.html">Home</a></div>
-          <div class="upper-nav-item"><a href="#">Login</a></div>
-          <div class="upper-nav-item"><a href="#">cart</a></div>
-          <div class="upper-nav-item"><a href="#">mystarbucks</a></div>
-          <div class="upper-nav-item"><a href="#">find a store</a></div>
-
+            <div class="upper-nav-item"><a class="active" href="index.html">Home</a></div>
+            <div class="upper-nav-item"><a href="#">Login</a></div>
+            <div class="upper-nav-item"><a href="#">cart</a></div>
+            <div class="upper-nav-item"><a href="#">mystarbucks</a></div>
+            <div class="upper-nav-item"><a href="#">find a store</a></div>
+         
         </div><!-- end upper-nav-->
       </div> <!-- end upper-->
       <div class="lower">
+        
         <div class="dropdown"><a href="#"><span>Menu</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
             <li><a href="#">Drink</a></li>
@@ -93,8 +95,62 @@
             <li><a href="#">드라이브 스루</a></li>
             <li><a href="#">리저브 매장</a></li>
           </ul>
+          
+<%-- 
+          <c:choose>
+          <!-- 회원/관리자 모두 로그인 전 -->
+          <c:when test="${(empty sessionScope.principal)&&(empty sessionScope.managerPrincipal)}"> 
+            <div class="upper-nav-item"><a class="active" href="index.html">Home</a></div>
+            <div class="upper-nav-item"><a href="#">Login</a></div>
+            <div class="upper-nav-item"><a href="#">cart</a></div>
+            <div class="upper-nav-item"><a href="#">mystarbucks</a></div>
+            <div class="upper-nav-item"><a href="#">find a store</a></div>
+          </c:when>
+          <!-- 관리자 로그인 후 -->
+          <c:when test="${!(empty sessionScope.managerPrincipal)}">
+            <div class="upper-nav-item"><a href="#">cart</a></div>
+            <div class="upper-nav-item"><a href="#">mystarbucks</a></div>
+            <div class="upper-nav-item"><a href="#">find a store</a></div>
+          </c:when>
+          <!-- 회원 로그인 후 -->
+          <c:otherwise>
+             <div class="upper-nav-item" onclick="kakaoLoagout()"><a href="javascript:void(0)">logout</a></div>
+             <div class="upper-nav-item"><a href="#">cart</a></div>
+             <div class="upper-nav-item"><a href="#">mystarbucks</a></div>
+             <div class="upper-nav-item"><a href="#">find a store</a></div>
+          </c:otherwise>
+        <c:choose>
+        </div><!-- end upper-nav-->
+      </div> <!-- end upper-->
+      <div class="lower">
+        <c:choose>
+        <c:when test="${empty sessionScope.managerPrincipal}"> 
+        
+        <div class="dropdown"><a href="#"><span>Menu</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="#">Drink</a></li>
+
+            <li><a href="#">Food</a></li>
+            <li><a href="#">Product</a></li>
+            <li><a href="#">Card</a></li>
+          </ul>
+        </div> <!-- end dropdown-->
+        <div class="dropdown"><a href="#"><span>Store</span> <i class="bi bi-chevron-down"></i></a>
+          <ul>
+            <li><a href="#">매장 찾기</a></li>
+
+            <li><a href="#">드라이브 스루</a></li>
+            <li><a href="#">리저브 매장</a></li>
+          </ul>
+          </c:when>
+          <c:otherwise>
+            <div class="dropdown"><a href="#"><span>제품 등록</span> <i class="bi bi-chevron-down"></i></a>
+            <div class="dropdown"><a href="#"><span>회원 관리</span> <i class="bi bi-chevron-down"></i></a>
+            <div class="dropdown"><a href="#"><span>판매 현황</span> <i class="bi bi-chevron-down"></i></a>
+          </c:otherwise>
+          </c:choose>
         </div><!-- end dropdown-->
-      </div> <!-- end lower-->
+      </div> <!-- end lower--> --%>
 
       </nav><!-- .navbar -->
     </div> <!-- end outer-->

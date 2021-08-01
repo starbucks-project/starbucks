@@ -44,5 +44,9 @@ public class UserController {
   public String updateProductForm() {
     return "manager/uploadProduct";
   }
-                     
+
+  @GetMapping("/manager/saled-product")
+  public String saledProductForm() {
+    return "manager/saledProduct";
+  }
 }
