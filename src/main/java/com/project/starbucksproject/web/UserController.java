@@ -23,7 +23,7 @@ public class UserController {
   @GetMapping("/store")
   public String store() {
     return "auth/store";
-  }
+  } 
 
   @GetMapping("/auth/drink_list")
   public String drinkList() {
@@ -55,4 +55,11 @@ public class UserController {
     return "manager/uploadProduct";
   }
 
+<<<<<<< HEAD
+=======
+  @GetMapping("/manager/saled-product")
+  public String saledProductForm() {
+    return "manager/saledProduct";
+  }
+>>>>>>> 66a0eaf2d4907c962ab050e9a8aeeb819241b329
 }

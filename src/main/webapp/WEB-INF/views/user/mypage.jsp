@@ -21,7 +21,7 @@
     </div><!-- Banner area end -->
 
     <!-- ms cont part-->
-    <div class="container">
+    <!-- <div class="container">   -->
       <div class="ms_cont">
         <div class="ms_user_index">
         

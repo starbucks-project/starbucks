@@ -30,6 +30,11 @@ public class TestController {
     public String inMyCard() {
         return "user/inMyCard";
     }
+     
+    @GetMapping("/cart")
+    public String cart() {
+        return "user/Cart"; 
+    }
 
     @GetMapping("/purchaseHistory")
     public String purchaseHistory() {

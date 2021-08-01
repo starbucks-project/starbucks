@@ -5,7 +5,7 @@ body {
   border: 0;
   margin: 0;
   padding: 0;
-  font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+  font-family: 'nbg', '留묒� 怨좊뵓', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
   background: #fff;
   color: #555;
 }
@@ -69,7 +69,7 @@ input {
   box-sizing: content-box;
   vertical-align: top;
   border-radius: 0;
-  font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+  font-family: 'nbg', '留묒� 怨좊뵓', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
 }
 header, nav, section, article, aside, footer {
   display: block;
@@ -203,6 +203,7 @@ nav ul, li {
   box-shadow: 0px 0px 30px rgba(127, 137, 161, 0.25);
   transition: 0.3s;
   border-radius: 4px;
+  text-decoration: none;
 }
 
 .dropdown{
@@ -403,18 +404,20 @@ iframe {
 }
 
 /* =======================
-========로그인===========*/
+========濡쒓렇�씤===========*/
 
-.page-box{
+.page_box{
   background-image: url("../images/login_bg.jpg");
   height: 100%;
+  display: flex;
+  justify-content: center;
 }
 
-.outer-login-box{
+.outer_login_box{
   background-color: white;
   width: 550px;
-  display: block;
-  
+  display: flex;
+  justify-content: center;
   text-align: center;
   border-radius: 2px;
   border: 0px;
@@ -430,7 +433,7 @@ iframe {
   padding-top: 20px;
 }
 
-.greeting-box{
+.greeting_box{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -445,19 +448,7 @@ iframe {
   
 }
 
-.welcome-starbucks-box{
-  padding-top: 20px;
-  color: #a8a8a8;
-}
-
-.welcom-starbucks{
-  color: #a8a8a8;
-  font-size: 17px;
-  font-weight: 600;
-  padding-top: 20px;
-}
-
-.login-title{
+.login_title{
   display: block;
 }
 
@@ -468,15 +459,16 @@ iframe {
   font-size: 14px;
 }
 
-.login-box{
+.login_box{
   display: block;
+  margin: 0px 0px 40px 0px;
 }
 
 .manager-login-form{
   display: flex;
 }
 
-.login-form{
+.login_form{
   display: block;
   text-align: center;
   border: 0px;
@@ -484,23 +476,23 @@ iframe {
   width: 550px;
 }
 
-.kakaologin-button{
+.kakaologin_button{
   display: flex;
   justify-content: center;
 }
 
-.kakaologin-button img{
+.kakaologin_button img{
   height: 50px;
   width: 200px;
 }
 
-.managerlogin-button-box{
+.managerlogin_button_box{
   display: flex;
   justify-content: flex-end;
   align-items: center;
 }
 
-.managerlogin-button{
+.managerlogin_button{
   background-color: #006633;
   height: 35px;
   width: 100px;
@@ -516,11 +508,11 @@ iframe {
   align-items: center;
 }
 
-.manager-login-button a{
+.managerlogin_button {
   color: white;
 }
 
-.form-box{
+.form_box{
   padding: 1px 30px 20px 30px;
 }
 
@@ -868,16 +860,16 @@ tbody tr:nth-child(2n+1) {
 /*=========saledProduct
 ============================*/
  
-.top-box{
+.top_box{
   display: flex;
   justify-content: space-between;
 }
 
-.category-box{
+.category_box{
   display: flex;
 }
 
-.last-tr{
+.last_tr{
   font-weight: bold;
 }
 
@@ -889,7 +881,7 @@ tbody tr:nth-child(2n+1) {
   margin: 0 auto;
 }
 
-/* 제품상세보기 */
+/* �젣�뭹�긽�꽭蹂닿린 */
 div.product_view_wrap1 {
   width: 1100px;
   padding-bottom: 40px;
@@ -902,7 +894,7 @@ div.product_view_wrap1:after {
   clear: both;
 }
 
-/* 상품 view */
+/* �긽�뭹 view */
 div.product_view_pic {
   width: 450px;
   float: left;
@@ -942,7 +934,7 @@ div.product_view_pic:after {
   clear: both;
 }
 
-/* 상품 설명 */
+/* �긽�뭹 �꽕紐� */
 div.product_view_detail {
   width: 610px;
   float: right;
@@ -1365,7 +1357,7 @@ div.product_list > dl > dd > ul:after {
   clear: both;
 }
 
-/* dt2 영양정보로 보기 */
+/* dt2 �쁺�뼇�젙蹂대줈 蹂닿린 */
 dl.product_view_tab > dt.dt2 {
   left: 130px;
 }
@@ -1403,7 +1395,7 @@ a:hover {
 
 
 /*--------------------------------------------------------------
-# Index - 메인페이지
+# Index - 硫붿씤�럹�씠吏�
 --------------------------------------------------------------*/
 .main-visual_wrap {
   height:646px; 
@@ -1482,7 +1474,7 @@ img {
 
 }
 
-/*------- 메인 스타벅스 리워드 리뉴얼 시작-------- */
+/*------- 硫붿씤 �뒪��踰낆뒪 由ъ썙�뱶 由щ돱�뼹 �떆�옉-------- */
 .new-rewards_wrap {
   padding-top: 30px;
   padding-bottom: 40px;
@@ -1629,9 +1621,9 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   vertical-align: baseline;
   background: transparent;
 }
-/*------- 메인 스타벅스 리워드 리뉴얼 끝-------- */
+/*------- 硫붿씤 �뒪��踰낆뒪 由ъ썙�뱶 由щ돱�뼹 �걹-------- */
 
-/*------- pick your favorite 시작-------- */
+/*------- pick your favorite �떆�옉-------- */
 #favWrap {
   background: url("../images/fav_prod_bg_new.jpg") center center fixed no-repeat #45434c;
   background-size: auto 100%;
@@ -1723,9 +1715,9 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   background: #fff;
   text-decoration: underline;
 }
-/*------- pick your favorite 끝-------- */
+/*------- pick your favorite �걹-------- */
 
-/*------- StoreWrap 시작-------- */
+/*------- StoreWrap �떆�옉-------- */
 #storeWrap {
   background: url(../images/store_bg.jpg);
   background-size: 100% auto;
@@ -1844,7 +1836,7 @@ a {
   background: #111;
   text-decoration: underline;
 }
-/*------- StoreWrap 끝-------- */
+/*------- StoreWrap �걹-------- */
 
 /*--------------------------------------------------------------
 # MENU
@@ -2477,7 +2469,7 @@ option {
 }
 /* storeSlideArea  End*/
 
-/* 매장찾기 store_bn1_section */
+/* 留ㅼ옣李얘린 store_bn1_section */
 section.store_bn1_section {
   width: 100%;
   height: 430px;
@@ -2523,9 +2515,9 @@ div.store_bn1_btn a:hover {
   color: #111;
   text-decoration: underline;
 }
-/* 매장찾기 store_bn1_section End*/
+/* 留ㅼ옣李얘린 store_bn1_section End*/
 
-/* 드라이브스루 매장 store_bn2_section */
+/* �뱶�씪�씠釉뚯뒪猷� 留ㅼ옣 store_bn2_section */
 section.store_bn2_section {
   width: 100%;
   height: 430px;
@@ -2571,9 +2563,9 @@ div.store_bn2_btn a:hover {
   color: #fff;
   text-decoration: underline;
 }
-/* 드라이브스루 매장 store_bn2_section End */
+/* �뱶�씪�씠釉뚯뒪猷� 留ㅼ옣 store_bn2_section End */
 
-/* 리저브 매장 store_bn3_section */
+/* 由ъ�釉� 留ㅼ옣 store_bn3_section */
 section.store_bn3_section {
   width: 100%;
   height: 430px;
@@ -2620,12 +2612,12 @@ div.store_bn3_btn a:hover {
   color: #111;
   text-decoration: underline;
 }
-/* 리저브 매장 store_bn3_section End */
+/* 由ъ�釉� 留ㅼ옣 store_bn3_section End */
 
 /*--------------------------------------------------------------
-# Store Drive 드라이브스루 매장
+# Store Drive �뱶�씪�씠釉뚯뒪猷� 留ㅼ옣
 --------------------------------------------------------------*/
-/* 매장소개 */
+/* 留ㅼ옣�냼媛� */
 .store_drive_container {
   width: 100%;
 }
@@ -2654,7 +2646,7 @@ article.full_text p span {
   color: #555;
 }
 
-/* 드라이브스루 트랙 */
+/* �뱶�씪�씠釉뚯뒪猷� �듃�옓 */
 .drive_through_track {
   width: 100%;
   height: 663px;
@@ -2743,7 +2735,7 @@ article.full_text p span {
   bottom: 0px;  
 }
 
-/* 매장 지도 */
+/* 留ㅼ옣 吏��룄 */
 .driveStore_ber_wrap {
   position: relative;
   height: 80px;
@@ -2774,14 +2766,14 @@ article.driveStore_ber_innner dl:after {
   clear: both;
 }
 
-/* 지도영역 */
+/* 吏��룄�쁺�뿭 */
 .store_map_wrap {
   height: 631px;
   width: 100%;
 }
 
 /*--------------------------------------------------------------
-# Store Reserve 리저브 매장
+# Store Reserve 由ъ�釉� 留ㅼ옣
 --------------------------------------------------------------*/
 
 /* reserve_store_full */
@@ -3051,7 +3043,7 @@ dl.rs_bottom01 dd p {
 }
 
 
-/* 매장지도 */
+/* 留ㅼ옣吏��룄 */
 .reserveStore_ber_wrap {
   position: relative;
   height: 77px;
@@ -3120,7 +3112,7 @@ dl.rs_bottom01 dd p {
   color: #ffffff;
 }
 
-/* 지도 */
+/* 吏��룄 */
 /* @media screen and (min-width: 641px) and (max-width: 1600px) */
 .store_map_wrap {
     height: 631px;
@@ -3460,7 +3452,7 @@ i.pin_general {
   width: 100%;
 }
 
-/*마이페이지 부분 start -------------------------------------*/
+/*留덉씠�럹�씠吏� 遺�遺� start -------------------------------------*/
 /* Sub Pages
 ================================================== */
 /*-- Title border --*/
@@ -4250,7 +4242,7 @@ element.style {
 }
 
 
-/*---------------카드등록*/
+/*---------------移대뱶�벑濡�*/
 
 .my_card_info_wrap {
   height: 248px;
@@ -4350,7 +4342,7 @@ input {
   vertical-align: middle;
   margin: 0;
   padding: 0;
-  font-family: 'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+  font-family: 'nbg', '留묒� 怨좊뵓', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
 }
 .card_regi_dl dd span {
   color: #666;
@@ -4411,7 +4403,7 @@ input[type=text], input[type=number], input[type=password], input[type=tel], inp
   margin-right: 5px;
 }
 
-/* 카드 충전 -----------------*/
+/* 移대뱶 異⑹쟾 -----------------*/
 .card_charge_wrap {
   position: relative;
 }
@@ -4820,7 +4812,7 @@ ol.charge_warn li ul li ul li {
   margin-top: 5px;
   padding-left: 10px;
 }
-/*구매내역 ===============*/
+/*援щℓ�궡�뿭 ===============*/
 .my_card_pick_period {
   background: #f4f4f2;
   border-radius: 3px;
@@ -5012,3 +5004,313 @@ dd {
   padding: 50px 0;
   text-align: center;
 } 
+
+/*장바구니 내역 =========================*/
+.ms_cont_wrap {
+    left: 50%;
+    margin: 50px 0 0 -550px;
+    position: relative;
+    width: 1100px;
+}
+.ms_cont {
+    float: left;
+    width: 830px;
+    margin-bottom: 90px;
+}
+section.egiftCard_shopBag_pick header {
+    padding-bottom: 30px;
+}
+section.egiftCard_shopBag_pick header h5 {
+    font-size: 18px;
+    font-weight: bold;
+    color: #222;
+    padding-bottom: 12px;
+}
+section.egiftCard_shopBag_pick form fieldset legend {
+    font-size: 0;
+    height: 0;
+    line-height: 0;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    text-indent: -20000px;
+    width: 0;
+}
+table.egiftCard_shopBag_info_tbl {
+    width: 100%;
+    border-top: 1px solid #333;
+    font-size: 14px;
+    text-align: center;
+}
+div.egiftCard_shopBag_total {
+    background: #f4f4f2;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 17px 20px 15px 20px;
+    width: 790px;
+}
+div.egiftCard_shopBag_total {
+    background: #f4f4f2;
+    border-bottom: 1px solid #dbdbdb;
+    padding: 17px 20px 15px 20px;
+    width: 790px;
+}
+div.egiftCard_shopBag_total p span {
+    padding: 0 10px;
+}
+div.egiftCard_shopBag_total p strong {
+    color: #006633;
+    font-size: 14px;
+}
+div.egiftCard_shopBag_btnZone01 {
+    padding: 20px 0 30px 0;
+}
+div.egiftCard_shopBag_btnZone01 ul {
+    margin-left: -5px;
+    float: left;
+}
+div.egiftCard_shopBag_btnZone01 ul li {
+    background: #fcfcfc;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    float: left;
+    height: 28px;
+    margin-left: 5px;
+    width: 80px;
+}
+div.egiftCard_shopBag_btnZone01 ul li a {
+    color: #444;
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    width: 100%;
+}
+section.shopBag_infoBox_pick {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    width: 788px;
+    margin-bottom: 20px;
+    padding: 0 20px 0 20px;
+}
+dl.shopBag_infoBox01 {
+    border-bottom: 1px solid #ddd;
+    height: 28px;
+    padding: 10px 0 10px 0;
+    width: 788px;
+}
+dl.shopBag_infoBox01 dt {
+    color: #222;
+    font-size: 12px;
+    font-weight: bold;
+    height: 30px;
+    line-height: 30px;
+    width: 85px;
+}
+
+dl.shopBag_infoBox01 dt, dl.shopBag_infoBox01 dd, dl.shopBag_infoBox01 dd input, dl.shopBag_infoBox01 dd label {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+dl.shopBag_infoBox01 dd {
+    color: #444;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    width: 700px;
+}
+
+dl.shopBag_infoBox01 dt, dl.shopBag_infoBox01 dd, dl.shopBag_infoBox01 dd input, dl.shopBag_infoBox01 dd label {
+    float: left;
+    margin: 0;
+    padding: 0;
+}
+dl.shopBag_infoBox01 dd input {
+    height: 13px;
+    margin: 8px 0 0 17px;
+    width: 13px;
+}
+dl.shopBag_infoBox01 dd label {
+    margin: 0 0 0 5px;
+}
+dl.shopBag_infoBox02 {
+    padding: 17px 0 20px 0;
+}
+dl.shopBag_infoBox02 dt {
+    float: left;
+    color: #222;
+    font-size: 12px;
+    font-weight: bold;
+    width: 100px;
+}
+dl.shopBag_infoBox02 dd {
+    float: left;
+    color: #666;
+    font-size: 12px;
+    width: 688px;
+}
+dl.shopBag_infoBox02 dd ul li {
+    line-height: 1.5;
+    background: url("/images/list_blit.png") 0 7px no-repeat;
+    padding-left: 10px;
+}
+div.pay_sel_wrap {
+    display: none;
+}
+div.egiftCard_shopBag_btnZone02 {
+    width: 830px;
+    position: relative;
+}
+div.egiftCard_shopBag_btnZone02 ul {
+    height: 30px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 408px;
+}
+div.egiftCard_shopBag_btnZone02 ul li.btns_1 {
+    border: 1px solid #222;
+    border-radius: 3px;
+    float: left;
+    height: 28px;
+    margin-left: 5px;
+    width: 129px;
+}
+div.egiftCard_shopBag_btnZone02 ul li.btns_1 a {
+    background: #222;
+    color: #fff;
+}
+div.egiftCard_shopBag_btnZone02 ul li a {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    height: 100%;
+    line-height: 28px;
+    text-align: center;
+    width: 100%;
+}
+div.egiftCard_shopBag_btnZone02 ul li.btns_2 {
+    border: 1px solid #bb9f65;
+    border-radius: 3px;
+    float: left;
+    height: 28px;
+    margin-left: 5px;
+    width: 129px;
+}
+div.egiftCard_shopBag_btnZone02 ul li.btns_2 a {
+    background: #e2c383;
+    color: #222;
+}
+div.egiftCard_shopBag_btnZone02 ul li a {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    height: 100%;
+    line-height: 28px;
+    text-align: center;
+    width: 100%;
+}
+div.egiftCard_shopBag_btnZone02 ul li.btns_3 {
+    border: 1px solid #bb9f65;
+    border-radius: 3px;
+    float: left;
+    height: 28px;
+    margin-left: 5px;
+    width: 129px;
+}
+div.egiftCard_shopBag_btnZone02 ul li.btns_3 a {
+    background: #e2c383;
+    color: #222;
+}
+div.egiftCard_shopBag_btnZone02 ul li a {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    height: 100%;
+    line-height: 28px;
+    text-align: center;
+    width: 100%;
+}
+table.egiftCard_shopBag_info_tbl thead tr th {
+  border-bottom: 1px solid #333;
+  color: #222;
+  height: 46px;
+  vertical-align: middle;
+}
+table.egiftCard_shopBag_info_tbl tbody tr td {
+  border-bottom: 1px solid #dbdbdb;
+  color: #666;
+  height: 46px;
+  padding: 7px 0;
+  vertical-align: middle;
+}
+.ez-checkbox {
+  background: transparent url("/images/ck_icon.jpg") 0 0 no-repeat;
+  display: inline-block;
+}
+.ez-hide {
+  opacity: 0;
+  filter: alpha(opacity=0);
+}
+table.egiftCard_shopBag_info_tbl tbody tr td img.cardImg {
+  width: 69px;
+}
+table.egiftCard_shopBag_info_tbl tbody tr td.tl {
+  text-align: left;
+  padding: 0 15px 0 15px;
+}
+table.egiftCard_shopBag_info_tbl tbody tr td {
+  border-bottom: 1px solid #dbdbdb;
+  color: #666;
+  height: 46px;
+  padding: 7px 0;
+  vertical-align: middle;
+}
+table.egiftCard_shopBag_info_tbl tbody tr td strong {
+  font-weight: bold;
+  color: #006633;
+}
+div.egiftCard_shopBag_total {
+  background: #f4f4f2;
+  border-bottom: 1px solid #dbdbdb;
+  padding: 17px 20px 15px 20px;
+  width: 790px;
+}
+div.egiftCard_shopBag_total p {
+  color: #222;
+  font-size: 12px;
+  text-align: right;
+}
+div.egiftCard_shopBag_total p span {
+  padding: 0 10px;
+}
+div.egiftCard_shopBag_total p strong {
+  color: #006633;
+  font-size: 14px;
+}
+div.egiftCard_shopBag_btnZone01 {
+  padding: 20px 0 30px 0;
+}
+div.egiftCard_shopBag_btnZone01 ul {
+  margin-left: -5px;
+  float: left;
+}
+
+
+section.shopBag_infoBox_pick {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  width: 788px;
+  margin-bottom: 20px;
+  padding: 0 20px 0 20px;
+}
+dl.shopBag_infoBox01 {
+  border-bottom: 1px solid #ddd;
+  height: 28px;
+  padding: 10px 0 10px 0;
+  width: 788px;
+}
