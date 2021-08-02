@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@include file="../layout/header.jsp"%>
+<main id="main">
 <div class="container">
 <!-- LoginForm -->
 	<div class="saveProduct-page-box">
@@ -48,6 +49,12 @@
                 <div class="product-name-input-box">
                     <input type="text" name="productName" placeholder="제품 이름을 입력하세요." />
                 </div>
+                <div class="product-title-box">
+                    <a>제품 영문 이름</a>
+                </div>
+                <div class="product-name-input-box">
+                    <input type="text" name="productName" placeholder="제품 영문 이름을 입력하세요." />
+                </div>
             </div> <!-- end product-name-area-box-->
             
             <div class="product-detail-area-box">
@@ -64,9 +71,51 @@
                 <div class="product-title-box">
                     <a>제품 영양 정보</a>
                 </div>
-                <div class="product-content-box">
-                    <textarea  name="productNuturition" cols="60" rows="10" placeholder="제품 영양정보를 입력해주세요.">  
-                    </textarea>
+                <div class="product-nuturition-box">
+                <table class="nuturition_tb">
+                    <tr class="nuturition_tr">
+                        <td class="nuturition_title">
+                            <a>1회 제공량(kcal)</a>
+                        </td>
+                        <td class="nuturiton_input">
+                            <input type="text" placeholder="1회제공량 입력">
+                        </td>
+                        <td class="nuturition_title_right">
+                            <a>포화지방(g)</a>
+                        </td>
+                        <td class="nuturiton_input">
+                            <input type="text" placeholder="포화지방 입력">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nuturition_title">
+                            <a>단백질(g)</a>
+                        </td>
+                        <td class="nuturiton_input">
+                            <input type="text" placeholder="단백질 입력">
+                        </td>
+                        <td class="nuturition_title_right">
+                            <a>나트륨(g)</a>
+                        </td>
+                        <td class="nuturiton_input">
+                            <input type="text" placeholder="나트륨 입력">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="nuturition_title">
+                            <a>당류(g)</a>
+                        </td>
+                        <td class="nuturiton_input">
+                            <input type="text" placeholder="당류 입력">
+                        </td>
+                        <td class="nuturition_title_right">
+                            <a>카페인(mg)</a>
+                        </td>
+                        <td class="nuturiton_input">
+                            <input type="text" placeholder="카페인 입력">
+                        </td>
+                    </tr>
+                    </table>
                 </div>
             </div> <!-- end nutrition-detail-area-box-->
 
@@ -83,5 +132,5 @@
     </div>
 </div>
 </div> <!-- end div -contatiner-->
-
+</main>
 <%@include file="../layout/footer.jsp"%>

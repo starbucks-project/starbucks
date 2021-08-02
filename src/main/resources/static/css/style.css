@@ -148,6 +148,7 @@ nav ul, li {
 }
 
 .upper-nav-item a{
+  font-size: 15px;
   color: rgb(44, 44, 44);
   text-decoration: none;
 }
@@ -209,6 +210,7 @@ nav ul, li {
 
 .dropdown{
   width: 100%;
+  
 }
 
 .navbar .dropdown ul li {
@@ -221,6 +223,7 @@ nav ul, li {
   text-transform: none;
   font-weight: 500;
   color: white;
+  font-size: 20px;
 }
 
 .navbar .dropdown ul a i {
@@ -412,6 +415,9 @@ iframe {
   height: 100%;
   display: flex;
   justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 600px;
 }
 
 .outer_login_box{
@@ -426,7 +432,7 @@ iframe {
 
 .title h2 {
   color: rgb(255, 255, 255);
-  margin-top: 10%;
+  margin-top: 50px;
 }
 
 .welcom-box{
@@ -453,7 +459,7 @@ iframe {
   display: block;
 }
 
-.login-warn {
+.login_warn {
   text-align: left;
   color: #006633;
   font-weight: 600;
@@ -465,7 +471,7 @@ iframe {
   margin: 0px 0px 40px 0px;
 }
 
-.manager-login-form{
+.manager_login-form{
   display: flex;
 }
 
@@ -509,8 +515,11 @@ iframe {
   align-items: center;
 }
 
-.managerlogin_button {
+.managerlogin_button a{
   color: white;
+  font-size: 15px;
+  text-decoration: none;
+
 }
 
 .form_box{
@@ -519,14 +528,15 @@ iframe {
 
 /* ========manager login
 ===========================*/
-.page-box{
+.manager_page_box{
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  margin-top: 200px;
 }
 
-.id-pw-box{
+.id_pw_box{
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -534,18 +544,23 @@ iframe {
   margin-left: 25px;
 }
 
-.manager-login{
+.manager_outer_login_box{
+  display: flex;
+  justify-content: center;
+}
+
+.manager_login{
   height: 40px;
   width: 90%;
   margin-bottom: 20px;
 }
 
-.managerloginfunc-button-box{
+.managerloginfunc_button_box{
   display: flex;
   justify-content: center;
 }
 
-.manager-login-form{
+.manager_login_form{
   display: block;
   text-align: center;
   border: 0px;
@@ -624,7 +639,7 @@ iframe {
 
 /* --------nickname ----------*/
 
-.under-img-text-box{
+.under_img_text_box{
   background-color: #edebe7;
   color: #666;
   text-align: center;
@@ -636,6 +651,7 @@ iframe {
 .nickname-img-box{
   margin-top: 30px;
 }
+
 
 .nickname-title-box{
   padding: 20px 0px 10px 10px;
@@ -690,6 +706,7 @@ iframe {
   font-size: 20px;
   color: white;
   font-weight: 600;
+  margin-top: 20px;
 }
 
 /* ============uploadProduct
@@ -754,7 +771,7 @@ iframe {
 
 .savebtn-box{
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
 }
 
 .savebtn-box input{
@@ -772,6 +789,60 @@ iframe {
   margin-bottom: 30px;
   
   padding: 20px 20px 20px 80px;
+}
+
+.product-content-box{
+  display: block;
+}
+
+.nuturition_tb{
+  display: block;
+}
+
+.nuturition_title{
+  width: 80px;
+  
+  background-color: white;
+}
+
+.nuturition_tr{
+  background-color: white;
+  padding-bottom: 10px;
+  
+}
+
+.nuturition_title_right {
+  margin-right: 10px;
+  background-color: white;
+  padding-bottom: 10px;
+}
+
+.nuturition_title_right a{
+  background-color: white;
+  font-size: 12px;
+  padding-left: 3px;
+  padding-bottom: 10px;
+}
+
+.nuturition_title a {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.nuturition_input{
+  margin-left: 5px;
+  background-color: white;
+  padding-bottom: 10px;
+}
+
+.nuturition_input input{
+  width: 60px;
+  margin-left: 10px;
+  padding-bottom: 10px;
+}
+
+.nuturition_input_left{
+  margin-left: 5px;
 }
 
 /*============manageUser
@@ -852,7 +923,11 @@ tbody tr:nth-child(2n+1) {
   background-color: #ffffff;
 }
 
-
+.pagination-box{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+}
 
 
 
@@ -1142,6 +1217,7 @@ div.product_view_wrap2 {
   text-decoration: none;
   background-color: #006633;
   justify-content: center;
+  margin-left: 10px;
 }
 
 .edit-btn a{
