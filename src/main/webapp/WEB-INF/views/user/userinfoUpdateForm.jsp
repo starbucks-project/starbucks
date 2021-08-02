@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@include file="../layout/header.jsp"%>
+<main id="main">
 <div class="container">
 <!-- LoginForm -->
 	<div class="userinfo-page-box">
@@ -22,11 +23,6 @@
         <div class="name-output-box">
           <input type="text" name="name" value="홍길동" readonly />
         </div> <!-- end name-output-box-->
-        <div class="user_gender">
-          <a class="male " href="#">남</a>
-          <a class="female  on" href="#">여</a>
-          <input type="hidden" name="gender" id="gender" value="F">
-        </div> <!-- end user gender-->
       </div> <!-- under-name-text-->
       </div> <!-- end user-name-box-->
     <hr />
@@ -63,7 +59,7 @@
     <hr />
 
       <div class="nickname-img-box">
-      <img src="../images/starbucksnickname.jpg" />
+        <img src="../images/starbucksnickname.jpg" />
       <div class="under-img-text-box">
         <p>주문하신 제품을 찾으실 때, <br /> 파트너가 등록하신 닉네임을 불러드립니다.</p>
       </div>
@@ -97,4 +93,5 @@
   </div>
 	</div> <!-- end page-box -->
 </div> <!-- end div -contatiner-->
+</main>
 <%@include file="../layout/footer.jsp"%>

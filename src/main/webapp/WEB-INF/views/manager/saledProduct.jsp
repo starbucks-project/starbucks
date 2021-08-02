@@ -1,22 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@include file="../layout/header.jsp"%>
-<div class="manage_User_container">
+<main id="main">
+<div class="manage-User-container">
 <!-- LoginForm -->
-	<div class="manageUser_page_box">
+	<div class="manageUser-page-box">
 		<!-- section title -->
-		<div class="manageUser_title_box">
-		<div class="manageUser_title" >
+		<div class="manageUser-title-box">
+		<div class="manageUser-title" >
 			<a><strong>판매현황</strong></a>				
 		</div> <!-- end userinfo-title-box-->
 		</div> <!-- end userinfo-title-->
 		<!-- /section title -->
         <hr />   
-        <div class="manageUser_bottom_area">
+        <div class="manageUser-bottom-area">
         <div class="top_box">
-        <div class="category_area_box">
-            <div class="category_box">
-                <select class="category_select">
+        <div class="category-area-box">
+            <div class="category-box">
+                <select class="category-select">
                     <option value="">--카테고리--</option>
                     <option value="drink">Drink</option>
                     <option value="food">Food</option>
@@ -25,21 +26,21 @@
             </div> <!-- end cateogry-box-->
         </div> <!-- end search-area-box-->
 
-        <div class="search_area_box">
+        <div class="search-area-box">
             <form>
-            <div class="search_input_box">
+            <div class="search-input-box">
                 <input type="text" name="search" placeholder="검색어를 입력해주세요." />
             </div>
-            <div class="search_btn_box">
-                <input type="button" name="search_btn" value="검색"/>
+            <div class="search-btn-box">
+                <input type="button" name="search-btn" value="검색"/>
             </div>
             </form>
         </div> <!-- end search-area-box-->
 
     </div>
 
-        <div class="user_list_area_box">
-            <table class="userlist_tb">
+        <div class="user-list-area-box">
+            <table class="userlist-tb">
                 <colgroup>
                     <col width="10%">
                     
@@ -50,7 +51,8 @@
                 </colgroup>
                 <thead>
                     <tr>
-                        <th scope="col">고객 번호</th>
+                        <th scope="col">No.</th>
+                        <th scope="col">구매자</th>
                         <th scope="col">상품명</th>
                         <th scope="col">구매 날짜</th>
                         <th scope="col">상품 가격</th>
@@ -60,41 +62,47 @@
                 <tbody id="notice">
                     <tr>     
                         <td>01</td>     
+                        <td>김철수</td>
                         <td class="left"><a>아메리카노</a></td>     
                         <td>2021-07-18</td>     
                         <td>4,100</td> 
                         <td>1</td>
                     </tr>
                     <tr>     
-                        <td>02</td>     
+                        <td>02</td> 
+                        <td>김영희</td>    
                         <td class="left"><a>카페라떼</a></td>     
                         <td>2021-07-21</td>     
                         <td>5,200</td> 
                         <td>3</td>
                     </tr>
                     <tr>     
-                        <td>03</td>     
+                        <td>03</td> 
+                        <td>홍길동</td>    
                         <td class="left"><a>카페모카</a></td>     
                         <td>2021-07-21</td>     
                         <td>4,800</td> 
                         <td>1</td>
                     </tr>
                     <tr>     
-                        <td>04</td>     
+                        <td>04</td> 
+                        <td>박다정</td>    
                         <td class="left"><a>에스프레소</a></td>     
                         <td>2021-07-28</td>     
                         <td>3,200</td> 
                         <td>2</td>
                     </tr>
                     <tr>     
-                        <td>05</td>     
+                        <td>05</td>
+                        <td>홍길동</td>     
                         <td class="left"><a>디카페인 아메리카노</a></td>     
                         <td>2021-07-28</td>     
                         <td>4,500</td> 
                         <td>2</td>
                     </tr>
-                    <tr class="last_tr">     
-                        <td>고객번호</td>     
+                    <tr class="last-tr">     
+                        <td>No</td>     
+                        <td>구매자</td>
                         <td>상품명</td>     
                         <td>구매일</td>     
                         <td>총 액 : 21,800</td> 
@@ -115,4 +123,5 @@
     </div>
 </div> <!-- end manageUser-page-box-->
 </div> <!-- end div -contatiner-->
+</main>
 <%@include file="../layout/footer.jsp"%>

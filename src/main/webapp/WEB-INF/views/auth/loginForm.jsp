@@ -5,7 +5,7 @@
 <main id="main">
 <!-- LoginForm -->
 	<div class="page_box">
-    
+		<div class="login_title_box">
 			<!-- section title -->
 			<div class="login_title">
 			  <div class="title text-center" >
@@ -13,11 +13,9 @@
 			  </div>     
 			</div> <!-- end login-title -->
 			<!-- /section title -->
-			
-      <div class="outer_login_box">
-
-        
-				<div class="login_box">
+		</div>	
+        <div class="outer_login_box">
+			<div class="login_box">
 					<div class="login_form" >
 						<p class="greeting_box">
 							<span class="welcome">Welcome!</span><br class="for_mob" /> 스타벅스커피 코리아에 오신 것을 환영합니다.
