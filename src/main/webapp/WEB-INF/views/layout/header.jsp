@@ -10,7 +10,7 @@
   
   <meta name="author" content="Themefisher.com">
 
-  <title>starbucks</title>
+  <title>Starbucks Coffee Korea</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 

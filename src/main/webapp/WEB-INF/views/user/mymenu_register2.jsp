@@ -28,10 +28,10 @@
     <div class="only_my_head">
       <p class="tit">나만의 음료 이름을 지어보세요</p>
       <p class="close"><a href="javascript:void(0)" class="btn_close" role="button">
-        <img src="/img/mymenu-register/btn_closesa.png" alt="팝업 닫기"></a></p>
+        <img src="/images/mymenu-register/btn_closesa.png" alt="팝업 닫기"></a></p>
     </div>
     <div class="only_my_cont">
-      <p class="drink2_cont_input"><label for="nickname" class="a11y">음료이름</label>
+      <p class="drink2_cont_input"><label for="nickname" class="a11y" >음료이름</label>
         <input type="text" id="nickname" placeholder="아이스 카페 아메리카노"></p>
       <ul class="btn_list">
         <li class="li1"><a href="javascript:void(0)" class="btn_myMenuRegister" title="나만의 음료로 등록" role="button">확인</a></li>

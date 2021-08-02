@@ -3,7 +3,7 @@
 
 <main id="main_map">
   <div class="map_wrap">
-    <div id="map" style="width:100%;height: 631px;position:relative;overflow:hidden;"></div>
+    <div id="map" style="width:100%;height: 800px;position:relative;overflow:hidden;"></div>
     <div id="menu_wrap" class="bg_white">
         <header class="find_store_header">
             <h2>매장찾기</h2>
@@ -25,7 +25,7 @@
         </div>
     </div>
 </div>
-<section class="bottom_wrap"></section>
+<div class="bottom-wrap"></div>
 </main>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a46aa39525659b92f0dda2e367cdde6a&libraries=services"></script>
 <script>
@@ -151,7 +151,7 @@ function getListItem(index, places) {
 
     var el = document.createElement('li'),
     itemStr = '<span class="markerbg"></span>' +
-                '<div class="info">' +
+                '<div class="info2">' +
                 '   <h5>' + places.place_name + '</h5>';
 
     if (places.road_address_name) {

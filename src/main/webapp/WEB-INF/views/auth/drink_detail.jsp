@@ -41,7 +41,7 @@
             <p class="t1">콜드 브루와 바닐라빈이 콕콕 박힌 아이스크림이 블렌딩 되어 진하고 부드러운 콜드 브루 풍미를 느낄 수 있는 콜드 브루
             <br> * 아이스크림 블렌딩 콜드 브루는 BOGO쿠폰, 무료음료 쿠폰 등 일부 쿠폰 사용이 제한됩니다</p>
             <div class="myDrink">
-              <a href="/user/mymenu_re1" role="button" title="나만의 음료 등록 옵션 열기">나만의 음료로 등록</a><!-- 접근성_20171123 role, title 추가 -->
+              <a href="javascript:popup()" role="button" title="나만의 음료 등록 옵션 열기">나만의 음료로 등록</a>
             </div>
           </div>
 
@@ -51,9 +51,6 @@
               <div class="product_view_info">
                 <div class="product_info_head">
                   <p class="tit">제품 영양 정보</p>
-                  <div class="product_select_wrap2">
-                      <div class="selectTxt2" id="product_info01">Tall(톨) / 355ml (12 fl oz)</div>
-                  </div>
                 </div>
                 <div class="product_info_content">
                    <ul>
@@ -122,9 +119,6 @@
                                             </li>
                                         </ul>
                 </div>
-                <div class="product_factor">
-                  <p>알레르기 유발요인 : 대두 / 우유</p>
-                </div>
                 <div class="cart_wrap">
                   <a href="/user/cart">장바구니 담기</a>
                 </div>
@@ -169,5 +163,12 @@
 
   </div>
 <!-- container  end-->
-
+<script>
+  function popup(){
+      var url = "/user/mymenu_re1";
+      var name = "나만의메뉴 등록";
+      var option = "width = 500, height = 500, top = 100, left = 200, location = no"
+      window.open(url, name, option);
+  }
+</script>
 <%@include file="../layout/footer.jsp"%>

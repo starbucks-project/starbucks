@@ -332,15 +332,19 @@ iframe {
   width: 250px;
 }
 
-.footer-menu-title{
-  font-size: 20px;
+.footer-menu-title a{
+  font-size: 18px;
   font-weight: 300;
+}
+
+.footer-menu-title {
+  margin-bottom: 10px;
 }
 
 .footer-menus li{
   color: white;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 300;
   letter-spacing: 1px;
   text-transform: capitalize;
@@ -1040,11 +1044,11 @@ div.product_view_detail div.myDrink {
 }
 div.product_view_detail div.myDrink a {
   display: block;
-  width: 115px;
+  width: 132px;
   height: 28px;
   line-height: 28px;
   background: #006633;
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
   text-align: center;
   border-radius: 3px;
@@ -1080,7 +1084,6 @@ legend {
 
 div.product_view_detail div.product_info_head {
   height: 59px;
-  line-height: 59px;
   position: relative;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
@@ -1090,30 +1093,8 @@ div.product_view_detail div.product_info_head p.tit {
   color: #222;
   padding-left: 10px;
 }
-div.product_view_detail div.product_select_wrap2 {
-  /* width: 375px; */
-  position: absolute;
-  right: 6px;
-  top: 6px;
-  display: inline-block;
-}
-div.product_view_detail div.product_select_wrap2:after {
-  content: "";
-  display: block;
-  clear: both;
-}
 div.product_view_detail div.product_select_wrap2 > div {
   float: left;
-}
-.selectTxt2 {
-  margin-right: 6px;
-}
-.selectTxt1, .selectTxt2 {
-
-  margin-top: -5px;
-  font-size: 16px;
-  color: #444;
-  font-family: "nbg";
 }
 div.product_info_content {
   width: 100%;
@@ -1136,7 +1117,7 @@ div.product_info_content li {
 }
 div.product_info_content dl {
   width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   color: #444;
 }
 div.product_info_content dl dt {
@@ -1147,42 +1128,34 @@ div.product_info_content dl dd {
   float: right;
   width: 15%;
   text-align: right;
+  margin-inline-start: 0px;
 }
 div.product_info_content dl:after {
   content: "";
   display: block;
   clear: both;
 }
-div.product_factor {
-  background: #f4f4f2;
-  padding: 13px 11px;
-  font-size: 14px;
-  color: #444;
-  border-radius: 3px;
+.cart_wrap {
   position: relative;
-  margin-bottom: 23px;
-  line-height: 1.6;
-}
-div.product_factor p {
-  font-weight: 200;
+  float: right;
 }
 .cart_wrap a {
   display: block;
-  width: 111px;
+  width: 140px;
   height: 30px;
   line-height: 28px;
   background: transparent;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bolder;
-  color: #006633;
+  color: #111;
   text-align: center;
-  border: 2px solid #006633;
+  border: 2px solid #222;
   border-radius: 3px;
   text-decoration: none;
 }
 .cart_wrap a:hover {
   text-decoration: underline;
-  background-color: #006633;
+  background-color: #222;
   color: #fff;
 } 
 
@@ -1230,7 +1203,83 @@ div.product_view_wrap2 {
   background-color: #034b27;
   color: #fff;
 } 
+/* 하단공통 */
+.productView_footmenu {
+  padding: 40px 0 60px 0;
+  background: #f4f4f2;
+}
+.productView_footmenu_inner {
+  width: 1100px;
+  margin: 0 auto;
+}
+.productView_top {
+  margin-bottom: 40px;
+}
+.productView_top:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.productView_top_left {
+  width: 550px;
+  float: left;
+  position: relative;
+}
+.productView_top_left p.tit {
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 15px;
+}
+div.productView_top_left ul li {
+  font-size: 14px;
+  font-weight: 600;
+  background: url(/img/drink-detail/dot.jpg) 0 center no-repeat;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+.productView_top_left p.more {
+  position: absolute;
+  top: 0;
+  right: 40px;
+}
 
+.productView_top_right {
+  width: 549px;
+  float: right;
+  border-left: 1px solid #ddd;
+}
+.productView_top_right dl {
+  width: 549px;
+}
+.productView_top_right dt {
+  width: 228px;
+  float: left;
+  text-align: center;
+  position: relative;
+}
+.productView_top_right dt p.sirenOrder {
+  position: absolute;
+  left: 30px;
+  top: -20px;
+}
+.productView_top_right dd {
+  width: 321px;
+  float: right;
+}
+div.productView_top_right p.tit {
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 14px;
+}
+div.productView_top_right p.txt {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
 /*--------------------------------------------------------------
 # Drink List
 --------------------------------------------------------------*/
@@ -2180,7 +2229,7 @@ img.m_pic {
 .only_my_drink div.only_my_head p.close {
   position: absolute;
   right: 20px;
-  top: 15px;
+  top: 5px;
 }
 .only_my_drink div.only_my_head p.close a {
   display: block;
@@ -2209,6 +2258,7 @@ img.m_pic {
 .only_my_drink dl.my_sel_drink dd {
   width: 58%;
   float: right;
+  margin-inline-start: 10px;
 }
 .only_my_drink dl.my_sel_drink dd p.t1 {
   font-size: 16px;
@@ -2221,71 +2271,7 @@ img.m_pic {
   color: #666;
   font-family: "Arial";
 }
-.only_my_drink dl.my_sel_drink div.select_box {
-  height: 28px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  position: relative;
-  top: 4px;
-  width: 100%;
-  background: #fff url(/images/mymenu-register/select_arrow.png) no-repeat 96% center;
-}
-.a11y {
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  clip: rect(0, 0, 0, 0);
-  overflow: hidden;
-  position: absolute;
-}
-.only_my_drink dl.my_sel_drink div.select_box select {
-  padding: 0 10px 0 10px;
-  height: 28px;
-  text-align: left;
-  line-height: 28px;
-  font-size: 12px;
-  /* color: #b7312c; */
-  border: 0;
-  background: transparent;
-  appearance: none;
-  font-family: "nbg";
-  width: 100%;
-}
-select:not(:-internal-list-box) {
-  overflow: visible !important;
-}
-select {
-  text-rendering: auto;
-  color: -internal-light-dark(black, white);
-  letter-spacing: normal;
-  word-spacing: normal;
-  text-transform: none;
-  text-indent: 0px;
-  text-shadow: none;
-  display: inline-block;
-  text-align: start;
-  appearance: auto;
-  box-sizing: border-box;
-  align-items: center;
-  white-space: pre;
-  -webkit-rtl-ordering: logical;
-  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
-  cursor: default;
-  margin: 0em;
-  font: 400 13.3333px Arial;
-  border-radius: 0px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-  border-image: initial;
-}
-option {
-  font-weight: normal;
-  display: block;
-  white-space: nowrap;
-  min-height: 1.2em;
-  padding: 0px 2px 1px;
-}
+
 .only_my_drink dl.my_sel_drink:after {
   content: "";
   display: block;
@@ -2323,9 +2309,9 @@ option {
   display: block;
   height: 30px;
   line-height: 30px;
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
-  font-weight: bold;
+  font-weight: normal;
   text-align: center;
   border-radius: 3px;
   text-decoration: none;
@@ -2346,17 +2332,19 @@ option {
   left: 50%;
   top: 270px;
   margin-left: -170px;
-  width: 340px;
+  width: 400px;
   border-radius: 3px;
   overflow: hidden;
   z-index: 10001;
-  min-width: 320px;
+  min-width: 380px;
 }
 .only_my_drink2 div.only_my_head {
   height: 56px;
   line-height: 56px;
   position: relative;
   background: #8c8279;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 .only_my_drink2 div.only_my_head p.tit {
   font-size: 16px;
@@ -2367,7 +2355,7 @@ option {
 .only_my_drink2 div.only_my_head p.close {
   position: absolute;
   right: 20px;
-  top: 15px;
+  top: 5px;
 }
 .only_my_drink2 div.only_my_head p.close a {
   display: block;
@@ -2378,6 +2366,15 @@ option {
 .only_my_drink2 div.only_my_cont {
   background: #fff;
   padding: 30px;
+}
+.a11y {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  position: absolute;
 }
 .only_my_drink2 div.only_my_cont .drink2_cont_input {
   background: #fff;
@@ -2405,6 +2402,7 @@ option {
   cursor: text;
   margin: 0em;
   font: 400 13.3333px Arial;
+  font-size: 16px;
 }
 .only_my_drink2 ul.btn_list {
   width: 70%;
@@ -2427,7 +2425,7 @@ option {
   display: block;
   height: 30px;
   line-height: 30px;
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
   font-weight: bold;
   text-align: center;
@@ -2441,9 +2439,9 @@ option {
   display: block;
   height: 30px;
   line-height: 30px;
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
-  font-weight: bold;
+  font-weight: normal;
   text-align: center;
   border-radius: 3px;
   text-decoration: none;
@@ -2536,8 +2534,6 @@ div.store_bn1_btn {
 div.store_bn1_btn a {
   color: #fff;
   display: block;
-  font-size: 14px;
-  font-weight: 600;
   height: 100%;
   text-align: center;
   width: 100%;
@@ -2584,8 +2580,6 @@ div.store_bn2_btn {
 div.store_bn2_btn a {
   color: #222;
   display: block;
-  font-size: 14px;
-  font-weight: 600;
   height: 100%;
   text-align: center;
   width: 100%;
@@ -2632,8 +2626,6 @@ div.store_bn3_btn {
 div.store_bn3_btn a {
   color: #fff;
   display: block;
-  font-size: 14px;
-  font-weight: 600;
   height: 100%;
   text-align: center;
   width: 100%;
@@ -2872,7 +2864,7 @@ article.driveStore_ber_innner dl:after {
 }
 .reserve_store_middle01 h3 {
   position: absolute;
-  top: 30px;
+  top: 15px;
   left: 0;
   font-size: 16px;
   color: #222222;
@@ -2882,7 +2874,7 @@ article.driveStore_ber_innner dl:after {
 }
 .reserveStore_middle01 {
   background-image: url(/images/store/YjLYqU_20210405101532228.png);
-  padding-top: 25px;
+  padding-top: 5px;
   height: 260px;
   background-position: 103% 62%;
   background-repeat: no-repeat;
@@ -3172,16 +3164,17 @@ dl.rs_bottom01 dd p {
 # Store Map
 --------------------------------------------------------------*/
 #main_map {
-  margin-top: 100px;
+  margin-top: 120px;
+  margin-bottom: 100px;
 }
 .map_wrap, .map_wrap * {
   margin:0;
   padding:0;
   font-family:'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
-  font-size:12px;
+  font-size:15px;
   }
 .map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
-.map_wrap {position:relative;width:100%;height:550px;}
+.map_wrap {position:relative;width:100%;height:700px;}
 .find_store_header {
   height: 46px;
   width: 100%;
@@ -3200,11 +3193,12 @@ dl.rs_bottom01 dd p {
   top:0;
   left:0;
   bottom:0;
-  width:300px;
-  margin:30px 0 10px 10px;
+  width:350px;
+  height: 520;
+  margin:30px 0 40px 20px;
   background:rgba(255, 255, 255);
   z-index: 1;
-  font-size:12px;
+  font-size:15px;
   border-radius: 10px;}
 .bg_white {background:#fff;}
 #menu_box {
@@ -3218,27 +3212,27 @@ dl.rs_bottom01 dd p {
   border-top: 2px solid #5F5F5F;
   margin:3px 0;
 }
-#menu_box .option{font-size: 14px;}
-#menu_box .option input {height:28px; width: 63%; display:inline-block; border: 1px solid #8a8a8a;}
-#menu_box .option {margin-top: 5px; margin-bottom: 5px;}
+#menu_box .option{font-size: 15px; text-align: center;}
+#menu_box .option input {height:26px; width: 63%; font-size: 15px; display:inline-block; border: 1px solid #8a8a8a;}
+#menu_box .option {margin-top: 5px; margin-bottom: 10px;}
 #menu_box .option p {margin:10px 0;}  
-#menu_box .option button {margin-left:5px; height: 28px; width: 40px;}
+#menu_box .option button {margin-left:5px; height: 28px; width: 40px; border-radius: 3px; border: solid 1px #5F5F5F;}
 #placesList li {list-style: none;}
 #placesList .item {position:relative;border-bottom:1px solid #888;overflow: hidden;cursor: pointer;min-height: 65px;}
 #placesList .item span {display: block;margin-top:4px;}
 #placesList .item h5, #placesList .item .info {text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
-#placesList .item .info{padding:10px 0 10px 55px;}
-#placesList .info .gray {color:#8a8a8a;}
-#placesList .info .tel {color:#009900;}
+#placesList .item .info2{padding:10px 0 10px 55px;}
+#placesList .info2 .gray {color:#8a8a8a;}
+#placesList .info2 .tel {color:#009900;}
 #placesList .item .markerbg {
   float:left;
   position:absolute;
   width:46px; 
   height:60px;
-  margin:0 0 0 0;
+  margin:5px 0 0 0;
   background:url('/images/store/pin_general.png') no-repeat;
   }
-.placesList_box {width: auto; height: 410px;  overflow-y:auto;}
+.placesList_box {width: auto; height: 500px;  overflow-y:auto;}
 #placesList .item .marker_1 {background-position: 0 -10px;}
 #placesList .item .marker_2 {background-position: 0 -56px;}
 #placesList .item .marker_3 {background-position: 0 -102px}
@@ -3258,7 +3252,7 @@ dl.rs_bottom01 dd p {
 #pagination a {display:inline-block;margin-right:10px;}
 #pagination .on {font-weight: bold; cursor: default;color:#777;}
 .bottom_wrap {
-  height: 300px;
+  height: 100px;
   position: relative;
   width: 100%;
 }
