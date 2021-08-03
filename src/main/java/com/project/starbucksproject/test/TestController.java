@@ -9,7 +9,7 @@ public class TestController {
     @GetMapping("/test")
     public String test() {
         return "test/test";
-    }
+    } 
 
     @GetMapping("/user/mypage")
     public String mypage() {
@@ -20,7 +20,7 @@ public class TestController {
     public String cardCharge() {
         return "user/cardCharge";
     }
-
+  
     @GetMapping("/user/cardRegi")
     public String cardRegi() {
         return "user/cardRegi";
@@ -35,7 +35,7 @@ public class TestController {
     public String cart() {
         return "user/Cart";
     }
-
+ 
     @GetMapping("/user/purchaseHistory")
     public String purchaseHistory() {
         return "user/purchaseHistory";

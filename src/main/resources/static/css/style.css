@@ -5,7 +5,7 @@ body {
   border: 0;
   margin: 0;
   padding: 0;
-  font-family: 'nbg', '留묒� 怨좊뵓', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+  font-family: 'nbg', '筌띾쵐占� �⑥쥓逾�', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
   background: #fff;
   color: #555;
 }
@@ -69,7 +69,7 @@ input {
   box-sizing: content-box;
   vertical-align: top;
   border-radius: 0;
-  font-family: 'nbg', '留묒� 怨좊뵓', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+  font-family: 'nbg', '筌띾쵐占� �⑥쥓逾�', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
 }
 header, nav, section, article, aside, footer {
   display: block;
@@ -81,9 +81,15 @@ header, nav, section, article, aside, footer {
 nav ul, li {
   list-style: none;
 }
-
+ul, li{
+	list-style: none;
+	text-decoration: none;
+}
 #main {
   margin-top: 120px;
+}
+.body-inner .container{
+	width: 100%
 }
 /*--------------------------------------------------------------
 # Header
@@ -411,7 +417,7 @@ iframe {
 }
 
 /* =======================
-========濡쒓렇�씤===========*/
+========嚥≪뮄�젃占쎌뵥===========*/
 
 .page_box{
   background-image: url("../images/login_bg.jpg");
@@ -811,7 +817,7 @@ iframe {
 .nuturition_tr{
   background-color: white;
   padding-bottom: 10px;
-  
+  margin-bottom: 10px;
 }
 
 .nuturition_title_right {
@@ -836,12 +842,15 @@ iframe {
   margin-left: 5px;
   background-color: white;
   padding-bottom: 10px;
+  border: solid gray 1px;
+
 }
 
 .nuturition_input input{
   width: 60px;
   margin-left: 10px;
   padding-bottom: 10px;
+  
 }
 
 .nuturition_input_left{
@@ -960,7 +969,7 @@ tbody tr:nth-child(2n+1) {
   margin: 0 auto;
 }
 
-/* �젣�뭹�긽�꽭蹂닿린 */
+/* 占쎌젫占쎈�뱄옙湲쏙옙苑�癰귣떯由� */
 div.product_view_wrap1 {
   width: 1100px;
   padding-bottom: 40px;
@@ -973,7 +982,7 @@ div.product_view_wrap1:after {
   clear: both;
 }
 
-/* �긽�뭹 view */
+/* 占쎄맒占쎈�� view */
 div.product_view_pic {
   width: 450px;
   float: left;
@@ -1013,7 +1022,7 @@ div.product_view_pic:after {
   clear: both;
 }
 
-/* �긽�뭹 �꽕紐� */
+/* 占쎄맒占쎈�� 占쎄퐬筌륅옙 */
 div.product_view_detail {
   width: 610px;
   float: right;
@@ -1460,7 +1469,7 @@ div.product_list > dl > dd > ul:after {
   clear: both;
 }
 
-/* dt2 �쁺�뼇�젙蹂대줈 蹂닿린 */
+/* dt2 占쎌겫占쎈펶占쎌젟癰귣�以� 癰귣떯由� */
 dl.product_view_tab > dt.dt2 {
   left: 130px;
 }
@@ -1498,7 +1507,7 @@ a:hover {
 
 
 /*--------------------------------------------------------------
-# Index - 硫붿씤�럹�씠吏�
+# Index - 筌롫뗄�뵥占쎈읂占쎌뵠筌욑옙
 --------------------------------------------------------------*/
 .main-visual_wrap {
   height:646px; 
@@ -1577,7 +1586,7 @@ img {
 
 }
 
-/*------- 硫붿씤 �뒪��踰낆뒪 由ъ썙�뱶 由щ돱�뼹 �떆�옉-------- */
+/*------- 筌롫뗄�뵥 占쎈뮞占쏙옙甕곕굞�뮞 �뵳�딆뜖占쎈굡 �뵳�됰뤀占쎈섰 占쎈뻻占쎌삂-------- */
 .new-rewards_wrap {
   padding-top: 30px;
   padding-bottom: 30px;
@@ -1699,10 +1708,22 @@ img {
 .btn_egift a:hover {
   text-decoration: underline;
 }
+<<<<<<< HEAD
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+/*------- 筌롫뗄�뵥 占쎈뮞占쏙옙甕곕굞�뮞 �뵳�딆뜖占쎈굡 �뵳�됰뤀占쎈섰 占쎄국-------- */
+=======
 
 /*------- 硫붿씤 �뒪��踰낆뒪 由ъ썙�뱶 由щ돱�뼹 �걹-------- */
+>>>>>>> cd738b27396aa8cad90f087a241e84636a309947
 
-/*------- pick your favorite �떆�옉-------- */
+/*------- pick your favorite 占쎈뻻占쎌삂-------- */
 #favWrap {
   background: url("../images/fav_prod_bg_new.jpg") center center fixed no-repeat #45434c;
   background-size: auto 100%;
@@ -1788,9 +1809,9 @@ img {
   background: #fff;
   text-decoration: underline;
 }
-/*------- pick your favorite �걹-------- */
+/*------- pick your favorite 占쎄국-------- */
 
-/*------- StoreWrap �떆�옉-------- */
+/*------- StoreWrap 占쎈뻻占쎌삂-------- */
 #storeWrap {
   background: url(../images/store_bg.jpg);
   background-size: 100% auto;
@@ -1901,7 +1922,7 @@ img {
   background: #111;
   text-decoration: underline;
 }
-/*------- StoreWrap �걹-------- */
+/*------- StoreWrap 占쎄국-------- */
 
 /*--------------------------------------------------------------
 # MENU
@@ -2480,7 +2501,7 @@ img.m_pic {
 }
 /* storeSlideArea  End*/
 
-/* 留ㅼ옣李얘린 store_bn1_section */
+/* 筌띲끉�삢筌≪뼐由� store_bn1_section */
 section.store_bn1_section {
   width: 100%;
   height: 430px;
@@ -2524,9 +2545,9 @@ div.store_bn1_btn a:hover {
   color: #111;
   text-decoration: underline;
 }
-/* 留ㅼ옣李얘린 store_bn1_section End*/
+/* 筌띲끉�삢筌≪뼐由� store_bn1_section End*/
 
-/* �뱶�씪�씠釉뚯뒪猷� 留ㅼ옣 store_bn2_section */
+/* 占쎈굡占쎌뵬占쎌뵠�뇡�슣�뮞�뙴占� 筌띲끉�삢 store_bn2_section */
 section.store_bn2_section {
   width: 100%;
   height: 430px;
@@ -2570,9 +2591,9 @@ div.store_bn2_btn a:hover {
   color: #fff;
   text-decoration: underline;
 }
-/* �뱶�씪�씠釉뚯뒪猷� 留ㅼ옣 store_bn2_section End */
+/* 占쎈굡占쎌뵬占쎌뵠�뇡�슣�뮞�뙴占� 筌띲끉�삢 store_bn2_section End */
 
-/* 由ъ�釉� 留ㅼ옣 store_bn3_section */
+/* �뵳�딉옙�뇡占� 筌띲끉�삢 store_bn3_section */
 section.store_bn3_section {
   width: 100%;
   height: 430px;
@@ -2617,12 +2638,21 @@ div.store_bn3_btn a:hover {
   color: #111;
   text-decoration: underline;
 }
+<<<<<<< HEAD
+/* �뵳�딉옙�뇡占� 筌띲끉�삢 store_bn3_section End */
+
+/*--------------------------------------------------------------
+# Store Drive 占쎈굡占쎌뵬占쎌뵠�뇡�슣�뮞�뙴占� 筌띲끉�삢
+--------------------------------------------------------------*/
+/* 筌띲끉�삢占쎈꺖揶쏉옙 */
+=======
 /* 리저브 매장 store_bn3_section End */
 
 /*--------------------------------------------------------------
 # Store Drive 드라이브스루 매장
 --------------------------------------------------------------*/
 /* 매장소개 */
+>>>>>>> cd738b27396aa8cad90f087a241e84636a309947
 .store_drive_container {
   width: 100%;
 }
@@ -2651,7 +2681,11 @@ article.full_text p span {
   color: #555;
 }
 
+<<<<<<< HEAD
+/* 占쎈굡占쎌뵬占쎌뵠�뇡�슣�뮞�뙴占� 占쎈뱜占쎌삌 */
+=======
 /* 드라이브스루 트랙 */
+>>>>>>> cd738b27396aa8cad90f087a241e84636a309947
 .drive_through_track {
   width: 100%;
   height: 663px;
@@ -2740,7 +2774,11 @@ article.full_text p span {
   bottom: 0px;  
 }
 
+<<<<<<< HEAD
+/* 筌띲끉�삢 筌욑옙占쎈즲 */
+=======
 /* 매장 지도 */
+>>>>>>> cd738b27396aa8cad90f087a241e84636a309947
 .driveStore_ber_wrap {
   position: relative;
   height: 80px;
@@ -2775,7 +2813,11 @@ article.driveStore_ber_innner dl:after {
   clear: both;
 }
 
+<<<<<<< HEAD
+/* 筌욑옙占쎈즲占쎌겫占쎈열 */
+=======
 /* 지도영역 */
+>>>>>>> cd738b27396aa8cad90f087a241e84636a309947
 .store_map_wrap {
   height: 631px;
   width: 100%;
@@ -2798,7 +2840,7 @@ article.driveStore_ber_innner dl:after {
 .info .link {color: #5085BB;}
 
 /*--------------------------------------------------------------
-# Store Reserve 由ъ�釉� 留ㅼ옣
+# Store Reserve �뵳�딉옙�뇡占� 筌띲끉�삢
 --------------------------------------------------------------*/
 
 /* reserve_store_full */
@@ -3068,7 +3110,7 @@ dl.rs_bottom01 dd p {
 }
 
 
-/* 留ㅼ옣吏��룄 */
+/* 筌띲끉�삢筌욑옙占쎈즲 */
 .reserveStore_ber_wrap {
   position: relative;
   height: 77px;
@@ -3137,7 +3179,7 @@ dl.rs_bottom01 dd p {
   color: #ffffff;
 }
 
-/* 吏��룄 */
+/* 筌욑옙占쎈즲 */
 /* @media screen and (min-width: 641px) and (max-width: 1600px) */
 .store_map_wrap {
     height: 631px;
@@ -3240,7 +3282,7 @@ dl.rs_bottom01 dd p {
   width: 100%;
 }
 
-/*留덉씠�럹�씠吏� 遺�遺� start -------------------------------------*/
+/*筌띾뜆�뵠占쎈읂占쎌뵠筌욑옙 �겫占썽겫占� start -------------------------------------*/
 /* Sub Pages
 ================================================== */
 /*-- Title border --*/
@@ -3739,18 +3781,18 @@ h5, strong {
   height: 597px;
   width: 800px;
 }
-.my_ms_index_slide header {
+.my_ms_index_slide .header {
   height: 76px;
   position: absolute;
   text-align: center;
   top: 50px;
 }
-.ms_cont .my_ms_index_slide header h5 {
+.ms_cont .my_ms_index_slide .header h5 {
     color: #fff;
     font-size: 24px;
     margin: 10px auto;
 }
-.ms_cont .my_ms_index_slide header strong {
+.ms_cont .my_ms_index_slide .header strong {
   color: #fff;
   font-size: 16px;
   margin: 0 auto;
@@ -4030,7 +4072,7 @@ element.style {
 }
 
 
-/*---------------移대뱶�벑濡�*/
+/*---------------燁삳�諭띰옙踰묉에占�*/
 
 .my_card_info_wrap {
   height: 248px;
@@ -4130,7 +4172,7 @@ input {
   vertical-align: middle;
   margin: 0;
   padding: 0;
-  font-family: 'nbg', '留묒� 怨좊뵓', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+  font-family: 'nbg', '筌띾쵐占� �⑥쥓逾�', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
 }
 .card_regi_dl dd span {
   color: #666;
@@ -4191,7 +4233,7 @@ input[type=text], input[type=number], input[type=password], input[type=tel], inp
   margin-right: 5px;
 }
 
-/* 移대뱶 異⑹쟾 -----------------*/
+/* 燁삳�諭� �빊�뫗�읈 -----------------*/
 .card_charge_wrap {
   position: relative;
 }
@@ -4410,6 +4452,44 @@ table {
   text-indent: -20000px;
   width: 0;
 }
+ul.charge_tbl_btns {
+    float: right;
+    height: 30px;
+    margin-top: 20px;
+    width: 185px;
+}
+ul.charge_tbl_btns li.charge_tbl_btn1 {
+    background: #e2c383;
+    border: 1px solid #bb9f65;
+}
+ul.charge_tbl_btns li {
+    border-radius: 3px;
+    float: left;
+    height: 28px;
+    width: 83px;
+}
+
+ul.charge_tbl_btns li.charge_tbl_btn1 a {
+    color: #222;
+}
+ul.charge_tbl_btns li a {
+    display: block;
+    font-size: 12px;
+    font-weight: bold;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    width: 83px;
+}
+ul.charge_tbl_btns li.charge_tbl_btn2 {
+    background: #222;
+    border: 1px solid #222;
+    color: #fff;
+    margin-left: 5px;
+}
+ul.charge_tbl_btns li.charge_tbl_btn2 a {
+    color: #fff;
+}
 tbody {
   display: table-row-group;
   vertical-align: middle;
@@ -4523,19 +4603,7 @@ select:not(:-internal-list-box) {
   position: relative;
   width: 100%;
 }
-.card_charge_wrap article table tr td div.sel_wrap p.charge_change {
-  float: left;
-  line-height: 28px;
-  margin-left: 10px;
-}
-.charge_change {
-  font-size: 14px;
-  color: #444;
-}
-.card_charge_wrap article table tr td div.sel_wrap p.charge_change span {
-  font-size: 14px;
-  font-weight: bold;
-}
+
 .t_006633 {
   color: #006633;
 }
@@ -4600,7 +4668,7 @@ ol.charge_warn li ul li ul li {
   margin-top: 5px;
   padding-left: 10px;
 }
-/*援щℓ�궡�뿭 ===============*/
+/*�뤃�됤꼻占쎄땀占쎈열 ===============*/
 .my_card_pick_period {
   background: #f4f4f2;
   border-radius: 3px;
@@ -4793,7 +4861,7 @@ dd {
   text-align: center;
 } 
 
-/*장바구니 내역 =========================*/
+/*�옣諛붽뎄�땲 �궡�뿭 =========================*/
 .ms_cont_wrap {
     left: 50%;
     margin: 50px 0 0 -550px;

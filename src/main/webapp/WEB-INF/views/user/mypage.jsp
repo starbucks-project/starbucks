@@ -11,7 +11,7 @@
               <div class="ms_sub_tit_bg">
                 <div class="ms_sub_tit_inner">
                   <h4>
-                    <img alt="MyStarbucks" src="images/ms_ttl.png" />
+                    <img alt="MyStarbucks" src="/images/ms_ttl.png" />
                   </h4>
                 </div>
               </div>
@@ -22,7 +22,7 @@
     </div><!-- Banner area end -->
 
     <!-- ms cont part-->
-    <!-- <div class="container">   -->
+ 	<div class="container"> 
       <div class="ms_cont">
         <div class="ms_user_index">
         
@@ -62,7 +62,7 @@
                   <div class="card_header_box_two">
                     <i class="card_list_btn1">
                       <a href="#">
-                        <img alt="보유 카드 상세 정보" src="images/card_list_btn1.png" />
+                        <img alt="보유 카드 상세 정보" src="/images/card_list_btn1.png" />
                       </a>
                     </i>
                     <aside>

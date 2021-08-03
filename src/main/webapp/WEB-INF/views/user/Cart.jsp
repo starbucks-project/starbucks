@@ -12,7 +12,7 @@
 							<div class="ms_sub_tit_bg">
 								<div class="ms_sub_tit_inner">
 									<h4>
-										<img alt="inMyCard" src="images/shopping_bag_ttl.png" />
+										<img alt="" src="/images/shopping_bag_ttl.png" />
 									</h4>
 								</div>
 							</div>
@@ -59,15 +59,11 @@
 														id="ckAll" title="전체 선택" class="ez-hide">
 												</div>
 											</div></th>
-										<th scope="col">카드이미지</th>
-										<th scope="col">내용</th>
+										<th scope="col">상품 이미지</th>
 										<th scope="col">받는사람</th>
-										<th scope="col">선물할 방법</th>
-										<th scope="col">전송 방법</th>
 										<th scope="col">주문수량</th>
 										<th scope="col">주문금액</th>
 										<th scope="col">결제금액</th>
-										<th scope="col">주문수정</th>
 									</tr>
 								</thead>
 								<tbody>
@@ -83,17 +79,12 @@
 											src="https://image.istarbucks.co.kr/cardThumbImg/20210503/008046_thumb.png"
 											alt="e-gift 카드" class="cardImg"
 											onerror="this.src='https://image.istarbucks.co.kr/upload/common/img/icon/card_672x423.png';"></td>
-										<td class="tl">나에게 선물</td>
 										<td>정용주<br>[010-5710-2570]
 										</td>
-										<td>휴대폰 전송</td>
-										<td>즉시</td>
 										<td>1장</td>
 										<td>10,000원</td>
 										<td><strong>10,000원</strong></td>
-										<td><p class="btn_change">
-												<a href="javascript:void(0);" data-egiftcartseq="103530">주문수정</a>
-											</p></td>
+										
 									</tr>
 								</tbody>
 							</table>
