@@ -18,9 +18,9 @@ public class Cart {
     private int id; // 기본키
 
     private String receiver; // 받는 사람
-    private int amount; // 주문 수량
+
     private int price; // 주문 금액
 
-    // @ManyToOne
-    // private Product product; // product 조인
+    @ManyToOne
+    private Product product; // product 조인
 }

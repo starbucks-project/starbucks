@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import com.project.starbucksproject.domain.product.Product;
+import com.project.starbucksproject.domain.user.User;
 
 import lombok.Data;
 
@@ -20,6 +21,9 @@ public class MyMenu {
     private String productName; // 상품명
     private String date; // 등록일
 
-    // @ManyToOne
-    // private Product products; // product 조인
+    @ManyToOne
+    private Product products; // product 조인
+
+    @ManyToOne
+    private User user; // user 조인
 }

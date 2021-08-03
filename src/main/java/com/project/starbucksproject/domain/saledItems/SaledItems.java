@@ -20,9 +20,9 @@ public class SaledItems {
 
     private String date; // 구매 날짜
 
-    // @ManyToOne
-    // private Cart cart; // cart 조인
+    @ManyToOne
+    private Cart cart; // cart 조인
 
-    // @ManyToOne
-    // private User user; // user 조인
+    @ManyToOne
+    private User user; // user 조인
 }

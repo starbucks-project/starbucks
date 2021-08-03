@@ -23,6 +23,6 @@ public class Card {
     private String cardNum; // 카드 번호
     private int valance; // 잔액
 
-    // @ManyToOne
-    // private User user; // user 조인
+    @ManyToOne
+    private User user; // user 조인
 }
