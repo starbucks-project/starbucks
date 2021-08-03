@@ -10,7 +10,7 @@
   
   <meta name="author" content="Themefisher.com">
 
-  <title>starbucks</title>
+  <title>Starbucks Coffee Korea</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -91,7 +91,7 @@
         </div> <!-- end dropdown-->
         <div class="dropdown"><a href="#"><span>Store</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a href="/store">매장 찾기</a></li>
+            <li><a href="/auth/store_map">매장 찾기</a></li>
 
             <li><a href="/auth/store_drive">드라이브 스루</a></li>
             <li><a href="/auth/store_reserve">리저브 매장</a></li>

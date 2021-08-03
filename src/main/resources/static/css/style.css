@@ -86,7 +86,7 @@ ul, li{
 	text-decoration: none;
 }
 #main {
-  margin-top: 100px;
+  margin-top: 120px;
 }
 .body-inner .container{
 	width: 100%
@@ -146,7 +146,7 @@ ul, li{
 }
 
 .upper-nav-item{
-  font-size: 13px;
+
   justify-content: space-between;
   padding: 10px 0 10px 30px;
   font-family: "Poppins", sans-serif;
@@ -154,8 +154,9 @@ ul, li{
 }
 
 .upper-nav-item a{
-  font-size: 15px;
+  font-size: 18px;
   color: rgb(44, 44, 44);
+  text-decoration: none;
 }
 
 .lower{
@@ -179,7 +180,7 @@ ul, li{
   justify-content: space-between;
   padding: 10px 0 10px 30px;
   font-family: "Poppins", sans-serif;
-  font-size: 15px;
+  font-size: 18px;
   font-weight: 500;
   color: #37423b;
   white-space: nowrap;
@@ -187,7 +188,7 @@ ul, li{
 }
 
 .navbar a i, .navbar a:focus i {
-  font-size: 12px;
+  font-size: 15px;
   line-height: 0;
   margin-left: 5px;
 }
@@ -224,7 +225,6 @@ ul, li{
 
 .navbar .dropdown ul a {
   padding: 10px 20px;
-  font-size: 14px;
   text-transform: none;
   font-weight: 500;
   color: white;
@@ -232,7 +232,7 @@ ul, li{
 }
 
 .navbar .dropdown ul a i {
-  font-size: 12px;
+  font-size: 15px;
   color: white;
 }
 
@@ -338,15 +338,19 @@ iframe {
   width: 250px;
 }
 
-.footer-menu-title{
-  font-size: 20px;
+.footer-menu-title a{
+  font-size: 18px;
   font-weight: 300;
+}
+
+.footer-menu-title {
+  margin-bottom: 10px;
 }
 
 .footer-menus li{
   color: white;
   font-family: "Source Sans Pro", sans-serif;
-  font-size: 13px;
+  font-size: 14px;
   font-weight: 300;
   letter-spacing: 1px;
   text-transform: capitalize;
@@ -813,7 +817,7 @@ iframe {
 .nuturition_tr{
   background-color: white;
   padding-bottom: 10px;
-  
+  margin-bottom: 10px;
 }
 
 .nuturition_title_right {
@@ -838,12 +842,15 @@ iframe {
   margin-left: 5px;
   background-color: white;
   padding-bottom: 10px;
+  border: solid gray 1px;
+
 }
 
 .nuturition_input input{
   width: 60px;
   margin-left: 10px;
   padding-bottom: 10px;
+  
 }
 
 .nuturition_input_left{
@@ -1046,11 +1053,11 @@ div.product_view_detail div.myDrink {
 }
 div.product_view_detail div.myDrink a {
   display: block;
-  width: 115px;
+  width: 132px;
   height: 28px;
   line-height: 28px;
   background: #006633;
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
   text-align: center;
   border-radius: 3px;
@@ -1086,7 +1093,6 @@ legend {
 
 div.product_view_detail div.product_info_head {
   height: 59px;
-  line-height: 59px;
   position: relative;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
@@ -1096,30 +1102,8 @@ div.product_view_detail div.product_info_head p.tit {
   color: #222;
   padding-left: 10px;
 }
-div.product_view_detail div.product_select_wrap2 {
-  /* width: 375px; */
-  position: absolute;
-  right: 6px;
-  top: 6px;
-  display: inline-block;
-}
-div.product_view_detail div.product_select_wrap2:after {
-  content: "";
-  display: block;
-  clear: both;
-}
 div.product_view_detail div.product_select_wrap2 > div {
   float: left;
-}
-.selectTxt2 {
-  margin-right: 6px;
-}
-.selectTxt1, .selectTxt2 {
-
-  margin-top: -5px;
-  font-size: 16px;
-  color: #444;
-  font-family: "nbg";
 }
 div.product_info_content {
   width: 100%;
@@ -1142,7 +1126,7 @@ div.product_info_content li {
 }
 div.product_info_content dl {
   width: 100%;
-  font-size: 14px;
+  font-size: 16px;
   color: #444;
 }
 div.product_info_content dl dt {
@@ -1153,42 +1137,34 @@ div.product_info_content dl dd {
   float: right;
   width: 15%;
   text-align: right;
+  margin-inline-start: 0px;
 }
 div.product_info_content dl:after {
   content: "";
   display: block;
   clear: both;
 }
-div.product_factor {
-  background: #f4f4f2;
-  padding: 13px 11px;
-  font-size: 14px;
-  color: #444;
-  border-radius: 3px;
+.cart_wrap {
   position: relative;
-  margin-bottom: 23px;
-  line-height: 1.6;
-}
-div.product_factor p {
-  font-weight: 200;
+  float: right;
 }
 .cart_wrap a {
   display: block;
-  width: 111px;
+  width: 140px;
   height: 30px;
   line-height: 28px;
   background: transparent;
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bolder;
-  color: #006633;
+  color: #111;
   text-align: center;
-  border: 2px solid #006633;
+  border: 2px solid #222;
   border-radius: 3px;
   text-decoration: none;
 }
 .cart_wrap a:hover {
   text-decoration: underline;
-  background-color: #006633;
+  background-color: #222;
   color: #fff;
 } 
 
@@ -1236,7 +1212,83 @@ div.product_view_wrap2 {
   background-color: #034b27;
   color: #fff;
 } 
+/* 하단공통 */
+.productView_footmenu {
+  padding: 40px 0 60px 0;
+  background: #f4f4f2;
+}
+.productView_footmenu_inner {
+  width: 1100px;
+  margin: 0 auto;
+}
+.productView_top {
+  margin-bottom: 40px;
+}
+.productView_top:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+.productView_top_left {
+  width: 550px;
+  float: left;
+  position: relative;
+}
+.productView_top_left p.tit {
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 15px;
+}
+div.productView_top_left ul li {
+  font-size: 14px;
+  font-weight: 600;
+  background: url(/img/drink-detail/dot.jpg) 0 center no-repeat;
+  padding-left: 10px;
+  margin-bottom: 10px;
+}
+.productView_top_left p.more {
+  position: absolute;
+  top: 0;
+  right: 40px;
+}
 
+.productView_top_right {
+  width: 549px;
+  float: right;
+  border-left: 1px solid #ddd;
+}
+.productView_top_right dl {
+  width: 549px;
+}
+.productView_top_right dt {
+  width: 228px;
+  float: left;
+  text-align: center;
+  position: relative;
+}
+.productView_top_right dt p.sirenOrder {
+  position: absolute;
+  left: 30px;
+  top: -20px;
+}
+.productView_top_right dd {
+  width: 321px;
+  float: right;
+}
+div.productView_top_right p.tit {
+  font-size: 18px;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 14px;
+}
+div.productView_top_right p.txt {
+  font-size: 14px;
+  font-weight: 600;
+  color: #555;
+  margin-bottom: 15px;
+  line-height: 1.6;
+}
 /*--------------------------------------------------------------
 # Drink List
 --------------------------------------------------------------*/
@@ -1559,11 +1611,11 @@ img {
 /*------- 筌롫뗄�뵥 占쎈뮞占쏙옙甕곕굞�뮞 �뵳�딆뜖占쎈굡 �뵳�됰뤀占쎈섰 占쎈뻻占쎌삂-------- */
 .new-rewards_wrap {
   padding-top: 30px;
-  padding-bottom: 40px;
+  padding-bottom: 30px;
   background-color: #1e3932;
 }
 .new-rewards_inner {
-  max-width: 1080px;
+  width: 63%;
   margin: 0 auto;
 }
 .new-rewards_inner:after {
@@ -1574,22 +1626,18 @@ img {
 .new-rewards_logo {
   float: left;
   width: 16.3%;
-  margin-left: 40px;
-  margin-right: 40px;
+  margin-left: 30px;
+  margin-right: 30px;
   text-align: center;
 }
 .new-rewards_logo img {
   width: 176px;
 }
-img {
-  vertical-align: top;
-  max-width: 100%;
-}
+
 .new-rewards_conts {
   box-sizing: border-box;
   float: left;
   width: calc(83.7% - 80px);
-  padding-right: 30px;
   color: #fff;
   letter-spacing: 0.5px;
 }
@@ -1613,11 +1661,16 @@ img {
 .new-rewards_conts .info-cont_txt p {
   line-height: 1.4;
   font-size: 17px;
+  color: white;
 }
 .btn-signin_group {
   margin-bottom: 15px;
 }
-
+.new-rewards_conts .btn-signin_group {
+  position: absolute;
+  bottom: 20px;
+  right: 50px;
+}
 .new-rewards_conts .btn-signin_group a {
   box-sizing: border-box;
   display: inline-block;
@@ -1625,76 +1678,59 @@ img {
   line-height: 36px;
   padding-left: 18.5px;
   padding-right: 18.5px;
-  font-size: 14px;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
-}
-.new-rewards_conts .btn-signin_join {
-  background-color: #00704a;
-  border: 2px solid #00704a;
-}
-a {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
   text-decoration: none;
-  vertical-align: baseline;
-  color: #666;
-  background: transparent;
-  cursor: pointer;
 }
-a:hover{
+.btn-signin_group a:hover {
   text-decoration: underline;
 }
 .new-rewards_conts .btn-signin_login {
-  margin-left: 9px;
-  background-color: transparent;
-  border: 2px solid #fff;
+  background-color: #00704a;
+  border: 2px solid #00704a;
 }
+
 .new-rewards_conts .gift-cont {
   position: relative;
 }
 .new-rewards_conts .gift-cont_txt p {
   line-height: 1.4;
-  font-size: 14px;
+  font-size: 17px;
+  color: white;
 }
-.gift-cont_text p {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 0px;
-  margin-inline-end: 0px;
+.gift-cont {
+  position: relative;
 }
+
 .new-rewards_conts .btn_egift {
   box-sizing: border-box;
   position: absolute;
   top: 0;
   right: 0;
-  width: 183px;
+  width: 192px;
   height: 38px;
   line-height: 36px;
   text-align: center;
-  font-size: 14px;
   border: 2px solid #fff;
   border-radius: 5px;
-  letter-spacing: 0.5px;
 }
 .btn_egift a {
   box-sizing: border-box;
   display: inline-block;
-  height: 38px;
   line-height: 36px;
-  padding-left: 18.5px;
-  padding-right: 18.5px;
-  font-size: 14px;
+  padding-left: 18px;
+  padding-right: 18px;
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
 }
 .btn_egift a:hover {
   text-decoration: underline;
 }
+<<<<<<< HEAD
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -1704,6 +1740,10 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   background: transparent;
 }
 /*------- 筌롫뗄�뵥 占쎈뮞占쏙옙甕곕굞�뮞 �뵳�딆뜖占쎈굡 �뵳�됰뤀占쎈섰 占쎄국-------- */
+=======
+
+/*------- 硫붿씤 �뒪��踰낆뒪 由ъ썙�뱶 由щ돱�뼹 �걹-------- */
+>>>>>>> cd738b27396aa8cad90f087a241e84636a309947
 
 /*------- pick your favorite 占쎈뻻占쎌삂-------- */
 #favWrap {
@@ -1761,35 +1801,29 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   background-repeat: no-repeat;
   background-position: center;
   z-index: 7;
-}
-.btn_fav_prod {
-  width: 125px;
-  height: 38px;
-  border-width: 0;
-}
+} 
 .btn_fav_prod {
   border: 2px solid #fff;
   border-radius: 5px;
-  height: 34px;
+  height: 38px;
   left: 328px;
   position: absolute;
   top: 570px;
-  width: 121px;
+  width: 130px;
   z-index: 7;
-
   left: 378px;
   top: 570px;
 }
 .btn_fav_prod a {
   color: #fff;
   display: block;
-  font-size: 14px;
   height: 100%;
   line-height: 34px;
   text-align: center;
   width: 100%;
   -webkit-transition: background-color .7s, color .7s;
   transition: background-color .7s, color .7s;
+  text-decoration: none;
 }
 
 .btn_fav_prod_a:hover {
@@ -1902,17 +1936,9 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   width: 100%;
   -webkit-transition: background-color .7s, color .7s;
   transition: background-color .7s, color .7s;
-}
-a {
-  margin: 0;
-  padding: 0;
-  font-size: 100%;
   text-decoration: none;
-  vertical-align: baseline;
-  color: #666;
-  background: transparent;
-  cursor: pointer;
 }
+
 .store_btn a:hover {
   color: #fff;
   background: #111;
@@ -2224,7 +2250,7 @@ img.m_pic {
 .only_my_drink div.only_my_head p.close {
   position: absolute;
   right: 20px;
-  top: 15px;
+  top: 5px;
 }
 .only_my_drink div.only_my_head p.close a {
   display: block;
@@ -2253,6 +2279,7 @@ img.m_pic {
 .only_my_drink dl.my_sel_drink dd {
   width: 58%;
   float: right;
+  margin-inline-start: 10px;
 }
 .only_my_drink dl.my_sel_drink dd p.t1 {
   font-size: 16px;
@@ -2265,71 +2292,7 @@ img.m_pic {
   color: #666;
   font-family: "Arial";
 }
-.only_my_drink dl.my_sel_drink div.select_box {
-  height: 28px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  position: relative;
-  top: 4px;
-  width: 100%;
-  background: #fff url(/images/mymenu-register/select_arrow.png) no-repeat 96% center;
-}
-.a11y {
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  clip: rect(0, 0, 0, 0);
-  overflow: hidden;
-  position: absolute;
-}
-.only_my_drink dl.my_sel_drink div.select_box select {
-  padding: 0 10px 0 10px;
-  height: 28px;
-  text-align: left;
-  line-height: 28px;
-  font-size: 12px;
-  /* color: #b7312c; */
-  border: 0;
-  background: transparent;
-  appearance: none;
-  font-family: "nbg";
-  width: 100%;
-}
-select:not(:-internal-list-box) {
-  overflow: visible !important;
-}
-select {
-  text-rendering: auto;
-  color: -internal-light-dark(black, white);
-  letter-spacing: normal;
-  word-spacing: normal;
-  text-transform: none;
-  text-indent: 0px;
-  text-shadow: none;
-  display: inline-block;
-  text-align: start;
-  appearance: auto;
-  box-sizing: border-box;
-  align-items: center;
-  white-space: pre;
-  -webkit-rtl-ordering: logical;
-  background-color: -internal-light-dark(rgb(255, 255, 255), rgb(59, 59, 59));
-  cursor: default;
-  margin: 0em;
-  font: 400 13.3333px Arial;
-  border-radius: 0px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
-  border-image: initial;
-}
-option {
-  font-weight: normal;
-  display: block;
-  white-space: nowrap;
-  min-height: 1.2em;
-  padding: 0px 2px 1px;
-}
+
 .only_my_drink dl.my_sel_drink:after {
   content: "";
   display: block;
@@ -2367,9 +2330,9 @@ option {
   display: block;
   height: 30px;
   line-height: 30px;
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
-  font-weight: bold;
+  font-weight: normal;
   text-align: center;
   border-radius: 3px;
   text-decoration: none;
@@ -2390,17 +2353,19 @@ option {
   left: 50%;
   top: 270px;
   margin-left: -170px;
-  width: 340px;
+  width: 400px;
   border-radius: 3px;
   overflow: hidden;
   z-index: 10001;
-  min-width: 320px;
+  min-width: 380px;
 }
 .only_my_drink2 div.only_my_head {
   height: 56px;
   line-height: 56px;
   position: relative;
   background: #8c8279;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
 }
 .only_my_drink2 div.only_my_head p.tit {
   font-size: 16px;
@@ -2411,7 +2376,7 @@ option {
 .only_my_drink2 div.only_my_head p.close {
   position: absolute;
   right: 20px;
-  top: 15px;
+  top: 5px;
 }
 .only_my_drink2 div.only_my_head p.close a {
   display: block;
@@ -2422,6 +2387,15 @@ option {
 .only_my_drink2 div.only_my_cont {
   background: #fff;
   padding: 30px;
+}
+.a11y {
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  overflow: hidden;
+  position: absolute;
 }
 .only_my_drink2 div.only_my_cont .drink2_cont_input {
   background: #fff;
@@ -2449,6 +2423,7 @@ option {
   cursor: text;
   margin: 0em;
   font: 400 13.3333px Arial;
+  font-size: 16px;
 }
 .only_my_drink2 ul.btn_list {
   width: 70%;
@@ -2471,7 +2446,7 @@ option {
   display: block;
   height: 30px;
   line-height: 30px;
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
   font-weight: bold;
   text-align: center;
@@ -2485,9 +2460,9 @@ option {
   display: block;
   height: 30px;
   line-height: 30px;
-  font-size: 12px;
+  font-size: 14px;
   color: #fff;
-  font-weight: bold;
+  font-weight: normal;
   text-align: center;
   border-radius: 3px;
   text-decoration: none;
@@ -2506,12 +2481,6 @@ option {
 /* storeSlideArea */
 .storeSlideArea {
   width: 100%;
-  height: 400px;
-  position: relative;
-  overflow: hidden;
-}
-.storeSlideArea .bxslide-main {
-  width: 100%;
   position: relative;
   z-index: 1;
 }
@@ -2519,9 +2488,11 @@ option {
   background: #fff;
 }
 .bnr_temp_store {
-  background: url(/images/store/bnr_temp_store.jpg) center top no-repeat;
+  width: 100%;
   height: 400px;
   position: relative;
+  background: url(/images/store/bnr_temp_store.jpg) center top no-repeat;
+  background-size: 100% auto;
 }
 .bnr_temp_store_inner {
   height: 100%;
@@ -2584,8 +2555,6 @@ div.store_bn1_btn {
 div.store_bn1_btn a {
   color: #fff;
   display: block;
-  font-size: 14px;
-  font-weight: 600;
   height: 100%;
   text-align: center;
   width: 100%;
@@ -2632,8 +2601,6 @@ div.store_bn2_btn {
 div.store_bn2_btn a {
   color: #222;
   display: block;
-  font-size: 14px;
-  font-weight: 600;
   height: 100%;
   text-align: center;
   width: 100%;
@@ -2680,8 +2647,6 @@ div.store_bn3_btn {
 div.store_bn3_btn a {
   color: #fff;
   display: block;
-  font-size: 14px;
-  font-weight: 600;
   height: 100%;
   text-align: center;
   width: 100%;
@@ -2694,12 +2659,21 @@ div.store_bn3_btn a:hover {
   color: #111;
   text-decoration: underline;
 }
+<<<<<<< HEAD
 /* �뵳�딉옙�뇡占� 筌띲끉�삢 store_bn3_section End */
 
 /*--------------------------------------------------------------
 # Store Drive 占쎈굡占쎌뵬占쎌뵠�뇡�슣�뮞�뙴占� 筌띲끉�삢
 --------------------------------------------------------------*/
 /* 筌띲끉�삢占쎈꺖揶쏉옙 */
+=======
+/* 리저브 매장 store_bn3_section End */
+
+/*--------------------------------------------------------------
+# Store Drive 드라이브스루 매장
+--------------------------------------------------------------*/
+/* 매장소개 */
+>>>>>>> cd738b27396aa8cad90f087a241e84636a309947
 .store_drive_container {
   width: 100%;
 }
@@ -2728,7 +2702,11 @@ article.full_text p span {
   color: #555;
 }
 
+<<<<<<< HEAD
 /* 占쎈굡占쎌뵬占쎌뵠�뇡�슣�뮞�뙴占� 占쎈뱜占쎌삌 */
+=======
+/* 드라이브스루 트랙 */
+>>>>>>> cd738b27396aa8cad90f087a241e84636a309947
 .drive_through_track {
   width: 100%;
   height: 663px;
@@ -2817,7 +2795,11 @@ article.full_text p span {
   bottom: 0px;  
 }
 
+<<<<<<< HEAD
 /* 筌띲끉�삢 筌욑옙占쎈즲 */
+=======
+/* 매장 지도 */
+>>>>>>> cd738b27396aa8cad90f087a241e84636a309947
 .driveStore_ber_wrap {
   position: relative;
   height: 80px;
@@ -2848,11 +2830,31 @@ article.driveStore_ber_innner dl:after {
   clear: both;
 }
 
+<<<<<<< HEAD
 /* 筌욑옙占쎈즲占쎌겫占쎈열 */
+=======
+/* 지도영역 */
+>>>>>>> cd738b27396aa8cad90f087a241e84636a309947
 .store_map_wrap {
   height: 631px;
   width: 100%;
 }
+.wrap {position: absolute;left: 0;bottom: 40px;width: 288px;height: 132px;margin-left: -144px;text-align: left;overflow: hidden;font-size: 12px;font-family: 'Malgun Gothic', dotum, '맑은고딕', sans-serif;line-height: 1.5;}
+.wrap * {padding: 0;margin: 0;}
+.wrap .info {width: 286px;height: 120px;border-radius: 5px;border-bottom: 2px solid #ccc;border-right: 1px solid #ccc;overflow: hidden;background: #fff;}
+.wrap .info:nth-child(1) {border: 0;box-shadow: 0px 1px 2px #888;}
+.info .title {padding: 10px 0 0 10px;height: 38px;background: #8c8279;border-bottom: 1px solid #ddd;font-size: 16px;font-weight: bold; color: white; text-indent: 8px;}
+.info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
+.info .close:hover {cursor: pointer;}
+.body-wrap {height: 150px; width: 100%; position: relative;}
+.body {margin: 2px 15px;}
+.desc {position: relative;margin: 10px 0 0 10px;height: 75px;}
+.desc .ellipsis {text-overflow: ellipsis;white-space: nowrap;}
+.desc .tel {display:flex; }
+.desc .tel img {align-items: center;}
+.img {padding:2px; width: 100%;height: 20px; border-bottom: 1px solid #ddd;color: #888;overflow: hidden;}
+.info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
+.info .link {color: #5085BB;}
 
 /*--------------------------------------------------------------
 # Store Reserve �뵳�딉옙�뇡占� 筌띲끉�삢
@@ -2904,7 +2906,7 @@ article.driveStore_ber_innner dl:after {
 }
 .reserve_store_middle01 h3 {
   position: absolute;
-  top: 60px;
+  top: 15px;
   left: 0;
   font-size: 16px;
   color: #222222;
@@ -2914,7 +2916,7 @@ article.driveStore_ber_innner dl:after {
 }
 .reserveStore_middle01 {
   background-image: url(/images/store/YjLYqU_20210405101532228.png);
-  padding-top: 76px;
+  padding-top: 5px;
   height: 260px;
   background-position: 103% 62%;
   background-repeat: no-repeat;
@@ -3203,334 +3205,97 @@ dl.rs_bottom01 dd p {
 /*--------------------------------------------------------------
 # Store Map
 --------------------------------------------------------------*/
-.store_height_wrap {
-  left: 0;
-  position: absolute;
-  top: 120px;
+#main_map {
+  margin-top: 120px;
+  margin-bottom: 100px;
 }
-.store_map_layer {
-  background: #fff;
-  border-radius: 3px;
-  box-shadow: 2px 0px 3px 0px rgb(0 0 0 / 20%);
-  -webkit-box-shadow: 2px 0px 3px 0px rgb(0 0 0 / 20%);
-  left: 20px;
-  position: absolute;
-  top: 20px;
-  width: 300px;
-  z-index: 7;
-}
-.find_store_wrap {
-  background: #fff;
-  border-radius: 3px;
-  height: 118px;
-  position: relative;
-}
+.map_wrap, .map_wrap * {
+  margin:0;
+  padding:0;
+  font-family:'nbg', '맑은 고딕', HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+  font-size:15px;
+  }
+.map_wrap a, .map_wrap a:hover, .map_wrap a:active{color:#000;text-decoration: none;}
+.map_wrap {position:relative;width:100%;height:700px;}
 .find_store_header {
-  border-top-left-radius: 3px;
-  float: left;
-  height: 58px;
-  left: 0;
-  position: absolute;
-  top: 0;
-  width: 50%;
-}
-.find_store_header h2.btn_find_store {
-  border-top-left-radius: 3px;
-  height: 58px;
+  height: 46px;
   width: 100%;
-}
-.btn_find_store {
-  margin: 0;
-}
-.find_store_header h2, .btn_find_store a {
-  background: url(/images/store/btn_find_store_on.png) center center no-repeat #006633;
-  border-top-left-radius: 3px;
-  display: block;
-  height: 100%;
-  overflow: hidden;
-  text-indent: -20000px;
-  width: 100%;
-}
-
-.find_store_wrap > article {
-  left: 0;
-  position: absolute;
-  top: 58px;
-  width: 100%;
-}
-.find_store_cont_header {
-  background: #fff;
-}
-.find_store_cont_header, .find_road_cont_header {
-  height: 60px;
-  position: relative;
-  background: #fff;
-}
-.btn_opt_chk {
-  background: url(/images/store/icon_opt_chk.png) 10px 12px no-repeat #fff;
-  border: 1px solid #222;
-  border-radius: 3px;
-  box-shadow: 2px 2px 2px 0px rgb(0 0 0 / 20%);
-  -webkit-box-shadow: 2px 2px 2px 0px rgb(0 0 0 / 20%);
-  /* display: none; */
-  height: 33px;
-  left: 10px;
-  line-height: 33px;
-  position: absolute;
-  top: 11px;
-  width: 90px;
-  z-index: 7;
-}
-p.btn_opt_chk a {
-  color: #666;
-  display: block;
-  font-size: 12px;
-  font-weight: bold;
-  height: 100%;
-  text-indent: 30px;
-  width: 100%;
-}
-.map_layer_toggle, .road_layer_toggle {
-  height: 44px;
-  position: absolute;
-  right: 10px;
-  top: 8px;
-  width: 44px;
-}
-.map_layer_toggle a, .road_layer_toggle a {
-  background: url(/images/store/map_layer_arrow_u.png);
-  background-size: 100% auto;
-  display: block;
-  height: 44px;
-  overflow: hidden;
-  text-indent: -20000px;
-  width: 44px;
-}
-
-
-.store_map_layer_cont {
-  background: #fff;
-  height: 551px;
-  position: relative;
-  width: 300px;
-}
-.store_map_layer_cont header.quick_search {
-  left: 0;
-}
-.store_map_layer_cont header.quick_search, .store_map_layer_cont header.loca_search {
-  border-right: 1px solid #ddd;
-}
-.store_map_layer_cont header {
-  float: left;
-  height: 40px;
-  position: absolute;
-  top: 0;
-  width: 50%;
-}
-.store_map_layer_cont header h3 {
-  background: #fff;
-  border-bottom: 1px solid #ddd;
-  border-top: 1px solid #ddd;
-  height: 38px;
-  line-height: 38px;
+  background: #006633;
   text-align: center;
-  width: 100%;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
 }
-
-.store_map_layer_cont header h3.on {
-  background: #006633;
-  border-color: #006633;
-  height: 38px;
-  line-height: 38px;
-}
-.store_map_layer_cont article {
-  padding: 40px 0 0 0;
-}
-.quick_search_input {
-  background: #006633;
-  height: 60px;
-  width: 100%;
-}
-.store_map_layer_cont header h3.on a {
+.find_store_header h2 {
+  padding-top: 6px;
+  font-size: 22px;
   color: #fff;
 }
-.store_map_layer_cont header h3 a {
-  display: block;
-  color: #444;
-  font-size: 12px;
-  height: 100%;
-  width: 100%;
+#menu_wrap {
+  position:absolute;
+  top:0;
+  left:0;
+  bottom:0;
+  width:350px;
+  height: 520;
+  margin:30px 0 40px 20px;
+  background:rgba(255, 255, 255);
+  z-index: 1;
+  font-size:15px;
+  border-radius: 10px;}
+.bg_white {background:#fff;}
+#menu_box {
+  margin: 0 0 0 5px;
+  padding:5px;
 }
-
-.store_map_layer_cont article {
-  padding: 40px 0 0 0;
+#menu_box hr {
+  display: block; 
+  height: 1px;
+  border: 0; 
+  border-top: 2px solid #5F5F5F;
+  margin:3px 0;
 }
-.quick_search_input {
-  background: #006633;
-  height: 60px;
-  width: 100%;
-}
-.quick_search_inner {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  float: left;
-  height: 38px;
-  margin: 10px 0 0 10px;
-  position: relative;
-  width: 278px;
-}
-.quick_search_inner input {
-  border: none;
-  float: left;
-  height: 100%;
-  margin-left: 2%;
-  padding: 0;
-  width: 96%;
-}
-input {
-  vertical-align: middle;
-}
-.quick_search_inner a {
-  background: url(/images/store/icon_magnifier.png);
-  display: block;
-  height: 23px;
-  overflow: hidden;
-  position: absolute;
-  right: 7px;
-  top: 7px;
-  text-indent: -20000px;
-  width: 19px;
-}
-
-.result_num_wrap.myStoreInfo {
-  line-height: inherit;
-  height: 22px;
-  padding-top: 5px;
-}
-.result_num_wrap, .result_num_wrap2 {
-  background: #f4f4f2;
-  color: #444;
-  font-size: 14px;
-  height: 54px;
-  line-height: 54px;
-  position: relative;
-  text-indent: 10px;
-  width: 100%;
-}
-.result_num_wrap strong, .result_num_wrap2 strong, .result_num_wrap3 strong {
-  font-size: 14px;
-}
-.t_006633 {
-  color: #006633;
-}
-.en {
-  font-family: arial, HelveticaNeue, DroidSans, Sans-serif, Helvetica;
-}
-.result_list_wrap {
-  background: #fff;
-  @height: 404px;
-  position: relative;
-  width: 100%;
-}
-/* @media screen and (min-width: 641px) and (max-width: 1600px) */
-.result_list {
-    height: 300px;
-    width: 100%;
-}
-.mCustomScrollbar {
-  /* -ms-touch-action: none; */
-  touch-action: none;
-}
-.result_list .mCustomScrollBox, .result_list2 .mCustomScrollBox, .result_list3 .mCustomScrollBox {
-  height: 98%;
-  padding-bottom: 0;
-}
-.mCustomScrollBox {
-  position: relative;
-  overflow: hidden;
-  height: 100%;
-  max-width: 100%;
-  outline: none;
-  direction: ltr;
-}
-.result_list .mCSB_inside > .mCSB_container, .result_list2 .mCSB_inside > .mCSB_container, .result_list3 .mCSB_inside > .mCSB_container {
-  margin-right: 0;
-}
-.mCSB_container {
-  overflow: hidden;
-  width: auto;
-  height: auto;
-}
-.result_list ul, .result_list2 ul, .result_list3 ul {
-  margin: 0 auto;
-  width: 280px;
-}
-.result_list ul li, .result_list2 ul li, .result_list3 ul li {
-  border-bottom: 1px solid #ddd;
+#menu_box .option{font-size: 15px; text-align: center;}
+#menu_box .option input {height:26px; width: 63%; font-size: 15px; display:inline-block; border: 1px solid #8a8a8a;}
+#menu_box .option {margin-top: 5px; margin-bottom: 10px;}
+#menu_box .option p {margin:10px 0;}  
+#menu_box .option button {margin-left:5px; height: 28px; width: 40px; border-radius: 3px; border: solid 1px #5F5F5F;}
+#placesList li {list-style: none;}
+#placesList .item {position:relative;border-bottom:1px solid #888;overflow: hidden;cursor: pointer;min-height: 65px;}
+#placesList .item span {display: block;margin-top:4px;}
+#placesList .item h5, #placesList .item .info {text-overflow: ellipsis;overflow: hidden;white-space: nowrap;}
+#placesList .item .info2{padding:10px 0 10px 55px;}
+#placesList .info2 .gray {color:#8a8a8a;}
+#placesList .info2 .tel {color:#009900;}
+#placesList .item .markerbg {
+  float:left;
+  position:absolute;
+  width:46px; 
+  height:60px;
+  margin:5px 0 0 0;
+  background:url('/images/store/pin_general.png') no-repeat;
+  }
+.placesList_box {width: auto; height: 500px;  overflow-y:auto;}
+#placesList .item .marker_1 {background-position: 0 -10px;}
+#placesList .item .marker_2 {background-position: 0 -56px;}
+#placesList .item .marker_3 {background-position: 0 -102px}
+#placesList .item .marker_4 {background-position: 0 -148px;}
+#placesList .item .marker_5 {background-position: 0 -194px;}
+#placesList .item .marker_6 {background-position: 0 -240px;}
+#placesList .item .marker_7 {background-position: 0 -286px;}
+#placesList .item .marker_8 {background-position: 0 -332px;}
+#placesList .item .marker_9 {background-position: 0 -378px;}
+#placesList .item .marker_10 {background-position: 0 -423px;}
+#placesList .item .marker_11 {background-position: 0 -470px;}
+#placesList .item .marker_12 {background-position: 0 -516px;}
+#placesList .item .marker_13 {background-position: 0 -562px;}
+#placesList .item .marker_14 {background-position: 0 -608px;}
+#placesList .item .marker_15 {background-position: 0 -654px;}
+#pagination {margin:10px auto;text-align: center;}
+#pagination a {display:inline-block;margin-right:10px;}
+#pagination .on {font-weight: bold; cursor: default;color:#777;}
+.bottom_wrap {
   height: 100px;
   position: relative;
-  width: 270px;
-}
-.result_list ul li strong, .result_list2 ul li strong, .result_list3 ul li strong {
-  color: #444;
-  float: left;
-  font-size: 14px;
-  height: 20px;
-  line-height: 20px;
-  margin-top: 8px;
-  width: 100%;
-}
-.result_list ul li p.result_details, .result_list2 ul li p.result_details, .result_list3 ul li p.result_details {
-  color: #666;
-  float: left;
-  font-size: 12px;
-  margin-top: 5px;
-  line-height: 1.4;
-  width: 80%;
-}
-.result_list ul li i, .result_list2 ul li i, .result_list3 ul li i {
-  background-size: 100% auto;
-  display: block;
-  height: 60px;
-  overflow: hidden;
-  position: absolute;
-  right: 5px;
-  text-indent: -20000px;
-  top: 22px;
-  width: 38px;
-}
-i.pin_reserve {
-  background: url(/images/store/pin/pin_reserve.png) no-repeat;
-}
-i.pin_general {
-  background: url(/images/store/pin/pin_general.png) no-repeat;
-}
-/* ========find road======== */
-.find_road_header {
-  border-top-right-radius: 3px;
-  float: right;
-  height: 58px;
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 50%;
-}
-.find_road_header h2.btn_find_road {
-  border-top-right-radius: 3px;
-  height: 58px;
-  width: 100%;
-}
-.btn_find_road {
-  margin: 0;
-}
-.find_road_header h2.btn_find_road a {
-  background: url(/images/store/btn_find_road_off.png) center center no-repeat #f4f4f2;
-  border-top-right-radius: 3px;
-  display: block;
-  height: 100%;
-  overflow: hidden;
-  text-indent: -20000px;
   width: 100%;
 }
 
@@ -4528,40 +4293,40 @@ input[type=text], input[type=number], input[type=password], input[type=tel], inp
   height: 165px;
   margin-bottom: 40px;
 }
-.paymentSlideArea .bxslide-main {
+.paymentSlideArea {
   position: relative;
   width: 100%;
   z-index: 1;
 }
-.paymentSlideArea .bxslide-main .bx-wrapper{
+.paymentSlideArea .bx-wrapper{
   max-width: 100%;
 }
-.paymentSlideArea .bxslide-main .bx-wrapper .bx-viewport{
+.paymentSlideArea .bx-wrapper .bx-viewport{
   width: 100%;
   overflow: hidden;
   position: relative;
   height: 165px;
 }
-.paymentSlideArea .bxslide-main .bx-wrapper .bx-viewport ul{
+.paymentSlideArea .bx-wrapper .bx-viewport ul{
   width: 315%;
   position: relative;
   transition-duration: 0s;
   transform: translate3d(-830px, 0px, 0px);
 }
 
-.paymentSlideArea .bxslide-main .bx-wrapper .bx-viewport ul.payment_slider li{
+.paymentSlideArea .bx-wrapper .bx-viewport ul.payment_slider li{
   float: left;
   list-style: none;
   position: relative;
   width: 690px;
   height: 165px;
 }
-.paymentSlideArea .bxslide-main .bx-wrapper .bx-viewport ul.payment_slider li a {
+.paymentSlideArea .bx-wrapper .bx-viewport ul.payment_slider li a {
   display: block;
   width: 100%;
   height: 100%;
 }
-.paymentSlideArea .bxslide-main .bx-wrapper .bx-viewport ul.payment_slider li a img {
+.paymentSlideArea .bx-wrapper .bx-viewport ul.payment_slider li a img {
   width: 100%;
   height: 100%;
 }
@@ -4682,7 +4447,7 @@ input[type=text], input[type=number], input[type=password], input[type=tel], inp
 .paymentSlideArea.type1.mobile, .paymentSlideArea.type2.mobile, .paymentSlideArea.type3.mobile {
   display: none;
 }
-.paymentSlideArea .bxslide-main {
+.paymentSlideArea {
   position: relative;
   width: 100%;
   z-index: 1;

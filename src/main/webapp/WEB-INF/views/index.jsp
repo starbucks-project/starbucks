@@ -45,17 +45,17 @@
               </p>
             </div>
             <div class="btn-signin_group">
-              <a href="#" class="btn-signin_join">회원가입</a>
-              <a href="/auth/login" class="btn-signin_login">로그인</a>
+              <a href="/auth/login" class="btn-signin_login">카카오 로그인</a>
+
             </div>
           </div>
           
           <div class="gift-cont">
             <div class="gift-cont_txt">
               <p>
-                회원 가입 후, 스타벅스 e-Gift Card를 <br class="pc-br"><br class="mobile-br"><strong>"나에게 선물하기"로 구매하시고, <br class="mobile-br">편리하게 등록하세요!</strong>
+                회원 가입 후, 스타벅스 e-Gift Card를 <br class="pc-br"><strong>"나에게 선물하기"로 구매하시고, 편리하게 등록하세요!</strong>
                 <br>
-                카드를 등록하여 스타벅스 리워드 회원이 되신 후, <br class="pc-br"><br class="mobile-br">첫 구매를 하시면 무료 음료쿠폰을 드립니다!
+                카드를 등록하여 스타벅스 리워드 회원이 되신 후, <br class="pc-br">첫 구매를 하시면 무료 음료쿠폰을 드립니다!
               </p>
             </div>
             <div class="btn_egift">
