@@ -811,7 +811,7 @@ iframe {
 .nuturition_tr{
   background-color: white;
   padding-bottom: 10px;
-  
+  margin-bottom: 10px;
 }
 
 .nuturition_title_right {
@@ -836,12 +836,15 @@ iframe {
   margin-left: 5px;
   background-color: white;
   padding-bottom: 10px;
+  border: solid gray 1px;
+
 }
 
 .nuturition_input input{
   width: 60px;
   margin-left: 10px;
   padding-bottom: 10px;
+  
 }
 
 .nuturition_input_left{
