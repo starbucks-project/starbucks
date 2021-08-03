@@ -1343,7 +1343,7 @@ dl.product_view_tab > dt a:hover, a:focus {
 }
 a:-webkit-any-link {
   cursor: pointer;
-  text-decoration: underline;
+  text-decoration: none;
 }
 dl.product_view_tab > dd {
   position: relative;
@@ -1708,7 +1708,6 @@ img {
 .btn_egift a:hover {
   text-decoration: underline;
 }
-<<<<<<< HEAD
 html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
   margin: 0;
   padding: 0;
@@ -1718,10 +1717,8 @@ html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pr
   background: transparent;
 }
 /*------- 筌롫뗄�뵥 占쎈뮞占쏙옙甕곕굞�뮞 �뵳�딆뜖占쎈굡 �뵳�됰뤀占쎈섰 占쎄국-------- */
-=======
 
 /*------- 硫붿씤 �뒪��踰낆뒪 由ъ썙�뱶 由щ돱�뼹 �걹-------- */
->>>>>>> cd738b27396aa8cad90f087a241e84636a309947
 
 /*------- pick your favorite 占쎈뻻占쎌삂-------- */
 #favWrap {
@@ -2638,21 +2635,12 @@ div.store_bn3_btn a:hover {
   color: #111;
   text-decoration: underline;
 }
-<<<<<<< HEAD
-/* �뵳�딉옙�뇡占� 筌띲끉�삢 store_bn3_section End */
 
-/*--------------------------------------------------------------
-# Store Drive 占쎈굡占쎌뵬占쎌뵠�뇡�슣�뮞�뙴占� 筌띲끉�삢
---------------------------------------------------------------*/
-/* 筌띲끉�삢占쎈꺖揶쏉옙 */
-=======
-/* 리저브 매장 store_bn3_section End */
 
 /*--------------------------------------------------------------
 # Store Drive 드라이브스루 매장
 --------------------------------------------------------------*/
 /* 매장소개 */
->>>>>>> cd738b27396aa8cad90f087a241e84636a309947
 .store_drive_container {
   width: 100%;
 }
@@ -2681,11 +2669,8 @@ article.full_text p span {
   color: #555;
 }
 
-<<<<<<< HEAD
-/* 占쎈굡占쎌뵬占쎌뵠�뇡�슣�뮞�뙴占� 占쎈뱜占쎌삌 */
-=======
+
 /* 드라이브스루 트랙 */
->>>>>>> cd738b27396aa8cad90f087a241e84636a309947
 .drive_through_track {
   width: 100%;
   height: 663px;
@@ -2774,11 +2759,7 @@ article.full_text p span {
   bottom: 0px;  
 }
 
-<<<<<<< HEAD
-/* 筌띲끉�삢 筌욑옙占쎈즲 */
-=======
-/* 매장 지도 */
->>>>>>> cd738b27396aa8cad90f087a241e84636a309947
+
 .driveStore_ber_wrap {
   position: relative;
   height: 80px;
@@ -2813,11 +2794,8 @@ article.driveStore_ber_innner dl:after {
   clear: both;
 }
 
-<<<<<<< HEAD
-/* 筌욑옙占쎈즲占쎌겫占쎈열 */
-=======
+
 /* 지도영역 */
->>>>>>> cd738b27396aa8cad90f087a241e84636a309947
 .store_map_wrap {
   height: 631px;
   width: 100%;
