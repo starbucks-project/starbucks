@@ -195,3 +195,36 @@
   });
 
 })(jQuery);
+
+  // -----------------------------
+  //  Drink List
+  // -----------------------------
+  $(document).ready(function(){
+  
+    $("div.product_list > dl > dd > ul > li").bind("click", function(){
+      goUrl = $(this).find("a").attr("href");
+      location.href = goUrl ;
+    });
+  
+    // 음료 - 카테고리 별 - 사진으로 보기 & 영양정보로 보기
+    $("dl.product_view_tab01 > dt > a:not(.selected)").parent().next().hide();
+    $("dl.product_view_tab01 > dt > a").bind("click", function(){
+
+      $("dl.product_view_tab01 > dt > a").removeClass("selected");
+      $(this).addClass("selected");
+      $("dl.product_view_tab01 > dd").hide();
+      $(this).parent().next().show();
+      return false;
+    });
+  
+    // 음료 - 서비스 별 - 사진으로 보기 & 영양정보로 보기
+    $("dl.product_view_tab02 > dt > a:not(.selected)").parent().next().hide();
+    $("dl.product_view_tab02 > dt > a").bind("click", function(){
+      $("dl.product_view_tab02 > dt > a").removeClass("selected");
+      $(this).addClass("selected");
+      $("dl.product_view_tab02 > dd").hide();
+      $(this).parent().next().show();
+      return false;
+    });
+  
+  });

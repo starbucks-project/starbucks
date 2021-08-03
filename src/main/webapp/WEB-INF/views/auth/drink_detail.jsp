@@ -24,7 +24,7 @@
             <p class="more_btn">
               <a href="javascript:void(0)" tabindex="-1" aria-hidden="true" role="presentation">
                 <img src="/images/drink-detail/more.png" alt="상세이미지">
-            </a><!-- 접근성_20171123 alt 추가 -->
+            </a>
           </p>
           </div>
           <div class="product_thum_wrap" id="product_thum_wrap">
@@ -41,7 +41,7 @@
             <p class="t1">콜드 브루와 바닐라빈이 콕콕 박힌 아이스크림이 블렌딩 되어 진하고 부드러운 콜드 브루 풍미를 느낄 수 있는 콜드 브루
             <br> * 아이스크림 블렌딩 콜드 브루는 BOGO쿠폰, 무료음료 쿠폰 등 일부 쿠폰 사용이 제한됩니다</p>
             <div class="myDrink">
-              <a href="javascript:popup()" role="button" title="나만의 음료 등록 옵션 열기">나만의 음료로 등록</a>
+              <a href="javascript:void(0)" role="button" title="나만의 음료 등록 옵션 열기">나만의 음료로 등록</a>
             </div>
           </div>
 
@@ -163,12 +163,53 @@
 
   </div>
 <!-- container  end-->
-<script>
-  function popup(){
-      var url = "/user/mymenu_re1";
-      var name = "나만의메뉴 등록";
-      var option = "width = 500, height = 500, top = 100, left = 200, location = no"
-      window.open(url, name, option);
-  }
+<div class="only_my_dimm" style="display: none;" aria-hidden="true" tabindex="0"></div>
+  <div class="only_my_drink" style="display: none;" role="dialog" aria-hidden="true" tabindex="0">
+    <div class="only_my_head">
+      <p class="tit">나만의 음료</p>
+      <p class="close"><a href="javascript:void(0)" class="btn_close" role="button">
+        <img src="/images/mymenu-register/btn_closesa.png" alt="팝업 닫기"></a></p>
+    </div>
+      
+    <!-- Step 1 -->
+    <div class="only_my_cont my_drink_step2" >
+      <dl class="my_sel_drink">
+        <dt>
+          <img alt="" class="skuImgUrl" src="/images/mymenu-register/아이스크림 블렌딩 콜드 브루.jpg"></dt>
+        <dd>
+          <p class="t1">아이스크림 블렌딩 콜드 브루<br><span>Ice Cream Blending Cold Brew</span></p>
+        </dd>
+      </dl>
+      <ul class="btn_list">
+        <li class="li1"><a href="/user/mymenu_re2" class="btn_go_my_drink_step3" role="button">나만의 음료에 등록</a></li>
+        <li class="li2"><a href="javascript:void(0)" class="btn_close" role="button">취소</a></li>
+      </ul>
+    </div>
+    <!-- Step 1 end-->
+<script>    
+	$(document).ready(function () {
+		
+		// [나만의 음료로 등록]
+       	$(".myDrink > a").on("click", function () {
+       					showPopMyDrink();
+       	});
+       		
+       	// [닫기]
+       	$(".btn_close").on("click", hidePopMyDrink);
+		});
+       	
+	// "나만의 음료로 등록" 팝업 출력
+    function showPopMyDrink() {
+                     // 레이어 팝업 출력
+                     $(".my_drink_step2").show();
+                     $(".only_my_dimm, .only_my_drink").fadeIn();
+                     $(".only_my_drink").attr("aria-hidden","false").attr("tabindex","0").focus(); 
+	}
+    
+	// "나만의 음료로 등록" 팝업 닫기
+	function hidePopMyDrink() {
+		$(".only_my_dimm , .only_my_drink , .only_my_drink2").attr("aria-hidden", "true").attr("tabindex", "0").fadeOut();// 접근성_20171123 aria, tabindex 추가
+		$(".myDrink > a").focus(); 
+	}
 </script>
 <%@include file="../layout/footer.jsp"%>
