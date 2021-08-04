@@ -81,8 +81,8 @@ public class UserController {
 
     if (userEntity == null) {
       user.setName(user.getNickname());
-      User principal = userRepository.save(user); // id:1, name: "정용주", nickname:"정용주", email:ssar@daum.com, createDate:
-                                                  // 자동
+      User principal = userRepository.save(user); // id:1, name: "정용주", nickname:"정용주", email:ssar@daum.com,
+                                                  // createDate:// 자동
       session.setAttribute("principal", principal);
     } else {
       session.setAttribute("principal", userEntity);
