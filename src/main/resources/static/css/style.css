@@ -3614,11 +3614,7 @@ h5, strong {
   margin-top: 19px;
   text-align: center;
 }
-.my_ms_card_btns p.my_ms_card_btn1 {
-  background: #222;
-  border: 1px solid #222;
-  margin: 0 5px;
-}
+
 .my_ms_card_btns p.my_ms_card_btn1 a, .my_ms_card_btns p.my_ms_card_btn3 a {
   color: #fff;
 }
