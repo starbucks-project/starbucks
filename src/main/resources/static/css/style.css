@@ -1325,7 +1325,8 @@ dl.product_view_tab> dt.dt1 a.selected {
   color: #fff;
 }
 dl.product_view_tab > dt.dt1 a {
-  font-size: 14px;
+  font-size: 16px;
+  font-weight: normal;
   background: url(/images/drink_list/icon_pic.png) 9px center no-repeat;
 }
 dl.product_view_tab > dt a {
@@ -1452,7 +1453,7 @@ ul ul {
   margin-block-end: 0px;
 }
 div.product_list > dl > dd > ul li dd {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: bolder;
   margin-left: 0px;
   color: #444;
@@ -1468,43 +1469,6 @@ div.product_list > dl > dd > ul:after {
   display: block;
   clear: both;
 }
-
-/* dt2 占쎌겫占쎈펶占쎌젟癰귣�以� 癰귣떯由� */
-dl.product_view_tab > dt.dt2 {
-  left: 130px;
-}
-dl.product_view_tab > dt {
-  position: absolute;
-  top: 0;
-  z-index: 1;
-}
-dt {
-  display: block;
-}
-dl.product_view_tab > dt.dt2 a {
-
-  background: url(/images/drink_list/icon_ante.png) 9px center no-repeat;
-}
-dl.product_view_tab > dt.dt2 a.selected {
-  background: #666 url(/images/drink_list/icon_ante_on.png) 9px center no-repeat;
-  color: #fff;
-}
-dl.product_view_tab > dt a {
-  display: block;
-  height: 26px;
-  line-height: 26px;
-  font-size: 14px;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  padding: 0 9px 0 25px;
-  color: #666;
-  cursor: pointer;
-  text-decoration: none;
-}
-a:hover {
-  text-decoration: none;
-}
-
 
 /*--------------------------------------------------------------
 # Index - 筌롫뗄�뵥占쎈읂占쎌뵠筌욑옙
@@ -2203,9 +2167,9 @@ img.m_pic {
 .only_my_drink {
   position: absolute;
   left: 50%;
-  top: 150px;
+  top: 180px;
   margin-left: -210px;
-  width: 440px;
+  width: 480px;
   border-radius: 3px;
   overflow: hidden;
   z-index: 10001;
@@ -2218,15 +2182,14 @@ img.m_pic {
   background: #8c8279;
 }
 .only_my_drink div.only_my_head p.tit {
-  font-size: 16px;
-  font-weight: bold;
+  font-size: 18px;
   color: #fff;
   padding-left: 30px;
 }
 .only_my_drink div.only_my_head p.close {
   position: absolute;
   right: 20px;
-  top: 5px;
+  top: 15px;
 }
 .only_my_drink div.only_my_head p.close a {
   display: block;
@@ -2352,7 +2315,7 @@ img.m_pic {
 .only_my_drink2 div.only_my_head p.close {
   position: absolute;
   right: 20px;
-  top: 5px;
+  top: 15px;
 }
 .only_my_drink2 div.only_my_head p.close a {
   display: block;
@@ -3722,7 +3685,7 @@ h5, strong {
 .ms_nav > ul > li > a {
   color: #444;
   display: block;
-  font-size: 14px;
+  font-size: 16px;
   padding: 20px 30px 20px 15px;
   position: relative;
   width: 220px;
@@ -3749,7 +3712,7 @@ h5, strong {
 .ms_nav > ul > li > ul > li > a {
   color: #444;
   display: block;
-  font-size: 12px;
+  font-size: 15px;
   padding: 6px 0 6px 15px;
   width: 205px;
 }
@@ -5144,4 +5107,211 @@ dl.shopBag_infoBox01 {
   height: 28px;
   padding: 10px 0 10px 0;
   width: 788px;
+}
+
+/*--------------------------------------------------------------
+# mymenu
+--------------------------------------------------------------*/
+/* (My 음료/매장) info */
+section.my_drinkShop_info {
+  position: relative;
+  padding-top: 40px;
+
+}
+
+div.drinkShop_info dl.content_tabmenu {
+  position: relative;
+  padding-top: 40px;
+}
+.newMyTab div.drinkShop_info dl.content_tabmenu dt.tab_02 {
+  left: 0;
+  margin-left: 0;
+}
+div.drinkShop_info dl.content_tabmenu dt.tab {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 5;
+}
+div.drinkShop_info dl.content_tabmenu dt.tab.on a, div.drinkShop_info dl.content_tabmenu dt.tab a:hover {
+  box-sizing: border-box;
+  height: 40px;
+  line-height: 40px;
+}
+.newMyTab div.drinkShop_info dl.content_tabmenu dt.tab_02 a {
+  border-left: 1px solid #ddd;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+.newMyTab div.drinkShop_info dl.content_tabmenu dt.tab a {
+  width: 277px;
+  box-sizing: border-box;
+  height: 40px;
+  line-height: 40px;
+}
+div.drinkShop_info dl.content_tabmenu dt.tab_first a {
+  display: block;
+  width: 206px;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: #444;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+div.drinkShop_info dl.content_tabmenu dd.panel {
+  z-index: 4;
+  margin-inline-start: 0;
+}
+.drinkShop_info_pick {
+  margin-top: 40px;
+}
+table.drinkShop_view_info_tbl {
+  border-top: 1px solid #333;
+  font-size: 16px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+table.drinkShop_view_info_tbl caption {
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  text-indent: -20000px;
+  width: 0;
+}
+caption {
+  display: table-caption;
+  text-align: -webkit-center;
+}
+col {
+  display: table-column;
+}
+table.drinkShop_view_info_tbl thead tr th {
+  border-bottom: 1px solid #333;
+  color: #222;
+  height: 46px;
+  vertical-align: middle;
+}
+.ez-checkbox {
+  zoom: 1;
+  background: transparent url("/images/ck_icon.jpg") 0 0 no-repeat;
+  display: inline-block;
+}
+input[type="checkbox"] {
+  height: 12px;
+  width: 12px;
+}
+.en {
+  font-family: arial, HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+}
+th {
+  display: table-cell;
+  vertical-align: inherit;
+  font-weight: bold;
+  text-align: -internal-center;
+}
+table.drinkShop_view_info_tbl tbody tr td {
+  border-bottom: 1px solid #dbdbdb;
+  color: #666;
+  height: 46px;
+  padding: 7px 0;
+  vertical-align: middle;
+}
+table.drinkShop_view_info_tbl tbody tr td.tl {
+  text-align: left;
+  padding: 0 10px 0 100px;
+}
+
+table.drinkShop_view_info_tbl tbody tr td.tl  a {
+  color: #000;
+}
+
+ /* (My 음료/매장) 버튼  */
+div.drinkShop_btnZone {
+  padding-bottom: 30px;
+  position: relative;
+}
+div.drinkShop_btnZone:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+div.drinkShop_btnZone ul {
+  margin-left: -5px;
+  float: left;
+}
+div.drinkShop_btnZone ul li {
+  float: left;
+  border: 1px solid #cccccc;
+  background: #fcfcfc;
+  border-radius: 3px;
+  width: 68px;
+  margin-left: 5px;
+}
+div.drinkShop_btnZone ul li a {
+  color: #444;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: 21px;
+  line-height: 21px;
+  text-align: center;
+  width: 100%;
+}
+/* (My 음료/매장) 페이징 */
+div.drinkShop_tbl_pagination {
+  height: 27px;
+  width: 100%;
+}
+div.drinkShop_tbl_pagination ul.pager {
+  text-align: center;
+}
+div.drinkShop_tbl_pagination ul.pager li {
+  display: inline-block;
+  margin: 0 5px;
+  vertical-align: middle;
+}
+div.drinkShop_tbl_pagination ul.pager li a {
+  font-size: 16px;
+  color: #555;
+}
+div.drinkShop_tbl_pagination ul.pager li.active a {
+  font-weight: bold;
+  color: #0d5f34;
+  border-bottom: 1px solid #0d5f34;
+}
+
+/* 3번 */
+.newMyTab div.drinkShop_info dl.content_tabmenu dt.tab_03 {
+  margin-left: -138px;
+}
+div.drinkShop_info dl.content_tabmenu dt.tab_03 {
+  left: 50%;
+}
+div.drinkShop_info dl.content_tabmenu dt.tab {
+  position: absolute;
+
+  top: 0;
+  z-index: 5;
+}
+.newMyTab div.drinkShop_info dl.content_tabmenu dt.tab a {
+  width: 277px;
+  box-sizing: border-box;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+    color: #444;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
