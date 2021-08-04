@@ -20,18 +20,21 @@
 			<div class="manager_login_form" >
         
         <div class="manager_form_box">
-				<form id="login_form" method="post" role="form">
+				
           <div class="id_pw_box">
-				<input class="manager_login"  name="manager_id" type="text" maxlength="20" placeholder="아이디를 입력해 주세요." required="required" autocomplete="off">
-				<input class="manager_login"  name="manager_pw" type="password" maxlength="20" placeholder="비밀번호를 입력해 주세요." required="required" autocomplete="off">
+		  	<form action="/manager/login" id="login_form" method="post" role="form">
+				<input class="manager_login"  name="managerId" type="text" maxlength="20" placeholder="아이디를 입력해 주세요." required="required" autocomplete="off">
+				<input class="manager_login"  name="managerPw" type="password" maxlength="20" placeholder="비밀번호를 입력해 주세요." required="required" autocomplete="off">
+				<input type="submit" value="로그인" />
+				</form>
           </div>
 					
           <hr />
           <div class="managerloginfunc_button_box">
-				<button class="managerlogin_button"><a href="/manager/login">로그인</a></button>						
+										
           </div><!-- end managerloginfunc-button-box-->
 					
-			</form>
+			
       </div> <!-- end form-box -->
 			</div> <!-- end login form-->
     </div> <!-- end login-box-->

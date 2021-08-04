@@ -7,6 +7,11 @@ GRANT ALL PRIVILEGES ON *.* TO 'starbucks'@'%';
 CREATE DATABASE starbucks;
 ```
 
+## manager table 더미 데이터
+```sql
+INSERT INTO manager(manager_Id, manager_Pw) VALUES('admin', '1234');
+```
+
 ### 추가 의존성
 ```xml
 <dependency>

@@ -37,7 +37,7 @@
 								</div> <!-- end login-warn-box -->
 								<hr />
 								<div class="managerlogin_button_box">
-									<a class="managerlogin_button" href="/auth/manager/login">관리자 로그인</a>						
+									<a class="managerlogin_button" href="/auth/manager/loginform">관리자 로그인</a>						
 								</div> <!-- end managerlogin-button-box -->						
 							
 						</div> <!-- end form-box -->

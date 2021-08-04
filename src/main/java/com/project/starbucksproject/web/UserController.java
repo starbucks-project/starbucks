@@ -97,48 +97,5 @@ public class UserController {
     return "redirect:/";
   }
 
-  @GetMapping("/manager")
-  public String managerHome() {
-    return "manager/managerHome";
-  }
-
-  @GetMapping("/manager/userlist")
-  public String userlistForm() {
-    return "manager/manageUser";
-  }
-
-  @GetMapping("/manager/detail")
-  public String productDetailForm() {
-    return "manager/productDetail";
-  }
-
-  @GetMapping("/manager/updateForm")
-  public String updateProductForm() {
-    return "manager/uploadProduct";
-  }
-
-  @GetMapping("/manager/saledProduct")
-  public String saledProductForm() {
-    return "manager/saledProduct";
-  }
-
-  // manager Login
-  @PostMapping("/manager/login")
-  public String managerLogin(Manager manager) {
-    Manager managerEntity = managerRepository.mMangerLogin(manager.getManagerId(), manager.getManagerPw());
-
-    if (managerEntity == null) {
-      return "auth/managerLogin";
-    } else {
-      session.setAttribute("managerPrincipal", managerEntity);
-      return "manager/managerHome";
-    }
-
-  }
-
-  @GetMapping("/manager/logout")
-  public String managerLogout() {
-    session.invalidate();
-    return "redirect:/";
-  }
+  
 }

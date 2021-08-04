@@ -5,6 +5,6 @@ import org.springframework.data.jpa.repository.Query;
 
 public interface ManagerRepository extends JpaRepository<Manager, Integer> {
 
-    @Query(value = "SELECT * FROM manager WHERE managerId = :managerId AND managerPw = :managerPw ", nativeQuery = true)
-    Manager mMangerLogin(String managerId, String managerPw);
+    @Query(value = "SELECT * FROM manager WHERE manager_id = :manager_id AND manager_pw = :manager_pw", nativeQuery = true)
+    Manager mLogin(String manager_id, String manager_pw);
 }

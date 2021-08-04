@@ -92,7 +92,8 @@
         </div><!-- end upper-nav-->
       </div> <!-- end upper-->
       <div class="lower">
-        
+        <c:choose>
+          <c:when test="${empty sessionScope.managerPrincipal}">
         <div class="dropdown"><a href="/menu"><span>Menu</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
             <li><a href="/auth/drink_list">Drink</a></li>
@@ -100,6 +101,7 @@
             <li><a href="#">Product</a></li>
             <li><a href="#">Card</a></li>
           </ul>
+          
         </div> <!-- end dropdown-->
         <div class="dropdown"><a href="/store"><span>Store</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
@@ -108,8 +110,21 @@
             <li><a href="/auth/store_drive">드라이브 스루</a></li>
             <li><a href="/auth/store_reserve">리저브 매장</a></li>
           </ul>
+        </div> <!--end dropdown --> 
+        </c:when>
+        <c:otherwise>
+          <div class="dropdown"><a href="/manager/uploadForm"><span>상품 등록</span></a></div>
+          <div class="dropdown"><a href="/manager/userlist"><span>회원관리</span></a></div>
+          <div class="dropdown"><a href="/manager/saledProduct"><span>판매현황</span></a></div>
+        </c:otherwise>
+        </c:choose>
           
-<%-- 
+  </nav>
+
+      
+  </header><!-- End Header -->
+
+  <%-- 
           <c:choose>
           <!-- 회원/관리자 모두 로그인 전 -->
           <c:when test="${(empty sessionScope.principal)&&(empty sessionScope.managerPrincipal)}"> 
@@ -164,8 +179,4 @@
           </c:choose>
         </div><!-- end dropdown-->
       </div> <!-- end lower--> --%>
-
-      </nav><!-- .navbar -->
-    </div> <!-- end outer-->
-  </header><!-- End Header -->
 
