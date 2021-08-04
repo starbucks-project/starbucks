@@ -228,3 +228,54 @@
     });
   
   });
+
+   // -----------------------------
+  //  Drink Detail
+  // -----------------------------
+$(document).ready(function () {
+		
+		// [나만의 음료로 등록]
+    $("#myDrink").on("click", function () {
+                console.log("1");
+       					showPopMyDrink();
+       	      });
+       		
+    // [닫기]
+    $(".btn_close").on("click", hidePopMyDrink);
+    //나만의 메뉴에 등록
+    $(".btn_go_my_drink_step3").on("click", goMyDrinkStep3); 
+    $(".btn_myMenuRegister").on("click", myMenuRegister);
+	});
+       	
+	 // "나만의 음료로 등록" 팝업 출력
+   function showPopMyDrink() {
+      // 레이어 팝업 출력
+         console.log("2");
+         $(".my_drink_step2").show();
+         $(".only_my_drink2").hide();
+         console.log("3");
+         $(".only_my_dimm, .only_my_drink").fadeIn();
+         console.log("4");
+         $(".only_my_drink").attr("aria-hidden","false").attr("tabindex","0").focus(); 
+         console.log("5");
+	    }
+    
+	// "나만의 음료로 등록" 팝업 닫기
+	function hidePopMyDrink() {
+		$(".only_my_dimm , .only_my_drink , .only_my_drink2").attr("aria-hidden", "true").attr("tabindex", "0").fadeOut();// 접근성_20171123 aria, tabindex 추가
+		$(".myDrink > a").focus(); 
+	}
+
+  // "나만의 음료에 등록" 팝업 출력
+	function goMyDrinkStep3() {
+    console.log("6");
+		$(".only_my_drink").attr("aria-hidden","true").attr("tabindex","-1").fadeOut(); 
+    console.log("7");
+	  $(".only_my_drink2").attr("aria-hidden","false").attr("tabindex","0").fadeIn(); 
+    console.log("8");
+
+		// $("#nickname").attr("placeholder",m_title);
+		
+		$("#nickname").focus();
+    console.log("9");
+	}
