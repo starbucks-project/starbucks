@@ -57,36 +57,15 @@
                                                         <div class="ez-checkbox"><input type="checkbox" name="drinkShop_view_ck2" title="선택" value="12021080402290715612" class="ez-hide"></div>
                                                     </td>               
                                                     <td>1</td>               
-                                                    <td class="tl">                               
-                                                        <a href="javascript:void(0);" class="btn_show_pop_detail" data-favoriteno="12021080402290715612">콜드브루</a>                          
+                                                    <td class="tl">
+                                                        <div id="btn_show_pop_detail">                            
+                                                        <a href="javascript:void(0);" class="btn_show_pop_detail" data-favoriteno="12021080402290715612">콜드브루</a>
+                                                        <div>             
                                                     </td>                            
                                                     <td>2021-08-04 02:29:07</td>              
                                                 </tr>
                                             </tbody>
                                         </table>
-                                        <script id="favoriteList01" type="text/x-jquery-tmpl">
-                                                <tr>
-                                                    <td><input type="checkbox" name="drinkShop_view_ck2" title="선택" value="${favoriteNo}" /></td>
-                                                    <td>${$item.getSeq()}</td>
-                                                    <td class="tl">
-                                                    {{if nickName == ''}}
-                                                        <a href="javascript:void(0);" class="btn_show_pop_detail" data-favoriteNo="${favoriteNo}">${skuName}</a>
-                                                    {{else}}
-                                                        <a href="javascript:void(0);" class="btn_show_pop_detail" data-favoriteNo="${favoriteNo}">${nickName}</a>
-                                                    {{/if}}
-                                                    <!-- 150904 수정 -->
-                                                        <a class="myFavorite" href="javascript:void(0)" data-favoriteNo="${favoriteNo}" data-myFavoriteYn="${myFavoriteYn}">
-                                                        {{if myFavoriteYn == 'Y'}}
-                                                            <img alt="" src="//image.istarbucks.co.kr/common/img/store/icon_fav_on.png">
-                                                        {{else}}
-                                                            <img alt="" src="//image.istarbucks.co.kr/common/img/store/icon_fav_off.png">
-                                                        {{/if}}
-                                                        </a>
-                                                        <!-- 150904 수정 end -->
-                                                    </td>
-                                                    <td>{{html $item.getCustomList}}</td>
-                                                    <td>${regDate}</td>
-                                                </tr>
                                         </script>
                                         <!-- (My 음료/매장) 목록 end -->
                                         
@@ -111,53 +90,48 @@
                                     </ul>
                                 </div>
                                 <!-- (My 음료/매장) 페이징 -->
-                                
                                 <!-- 음료 팝업 시작 -->
-                                <div class="sArea_pop" id="pop02" style="display:none;">
-                                    <p class="btn_pop_close"><a href="javascript:void(0);">닫기</a></p>
-                                    <section class="sArea_pop_inner">
-                                        <!-- 내용 -->
-                                        <div id="landing_wrap">
-                                            <div class="landing_inner_wrap">
-                                                <header class="landing_ttl">
-                                                    <p class="en">MY FAVORITE DRINK</p>
-                                                    <h1><!-- 레몬 진저 &amp; 망고 젤리 피지오 --></h1>
-                                                </header>
-                                                <p class="calling_name_ttl">
-                                                    <!-- <img alt="콜링네임" src="//image.istarbucks.co.kr/common/img/landing/calling_name_ttl.png">톨 9위드 칩 라이트 토핑 아이스 화이트 초콜릿 모카 -->
-                                                </p>
-                                                <p class="landing_comments_date"><!-- 2015/03/01 12:39 --></p>
-                                                <div class="landing_conts_wrap">
-                                                    <div class="landing_conts_img"><!-- <img alt=""> --></div>
-                                                    <div class="landing_conts_txt">
-                                                        <dl>
-                                                            <dt>기본 음료</dt>
-                                                            <dd><!-- 레몬진저 피지오 --></dd>
-                                                        </dl>
-                                                        
-                                                        <dl id="extractEquipment">
-                                                            <dt>추출기구</dt>
-                                                            <dd class="extractEquipmentName"></dd>
-                                                        </dl>
-                                                        <dl class="last">
-                                                            <dt>퍼스널옵션</dt>
-                                                            <dd class="customList"><!-- 아이스화이트초콜릿모카<br>화이트모카 시럽+1<br>일반 우유+1<br>일반 휘핑+1<br>토핑 적게+1<br>프라푸치노 자바칩+9 --></dd>
-                                                        </dl>															
-                                                        <div class="btn_bev_info">
-                                                            <p><a href="javascript:void(0);">음료 정보</a></p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- 내용 end -->
-                                    </section>														
-                                </div> 
-                                <!-- 음료 팝업 end -->
+                                <div class="only_my_dimm" style="display: none;" aria-hidden="true" tabindex="0"></div>
+                                <div class="sArea_pop" id="pop02" style="display: none;" role="dialog" aria-hidden="true"  tabindex="0">
+        <p class="btn_pop_close"><a href="javascript:void(0);">닫기</a></p>
+        <section class="sArea_pop_inner">
+            <!-- 내용 -->
+            <div id="landing_wrap">
+                <div class="landing_inner_wrap">
+                    <header class="landing_ttl">
+                        <p class="en">MY FAVORITE DRINK</p>
+                        <h1>레몬 진저 &amp; 망고 젤리 피지오</h1>
+                    </header>
+                    <p class="calling_name_ttl">
+                        <img alt="콜링네임" src="/images/calling_name_ttl.png">그란데 망고바나나 블랜디드
+                    </p>
+                    <p class="landing_comments_date">2021-08-04 17:35:25</p>
+                    <div class="landing_conts_wrap">
+                        <div class="landing_conts_img">
+                            <img src="/images/망고바나나블랜디드.jpg">
+                        </div>
+                        <div class="landing_conts_txt">
+                            <dl>
+                                <dt>기본 음료</dt>
+                                <dd>망고 바나나 블렌디드</dd>
+                            </dl>														
+                            <div class="btn_bev_info">
+                                <p><a href="/menu/drink_view.do?product_cd=169001">음료 정보</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 내용 end -->
+        </section>														
+    </div> 
+    <!-- 음료 팝업 end -->
                             </dd>
                             <!-- 2번 끝 -->
                             <!--3번 시작-->
                             <dt class="tab tab_03"><h5><a href="javascript:void(0);">나만의 푸드</a></h5></dt>
+                            <!--4번 시작-->
+                            <dt class="tab tab_last tab_04"><h5><a href="javascript:void(0);">나만의 상품</a></h5></dt>
                         </dl>
                     </div>
                 </section>
@@ -228,4 +202,5 @@
         </div><!-- Container end -->
     </div><!-- Body inner end -->
 </main>	
+
 <%@include file="../layout/footer.jsp"%>

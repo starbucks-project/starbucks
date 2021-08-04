@@ -83,7 +83,7 @@
             <div class="upper-nav-item"><a class="active" href="/">Home</a></div>
             <div class="upper-nav-item" onclick="kakaoLoagout()"><a href="">logout</a></div>
             <div class="upper-nav-item"><a href="#">cart</a></div>
-            <div class="upper-nav-item"><a href="#">mystarbucks</a></div>
+            <div class="upper-nav-item"><a href="/user/mypage">mystarbucks</a></div>
             <div class="upper-nav-item"><a href="#">find a store</a></div>
           </c:otherwise>
         </c:choose>

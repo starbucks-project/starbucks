@@ -4,7 +4,7 @@ Kakao.init('74e13a87230e8260bbc61fa5f6475239');
 // SDK 초기화 여부를 판단합니다.
 console.log(Kakao.isInitialized());
 
-async function kakaoLogin() {
+function kakaoLogin() {
   Kakao.Auth.login({
   success: async function (response) {
     Kakao.API.request({
@@ -17,7 +17,7 @@ async function kakaoLogin() {
 
         let userDto={
           email: email,
-          nickname: nickname,
+          nickname: nickname
           // birthday: birthday
         }; // end let userDto
 
@@ -29,11 +29,11 @@ async function kakaoLogin() {
           }
         }); // end let dataResponse
 
-        let parseResposne = await dataResponse.text();
+        let parseResponse = await dataResponse.text();
       
-        console.log(parseResposne);
+        console.log(parseResponse);
         if(parseResponse === "OK"){
-          location.href("/");
+          location.href="/"
         }else{
           alert("로그인실패");
         } // end if-else

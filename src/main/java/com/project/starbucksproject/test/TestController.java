@@ -21,6 +21,11 @@ public class TestController {
         return "user/mymenu";
     }
 
+    @GetMapping("/mymenu_pop")
+    public String mymenuPop() {
+        return "user/mymenu_popup";
+    }
+
     @GetMapping("/user/cardCharge")
     public String cardCharge() {
         return "user/cardCharge";

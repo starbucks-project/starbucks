@@ -209,7 +209,7 @@
                 </li>
 
                 <li>
-                  <a href="#" required="login" data-href="#">
+                  <a href="/user/mymenu" required="login" data-href="#">
                      My메뉴
                     </a>
                 </li>

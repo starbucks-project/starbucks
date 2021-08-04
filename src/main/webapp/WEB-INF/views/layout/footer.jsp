@@ -120,6 +120,48 @@
 
   <!-- Template Main JS File -->
   <script src="/plugins/js/main.js"></script>
+  <script>
+    $(document).ready(function () {
+		
+		// [나만의 메뉴 팝업]
+    $("#btn_show_pop_detail").on("click", function () {
+            console.log("1");
+       			showPopMyMenu();
+       	      });
+    // [닫기]
+    $(".btn_pop_close").on("click", hidePopMyMenu);
+	});
+
+  // "나만의 메뉴 자세히보기" 팝업 출력
+  function showPopMyMenu() {
+    // 레이어 팝업 출력
+       console.log("2");
+       $(".sArea_pop").show();
+       console.log("3");
+       $(".only_my_dimm, .sArea_pop").fadeIn();
+       console.log("4");
+       $(".sArea_pop").attr("aria-hidden","false").attr("tabindex","0").focus(); 
+    }
+
+  // "나만의 메뉴 자세히보기" 팝업 닫기
+	function hidePopMyMenu() {
+		$(".only_my_dimm , .sArea_pop").attr("aria-hidden", "true").attr("tabindex", "0").fadeOut();
+		$(".btn_show_pop_detail > a").focus(); 
+	}
+  $(function(){ 
+            //전체선택 체크박스 클릭 
+            $(".btn_all_check").click(function(){ 
+                //만약 전체 선택 체크박스가 체크된상태일경우 
+                if($(".btn_all_check").prop("checked")) { 
+                    //해당화면에 전체 checkbox들을 체크해준다 
+                    $("input[type=checkbox]").prop("checked",true);  // 전체선택 체크박스가 해제된 경우 
+                } else { 
+                        //해당화면에 모든 checkbox들의 체크를해제시킨다. 
+                        $("input[type=checkbox]").prop("checked",false); 
+                    } 
+                }) 
+            })
+</script>
 
 
   </html>
