@@ -41,6 +41,11 @@ public class TestController {
         return "user/Cart";
     }
 
+    @GetMapping("/user/egift")
+    public String eGift() {
+        return "user/eGift";
+    }
+
     @GetMapping("/user/purchaseHistory")
     public String purchaseHistory() {
         return "user/purchaseHistory";
