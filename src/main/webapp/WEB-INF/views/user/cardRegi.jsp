@@ -100,14 +100,10 @@
             <ul style="display: block;">
               
               <li>
-                <a href="#" required="login" data-href="#">
-                  · 선물하기</a>
-              </li>
-              <li>
-                <a href="#" required="login" data-href="#">
-                  · 선물내역</a>
-              </li>
-             
+						<a href="/user/egift" required="login" data-href="#">
+						  · 선물하기</a>
+					  </li>
+        
             </ul>
           </li>
 

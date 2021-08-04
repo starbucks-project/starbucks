@@ -91,6 +91,14 @@ ul, li{
 .body-inner .container{
 	width: 100%
 }
+option {
+  font-weight: normal;
+  display: block;
+  white-space: nowrap;
+  min-height: 1.2em;
+  padding: 0px 2px 1px;
+}
+
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -3606,11 +3614,7 @@ h5, strong {
   margin-top: 19px;
   text-align: center;
 }
-.my_ms_card_btns p.my_ms_card_btn1 {
-  background: #222;
-  border: 1px solid #222;
-  margin: 0 5px;
-}
+
 .my_ms_card_btns p.my_ms_card_btn1 a, .my_ms_card_btns p.my_ms_card_btn3 a {
   color: #fff;
 }
@@ -4579,7 +4583,7 @@ select:not(:-internal-list-box) {
 }
 .txt_red {
   color: #a52035;
-  background: url("/images/bullet_star_red.gif");
+ 
 }
 .charge_level_guide {
   float: left;
@@ -5322,6 +5326,7 @@ div.drinkShop_info dl.content_tabmenu dt.tab a {
   height: 38px;
   line-height: 38px;
   text-align: center;
+<<<<<<< HEAD
   font-size: 16px;
   font-weight: bold;
   color: #444;
@@ -5481,3 +5486,346 @@ header.landing_ttl h1 {
   text-align: center;
   width: 100%;
 }
+=======
+    font-size: 12px;
+    font-weight: bold;
+    color: #444;
+    background: #fff;
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+}
+
+/* egift =====================*/
+.egift_wrap{
+  margin: 10%;
+}
+.msr_sub_ttl_wrap {
+  height: 91px;
+  position: relative;
+  width: 100%;
+}
+.msr_sub_ttl_wrap div.msr_sub_ttl_inner {
+  height: 28px;
+  margin: 0 auto;
+  padding-top: 48px;
+  position: relative;
+  width: 1100px;
+}
+.msr_sub_ttl_wrap h4 {
+  position: relative;
+
+}
+.card_gift_info_section {
+  padding-bottom: 70px;
+  margin: 0 auto;
+  position: relative;
+  width: 1100px;
+}
+
+.card_gift_info_section form fieldset legend {
+  color: #222;
+  font-size: 18px;
+}
+.card_gift_info_section legend {
+  display: block;
+  width: 100%;
+  font-weight: bold;
+  text-align: center;
+  background: #f4f4f2;
+  padding: 25px 0;
+  margin-bottom: 40px;
+}
+.gift_card_visual {
+  background: url("https://www.starbucks.co.kr/common/img/msr/sceGift/gift_wave_bg.png") left bottom no-repeat;
+  height: auto;
+  padding-bottom: 10px;
+}
+.gift_card_visual dl dd {
+  height: 41px;
+  line-height: 41px;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 18px;
+  color: #006633;
+}
+.gift_card_visual dl dt {
+  text-align: center;
+}
+.gift_card_visual dl dt img {
+  width: 300px;
+}
+table .gift_info_tbl {
+  border-top: 1px solid #333;
+  margin-top: 20px;
+  text-align: left;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+table.gift_info_tbl caption {
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  text-indent: -20000px;
+  width: 0;
+}
+colgroup {
+  display: table-column-group;
+}
+table.gift_info_tbl tr th {
+  background: #f4f4f4;
+  border-bottom: 1px solid #ddd;
+  color: #444;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 17px 20px;
+  vertical-align: middle;
+}
+table.gift_info_tbl tr td {
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 17px 20px;
+  font-size: 14px;
+}
+table.gift_info_tbl tr td div.tbl_card_radio {
+  height: 13px;
+  width: 100%;
+}
+table.gift_info_tbl tr td div.tbl_card_radio input {
+  float: left;
+  height: 13px;
+  margin-right: 5px;
+  padding: 0;
+  width: 13px;
+}
+table.gift_info_tbl tr td div.tbl_card_radio label {
+  color: #666;
+  float: left;
+  font-size: 14px;
+  margin-right: 12px;
+}
+table.gift_info_tbl tr td div.tbl_card_radio input {
+  float: left;
+  height: 13px;
+  margin-right: 5px;
+  padding: 0;
+  width: 13px;
+}
+table.gift_info_tbl tr td div.tbl_card_radio label {
+  color: #666;
+  float: left;
+  font-size: 14px;
+  margin-right: 12px;
+}
+.pre_regi_number {
+  float: left;
+  line-height: 28px;
+}
+.btn_pre_regi {
+  background: #006633;
+  border-radius: 3px;
+  float: left;
+  height: 28px;
+  margin-left: 10px;
+  width: 60px;
+}
+.btn_pre_regi a {
+  color: #fff;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  height: 100%;
+  line-height: 28px;
+  text-align: center;
+  width: 100%;
+}
+.pop_sender_btn {
+  background: #333;
+  border: 1px solid #333;
+  border-radius: 3px;
+  float: left;
+  height: 28px;
+  margin-left: 10px;
+  width: 160px;
+}
+.pop_sender_btn a {
+  color: #fff;
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  height: 100%;
+  line-height: 28px;
+  text-align: center;
+  width: 100%;
+}
+table.gift_info_tbl tr th p {
+  color: #666;
+  font-weight: normal;
+  margin-top: 5px;
+}
+.ez-checkbox, .ez-radio {
+  zoom: 1;
+  *display: inline;
+  _height: 30px;
+}
+table.gift_info_tbl tr th input {
+  margin-right: 10px;
+}
+table.gift_info_tbl tr td div.tbl_card_sending {
+  color: #444;
+  font-size: 12px;
+  font-weight: bold;
+  height: 28px;
+  line-height: 28px;
+  padding-top: 15px;
+  margin-bottom: 5px;
+  width: 100%;
+}
+table.gift_info_tbl tr td div.tbl_card_sending p {
+  float: left;
+  text-align: center;
+  width: 20px;
+}
+table.gift_info_tbl tr td div.tbl_card_sending input.sender {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  float: left;
+  height: 26px;
+  text-align: center;
+  width: 99px;
+}
+table.gift_info_tbl tr td div.sel_wrap {
+  float: left;
+  height: 28px;
+  margin-left: 10px;
+  width: 75px;
+}
+.tbl_card_select {
+  background: url("/images/sbox_arrow_down.png") 56px 10px no-repeat #fff;
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  float: left;
+  height: 26px;
+  position: relative;
+  width: 73px;
+}
+.tbl_card_select label {
+  color: #444;
+  font-size: 12px;
+  font-weight: bold;
+  left: 5px;
+  line-height: 28px;
+  position: absolute;
+  top: 0;
+}
+.tbl_card_select select {
+  height: 26px;
+  opacity: 0;
+  filter: alpha(opacity=0);
+  width: 73px;
+}
+.tbl_card_sending span {
+  color: #222;
+  display: block;
+  float: left;
+  font-size: 12px;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  width: 20px;
+}
+.tbl_card_sending input.pnum_input {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  float: left;
+  height: 26px;
+  width: 73px;
+  text-indent: 5px;
+}
+.sender_addel_btn {
+  background: #666;
+  border-radius: 3px;
+  color: #fff;
+  display: block;
+  float: left;
+  font-size: 12px;
+  font-weight: bold;
+  height: 28px;
+  line-height: 28px;
+  margin-left: 9px;
+  text-align: center;
+  width: 42px;
+}
+
+table.gift_info_tbl tr td textarea {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  color: #666;
+  font-size: 12px;
+  height: 160px;
+  line-height: 20px;
+  padding: 10px;
+  width: 830px;
+  resize: none;
+}
+.gift_info_adding {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: 10px;
+}
+table.gift_info_tbl tr td div.tbl_card_radio {
+  height: 13px;
+  width: 100%;
+}
+table.gift_info_tbl tr td div.tbl_card_radio input {
+  float: left;
+  height: 13px;
+  margin-right: 5px;
+  padding: 0;
+  width: 13px;
+}
+table.gift_info_tbl tr td div.tbl_card_radio label {
+  color: #666;
+  float: left;
+  font-size: 14px;
+  margin-right: 12px;
+}
+table.gift_info_tbl tr td div.tbl_card_radio input.amountInput {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  float: left;
+  height: 26px;
+  width: 73px;
+  text-indent: 5px;
+  background: url("https://www.starbucks.co.kr/common/img/my/gift_price_bg.gif") 90% center no-repeat;
+  margin-top: -8px;
+  padding-right: 10px;
+}
+table.gift_info_tbl tr td div.tbl_card_radio + .gift_info_adding {
+  clear: both;
+}
+.gift_info_adding.txt_red {
+  color: #a52035;
+}
+.gift_info_adding2 {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.gift_info_adding2 li {
+  padding-left: 20px;
+  background: url("https://www.starbucks.co.kr/common/img/msr/sceGift/list_style.png") 0 4px no-repeat;
+}
+.gift_info_adding2 span.gift_info_add_fb {
+  color: #006633;
+  font-weight: bold;
+}
+>>>>>>> 1135fad6f57ce06fb1a2d38afc35b827d6ca6107

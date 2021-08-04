@@ -33,7 +33,11 @@ function kakaoLogin() {
       
         console.log(parseResponse);
         if(parseResponse === "OK"){
+<<<<<<< HEAD
           location.href="/"
+=======
+          location.href= "/"
+>>>>>>> 1135fad6f57ce06fb1a2d38afc35b827d6ca6107
         }else{
           alert("로그인실패");
         } // end if-else
@@ -50,17 +54,28 @@ function kakaoLogin() {
 }
 
 //카카오로그아웃  
-function kakaoLogout() {
-    if (Kakao.Auth.getAccessToken()) {
-      Kakao.API.request({
-        url: '/v1/user/unlink',
-        success: function (response) {
-          console.log(response)   
-        },
-        fail: function (error) {
-          console.log(error)
-        },
-      })
-      Kakao.Auth.setAccessToken(undefined)
-    } // end if
-  }  // end kakaoLogout()
+// function kakaoLogout() {
+//     if (Kakao.Auth.getAccessToken()) {
+//       Kakao.API.request({
+//         url: '/v1/user/unlink',
+//         success: function (response) {
+//           console.log(response)   
+//         },
+//         fail: function (error) {
+//           console.log(error)
+//         },
+//       })
+//       Kakao.Auth.setAccessToken(undefined)
+//     } // end if
+//   }  // end kakaoLogout()
+
+
+  function kakaoLogout() {
+    if (!Kakao.Auth.getAccessToken()) {
+      alert('Not logged in.')
+      return
+    }
+    Kakao.Auth.logout(function() {
+      alert('logout ok\naccess token -> ' + Kakao.Auth.getAccessToken())
+    })
+  }
