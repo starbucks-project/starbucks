@@ -168,7 +168,7 @@
     <div class="only_my_head">
       <p class="tit">나만의 음료</p>
       <p class="close"><a href="javascript:void(0)" class="btn_close" role="button">
-        <img src="/images/mymenu-register/btn_closesa.png" alt="팝업 닫기"></a></p>
+          <img src="/images/mymenu-register/btn_closesa.png" alt="팝업 닫기"></a></p>
     </div>
       
     <!-- Step 1 -->

@@ -3614,11 +3614,7 @@ h5, strong {
   margin-top: 19px;
   text-align: center;
 }
-.my_ms_card_btns p.my_ms_card_btn1 {
-  background: #222;
-  border: 1px solid #222;
-  margin: 0 5px;
-}
+
 .my_ms_card_btns p.my_ms_card_btn1 a, .my_ms_card_btns p.my_ms_card_btn3 a {
   color: #fff;
 }
@@ -5141,6 +5137,10 @@ div.drinkShop_info dl.content_tabmenu dt.tab {
   top: 0;
   z-index: 5;
 }
+.newMyTab div.drinkShop_info dl.content_tabmenu dt.tab {
+  box-sizing: border-box;
+  width: 33.3%;
+}
 div.drinkShop_info dl.content_tabmenu dt.tab.on a, div.drinkShop_info dl.content_tabmenu dt.tab a:hover {
   box-sizing: border-box;
   height: 40px;
@@ -5152,14 +5152,15 @@ div.drinkShop_info dl.content_tabmenu dt.tab.on a, div.drinkShop_info dl.content
   border-bottom-left-radius: 3px;
 }
 .newMyTab div.drinkShop_info dl.content_tabmenu dt.tab a {
-  width: 277px;
+  /* 탭의 width수정 */
+  width: 257px;  
   box-sizing: border-box;
   height: 40px;
   line-height: 40px;
 }
 div.drinkShop_info dl.content_tabmenu dt.tab_first a {
   display: block;
-  width: 206px;
+  width: 214px;
   height: 38px;
   line-height: 38px;
   text-align: center;
@@ -5211,10 +5212,19 @@ table.drinkShop_view_info_tbl thead tr th {
   zoom: 1;
   background: transparent url("/images/ck_icon.jpg") 0 0 no-repeat;
   display: inline-block;
+
+}
+.ez-hide {
+  opacity: 0;
+
 }
 input[type="checkbox"] {
   height: 12px;
   width: 12px;
+  vertical-align: middle;
+  margin: 0;
+    padding: 0;
+    box-sizing: content-box;
 }
 .en {
   font-family: arial, HelveticaNeue, DroidSans, Sans-serif, Helvetica;
@@ -5298,7 +5308,8 @@ div.drinkShop_tbl_pagination ul.pager li.active a {
 
 /* 3번 */
 .newMyTab div.drinkShop_info dl.content_tabmenu dt.tab_03 {
-  margin-left: -138px;
+  margin-left: -150px; 
+  /* -138 */
 }
 div.drinkShop_info dl.content_tabmenu dt.tab_03 {
   left: 50%;
@@ -5309,12 +5320,173 @@ div.drinkShop_info dl.content_tabmenu dt.tab {
   top: 0;
   z-index: 5;
 }
-.newMyTab div.drinkShop_info dl.content_tabmenu dt.tab a {
-  width: 277px;
-  box-sizing: border-box;
-  height: 40px;
-  line-height: 40px;
+div.drinkShop_info dl.content_tabmenu dt.tab a {
+  display: block;
+  width: 207px;
+  height: 38px;
+  line-height: 38px;
   text-align: center;
+<<<<<<< HEAD
+  font-size: 16px;
+  font-weight: bold;
+  color: #444;
+  background: #fff;
+  border-top: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+/* 4번 */
+.newMyTab div.drinkShop_info dl.content_tabmenu dt.tab_04 {
+  margin-left: 0;
+  left: 63.4%;
+  z-index: 4;
+}
+/* ========drink popup========== */
+.sArea_pop {
+  display: block;
+  background: #fff;
+  border-radius: 3px;
+  left: 50%;
+  margin-left: -255px;
+  position: absolute;
+  width: 672px;
+  z-index: 20001;
+  top: 0;
+}
+  /* close */
+.sArea_pop p.btn_pop_close {
+  height: 22px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 22px;
+}
+.sArea_pop p.btn_pop_close a {
+  background: url("../images/btn_closesa.png");
+  display: block;
+  height: 22px;
+  overflow: hidden;
+  text-indent: -20000px;
+  width: 22px;
+  transition: transform 1s;
+}
+ /* wrap */
+#landing_wrap {
+  background: url("../images/lander_bg.jpg") 0 0;
+  height: 100%;
+  width: 100%;
+}
+.sArea_pop .landing_inner_wrap {
+  margin: 0 auto;
+  padding: 5% 0;
+  width: 90%;
+}
+header.landing_ttl {
+  text-align: center;
+  width: 100%;
+}
+header.landing_ttl p {
+  color: #006633;
+  font-size: 18px;
+  font-weight: bold;
+}
+.en {
+  font-family: arial, HelveticaNeue, DroidSans, Sans-serif, Helvetica;
+}
+header.landing_ttl h1 {
+  color: #222;
+  font-size: 24px;
+  margin-top: 10px;
+}
+.calling_name_ttl {
+  color: #444;
+  font-size: 18px;
+  line-height: 30px;
+  margin-top: 20px;
+  text-align: center;
+  width: 100%;
+}
+.calling_name_ttl img {
+  margin-right: 10px;
+}
+.landing_comments_date {
+  color: #444;
+  font-size: 14px;
+  height: 30px;
+  line-height: 30px;
+  text-align: right;
+  width: 100%;
+}
+.landing_conts_wrap {
+  display: inline-block;
+  margin-top: 40px;
+  width: 100%;
+}
+.sArea_pop .landing_conts_img {
+  width: 45%;
+}
+.landing_conts_img {
+  border: 5px solid #fff;
+  float: left;
+}
+.landing_conts_img img {
+  width: 100%;
+}
+.sArea_pop .landing_conts_txt {
+  width: 48%;
+}
+.landing_conts_txt {
+  border-top: 1px solid #222;
+  float: right;
+}
+.landing_conts_txt dl {
+  border-bottom: 1px solid #b0a69b;
+  float: left;
+  width: 100%;
+}
+.sArea_pop .landing_conts_txt dl dt {
+  color: #222;
+  font-weight: bold;
+  padding: 15px 0 15px 2%;
+  width: 30%;
+  display: inline-block;
+}
+/* .landing_conts_txt dl dt, .landing_conts_txt dl dd {
+  float: left;
+  font-size: 14px;
+  line-height: 1.4;
+} */
+.sArea_pop .landing_conts_txt dl dd {
+  color: #444;
+  padding: 15px 0 15px 2%;
+  width: 65%;
+  display: inline-block;
+  margin-left: 0;
+}
+.btn_bev_info {
+  float: left;
+  height: 30px;
+  margin-top: 20px;
+  width: 100%;
+}
+.btn_bev_info p {
+  background: #666;
+  border-radius: 3px;
+  float: right;
+  height: 30px;
+  width: 88px;
+}
+.btn_bev_info p a {
+  color: #fff;
+  display: block;
+  font-size: 15px;
+  font-weight: bold;
+  height: 100%;
+  line-height: 30px;
+  text-align: center;
+  width: 100%;
+}
+=======
     font-size: 12px;
     font-weight: bold;
     color: #444;
@@ -5656,3 +5828,4 @@ table.gift_info_tbl tr td div.tbl_card_radio + .gift_info_adding {
   color: #006633;
   font-weight: bold;
 }
+>>>>>>> 1135fad6f57ce06fb1a2d38afc35b827d6ca6107

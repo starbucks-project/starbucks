@@ -43,11 +43,9 @@
                 <div class="ms_user_stat_btns">
                   <ul>
                     <li class="btn_black">
-                        <a href="#">개인정보 수정</a>
+                        <a href="/user/userinfo">개인정보 수정</a>
                     </li>
-                    <li class="btn_gray">
-                      <a class="gray" href="#">비밀번호 변경</a>
-                    </li>
+                   
                   </ul>
                 </div>
               </article>
@@ -61,7 +59,7 @@
                   </div>
                   <div class="card_header_box_two">
                     <i class="card_list_btn1">
-                      <a href="#">
+                      <a href="/user/inMyCard">
                         <img alt="보유 카드 상세 정보" src="/images/card_list_btn1.png" />
                       </a>
                     </i>
@@ -96,12 +94,30 @@
                             </p>
                             <p class="my_ms_card_price"><strong>2,800</strong>원</p>
                             <p class="my_ms_card_date">최종 사용일 : <span class="en">2021-07-08 13:31:00</span></p>
-                            <div class="my_ms_card_btns">
-                              <p class="my_ms_card_btn1">
-                                <a href="javascript:void(0);" data-type="MANAGEMENT" data-cardregnumber="34655033">카드 관리</a>
-                              </p>                                                           
+                            <div class="my_ms_card_btns">                                                          
                               <p class="my_ms_card_btn2">
                                 <a href="javascript:void(0);" data-type="CHARGE" data-cardregnumber="34655033">충전하기</a>
+                              </p>                                                                      
+                            </div>
+                          </div>
+                        </li>
+                        <li style="float: left; list-style: none; position: relative; width: 602px;" class="bx-clone">
+                          <figure>
+                            <i class="representative_icon" aria-hidden="true"></i>
+                            <img alt="부산 시티 카드" src="https://image.istarbucks.co.kr/cardImg/20190805/005949.png" onerror="this.src='https://image.istarbucks.co.kr/upload/common/img/icon/card_672x423.png';" />
+                          </figure>
+                          <div class="my_ms_card_info">
+                            <p class="my_ms_card_id">
+                              <span>부산시티카드</span>
+                              <a href="javascript:void(0);" class="icon_pencil" data-cardstatus="R" data-cardnickname="부산 시티 카드" title=" 카드명 수정">정보수정</a>
+
+                            </p>
+                            <p class="my_ms_card_price"><span class="a11y">잔여금액</span><!-- 접근성_20171201 span 추가 --><strong class="en t_0d5f34">2,800</strong>원</p>
+                            <p class="my_ms_card_date">최종 사용일 : <span class="en">2021-07-08 13:31:00</span></p>
+                            <div class="my_ms_card_btns">
+                                                                                        
+                              <p class="my_ms_card_btn2">
+                                <a href="/user/cardCharge" data-type="CHARGE" data-cardregnumber="34655033">충전하기</a>
                               </p>                                                                      </div>
                           </div>
                         </li>
@@ -119,33 +135,9 @@
                             <p class="my_ms_card_price"><span class="a11y">잔여금액</span><!-- 접근성_20171201 span 추가 --><strong class="en t_0d5f34">2,800</strong>원</p>
                             <p class="my_ms_card_date">최종 사용일 : <span class="en">2021-07-08 13:31:00</span></p>
                             <div class="my_ms_card_btns">
-                              <p class="my_ms_card_btn1">
-                                <a href="javascript:void(0);" data-type="MANAGEMENT" data-cardregnumber="34655033">카드 관리</a>
-                              </p>                                                           
+                              <                                                         
                               <p class="my_ms_card_btn2">
-                                <a href="javascript:void(0);" data-type="CHARGE" data-cardregnumber="34655033">충전하기</a>
-                              </p>                                                                      </div>
-                          </div>
-                        </li>
-                        <li style="float: left; list-style: none; position: relative; width: 602px;" class="bx-clone">
-                          <figure>
-                            <i class="representative_icon" aria-hidden="true"></i>
-                            <img alt="부산 시티 카드" src="https://image.istarbucks.co.kr/cardImg/20190805/005949.png" onerror="this.src='https://image.istarbucks.co.kr/upload/common/img/icon/card_672x423.png';" />
-                          </figure>
-                          <div class="my_ms_card_info">
-                            <p class="my_ms_card_id">
-                              <span>부산시티카드</span>
-                              <a href="javascript:void(0);" class="icon_pencil" data-cardstatus="R" data-cardnickname="부산 시티 카드" title=" 카드명 수정">정보수정</a>
-
-                            </p>
-                            <p class="my_ms_card_price"><span class="a11y">잔여금액</span><!-- 접근성_20171201 span 추가 --><strong class="en t_0d5f34">2,800</strong>원</p>
-                            <p class="my_ms_card_date">최종 사용일 : <span class="en">2021-07-08 13:31:00</span></p>
-                            <div class="my_ms_card_btns">
-                              <p class="my_ms_card_btn1">
-                                <a href="javascript:void(0);" data-type="MANAGEMENT" data-cardregnumber="34655033">카드 관리</a>
-                              </p>                                                           
-                              <p class="my_ms_card_btn2">
-                                <a href="javascript:void(0);" data-type="CHARGE" data-cardregnumber="34655033">충전하기</a>
+                                <a href="/user/cardCharge" data-type="CHARGE" data-cardregnumber="34655033">충전하기</a>
                               </p>                                                                      </div>
                           </div>
                         </li>
@@ -203,7 +195,7 @@
                 </li>
 
                 <li>
-                  <a href="#" required="login" data-href="#">
+                  <a href="/user/mymenu" required="login" data-href="#">
                      My메뉴
                     </a>
                 </li>
@@ -234,4 +226,5 @@
     </div><!-- ms cont wrap end -->
   </div><!-- Body inner end -->
 </main>	
+<script src = "/js/my/index.js"></script>
 <%@include file="../layout/footer.jsp"%>

@@ -18,6 +18,10 @@
   <link href="../images/starbuckslogo.png" rel="icon">
   <link href="../images/starbuckslogo.png" rel="apple-touch-icon">
   <link rel="shortcut icon"	href="https://image.istarbucks.co.kr/common/img/common/favicon.ico?v=200828"	type="image/ico">
+<%-- 
+  <link href="jquery.bxslider/jquery.bxslider.css" rel="stylesheet" /> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> 
+  <script src="jquery.bxslider/jquery.bxslider.js"></script> --%>
 
   <!-- Google Fonts -->
   <link
@@ -83,7 +87,7 @@
             <div class="upper-nav-item"><a class="active" href="/">Home</a></div>
             <div class="upper-nav-item" onclick="kakaoLoagout()"><a href="">logout</a></div>
             <div class="upper-nav-item"><a href="#">cart</a></div>
-            <div class="upper-nav-item"><a href="#">mystarbucks</a></div>
+            <div class="upper-nav-item"><a href="/user/mypage">mystarbucks</a></div>
             <div class="upper-nav-item"><a href="#">find a store</a></div>
           </c:otherwise>
         </c:choose>

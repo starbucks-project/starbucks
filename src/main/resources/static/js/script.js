@@ -250,14 +250,10 @@ $(document).ready(function () {
 	 // "나만의 음료로 등록" 팝업 출력
    function showPopMyDrink() {
       // 레이어 팝업 출력
-         console.log("2");
          $(".my_drink_step2").show();
          $(".only_my_drink2").hide();
-         console.log("3");
          $(".only_my_dimm, .only_my_drink").fadeIn();
-         console.log("4");
          $(".only_my_drink").attr("aria-hidden","false").attr("tabindex","0").focus(); 
-         console.log("5");
 	    }
     
 	// "나만의 음료로 등록" 팝업 닫기
@@ -280,6 +276,7 @@ $(document).ready(function () {
     console.log("9");
 	}
 
+<<<<<<< HEAD
   /**=======================
    * =========이미지 업로드========
    ==================================*/
@@ -299,3 +296,9 @@ $(document).ready(function () {
    //업로드한 이미지의 URL을 reader에 등록
   })
  
+=======
+  // -----------------------------
+  //  Mymenu Popup
+  // -----------------------------
+  
+>>>>>>> fc0448ee6fa1a8f0dc67166f9005a2e169f9e912
