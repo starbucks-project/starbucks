@@ -3317,7 +3317,9 @@ img {
 .ms_cont {
   flex: 3;
   width: 830px;
+  margin-right: 50px;
   margin-bottom: 90px;
+  
 }
 .ms_nav {
   flex: 1;
@@ -3708,7 +3710,7 @@ h5, strong {
 ================================================== */
 
 .ms_nav > ul {
-
+  width: 220px;
   border-top: 2px solid #222;
 }
 
@@ -4651,7 +4653,6 @@ ol.charge_warn li ul li ul li {
   background: #f4f4f2;
   border-radius: 3px;
   min-height: 60px;
-  margin-top: 30px;
   width: 830px;
 }
 .my_ms_rank form fieldset legend, .my_card_pick_period form fieldset legend, .ms_cont form fieldset legend {
@@ -4846,11 +4847,7 @@ dd {
     position: relative;
     width: 1100px;
 }
-.ms_cont {
-    float: left;
-    width: 830px;
-    margin-bottom: 90px;
-}
+
 section.egiftCard_shopBag_pick header {
     padding-bottom: 30px;
 }

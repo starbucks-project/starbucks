@@ -214,6 +214,11 @@
                     </a>
                 </li>
                 <li>
+                  <a href="/user/purchaseHistory" required="login" data-href="#">
+                     구매내역
+                    </a>
+                </li>
+                <li>
                   <a href="#">
                    개인정보 관리
                     <span class="sbox_arrow_down"></span>
