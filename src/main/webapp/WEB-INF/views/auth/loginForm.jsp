@@ -23,8 +23,8 @@
 						<div class="form_box">
 							
 								<hr>
-								<div class="kakaologin_button" onclick="kakaoLogin()">
-									<a href="javascript:void(0)">
+								<div class="kakaologin_button" >
+									<a onclick="kakaoLogin()">
 									<img src="../images/kakao_login_large_narrow.png">
 									<a>
 								</div> <!-- end kakaologin-button-->

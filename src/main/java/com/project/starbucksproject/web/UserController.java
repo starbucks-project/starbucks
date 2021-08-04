@@ -72,17 +72,29 @@ public class UserController {
   // 로그인
   @PostMapping("/user/login")
   public @ResponseBody String login(@RequestBody User user) {
-    String nickname = user.getNickname();
-    String email = user.getEmail();
-    String birthday = user.getBirth();
+    // String name = user.getNickname();
+    // String nickname = user.getNickname();
+    // String email = user.getEmail();
+    // String birthday = user.getBirth();
 
-    if (userRepository.mfindByemail(email) == null) {
-      userRepository.save(user);
+    User userEntity = userRepository.mfindByemail(user.getEmail());
+
+    if (userEntity == null) {
+      user.setName(user.getNickname());
+      User principal = userRepository.save(user); // id:1, name: "정용주", nickname:"정용주", email:ssar@daum.com, createDate:
+                                                  // 자동
+      session.setAttribute("principal", principal);
+    } else {
+      session.setAttribute("principal", userEntity);
     }
-    User userEntity = userRepository.mfindByemail(email);
-    session.setAttribute("principal", userEntity);
 
     return "OK";
+  }
+
+  @GetMapping("user/logout")
+  public String logout() {
+    session.invalidate();
+    return "redirect:/";
   }
 
   @GetMapping("/manager")
