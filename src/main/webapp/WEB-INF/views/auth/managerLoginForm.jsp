@@ -28,7 +28,7 @@
 					
           <hr />
           <div class="managerloginfunc_button_box">
-				<button class="managerlogin_button"><a href="/manager">로그인</a></button>						
+				<button class="managerlogin_button"><a href="/manager/login">로그인</a></button>						
           </div><!-- end managerloginfunc-button-box-->
 					
 			</form>

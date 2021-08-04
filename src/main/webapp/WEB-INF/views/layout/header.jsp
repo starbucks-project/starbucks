@@ -70,12 +70,17 @@
       <nav id="navbar" class="navbar order-last order-lg-0">
         <div class="upper">
         <div class="upper-nav">
+       
             <div class="upper-nav-item"><a class="active" href="/">Home</a></div>
             <div class="upper-nav-item"><a href="/auth/login">Login</a></div>
             <div class="upper-nav-item"><a href="/user/cart">cart</a></div>
             <div class="upper-nav-item"><a href="/user/mypage">mystarbucks</a></div>
             <div class="upper-nav-item"><a href="/auth/store_map">find a store</a></div>
-         
+       
+            <%-- <div class="upper-nav-item"><a href="/manager/logout">logout</a></div> --%>
+        
+             <div class="upper-nav-item" onclick="kakaoLoagout()"><a href="javascript:void(0)">logout</a></div>
+             <
         </div><!-- end upper-nav-->
       </div> <!-- end upper-->
       <div class="lower">
