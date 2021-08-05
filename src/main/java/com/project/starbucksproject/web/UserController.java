@@ -59,16 +59,6 @@ public class UserController {
     return "auth/store_reserve";
   }
 
-  @GetMapping("/auth/drink_list")
-  public String drinkList() {
-    return "auth/drink_list";
-  }
-
-  @GetMapping("/auth/drink_detail")
-  public String drinkDetail() {
-    return "auth/drink_detail";
-  }
-
   // 로그인
   @PostMapping("/user/login")
   public @ResponseBody String login(@RequestBody User user) {
@@ -97,5 +87,4 @@ public class UserController {
     return "redirect:/";
   }
 
-  
 }

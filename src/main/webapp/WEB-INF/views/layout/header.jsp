@@ -40,6 +40,10 @@
   <link href="../plugins/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="../plugins/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
    <!-- CSS
   ================================================== -->
   <!-- Themefisher Icon font -->
@@ -58,6 +62,9 @@
   <!-- Template Main CSS File -->
   <link href="/css/style.css" rel="stylesheet">
 
+
+  <!-- script -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>

@@ -45,7 +45,11 @@
                                             </colgroup>
                                             <thead>
                                                 <tr>
-                                                    <th scope="col"><div class="ez-checkbox"><input type="checkbox" name="drinkShop_view_ck_all" class="chkAll ez-hide" title="전체 선택"></div></th>
+                                                    <th scope="col">
+                                                      <div class="ez-mcheckbox">
+                                                        <input type="checkbox" name="drinkShop_view_ck_all" class="chkAll ez-hide" title="전체 선택">
+                                                      </div>
+                                                    </th>
                                                     <th class="en" scope="col">No</th>
                                                     <th scope="col">음료명</th>
                                                     <th scope="col">등록일</th>
@@ -54,26 +58,28 @@
                                             <tbody>
                                                 <tr>               
                                                     <td>
-                                                        <div class="ez-checkbox"><input type="checkbox" name="drinkShop_view_ck2" title="선택" value="12021080402290715612" class="ez-hide"></div>
+                                                        <div class="ez-mcheckbox">
+                                                          <input type="checkbox" name="drinkShop_view_ck2" title="선택" value="12021080402290715612" class="ez-hide">
+                                                        </div>
                                                     </td>               
                                                     <td>1</td>               
                                                     <td class="tl">
                                                         <div id="btn_show_pop_detail">                            
-                                                        <a href="javascript:void(0);" class="btn_show_pop_detail" data-favoriteno="12021080402290715612">콜드브루</a>
+                                                        <a href="javascript:void(0);" class="btn_show_pop_detail" data-favoriteno="12021080402290715612">그란데 망고바나나 블랜디드
+                                                        </p></a>
                                                         <div>             
                                                     </td>                            
                                                     <td>2021-08-04 02:29:07</td>              
                                                 </tr>
                                             </tbody>
                                         </table>
-                                        </script>
                                         <!-- (My 음료/매장) 목록 end -->
                                         
                                         <!-- (My 음료/매장) 버튼 -->
                                         <div class="drinkShop_btnZone">
                                             <ul>
-                                                <li><a href="javascript:void(0);" class="btn_all_check">전체선택</a></li>
-                                                <li><a href="javascript:void(0);" class="btn_selected_del">선택삭제</a></li>
+                                                <li><a href="javascript:void(0);" class="btn_all_check" id="Allcheck">전체선택</a></li>
+                                                <li><a href="javascript:void(0);" class="btn_selected_del"  id="selected_del">선택삭제</a></li>
                                             </ul>														
                                         </div>
                                         <!-- (My 음료/매장) 버튼 end -->

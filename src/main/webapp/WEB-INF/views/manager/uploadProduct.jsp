@@ -48,7 +48,7 @@
                     <a>제품 영문 이름</a>
                 </div>
                 <div class="product-name-input-box">
-                    <input name="productNameEng" type="text" name="productName" placeholder="제품 영문 이름을 입력하세요." />
+                    <input name="productNameEng" type="text" name="productNameEng" placeholder="제품 영문 이름을 입력하세요." />
                 </div>
             </div> <!-- end product-name-area-box-->
             
