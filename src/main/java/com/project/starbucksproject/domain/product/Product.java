@@ -1,7 +1,10 @@
 package com.project.starbucksproject.domain.product;
 
 import java.sql.Timestamp;
+<<<<<<< HEAD
+=======
 import java.util.List;
+>>>>>>> 1a45ed18f671484210f5c68698bd55f657cb1e5e
 
 // import java.util.List;
 
@@ -14,6 +17,8 @@ import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 
 import com.project.starbucksproject.domain.mymenu.MyMenu;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -44,9 +49,14 @@ public class Product {
     @Lob
     private String productImg; // 상품 이미지
 
+<<<<<<< HEAD
+    @CreationTimestamp
+    private Timestamp createDate; // 상품 등록일
+=======
     // 시간이 자동 입력됨
     @CreationTimestamp
     private Timestamp createDate; // 등록일
+>>>>>>> 1a45ed18f671484210f5c68698bd55f657cb1e5e
 
     @OneToMany(mappedBy = "products")
     private List<MyMenu> mymenus; // 마이메뉴 조인

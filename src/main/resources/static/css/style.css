@@ -611,6 +611,7 @@ iframe {
   text-align: center;
   font-size: 30px;
   margin-bottom: 30px;
+  margin-left: 65px;
 }
 
 .name-text-box {
@@ -5902,6 +5903,10 @@ header.landing_ttl h1 {
   text-align: center;
   width: 100%;
 }
+<<<<<<< HEAD
+
+=======
+>>>>>>> 91da5dd69a5094dc73eb85bcd85cb3c74bdd1dc0
 
 /* egift =====================*/
 .egift_wrap {

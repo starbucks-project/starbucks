@@ -15,7 +15,7 @@
             
             <div class="bottom-area">
                 <hr />
-            <form action="/manager/upload" method="post">
+            <form action="/manager/upload" method="post" enctype="multipart/form-data">
             <div class="category-box">
                 <select name="category" class="category-select">
                     <option value="">--카테고리--</option>
@@ -27,12 +27,12 @@
 
             <div class="productImageupload-box">
                 <div class="productImage-box">
-                    <img name="productImg" src="/images/preview.png" id="img_section" style="width: 120px; height: 150px;">
+                    <img src="/images/preview.png" id="img_section" style="width: 120px; height: 150px;">
                 </div> <!-- end productImage-->
 
                 <div class="imageupload-btn-box">
                     <div class="imageupload-btn">
-                        <input type="file" id="upload_file" accept="image/*" required=true value="업로드">
+                        <input type="file" name="productImage" id="upload_file" accept="image/*" required=true value="업로드">
                     </div> <!-- end imageupload-btn-->
                 </div> <!-- end imageupload-btn-box-->
             </div> <!-- end productImageupload-box-->
@@ -57,8 +57,7 @@
                     <a>제품 상세 설명</a>
                 </div>
                 <div class="product-content-box">
-                    <textarea  name="productInfo" cols="60" rows="10" placeholder="제품 상세 설명을 입력해주세요.">  
-                    </textarea>
+                    <textarea  name="productInfo" cols="60" rows="10" placeholder="제품 상세 설명을 입력해주세요."></textarea>
                 </div>
             </div> <!-- end product-detail-area-box-->
 
@@ -119,7 +118,7 @@
             <div>
                 <div class="savebtn-box">
                     <a href="/manager">
-                        <input type="button" name="saveBtn" value="등록">
+                        <input type="submit" name="saveBtn" value="등록">
                     </a>
                 </div>
             </div>
@@ -143,6 +142,8 @@
                 const imgFile = changeEvent.target.files[0];
                 reader.readAsDataURL(imgFile);
                 //업로드한 이미지의 URL을 reader에 등록
+
+                
                 })
             </script>
 <%@include file="../layout/footer.jsp"%>

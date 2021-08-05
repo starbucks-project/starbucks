@@ -1,6 +1,7 @@
 # DBAPP ~
 
 ## 데이터베이스 생성 방법
+
 ```sql
 CREATE USER 'starbucks'@'%' IDENTIFIED BY 'starbucks1234';
 GRANT ALL PRIVILEGES ON *.* TO 'starbucks'@'%';
@@ -8,11 +9,13 @@ CREATE DATABASE starbucks;
 ```
 
 ## manager table 더미 데이터
+
 ```sql
-INSERT INTO manager(manager_Id, manager_Pw) VALUES('admin', '1234');
+INSERT INTO manager(managerId, managerPw) VALUES('admin', '1234');
 ```
 
 ### 추가 의존성
+
 ```xml
 <dependency>
   <groupId>org.apache.tomcat</groupId>
@@ -28,12 +31,14 @@ INSERT INTO manager(manager_Id, manager_Pw) VALUES('admin', '1234');
 ```
 
 ### JSP / JSTL 태그 라이브러리
+
 ```jsp
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 ```
 
 ### application.yml
+
 ```yml
 server:
   port: 8081
@@ -49,17 +54,15 @@ spring:
   output:
     ansi:
       enabled: always
-      
+
   datasource:
     driver-class-name: org.mariadb.jdbc.Driver
     username: starbucks
     password: starbucks1234
     url: jdbc:mysql://localhost:3306/starbucks
-    
+
   jpa:
     hibernate:
-      ddl-auto: none  #create update none
+      ddl-auto: none #create update none
     show-sql: true
 ```
-
-
