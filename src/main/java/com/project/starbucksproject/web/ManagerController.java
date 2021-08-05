@@ -7,7 +7,7 @@ import com.project.starbucksproject.domain.manager.ManagerRepository;
 import com.project.starbucksproject.domain.product.Product;
 import com.project.starbucksproject.domain.product.ProductRepository;
 
-import org.springframework.boot.system.SystemProperties;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,10 +18,7 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class ManagerController {
 
-<<<<<<< HEAD
-=======
   private final ProductRepository productRepository;
->>>>>>> 196c65402ec6053e0ea061fc15fcbf951d4c8a72
   private final ManagerRepository managerRepository;
   private final HttpSession session;
 
@@ -69,17 +66,10 @@ public class ManagerController {
     Manager managerEntity = managerRepository.mLogin(manager.getManagerId(), manager.getManagerPw());
 
     if (managerEntity == null) {
-<<<<<<< HEAD
-      System.out.println("managerEntity is null");
-      return "auth/managerLoginForm";
-    } else {
-      System.out.println("managerEntity is not null");
-=======
 
       return "auth/managerLoginForm";
     } else {
 
->>>>>>> 196c65402ec6053e0ea061fc15fcbf951d4c8a72
       session.setAttribute("managerPrincipal", managerEntity);
       return "manager/managerHome";
     }
