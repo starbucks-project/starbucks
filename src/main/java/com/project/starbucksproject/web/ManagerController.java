@@ -1,16 +1,22 @@
 package com.project.starbucksproject.web;
 
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.util.UUID;
+
 import javax.servlet.http.HttpSession;
 
 import com.project.starbucksproject.domain.manager.Manager;
 import com.project.starbucksproject.domain.manager.ManagerRepository;
 import com.project.starbucksproject.domain.product.Product;
 import com.project.starbucksproject.domain.product.ProductRepository;
+import com.project.starbucksproject.util.MyPath;
 
 import org.springframework.boot.system.SystemProperties;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import lombok.RequiredArgsConstructor;
 
@@ -37,14 +43,30 @@ public class ManagerController {
     return "manager/productDetail";
   }
 
+  @GetMapping("/manager/saledProduct")
+  public String saledProductForm() {
+    return "manager/saledProduct";
+  }
+
   @GetMapping("/manager/uploadForm")
   public String uploadProductForm() {
     return "manager/uploadProduct";
   }
 
+  // 상품 업로드
   @PostMapping("/manager/upload")
-  public String upload(Product product) {
+  public String upload(Product product, MultipartFile productImage) {
+    System.out.println("=========들어옴=========");
     System.out.println(product);
+
+    UUID uuid = UUID.randomUUID();
+
+    // 저장될 파일 이름
+    String imageFileName = uuid + "_"+ productImage.getOriginalFilename();
+    // Path imagePath = Paths.get(MyPath.IMAGEPATH + imageFileName);
+
+    product.setProductImg(imageFileName);
+
     Product productEntity = productRepository.save(product);
     if (productEntity == null) {
       System.out.println("productEntity is null");
@@ -52,13 +74,10 @@ public class ManagerController {
       System.out.println(productEntity);
     }
 
-    return "redirect:/manager/managerHome";
+    return "redirect:/manager";
   }
 
-  @GetMapping("/manager/saledProduct")
-  public String saledProductForm() {
-    return "manager/saledProduct";
-  }
+  
 
   // manager Login
   @PostMapping("/manager/login")
@@ -76,6 +95,7 @@ public class ManagerController {
 
   }
 
+  // manager Logout
   @GetMapping("/manager/logout")
   public String managerLogout() {
     session.invalidate();

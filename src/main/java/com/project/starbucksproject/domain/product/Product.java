@@ -1,5 +1,7 @@
 package com.project.starbucksproject.domain.product;
 
+import java.sql.Timestamp;
+
 // import java.util.List;
 
 import javax.persistence.Entity;
@@ -8,6 +10,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Lob;
 // import javax.persistence.OneToMany;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 // import com.project.starbucksproject.domain.cart.Cart;
 // import com.project.starbucksproject.domain.myMenu.MyMenu;
@@ -36,7 +40,8 @@ public class Product {
     @Lob
     private String productImg; // 상품 이미지
 
-    private String createDate; // 상품 등록일
+    @CreationTimestamp
+    private Timestamp createDate; // 상품 등록일
 
     // @OneToMany(mappedBy = "mymenu")
     // private List<MyMenu> mymenus; // 마이메뉴 조인

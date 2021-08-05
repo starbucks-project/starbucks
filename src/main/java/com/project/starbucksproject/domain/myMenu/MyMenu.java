@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class MyMenu {
+public class Mymenu {   
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; // 기본키
