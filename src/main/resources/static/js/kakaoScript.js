@@ -33,11 +33,7 @@ function kakaoLogin() {
       
         console.log(parseResponse);
         if(parseResponse === "OK"){
-<<<<<<< HEAD
           location.href="/"
-=======
-          location.href= "/"
->>>>>>> 1135fad6f57ce06fb1a2d38afc35b827d6ca6107
         }else{
           alert("로그인실패");
         } // end if-else

@@ -4170,7 +4170,7 @@ input[type=text], input[type=number], input[type=password], input[type=tel], inp
   margin-top: 10px;
 }
 .ez-checkbox, .ez-radio {
-  zoom: 1;
+  zoom: 1.5;
   *display: inline;
   height: 30px;
 }
@@ -5208,24 +5208,27 @@ table.drinkShop_view_info_tbl thead tr th {
   height: 46px;
   vertical-align: middle;
 }
-.ez-checkbox {
-  zoom: 1;
+.ez-mcheckbox {
+  zoom: 1.5;
   background: transparent url("/images/ck_icon.jpg") 0 0 no-repeat;
   display: inline-block;
-
 }
 .ez-hide {
   opacity: 0;
-
 }
-input[type="checkbox"] {
-  height: 12px;
-  width: 12px;
+.ez-checked {
+  background: transparent url("/images/ck_icon_on.jpg") 0 0 no-repeat;
+  display: inline-block;
+}
+.ez-mcheckbox input {
+  height: 14px;
+  width: 14px;
   vertical-align: middle;
   margin: 0;
-    padding: 0;
-    box-sizing: content-box;
+  padding: 0;
+  box-sizing: content-box;
 }
+input[type="checkbox"] {height:14px; width:14px;}
 .en {
   font-family: arial, HelveticaNeue, DroidSans, Sans-serif, Helvetica;
 }
@@ -5326,7 +5329,6 @@ div.drinkShop_info dl.content_tabmenu dt.tab a {
   height: 38px;
   line-height: 38px;
   text-align: center;
-<<<<<<< HEAD
   font-size: 16px;
   font-weight: bold;
   color: #444;
@@ -5485,15 +5487,6 @@ header.landing_ttl h1 {
   line-height: 30px;
   text-align: center;
   width: 100%;
-}
-=======
-    font-size: 12px;
-    font-weight: bold;
-    color: #444;
-    background: #fff;
-    border-top: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
 }
 
 /* egift =====================*/
@@ -5670,7 +5663,7 @@ table.gift_info_tbl tr th p {
   margin-top: 5px;
 }
 .ez-checkbox, .ez-radio {
-  zoom: 1;
+  zoom: 1.5;
   *display: inline;
   _height: 30px;
 }
@@ -5828,4 +5821,3 @@ table.gift_info_tbl tr td div.tbl_card_radio + .gift_info_adding {
   color: #006633;
   font-weight: bold;
 }
->>>>>>> 1135fad6f57ce06fb1a2d38afc35b827d6ca6107

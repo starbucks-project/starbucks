@@ -15,10 +15,10 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class ManagerController {
 
-    private final ManagerRepository managerRepository;
-    private final HttpSession session;
+  private final ManagerRepository managerRepository;
+  private final HttpSession session;
 
-    @GetMapping("/manager")
+  @GetMapping("/manager")
   public String managerHome() {
     return "manager/managerHome";
   }
@@ -49,10 +49,10 @@ public class ManagerController {
     Manager managerEntity = managerRepository.mLogin(manager.getManagerId(), manager.getManagerPw());
 
     if (managerEntity == null) {
-        System.out.println("managerEntity is null");
+      System.out.println("managerEntity is null");
       return "auth/managerLoginForm";
     } else {
-        System.out.println("managerEntity is not null");
+      System.out.println("managerEntity is not null");
       session.setAttribute("managerPrincipal", managerEntity);
       return "manager/managerHome";
     }

@@ -58,6 +58,9 @@
   <!-- Template Main CSS File -->
   <link href="/css/style.css" rel="stylesheet">
 
+
+  <!-- script -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
