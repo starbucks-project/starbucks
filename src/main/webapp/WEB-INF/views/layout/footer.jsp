@@ -119,6 +119,7 @@
   <script src="/plugins/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Template Main JS File -->
+  <script src="/js/ezmark.js"></script>
   <script src="/plugins/js/main.js"></script>
   <script>
     $(document).ready(function () {
@@ -148,20 +149,30 @@
 		$(".only_my_dimm , .sArea_pop").attr("aria-hidden", "true").attr("tabindex", "0").fadeOut();
 		$(".btn_show_pop_detail > a").focus(); 
 	}
-  $(function(){ 
+  
+          //All checkbox
+        $("#Allcheck").on("click",function(){ 
             //전체선택 체크박스 클릭 
-            $(".btn_all_check").click(function(){ 
-                //만약 전체 선택 체크박스가 체크된상태일경우 
-                if($(".btn_all_check").prop("checked")) { 
-                    //해당화면에 전체 checkbox들을 체크해준다 
-                    $("input[type=checkbox]").prop("checked",true);  // 전체선택 체크박스가 해제된 경우 
+            console.log("5");
+            //해당화면에 전체 checkbox들을 체크해준다 
+            if($(".ez-mcheckbox").attr("class")=="ez-mcheckbox ez-checked") { 
+                  console.log("6");
+                  //해당화면에 모든 checkbox들의 체크를해제시킨다. 
+                  $(".ez-mcheckbox").attr("class","ez-mcheckbox").focus(); 
+                  console.log("7");
                 } else { 
-                        //해당화면에 모든 checkbox들의 체크를해제시킨다. 
-                        $("input[type=checkbox]").prop("checked",false); 
+                  console.log("8");
+                  //해당화면에 전체 checkbox들을 체크해준다 
+                 $(".ez-mcheckbox").attr("class","ez-mcheckbox ez-checked").focus(); 
                     } 
-                }) 
-            })
+          });
+
+        $(".chkAll checkbox").on("click",function(){ 
+            //전체선택 체크박스 클릭 
+            console.log("7");
+            //해당화면에 전체 checkbox들을 체크해준다 
+            $(".ez-mcheckbox").attr("class","ez-mcheckbox ez-checked").focus(); 
+            console.log("8");
+          });
 </script>
-
-
   </html>

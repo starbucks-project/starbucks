@@ -6,8 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+      <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 <body>
+        SKILLS
+  <input type="checkbox" name="html5" value="html5" id="html5">
+  <label for="html5">HTML5</label>
+  <input type="checkbox" name="CSS" value="CSS" id="CSS">
+  <label for="CSS">CSS</label>
+  <input type="checkbox" name="jquery" value="jquery" id="jquery">
+  <label for="jquery">jquery</label>
+  <input type="checkbox" name="javascript" value="javascript" id="javascript">
+  <label for="javascript">javascript</label>
+  <p><button>전체선택</button></p>
     HELLO
     <div id="myDrink" class="myDrink">
         <a href="javascript:void(0)">나만의 음료로 등록</a>
@@ -37,8 +48,15 @@
       </ul>
     </div>
     <!-- Step 1 end-->
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script>    
+<script>
+  $(function(){
+      $("button").click(function(){
+        $(":checkbox").attr("checked","checked")
+        })
+      });
+
 	$(document).ready(function () {
 		
 		// [나만의 음료로 등록]
