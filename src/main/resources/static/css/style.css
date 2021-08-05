@@ -5326,7 +5326,6 @@ div.drinkShop_info dl.content_tabmenu dt.tab a {
   height: 38px;
   line-height: 38px;
   text-align: center;
-<<<<<<< HEAD
   font-size: 16px;
   font-weight: bold;
   color: #444;
@@ -5486,15 +5485,7 @@ header.landing_ttl h1 {
   text-align: center;
   width: 100%;
 }
-=======
-    font-size: 12px;
-    font-weight: bold;
-    color: #444;
-    background: #fff;
-    border-top: 1px solid #ddd;
-    border-right: 1px solid #ddd;
-    border-bottom: 1px solid #ddd;
-}
+
 
 /* egift =====================*/
 .egift_wrap{
