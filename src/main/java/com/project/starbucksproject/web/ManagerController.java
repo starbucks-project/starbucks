@@ -4,7 +4,10 @@ import javax.servlet.http.HttpSession;
 
 import com.project.starbucksproject.domain.manager.Manager;
 import com.project.starbucksproject.domain.manager.ManagerRepository;
+import com.project.starbucksproject.domain.product.Product;
+import com.project.starbucksproject.domain.product.ProductRepository;
 
+import org.springframework.boot.system.SystemProperties;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -15,10 +18,11 @@ import lombok.RequiredArgsConstructor;
 @Controller
 public class ManagerController {
 
-    private final ManagerRepository managerRepository;
-    private final HttpSession session;
+  private final ProductRepository productRepository;
+  private final ManagerRepository managerRepository;
+  private final HttpSession session;
 
-    @GetMapping("/manager")
+  @GetMapping("/manager")
   public String managerHome() {
     return "manager/managerHome";
   }
@@ -38,6 +42,19 @@ public class ManagerController {
     return "manager/uploadProduct";
   }
 
+  @PostMapping("/manager/upload")
+  public String upload(Product product) {
+    System.out.println(product);
+    Product productEntity = productRepository.save(product);
+    if (productEntity == null) {
+      System.out.println("productEntity is null");
+    } else {
+      System.out.println(productEntity);
+    }
+
+    return "redirect:/manager/managerHome";
+  }
+
   @GetMapping("/manager/saledProduct")
   public String saledProductForm() {
     return "manager/saledProduct";
@@ -49,10 +66,10 @@ public class ManagerController {
     Manager managerEntity = managerRepository.mLogin(manager.getManagerId(), manager.getManagerPw());
 
     if (managerEntity == null) {
-        System.out.println("managerEntity is null");
+
       return "auth/managerLoginForm";
     } else {
-        System.out.println("managerEntity is not null");
+
       session.setAttribute("managerPrincipal", managerEntity);
       return "manager/managerHome";
     }

@@ -1,6 +1,7 @@
 package com.project.starbucksproject.domain.user;
 
 import java.sql.Timestamp;
+import java.util.List;
 
 // import java.util.List;
 
@@ -9,6 +10,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 // import javax.persistence.OneToMany;
+import javax.persistence.OneToMany;
+
+import com.project.starbucksproject.domain.mymenu.MyMenu;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -32,6 +36,9 @@ public class User {
 
     @CreationTimestamp
     private Timestamp createDate; // 회원가입 일
+
+    // @OneToMany(mappedBy = "mymenu")
+    // private List<MyMenu> mymenus;
 
     // @OneToMany(mappedBy = "card")
     // private List<Card> cards;
