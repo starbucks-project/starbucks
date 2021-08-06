@@ -39,10 +39,14 @@ public class User {
     private Timestamp createDate; // 회원가입 일
 
     @OneToMany(mappedBy = "user")
+<<<<<<< HEAD
     private List<Mymenu> mymenus; // 마이메뉴 조인
 
     // @OneToMany(mappedBy = "mymenu")
     // private List<MyMenu> mymenus;
+=======
+    private List<MyMenu> mymenus; // 마이메뉴 조인
+>>>>>>> 42fa59136b3f5737b699f02475f534af0f05d2eb
 
     // @OneToMany(mappedBy = "card")
     // private List<Card> cards;

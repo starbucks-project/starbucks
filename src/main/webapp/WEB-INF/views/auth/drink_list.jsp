@@ -36,7 +36,7 @@
                         <li class="menuDataSet" new="Y" sell="" recomm="0" sold="N">                 
                           <dl>                     
                             <dt>                         
-                              <a href="/auth/drink_detail" class="goDrinkView" prod="9200000003643">
+                              <a href="/auth/drink_detail/${product.id}" class="goDrinkView" prod="9200000003643">
                                 <img src="${product.productImg}" alt="아이스크림 블렌딩 콜드 브루">
                               </a>                                                  
                               <ul>                                                          
@@ -49,85 +49,6 @@
                           </dl>             
                         </li>
                       </c:forEach>
-                        
-                        <%-- <li class="menuDataSet" new="N" sell="" recomm="0" sold="N">                     
-                          <dl>                     
-                            <dt>                         
-                              <a href="javascript:void(0)" class="goDrinkView" prod="9200000002487">
-                                <img src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[9200000002487]_20210426091745467.jpg" alt="나이트로 바닐라 크림">
-                              </a>                                              
-                            </dt>                     
-                            <dd>나이트로 바닐라 크림</dd>                 
-                          </dl>             
-                        </li>
-                        <li class="menuDataSet" new="N" sell="" recomm="0" sold="N">                  
-                          <dl>                     
-                            <dt>                         
-                              <a href="javascript:void(0)" class="goDrinkView" prod="9200000000479">
-                                <img src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[9200000000479]_20210426091843897.jpg" alt="나이트로 콜드 브루">
-                              </a>                                              
-                            </dt>                     
-                            <dd>나이트로 콜드 브루</dd>                 
-                          </dl>             
-                        </li>
-                        <li class="menuDataSet" new="N" sell="" recomm="0" sold="N">                  
-                          <dl>                     
-                            <dt>                         
-                              <a href="javascript:void(0)" class="goDrinkView" prod="9200000002081">
-                                <img src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[9200000002081]_20210415133656839.jpg" alt="돌체 콜드 브루">
-                              </a>                                              
-                            </dt>                     
-                            <dd>돌체 콜드 브루</dd>                 
-                          </dl>             
-                        </li> --%>
-                        <%-- <li class="menuDataSet" new="N" sell="" recomm="0" sold="N">                 <dl>                     <dt>                         <a href="javascript:void(0)" class="goDrinkView" prod="9200000000487"><img src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[9200000000487]_20210430112319040.jpg" alt="바닐라 크림 콜드 브루"></a>                                              </dt>                     <dd>바닐라 크림 콜드 브루</dd>                 </dl>             </li><li class="menuDataSet" new="N" sell="" recomm="0" sold="N">                 <dl>                     <dt>                         <a href="javascript:void(0)" class="goDrinkView" prod="9200000003509"><img src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/03/[9200000003509]_20210322093452399.jpg" alt="벨벳 다크 모카 나이트로"></a>                                              </dt>                     <dd>벨벳 다크 모카 나이트로</dd>                 </dl>             </li><li class="menuDataSet" new="N" sell="" recomm="0" sold="N">                 <dl>                     <dt>                         <a href="javascript:void(0)" class="goDrinkView" prod="9200000002672"><img src="https://image.istarbucks.co.kr/upload/store/skuimg/2020/09/[9200000002672]_20200921171223898.jpg" alt="제주 비자림 콜드 브루"></a>                                              </dt>                     <dd>제주 비자림 콜드 브루</dd>                 </dl>             </li><li class="menuDataSet" new="N" sell="" recomm="0" sold="N">                 <dl>                     <dt>                         <a href="javascript:void(0)" class="goDrinkView" prod="9200000000038"><img src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[9200000000038]_20210430113202458.jpg" alt="콜드 브루"></a>                                              </dt>                     <dd>콜드 브루</dd>                 
-                        </dl>             
-                      </li> --%>
-                    </ul>
-                  </dd>
-                  
-                  <!-- 프라푸치노 -->
-                  <dt style="display: block;">
-                    <a href="javascript:void(0)">프라푸치노</a>
-                    <i class="summaryIcon">
-                      <img src="//image.istarbucks.co.kr/common/img/menu/logo_decaf.png" alt=""></i>
-                      <span class="summary">디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)</span>
-                  </dt>
-                  <dd style="display: block;">
-                    <ul class="product_frappuccino">
-                      <li class="menuDataSet" new="N" sell="" recomm="0" sold="N">                 
-                        <dl>                     
-                          <dt>                         
-                            <a href="javascript:void(0)" class="goDrinkView" prod="9200000002760">
-                              <img src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/04/[9200000002760]_20210415133558068.jpg" alt="더블 에스프레소 칩 프라푸치노"></a>                                              
-                          </dt>                     
-                          <dd>더블 에스프레소 칩 프라푸치노</dd>                 
-                        </dl>             
-                      </li>
-                    </ul>
-                  </dd>
-
-                  <!-- 블렌디드 -->
-                  <dt style="display: block;"><a href="javascript:void(0)">블렌디드</a>
-                    <i class="summaryIcon"><img src="//image.istarbucks.co.kr/common/img/menu/logo_decaf.png" alt=""></i><span class="summary">디카페인 에스프레소 샷 추가 가능 (일부 음료 제외)</span>
-                  </dt>
-                  <dd style="display: block;">
-                    <ul class="product_blended">
-                      <li class="menuDataSet" new="Y" sell="" recomm="0" sold="N">                 
-                        <dl>                     
-                          <dt>                         
-                            <a href="javascript:void(0)" class="goDrinkView" prod="9200000003652">
-                              <img src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/06/[9200000003652]_20210623102140826.jpg" alt="트윙클 스타 핑크 블렌디드">
-                            </a>                                                  
-                              <ul>                                                          
-                                <li><img src="//image.istarbucks.co.kr/common/img/menu/mark01.png" alt="NEW"></li>
-                              </ul>                                              
-                          </dt>                     
-                          <dd>트윙클 스타 핑크 블렌디드</dd>                 
-                        </dl>             
-                      </li>
-                </ul>
-              </dd>
             </dl>
           </div>
               <!-- 160928 검색결과 없을 때 -->

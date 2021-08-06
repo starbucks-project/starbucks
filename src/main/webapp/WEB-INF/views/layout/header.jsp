@@ -74,7 +74,7 @@
     <div class="outer">
       <div class="logo_box">
       <a class="navbar-brand logo" href="/">
-        <img class="logo" src="../images/starbuckslogo.png" />
+        <img class="logo" src="/images/starbuckslogo.png" />
       </a>
     </div> <!-- end logo_box-->
 
