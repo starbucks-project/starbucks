@@ -70,7 +70,9 @@ public class UserController {
     User userEntity = userRepository.mfindByemail(user.getEmail());
 
     if (userEntity == null) {
+
       user.setName(user.getNickname());
+      user.setValance(0);
       User principal = userRepository.save(user); // id:1, name: "정용주", nickname:"정용주", email:ssar@daum.com,
                                                   // createDate:// 자동
       session.setAttribute("principal", principal);

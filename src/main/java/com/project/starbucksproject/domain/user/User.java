@@ -33,17 +33,16 @@ public class User {
     private String nickname; // 닉네임
     private String phoneNum; // 휴대폰 번호
     private String birth; // 생년월일
+    private int valance; // 충전 잔액
 
     @CreationTimestamp
     private Timestamp createDate; // 회원가입 일
 
-<<<<<<< HEAD
     @OneToMany(mappedBy = "user")
-    private List<MyMenu> mymenus; // 마이메뉴 조인
-=======
+    private List<Mymenu> mymenus; // 마이메뉴 조인
+
     // @OneToMany(mappedBy = "mymenu")
     // private List<MyMenu> mymenus;
->>>>>>> 196c65402ec6053e0ea061fc15fcbf951d4c8a72
 
     // @OneToMany(mappedBy = "card")
     // private List<Card> cards;

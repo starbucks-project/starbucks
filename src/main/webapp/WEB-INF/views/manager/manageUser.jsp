@@ -18,10 +18,10 @@
         <div class="search-area-box">
             <form>
             <div class="search-input-box">
-                <input type="text" name="search" placeholder="검색어를 입력해주세요." />
+                <input type="text" name="name" placeholder="검색어를 입력해주세요." />
             </div>
             <div class="search-btn-box">
-                <input type="button" name="search_btn" value="검색"/>
+                <input type="submit" name="search_btn" value="검색"/>
             </div>
             </form>
         </div> <!-- end search-area-box-->
@@ -46,14 +46,16 @@
                     </tr>
                 </thead>
                 <tbody id="notice">
+                    <c:forEach var="user" items="${usersEntity}">
                     <tr>     
-                        <td>01</td>     
-                        <td class="left"><a>홍길동</a></td>     
-                        <td>hong@google.com</td>     
-                        <td>2021-07-23</td> 
-                        <td>20,000</td>
+                        <td>${user.id}</td>     
+                        <td class="left"><a>${user.name}</a></td>     
+                        <td>${user.email}</td>     
+                        <td>${user.createDate}</td> 
+                        <td>${user.valance}</td>
                     </tr>
-                    <tr>     
+                    </c:forEach>
+                    <%-- <tr>     
                         <td>02</td>     
                         <td class="left"><a>김철수</a></td>     
                         <td>kim@google.com</td>     
@@ -80,7 +82,7 @@
                         <td>park@google.com</td>     
                         <td>2018-05-18</td> 
                         <td>30,000</td>
-                    </tr>
+                    </tr> --%>
             </table>
         </div>  <!-- end user-list-area-box-->
 

@@ -36,7 +36,7 @@
               <article class="ms_user_info_right">
                 <p class="ms_user_stat">
                   <span>
-                    <strong class="userName">홍길동</strong>
+                    <strong class="userName">${principal.name}</strong>
                     님
                   </span>
                 </p>
