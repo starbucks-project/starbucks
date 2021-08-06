@@ -633,30 +633,14 @@ iframe {
   border-radius: 4px;
 }
 
-.user_gender {
-  display: flex;
-}
-
-.user_gender a {
-  color: #b0b0b0;
-  display: flex;
-  justify-content: center;
-  float: left;
-  height: 40px;
-  line-height: 40px;
-  text-align: center;
-  width: 50px;
-}
-
-.user_gender a.on {
-  background: #f4f4f2;
-  color: #222;
-}
-
 .outer-info-box {
   border: solid gray 1px;
   border-radius: 5px;
   margin-bottom: 40px;
+}
+
+.outer-info-box h6 {
+  margin-bottom: 5px;
 }
 
 .info-box {
@@ -665,6 +649,10 @@ iframe {
 
 .container {
   width: 38%;
+}
+
+.birthday-box {
+  display: flex;
 }
 
 /* --------nickname ----------*/
