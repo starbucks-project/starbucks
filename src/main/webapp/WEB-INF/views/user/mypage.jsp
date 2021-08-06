@@ -228,5 +228,6 @@
     </div><!-- ms cont wrap end -->
   </div><!-- Body inner end -->
 </main>	
-<script src = "/js/my/myinfo.js"></script>
+<script type="text/javascript" src = "/js/my/myinfo.js"></script>
+
 <%@include file="../layout/footer.jsp"%>

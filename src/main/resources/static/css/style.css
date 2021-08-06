@@ -4956,6 +4956,8 @@ select:not(:-internal-list-box) {
 }
 .charge_options li input[type="radio"] {
   margin: 0 3px;
+  height: 13px;
+  width: 13px;
 }
 .charge_options li input[type="text"] {
   box-sizing: border-box;
@@ -5903,10 +5905,6 @@ header.landing_ttl h1 {
   text-align: center;
   width: 100%;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 91da5dd69a5094dc73eb85bcd85cb3c74bdd1dc0
 
 /* egift =====================*/
 .egift_wrap {
