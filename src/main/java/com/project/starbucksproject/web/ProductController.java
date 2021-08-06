@@ -5,19 +5,13 @@ import javax.servlet.http.HttpSession;
 import com.project.starbucksproject.domain.manager.ManagerRepository;
 import com.project.starbucksproject.domain.product.Product;
 import com.project.starbucksproject.domain.product.ProductRepository;
-<<<<<<< HEAD
 
-=======
->>>>>>> 42fa59136b3f5737b699f02475f534af0f05d2eb
 import com.project.starbucksproject.domain.user.UserRepository;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-<<<<<<< HEAD
-=======
 import org.springframework.web.bind.annotation.PathVariable;
->>>>>>> 42fa59136b3f5737b699f02475f534af0f05d2eb
 
 import lombok.RequiredArgsConstructor;
 

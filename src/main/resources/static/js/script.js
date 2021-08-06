@@ -321,22 +321,11 @@ document
   .addEventListener("change", (changeEvent) => {
     //upload_file 에 이벤트리스너를 장착
 
-<<<<<<< HEAD
     const imgFile = changeEvent.target.files[0];
     reader.readAsDataURL(imgFile);
     //업로드한 이미지의 URL을 reader에 등록
   });
-=======
-   const imgFile = changeEvent.target.files[0];
-   reader.readAsDataURL(imgFile);
-   //업로드한 이미지의 URL을 reader에 등록
-  })
- 
-<<<<<<< HEAD
-  // -----------------------------
-  //  Mymenu Popup
-  // -----------------------------
-  
-=======
->>>>>>> 91da5dd69a5094dc73eb85bcd85cb3c74bdd1dc0
->>>>>>> 702d5c9b6e60517cd837ed7dd74f710d12c9c509
+
+// -----------------------------
+//  Mymenu Popup
+// -----------------------------
