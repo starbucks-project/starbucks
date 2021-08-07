@@ -14,11 +14,8 @@ import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 
 import com.project.starbucksproject.domain.mymenu.Mymenu;
-<<<<<<< HEAD
 
 import org.hibernate.annotations.CreationTimestamp;
-=======
->>>>>>> 54e72f717f0dc6d50f28ae7d22220ca269d83b73
 
 
 // import com.project.starbucksproject.domain.cart.Cart;
