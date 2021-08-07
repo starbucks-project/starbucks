@@ -119,7 +119,7 @@ pageEncoding="UTF-8"%> <%@include file="../layout/header.jsp"%>
                 </ul>
               </div>
               <div class="cart_wrap">
-                <a href="/user/cart">장바구니 담기</a>
+                <a href="javascript:void(0)" onclick="cartSave(${productEntity.id})" class="cartSave" role="button">장바구니 담기</a>
               </div>
             </div>
           </fieldset>
@@ -252,13 +252,10 @@ pageEncoding="UTF-8"%> <%@include file="../layout/header.jsp"%>
     </p>
     <ul class="btn_list">
       <li class="li1">
-        <a
-          href="javascript:void(0)"
-          class="btn_myMenuRegister"
-          title="나만의 음료로 등록"
-          role="button"
-          >확인</a
-        >
+      <form onsubmit="myMenuRegister(${productEntity.id})">
+        <%-- <a href="javascript:void(0)" class="btn_myMenuRegister" title="나만의 음료로 등록" role="button">확인</a> --%>
+        <button class="btn_myMenuRegister">확인</button>
+      </form>
       </li>
       <li class="li2">
         <a href="javascript:void(0)" class="btn_close" role="button">취소</a>

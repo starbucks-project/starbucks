@@ -2532,6 +2532,15 @@ img.m_pic {
 .only_my_drink2 ul.btn_list li.li1 a {
   background: #006633;
 }
+.only_my_drink2 ul.btn_list li.li1 button {
+  background: #006633;
+  border-style: none;
+  border-radius: 3px;
+  color: #fff;
+  height: 30px;
+  width: 100%;
+  font-size: 14px;
+}
 .only_my_drink2 ul.btn_list li a {
   display: block;
   height: 30px;
@@ -5903,10 +5912,6 @@ header.landing_ttl h1 {
   text-align: center;
   width: 100%;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 91da5dd69a5094dc73eb85bcd85cb3c74bdd1dc0
 
 /* egift =====================*/
 .egift_wrap {

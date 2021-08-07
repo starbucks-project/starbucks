@@ -38,7 +38,7 @@ public class User {
     private Timestamp createDate; // 회원가입 일
 
     @OneToMany(mappedBy = "user")
-    private List<MyMenu> mymenus; // 마이메뉴 조인
+    private List<Mymenu> mymenus; // 마이메뉴 조인
 
     // @OneToMany(mappedBy = "card")
     // private List<Card> cards;

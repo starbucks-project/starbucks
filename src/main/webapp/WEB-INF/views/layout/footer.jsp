@@ -122,16 +122,84 @@
   <script src="/js/ezmark.js"></script>
   <script src="/plugins/js/main.js"></script>
   <script>
-    $(document).ready(function () {
+    // $(document).ready(function () {
 		
 		// [나만의 메뉴 팝업]
-    $("#btn_show_pop_detail").on("click", function () {
-            console.log("1");
-       			showPopMyMenu();
-       	      });
+    // $("#btn_show_pop_detail").on("click", function () {
+    //         console.log("1");
+    //    			//showPopMyMenu();
+    //         myMenuDetail();
+    //    	      });
+
+               
     // [닫기]
+    // $(".btn_pop_close").on("click", hidePopMyMenu);
+	// });
+
+//팝업 동적 코딩
+ $(document).ready(function () {
+   console.log("1");
     $(".btn_pop_close").on("click", hidePopMyMenu);
-	});
+    $(".btn_show_pop_detail").on("click", myMenuDetail(mymenuId));
+ }
+
+let myMenuDetail = async (mymenuId) => {
+console.log("2");
+event.preventDefault();
+let response = await fetch("/user/mymenuPop/"+mymenuId, {
+  method: "get"
+});
+console.log("3");
+let parseResponse = await response.json();
+
+console.log(parseResponse);
+
+  		if(parseResponse.code === 1){
+			//let popBoxEL = document.querySelector("#pop02");
+		
+			let popupItem = document.createElement("div");
+			popupItem.id = "mymenu-pop-"+mymenuId;
+			popupItem.className = "sArea_pop";
+      popupItem.role="dialog";
+      popupItem.aria-hidden="false";
+      popupItem.tabindex="0";
+			
+      let temp =`
+        <p class="btn_pop_close"><a href="javascript:void(0);">닫기</a></p>
+                                  <section class="sArea_pop_inner">
+                                  <!-- 내용 -->
+                                  <div id="landing_wrap">
+                                   <div class="landing_inner_wrap">
+                                    <header class="landing_ttl">
+                                      <p class="en">MY FAVORITE DRINK</p>
+                                      <h1>${parseResponse.data.productName}</h1>
+                                    </header>
+                                    <p class="calling_name_ttl">
+                                      <img alt="콜링네임" src="/images/calling_name_ttl.png">닉네임 '콜드브루'
+                                    </p>
+                                    <p class="landing_comments_date">${parseResponse.data.createDate}</p>
+                                    <div class="landing_conts_wrap">
+                                      <div class="landing_conts_img">
+                                        <img src="/images/${parseResponse.data.productImg}">
+                                      </div>
+                                      <div class="landing_conts_txt">
+                                        <dl>
+                                          <dt>기본 음료</dt>
+                                          <dd>${parseResponse.data.productName}</dd>
+                                        </dl>
+                                        <div class="btn_bev_info">
+                                          <p><a href="/menu/drink_view.do?product_cd=169001">음료 정보</a></p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+      `;
+			
+			popupItem.innerHTML = temp;
+		}
+}
+
 
   // "나만의 메뉴 자세히보기" 팝업 출력
   function showPopMyMenu() {

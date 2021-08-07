@@ -55,6 +55,7 @@
                                                     <th scope="col">등록일</th>
                                                 </tr>
                                             </thead>
+                                            <c:forEach var="mymenu" items="${mymenuEntity}">
                                             <tbody>
                                                 <tr>               
                                                     <td>
@@ -62,16 +63,19 @@
                                                           <input type="checkbox" name="drinkShop_view_ck2" title="선택" value="12021080402290715612" class="ez-hide">
                                                         </div>
                                                     </td>               
-                                                    <td>1</td>               
+                                                    <td>${mymenu.id}</td>               
                                                     <td class="tl">
                                                         <div id="btn_show_pop_detail">                            
-                                                        <a href="javascript:void(0);" class="btn_show_pop_detail" data-favoriteno="12021080402290715612">그란데 망고바나나 블랜디드
-                                                        </p></a>
+                                                        <a href="javascript:void(0);"  id="my-menu-${mymenu.id}" class="btn_show_pop_detail" 
+                                                            data-favoriteno="12021080402290715612" onclick="myMenuDetail(${mymenu.id})">
+                                                          <p>${mymenu.proNickname}</p>
+                                                        </a>
                                                         <div>             
                                                     </td>                            
-                                                    <td>2021-08-04 02:29:07</td>              
+                                                    <td>${mymenu.createDate}</td>              
                                                 </tr>
                                             </tbody>
+                                            </c:forEach>
                                         </table>
                                         <!-- (My 음료/매장) 목록 end -->
                                         
@@ -97,41 +101,40 @@
                                 </div>
                                 <!-- (My 음료/매장) 페이징 -->
                                 <!-- 음료 팝업 시작 -->
-                                <div class="only_my_dimm" style="display: none;" aria-hidden="true" tabindex="0"></div>
-                                <div class="sArea_pop" id="pop02" style="display: none;" role="dialog" aria-hidden="true"  tabindex="0">
-        <p class="btn_pop_close"><a href="javascript:void(0);">닫기</a></p>
-        <section class="sArea_pop_inner">
-            <!-- 내용 -->
-            <div id="landing_wrap">
-                <div class="landing_inner_wrap">
-                    <header class="landing_ttl">
-                        <p class="en">MY FAVORITE DRINK</p>
-                        <h1>레몬 진저 &amp; 망고 젤리 피지오</h1>
-                    </header>
-                    <p class="calling_name_ttl">
-                        <img alt="콜링네임" src="/images/calling_name_ttl.png">그란데 망고바나나 블랜디드
-                    </p>
-                    <p class="landing_comments_date">2021-08-04 17:35:25</p>
-                    <div class="landing_conts_wrap">
-                        <div class="landing_conts_img">
-                            <img src="/images/망고바나나블랜디드.jpg">
-                        </div>
-                        <div class="landing_conts_txt">
-                            <dl>
-                                <dt>기본 음료</dt>
-                                <dd>망고 바나나 블렌디드</dd>
-                            </dl>														
-                            <div class="btn_bev_info">
-                                <p><a href="/menu/drink_view.do?product_cd=169001">음료 정보</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- 내용 end -->
-        </section>														
-    </div> 
-    <!-- 음료 팝업 end -->
+                                <div id="only_my_dimm" class="only_my_dimm" style="display: none;" aria-hidden="true" tabindex="0"></div>
+                                <div class="sArea_pop" id="mymenu-pop-" style="display: none;" role="dialog" aria-hidden="true"  tabindex="0">
+                                  <p class="btn_pop_close"><a href="javascript:void(0);">닫기</a></p>
+                                  <section class="sArea_pop_inner">
+                                  <!-- 내용 -->
+                                  <div id="landing_wrap">
+                                   <div class="landing_inner_wrap">
+                                    <header class="landing_ttl">
+                                      <p class="en">MY FAVORITE DRINK</p>
+                                      <h1>상품이름</h1>
+                                    </header>
+                                    <p class="calling_name_ttl">
+                                      <img alt="콜링네임" src="/images/calling_name_ttl.png">닉네임 '콜드브루'
+                                    </p>
+                                    <p class="landing_comments_date">등록날짜</p>
+                                    <div class="landing_conts_wrap">
+                                      <div class="landing_conts_img">
+                                        <img src="/images/망고바나나블랜디드.jpg">
+                                      </div>
+                                      <div class="landing_conts_txt">
+                                        <dl>
+                                          <dt>기본 음료</dt>
+                                          <dd>망고 바나나 블렌디드</dd>
+                                        </dl>
+                                        <div class="btn_bev_info">
+                                          <p><a href="/menu/drink_view.do?product_cd=169001">음료 정보</a></p>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <!-- 내용 end -->
+                              </section>
+                            </div> <!-- 음료 팝업 end -->
                             </dd>
                             <!-- 2번 끝 -->
                             <!--3번 시작-->
@@ -204,5 +207,4 @@
         </div><!-- Container end -->
     </div><!-- Body inner end -->
 </main>	
-
 <%@include file="../layout/footer.jsp"%>

@@ -16,11 +16,6 @@ public class TestController {
         return "user/mypage";
     }
 
-    @GetMapping("/user/mymenu")
-    public String mymenu() {
-        return "user/mymenu";
-    }
-
     @GetMapping("/mymenu_pop")
     public String mymenuPop() {
         return "user/mymenu_popup";

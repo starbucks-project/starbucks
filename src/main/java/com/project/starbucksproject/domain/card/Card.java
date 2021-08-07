@@ -4,6 +4,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 
 import com.project.starbucksproject.domain.user.User;
@@ -24,5 +25,6 @@ public class Card {
     private int valance; // 잔액
 
     @ManyToOne
+    @JoinColumn(name = "userId")
     private User user; // user 조인
 }

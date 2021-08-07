@@ -232,8 +232,30 @@ $(document).ready(function () {
   // [닫기]
   $(".btn_close").on("click", hidePopMyDrink);
   //나만의 메뉴에 등록
-  $(".btn_myMenuRegister").on("click", myMenuRegister);
+  $(".btn_go_my_drink_step3").on("click", goMyDrinkStep3);
+  //$(".btn_myMenuRegister").on("click", myMenuRegister);
+  $(".cartSave").on("click", cartSave);
 });
+
+function cartSave(productId) {
+  console.log("productId:"+productId);
+
+  let response = await fetch("/user/cart", {
+    method: "get"
+  });
+  console.log("2");
+  let parseResponse = await response.text();
+  
+  console.log(parseResponse);
+  
+    if (parseResponse.code === 1) {
+      alert("장바구니 담기 성공");
+      //history.back();
+      location.href = "/auth/drink_detail/"+parseResponse.data.products.id;
+    } else {
+      alert("저장 실패");
+    }
+}
 
 // "나만의 음료로 등록" 팝업 출력
 function showPopMyDrink() {
@@ -273,34 +295,37 @@ function goMyDrinkStep3() {
   console.log("9");
 }
 
-async function myMenuRegister() {
+let myMenuRegister = async (productId) => {
+
   event.preventDefault();
 
-  let title = document.querySelector("#title").value;
-  let content = document.querySelector("#content").value;
+  console.log("productId:"+productId);
 
-  let saveDto = {
-    title: title,
-    content: content,
-  };
+let MymenuSaveReqDto = {
+  proNickname: document.querySelector("#nickname").value,
+  productId: productId
+};
 
-  let response = await fetch("/post", {
-    method: "post",
-    body: JSON.stringify(saveDto),
-    headers: {
-      "Content-Type": "application/json; charset=utf-8",
-    },
-  });
+let response = await fetch("/user/mymenuRegi", {
+  method: "post",
+  body: JSON.stringify(MymenuSaveReqDto),
+  headers: {
+    "Content-Type": "application/json; charset=utf-8"
+  }
+});
+console.log("2");
+let parseResponse = await response.json();
 
-  let parseResponse = await response.text();
+console.log(parseResponse);
 
-  if (parseResponse === "ok") {
+  if (parseResponse.code === 1) {
     alert("저장 성공");
-    location.href = "/";
+    //history.back();
+    location.href = "/auth/drink_detail/"+parseResponse.data.products.id;
   } else {
     alert("저장 실패");
-    location.href = "/auth/loginForm";
   }
+
 }
 
 /**=======================
@@ -321,22 +346,7 @@ document
   .addEventListener("change", (changeEvent) => {
     //upload_file 에 이벤트리스너를 장착
 
-<<<<<<< HEAD
     const imgFile = changeEvent.target.files[0];
     reader.readAsDataURL(imgFile);
     //업로드한 이미지의 URL을 reader에 등록
   });
-=======
-   const imgFile = changeEvent.target.files[0];
-   reader.readAsDataURL(imgFile);
-   //업로드한 이미지의 URL을 reader에 등록
-  })
- 
-<<<<<<< HEAD
-  // -----------------------------
-  //  Mymenu Popup
-  // -----------------------------
-  
-=======
->>>>>>> 91da5dd69a5094dc73eb85bcd85cb3c74bdd1dc0
->>>>>>> 702d5c9b6e60517cd837ed7dd74f710d12c9c509
