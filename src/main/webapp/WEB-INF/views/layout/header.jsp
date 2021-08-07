@@ -110,7 +110,6 @@
             <li><a href="/auth/drink_list">Drink</a></li>
             <li><a href="#">Food</a></li>
             <li><a href="#">Product</a></li>
-            <li><a href="#">Card</a></li>
           </ul>
           
         </div> <!-- end dropdown-->

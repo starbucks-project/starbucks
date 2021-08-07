@@ -1,4 +1,4 @@
-package com.project.starbucksproject.domain.saleditems;  
+package com.project.starbucksproject.domain.saleditems;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

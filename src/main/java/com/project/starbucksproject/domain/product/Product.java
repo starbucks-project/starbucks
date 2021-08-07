@@ -14,8 +14,11 @@ import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 
 import com.project.starbucksproject.domain.mymenu.Mymenu;
+<<<<<<< HEAD
 
 import org.hibernate.annotations.CreationTimestamp;
+=======
+>>>>>>> 54e72f717f0dc6d50f28ae7d22220ca269d83b73
 
 
 // import com.project.starbucksproject.domain.cart.Cart;
@@ -32,15 +35,15 @@ public class Product {
 
     private String category; // 카테고리
     private String productName; // 상품 명
-    private String productNameEng;  // 상품 영문명
+    private String productNameEng; // 상품 영문명
     private String productInfo; // 상세 설명
 
-    private int kcal;           // 칼로리
-    private int saturatedFat;   // 포화지방
-    private int protein;        // 단백질
-    private int natrium;        // 나트륨
-    private int sugar;          // 당류
-    private int caffeine;        // 카페인
+    private int kcal; // 칼로리
+    private int saturatedFat; // 포화지방
+    private int protein; // 단백질
+    private int natrium; // 나트륨
+    private int sugar; // 당류
+    private int caffeine; // 카페인
 
     @Lob
     private String productImg; // 상품 이미지

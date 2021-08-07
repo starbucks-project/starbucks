@@ -92,37 +92,34 @@
 											</div>
 											<div class="charge_options">
 												<ul>
-													<li><label><input type="radio" value="100000"
-															name="totPrice">10만원</label></li>
-													<li><label><input type="radio" value="50000"
-															name="totPrice">5만원</label></li>
+													<li>
+														<label>
+															<input type="radio" value="100000" name="totPrice" />10만원
+															
+														</label>
+													</li>
+													<li>
+														<label>
+															<input type="radio" value="50000" name="totPrice">5만원
+														</label>
+													</li>
 													<li><label><input type="radio" value="30000"
-															name="totPrice">3만원</label></li>
+															name="totPrice" />3만원</label>
+													</li>
 													<li><label><input type="radio" value="10000"
-															name="totPrice">1만원</label></li>
-													<li><label><input type="radio" value="0"
-															name="totPrice">다른 금액</label></li>
-													<li><input type="text" name="totPriceInput"
-														title="충전금액" placeholder="직접입력" maxlength="2"
-														autocomplete="off"></li>
+															name="totPrice" />1만원</label>
+													</li>
+													
 												</ul>
 											</div>
 											<p class="charge_level_guide txt">스타벅스 카드 온라인 충전은 1만원
-												단위로 최대 55만원까지 가능하며, 충전 후 합계 잔액이 55만원을 초과할 수 없습니다.</p>
+												단위로 최대 10만원까지 가능하며, 충전 후 합계 잔액이 55만원을 초과할 수 없습니다.</p>
 										</td>
 									</tr>
 									<tr>
 										<th scope="row">결제 수단 선택</th>
 										<td>
-											<div class="sel_wrap">
-												<p class="user_sel_wrap">
-													<label for="gopaymethod_NORMAL">신용카드</label> <select
-														id="gopaymethod_NORMAL" name="gopaymethod">
-														<option value="onlycard" selected="selected">신용카드</option>
-														<option value="onlydbank">실시간 계좌이체</option>
-													</select>
-												</p>
-											</div>
+											<label for="gopaymethod_NORMAL">신용카드</label> 										
 										</td>
 									</tr>
 									<tr>
@@ -186,7 +183,7 @@
 						
 						<ul class="charge_tbl_btns">
 							<li class="charge_tbl_btn1"><a href="javascript:void(0);"
-								class="charge_normal">카드 충전</a></li>
+								class="charge_normal" onclick="pay();">카드 충전</a></li>
 							<li class="charge_tbl_btn2"><a href="javascript:void(0);">취소</a></li>
 						</ul>
 					</article>
@@ -267,4 +264,48 @@
 	</div>
 	<!-- Body inner end -->
 </main>
+<script>
+function pay() {
+  const IMP = window.IMP; // 생략해도 괜찮습니다.
+  IMP.init("imp68218098"); // "imp00000000" 대신 발급받은 "가맹점 식별코드"를 사용합니다.
+
+  var buyername = "${principal.name}";
+  var buyeremail = "${principal.email}";
+  // IMP.request_pay(param, callback) 호출
+  // 변수화
+  IMP.request_pay(
+    {
+      // param
+      pg: "html5_inicis",
+      pay_method: "card",
+      merchant_uid: "ORD20180131-0000011", // 상품 PK
+      name: "노르웨이 회전 의자",
+      amount: 100, // 값
+      buyer_email: "gildong@gmail.com", // session 값
+      buyer_name: buyername, // session 값
+      buyer_tel: buyeremail, // session 값
+      buyer_addr: "서울특별시 강남구 신사동", // session 값
+      buyer_postcode: "01181", // session 값
+    },
+    (rsp) => {
+      // callback
+      if (rsp.success) {
+        console.log("결제 성공");
+        console.log(rsp);
+        // 결제 성공 시 로직,
+      } else {
+        console.log("결제 실패");
+        console.log(rsp);
+        // 결제 실패 시 로직,
+      }
+    }
+  );
+}
+
+</script>
+<!-- jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+<!-- iamport.payment.js -->
+<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+
 <%@include file="../layout/footer.jsp"%>

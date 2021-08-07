@@ -36,7 +36,7 @@
               <article class="ms_user_info_right">
                 <p class="ms_user_stat">
                   <span>
-                    <strong class="userName">홍길동</strong>
+                    <strong class="userName">${principal.name}</strong>
                     님
                   </span>
                 </p>
@@ -228,5 +228,6 @@
     </div><!-- ms cont wrap end -->
   </div><!-- Body inner end -->
 </main>	
-<script src = "/js/my/myinfo.js"></script>
+<script type="text/javascript" src = "/js/my/myinfo.js"></script>
+
 <%@include file="../layout/footer.jsp"%>

@@ -23,7 +23,7 @@ pageEncoding="UTF-8"%> <%@include file="../layout/header.jsp"%>
               ><!-- 접근성_20171123 tabindex, aria, role 추가 -->
               <img
                 class="zoomImg"
-                src="/images/drink-detail/${productEntity.productName}.jpg"
+                src="/images/${productEntity.productImg}.jpg"
                 data-zoom-image="https://image.istarbucks.co.kr/upload/store/skuimg/2021/06/[9200000003643]_20210623101238875.jpg"
                 alt="상세이미지"
               />
@@ -47,7 +47,7 @@ pageEncoding="UTF-8"%> <%@include file="../layout/header.jsp"%>
                 data-image="https://image.istarbucks.co.kr/upload/store/skuimg/2021/06/[9200000003643]_20210623101238875.jpg"
                 data-zoom-image="https://image.istarbucks.co.kr/upload/store/skuimg/2021/06/[9200000003643]_20210623101238875.jpg"
                 class="elevatezoom-gallery active"
-                ><img src="${productEntity.productImg}" alt="상세이미지 1번"/></a>
+                ><img src="/images/${productEntity.productImg}.jpg" alt="상세이미지 1번"/></a>
             </li>
           </ul>
         </div>
@@ -206,7 +206,7 @@ pageEncoding="UTF-8"%> <%@include file="../layout/header.jsp"%>
         <img
           alt=""
           class="skuImgUrl"
-          src="${productEntity.productImg}"
+          src="/images/${productEntity.productImg}.jpg"
         />
       </dt>
       <dd>
