@@ -35,7 +35,7 @@ public class User {
     private String year; // 생년월일
     private String month; // 월
     private String date; // 일
-    private int valance; // 충전 잔액
+    private int balance; // 충전 잔액
 
     @CreationTimestamp
     private Timestamp createDate; // 회원가입 일

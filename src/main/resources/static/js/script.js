@@ -197,6 +197,8 @@ $(document).ready(function () {
     goUrl = $(this).find("a").attr("href");
     location.href = goUrl;
   });
+});
+
 
 // -----------------------------
 //  Drink Detail
@@ -333,3 +335,11 @@ document
 // -----------------------------
 //  Mymenu Popup
 // -----------------------------
+
+// -----------------------------
+// update drink select jquery
+// -----------------------------
+$(document).ready(function () {
+  category_val = $('select.category').attr('data-type');
+  $('select.category option[value=' + category_val + ']').attr('selected', 'selected');
+});

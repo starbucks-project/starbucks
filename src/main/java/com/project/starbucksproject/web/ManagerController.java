@@ -1,7 +1,5 @@
 package com.project.starbucksproject.web;
 
-import java.util.UUID;
-
 import javax.servlet.http.HttpSession;
 
 import com.project.starbucksproject.domain.manager.Manager;
@@ -37,16 +35,22 @@ public class ManagerController {
     return "manager/managerHome";
   }
 
-  @GetMapping("/manager/detail")
-  public String productDetailForm() {
+  // 상품 상세보기 페이지로 이동
+  @GetMapping("/manager/detail/{id}")
+  public String productDetailForm(@PathVariable int id, Model model) {
+    Product productEntity = productRepository.findById(id).get();
+    model.addAttribute("productEntity", productEntity);
+
     return "manager/productDetail";
   }
 
+  // 상품 판매 현황 페이지로 이동
   @GetMapping("/manager/saledProduct")
   public String saledProductForm() {
     return "manager/saledProduct";
   }
 
+  // 상품 수정 페이지로 이동
   @GetMapping("/manager/product/{id}")
   public String updateForm(@PathVariable int id, Model model) {
     Product productEntity = productRepository.findById(id).get();
@@ -55,11 +59,27 @@ public class ManagerController {
     return "manager/updateProduct";
   }
 
+  // 수정 완료 후 상품 상세보기 페이지로 이동
   @PostMapping("/manager/product/{id}")
-  public String update(@PathVariable int id, @RequestBody Product product) {
-    productRepository.save(product);
+  public String update(@PathVariable int id, Product product, MultipartFile productImage) {
+    Product productEntity = productRepository.findById(id).get();
 
-    return "redirect:/manager/detail";
+    String imageFileName = productImage.getOriginalFilename();
+    productEntity.setCategory(product.getCategory());
+    productEntity.setProductImg(imageFileName);
+    productEntity.setProductName(product.getProductName());
+    productEntity.setProductNameEng(product.getProductNameEng());
+    productEntity.setProductInfo(product.getProductInfo());
+    productEntity.setKcal(product.getKcal());
+    productEntity.setSaturatedFat(product.getSaturatedFat());
+    productEntity.setProtein(product.getProtein());
+    productEntity.setNatrium(product.getNatrium());
+    productEntity.setSugar(product.getSugar());
+    productEntity.setCaffeine(product.getCaffeine());
+
+    productRepository.save(productEntity);
+
+    return "redirect:/manager/detail/{id}";
   }
 
   // 회원 관리 페이지 이동
@@ -86,15 +106,11 @@ public class ManagerController {
   // 상품 업로드
   @PostMapping("/manager/upload")
   public String upload(Product product, MultipartFile productImage) {
-    System.out.println("=========들어옴=========");
+
     System.out.println(product);
 
     // 저장될 파일 이름
     String imageFileName = productImage.getOriginalFilename();
-    String imageTest = productImage.getContentType();
-    // System.out.println(imageTest);
-    // Path imagePath = Paths.get(MyPath.IMAGEPATH + imageFileName);
-    // System.out.println(imageFileName);
 
     product.setProductImg(imageFileName);
 

@@ -52,7 +52,7 @@
                         <td class="left"><a>${user.name}</a></td>     
                         <td>${user.email}</td>     
                         <td>${user.createDate}</td> 
-                        <td>${user.valance}</td>
+                        <td>${user.balance}</td>
                     </tr>
                     </c:forEach>
                     <%-- <tr>     

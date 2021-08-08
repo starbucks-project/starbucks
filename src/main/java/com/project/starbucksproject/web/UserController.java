@@ -73,7 +73,7 @@ public class UserController {
     if (userEntity == null) {
 
       user.setName(user.getNickname());
-      user.setValance(0);
+      user.setBalance(0);
       User principal = userRepository.save(user); // id:1, name: "정용주", nickname:"정용주", email:ssar@daum.com,
                                                   // createDate:// 자동
       session.setAttribute("principal", principal);
@@ -91,7 +91,7 @@ public class UserController {
   }
 
   @GetMapping("user/userinfo/{id}")
-  public String userinfo(@PathVariable int id, Model model){
+  public String userinfo(@PathVariable int id, Model model) {
     User userEntity = userRepository.findById(id).get();
     model.addAttribute("userEntity", userEntity);
 
@@ -99,7 +99,7 @@ public class UserController {
   }
 
   @PostMapping("user/userinfo/{id}")
-  public String userinfoUpdate(@PathVariable int id, User user){
+  public String userinfoUpdate(@PathVariable int id, User user) {
     User userEntity = userRepository.findById(id).get();
     userEntity.setName(user.getName());
     userEntity.setYear(user.getYear());

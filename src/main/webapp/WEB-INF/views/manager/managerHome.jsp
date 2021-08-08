@@ -35,8 +35,8 @@
                         <li class="menuDataSet" new="Y" sell="" recomm="0" sold="N">                 
                           <dl>                     
                             <dt>                         
-                              <a href="/auth/drink_detail/${products.id}" class="goDrinkView" prod="9200000003643">
-                                <img src="/images/${products.productImg}" alt="아이스크림 블렌딩 콜드 브루">
+                              <a href="/manager/detail/${product.id}" class="goDrinkView" prod="9200000003643">
+                                <img src="/images/${product.productImg}" alt="아이스크림 블렌딩 콜드 브루">
                               </a>                                                  
                               <ul>                                                          
                                 <li>
@@ -44,7 +44,7 @@
                                 </li>
                               </ul>                                              
                             </dt>                     
-                            <dd>${productsEntity.productName}</dd>                 
+                            <dd>${product.productName}</dd>                 
                           </dl>             
                         </li>
                       </c:forEach>
