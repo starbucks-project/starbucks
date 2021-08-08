@@ -15,7 +15,7 @@ $(document).ready(function () {
     //$(".btn_myMenuRegister").on("click", myMenuRegister);
     //$(".cartSave").on("click", cartSave);
   });
-  
+  /*
   async function cartSave(productId) {
     console.log("productId:"+productId);
   
@@ -36,7 +36,8 @@ $(document).ready(function () {
         alert("저장 실패");
       }
   }
-  
+  */
+ 
   // "나만의 음료로 등록" 팝업 출력
   function showPopMyDrink() {
     // 레이어 팝업 출력

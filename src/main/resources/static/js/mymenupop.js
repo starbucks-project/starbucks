@@ -70,7 +70,7 @@ $(document).ready(function () {
                                      <p class="landing_comments_date">${parseResponse.data.createDate}</p>
                                      <div class="landing_conts_wrap">
                                        <div class="landing_conts_img">
-                                         <img src="/images/돌체 콜드브루.jpg">
+                                         <img src="/images/${parseResponse.data.productImg}">
                                        </div>
                                        <div class="landing_conts_txt">
                                          <dl>

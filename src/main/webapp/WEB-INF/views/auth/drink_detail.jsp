@@ -119,7 +119,7 @@ pageEncoding="UTF-8"%> <%@include file="../layout/header.jsp"%>
                 </ul>
               </div>
               <div class="cart_wrap">
-                <a href="javascript:void(0)" onclick="cartSave(${productEntity.id})" class="cartSave" role="button">장바구니 담기</a>
+                <a href="/user/cartSave/${productEntity.id}" class="cartSave" role="button">장바구니 담기</a>
               </div>
             </div>
           </fieldset>
@@ -195,7 +195,7 @@ pageEncoding="UTF-8"%> <%@include file="../layout/header.jsp"%>
         <img
           alt=""
           class="skuImgUrl"
-          src="/images/${productEntity.productImg}.jpg"
+          src="/images/${productEntity.productImg}"
         />
       </dt>
       <dd>

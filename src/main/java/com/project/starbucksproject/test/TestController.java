@@ -36,10 +36,10 @@ public class TestController {
         return "user/inMyCard";
     }
 
-    @GetMapping("/user/cart")
-    public String cart() {
-        return "user/Cart";
-    }
+    //@GetMapping("/user/cart")
+    //public String cart() {
+    //    return "user/Cart";
+    //}
 
     @GetMapping("/user/egift")
     public String eGift() {
