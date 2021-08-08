@@ -2520,6 +2520,15 @@ img.m_pic {
 .only_my_drink2 ul.btn_list li.li1 a {
   background: #006633;
 }
+.only_my_drink2 ul.btn_list li.li1 button {
+  background: #006633;
+  border-style: none;
+  border-radius: 3px;
+  color: #fff;
+  height: 30px;
+  width: 100%;
+  font-size: 14px;
+}
 .only_my_drink2 ul.btn_list li a {
   display: block;
   height: 30px;

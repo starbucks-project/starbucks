@@ -85,7 +85,7 @@
             <%-- <div class="upper-nav-item"><a href="/manager/logout">logout</a></div> --%>
           <c:when test="${sessionScope.principal != null}">
             <div class="upper-nav-item"><a class="active" href="/">Home</a></div>
-            <div class="upper-nav-item" onclick="kakaoLoagout()"><a href="">logout</a></div>
+            <div class="upper-nav-item" onclick="kakaoLogout()"><a href="javascript:void(0);">logout</a></div>
             <div class="upper-nav-item"><a href="#">cart</a></div>
             <div class="upper-nav-item"><a href="/user/mypage">mystarbucks</a></div>
             <div class="upper-nav-item"><a href="#">find a store</a></div>
