@@ -45,10 +45,7 @@ public class User {
 
     // @OneToMany(mappedBy = "mymenu")
     // private List<MyMenu> mymenus;
-<<<<<<< HEAD
-=======
 
->>>>>>> 1f34d766c9b8430fc1288620f388d9659a728d44
     // @OneToMany(mappedBy = "card")
     // private List<Card> cards;
 

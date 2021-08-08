@@ -37,7 +37,7 @@
                           <dl>                     
                             <dt>                         
                               <a href="/auth/drink_detail/${product.id}" class="goDrinkView" prod="9200000003643">
-                                <img src="/images/${product.productImg}.jpg" alt="아이스크림 블렌딩 콜드 브루">
+                                <img src="/images/${product.productImg}" alt="아이스크림 블렌딩 콜드 브루">
                               </a>                                                  
                               <ul>                                                          
                                 <li>
@@ -49,6 +49,8 @@
                           </dl>             
                         </li>
                       </c:forEach>
+                    </ul>
+                    </dd>
             </dl>
           </div>
               <!-- 160928 검색결과 없을 때 -->
