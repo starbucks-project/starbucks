@@ -109,6 +109,8 @@
     
     <!-- Custom js -->
     <script src="/js/script.js"></script>
+    <script src="/js/drinkdetail.js"></script>
+    <script src="/js/mymenupop.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Vendor JS Files -->
@@ -120,127 +122,6 @@
 
   <!-- Template Main JS File -->
   <script src="/js/ezmark.js"></script>
-  <script src="/plugins/js/main.js"></script>
-  <script>
-    // $(document).ready(function () {
-		
-		// [나만의 메뉴 팝업]
-    // $("#btn_show_pop_detail").on("click", function () {
-    //         console.log("1");
-    //    			//showPopMyMenu();
-    //         myMenuDetail();
-    //    	      });
-
-               
-    // [닫기]
-    // $(".btn_pop_close").on("click", hidePopMyMenu);
-	// });
-
-//팝업 동적 코딩
- $(document).ready(function () {
-   console.log("1");
-    $(".btn_pop_close").on("click", hidePopMyMenu);
-    $(".btn_show_pop_detail").on("click", myMenuDetail(mymenuId));
- }
-
-let myMenuDetail = async (mymenuId) => {
-console.log("2");
-event.preventDefault();
-let response = await fetch("/user/mymenuPop/"+mymenuId, {
-  method: "get"
-});
-console.log("3");
-let parseResponse = await response.json();
-
-console.log(parseResponse);
-
-  		if(parseResponse.code === 1){
-			//let popBoxEL = document.querySelector("#pop02");
-		
-			let popupItem = document.createElement("div");
-			popupItem.id = "mymenu-pop-"+mymenuId;
-			popupItem.className = "sArea_pop";
-      popupItem.role="dialog";
-      popupItem.aria-hidden="false";
-      popupItem.tabindex="0";
-			
-      let temp =`
-        <p class="btn_pop_close"><a href="javascript:void(0);">닫기</a></p>
-                                  <section class="sArea_pop_inner">
-                                  <!-- 내용 -->
-                                  <div id="landing_wrap">
-                                   <div class="landing_inner_wrap">
-                                    <header class="landing_ttl">
-                                      <p class="en">MY FAVORITE DRINK</p>
-                                      <h1>${parseResponse.data.productName}</h1>
-                                    </header>
-                                    <p class="calling_name_ttl">
-                                      <img alt="콜링네임" src="/images/calling_name_ttl.png">닉네임 '콜드브루'
-                                    </p>
-                                    <p class="landing_comments_date">${parseResponse.data.createDate}</p>
-                                    <div class="landing_conts_wrap">
-                                      <div class="landing_conts_img">
-                                        <img src="/images/${parseResponse.data.productImg}">
-                                      </div>
-                                      <div class="landing_conts_txt">
-                                        <dl>
-                                          <dt>기본 음료</dt>
-                                          <dd>${parseResponse.data.productName}</dd>
-                                        </dl>
-                                        <div class="btn_bev_info">
-                                          <p><a href="/menu/drink_view.do?product_cd=169001">음료 정보</a></p>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-      `;
-			
-			popupItem.innerHTML = temp;
-		}
-}
-
-
-  // "나만의 메뉴 자세히보기" 팝업 출력
-  function showPopMyMenu() {
-    // 레이어 팝업 출력
-       console.log("2");
-       $(".sArea_pop").show();
-       console.log("3");
-       $(".only_my_dimm, .sArea_pop").fadeIn();
-       console.log("4");
-       $(".sArea_pop").attr("aria-hidden","false").attr("tabindex","0").focus(); 
-    }
-
-  // "나만의 메뉴 자세히보기" 팝업 닫기
-	function hidePopMyMenu() {
-		$(".only_my_dimm , .sArea_pop").attr("aria-hidden", "true").attr("tabindex", "0").fadeOut();
-		$(".btn_show_pop_detail > a").focus(); 
-	}
-  
-          //All checkbox
-        $("#Allcheck").on("click",function(){ 
-            //전체선택 체크박스 클릭 
-            console.log("5");
-            //해당화면에 전체 checkbox들을 체크해준다 
-            if($(".ez-mcheckbox").attr("class")=="ez-mcheckbox ez-checked") { 
-                  console.log("6");
-                  //해당화면에 모든 checkbox들의 체크를해제시킨다. 
-                  $(".ez-mcheckbox").attr("class","ez-mcheckbox").focus(); 
-                  console.log("7");
-                } else { 
-                  console.log("8");
-                  //해당화면에 전체 checkbox들을 체크해준다 
-                 $(".ez-mcheckbox").attr("class","ez-mcheckbox ez-checked").focus(); 
-                    } 
-          });
-
-        $(".chkAll checkbox").on("click",function(){ 
-            //전체선택 체크박스 클릭 
-            console.log("7");
-            //해당화면에 전체 checkbox들을 체크해준다 
-            $(".ez-mcheckbox").attr("class","ez-mcheckbox ez-checked").focus(); 
-            console.log("8");
-          });
-</script>
+  <!--<script src="/plugins/js/main.js"></script>-->
+  <script></script>
   </html>

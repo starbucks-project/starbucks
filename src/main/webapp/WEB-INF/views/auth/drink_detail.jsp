@@ -177,19 +177,8 @@ pageEncoding="UTF-8"%> <%@include file="../layout/header.jsp"%>
 </div>
 <!-- container  end-->
 
-<div
-  class="only_my_dimm"
-  style="display: none"
-  aria-hidden="true"
-  tabindex="0"
-></div>
-<div
-  class="only_my_drink"
-  style="display: none"
-  role="dialog"
-  aria-hidden="true"
-  tabindex="0"
->
+<div class="only_my_dimm" style="display: none" aria-hidden="true" tabindex="0"></div>
+<div class="only_my_drink" style="display: none" role="dialog" aria-hidden="true" tabindex="0">
   <div class="only_my_head">
     <p class="tit">나만의 음료</p>
     <p class="close">

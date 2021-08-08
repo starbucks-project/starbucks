@@ -2301,7 +2301,6 @@ img.m_pic {
   z-index: 99;
   opacity: 0.7;
   filter: alpha(opacity=70);
-  display: none;
 }
 .only_my_drink {
   position: absolute;
@@ -5666,6 +5665,11 @@ table.drinkShop_view_info_tbl tbody tr td.tl {
 
 table.drinkShop_view_info_tbl tbody tr td.tl a {
   color: #000;
+}
+
+.btn_show_pop_detail {
+  border: none;
+  background-color: white;
 }
 
 /* (My 음료/매장) 버튼  */
