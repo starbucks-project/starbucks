@@ -23,7 +23,7 @@ pageEncoding="UTF-8"%> <%@include file="../layout/header.jsp"%>
               ><!-- 접근성_20171123 tabindex, aria, role 추가 -->
               <img
                 class="zoomImg"
-                src="/images/${productEntity.productImg}"
+                src="/images/food_list/${productEntity.productImg}"
                 data-zoom-image="https://image.istarbucks.co.kr/upload/store/skuimg/2021/06/[9200000003643]_20210623101238875.jpg"
                 alt="상세이미지"
               />
@@ -47,7 +47,7 @@ pageEncoding="UTF-8"%> <%@include file="../layout/header.jsp"%>
                 data-image="https://image.istarbucks.co.kr/upload/store/skuimg/2021/06/[9200000003643]_20210623101238875.jpg"
                 data-zoom-image="https://image.istarbucks.co.kr/upload/store/skuimg/2021/06/[9200000003643]_20210623101238875.jpg"
                 class="elevatezoom-gallery active"
-                ><img src="/images/${productEntity.productImg}" alt="상세이미지 1번"/></a>
+                ><img src="/images/food_list/${productEntity.productImg}" alt="상세이미지 1번"/></a>
             </li>
           </ul>
         </div>
@@ -61,11 +61,9 @@ pageEncoding="UTF-8"%> <%@include file="../layout/header.jsp"%>
           </h4>
           <p class="t1">
             ${productEntity.productInfo} <br />
-            * 아이스크림 블렌딩 콜드 브루는 BOGO쿠폰, 무료음료 쿠폰 등 일부 쿠폰
-            사용이 제한됩니다
           </p>
           <div id="myDrink" class="myDrink">
-            <a href="javascript:void(0)">나만의 음료로 등록</a>
+            <a href="javascript:void(0)">나만의 메뉴로 등록</a>
           </div>
         </div>
 
@@ -195,7 +193,7 @@ pageEncoding="UTF-8"%> <%@include file="../layout/header.jsp"%>
         <img
           alt=""
           class="skuImgUrl"
-          src="/images/${productEntity.productImg}"
+          src="/images/food_list/${productEntity.productImg}"
         />
       </dt>
       <dd>

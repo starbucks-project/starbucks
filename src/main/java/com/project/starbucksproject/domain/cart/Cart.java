@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import com.project.starbucksproject.domain.product.Product;
+import com.project.starbucksproject.domain.user.User;
 
 import lombok.Data;
 
@@ -23,4 +24,7 @@ public class Cart {
 
     @ManyToOne
     private Product product; // product 조인
+
+    @ManyToOne
+    private User user;
 }

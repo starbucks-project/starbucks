@@ -42,6 +42,8 @@ public class Product {
     private int sugar; // 당류
     private int caffeine; // 카페인
 
+    private int price; // 상품 금액
+
     @Lob
     private String productImg; // 상품 이미지
 

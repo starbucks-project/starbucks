@@ -3,6 +3,7 @@ package com.project.starbucksproject.web;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import javax.servlet.http.HttpSession;
 
 import com.project.starbucksproject.domain.mymenu.MyMenuRepository;
@@ -12,10 +13,12 @@ import com.project.starbucksproject.domain.product.ProductRepository;
 import com.project.starbucksproject.domain.user.User;
 import com.project.starbucksproject.domain.user.UserRepository;
 import com.project.starbucksproject.web.dto.CMRespDto;
+import com.project.starbucksproject.web.dto.MymenuDelReqDto;
 import com.project.starbucksproject.web.dto.MymenuSaveReqDto;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -49,12 +52,6 @@ public class MymenuController {
       List<Mymenu> mymenuEntity=myMenuRepository.mfindByuserId(userId);
       modelMymenu.addAttribute("mymenuEntity",mymenuEntity);
 
-      // List<Product> product=new ArrayList<>();
-      // for (Mymenu mymenu : mymenuEntity) {
-      //   product.add(mymenu.getProducts());
-      // }
-      // modelProduct.addAttribute("product", product);
-
         return "user/mymenu";
     }
 
@@ -67,22 +64,20 @@ public class MymenuController {
     return new CMRespDto<>(1, "성공", product);
   }
 
-  //
-  @GetMapping("/user/mymenu/{id}")
-  public String mymenu(@PathVariable int id,Model model) {
-    Product productEntity=productRepository.findById(id).get();
-    model.addAttribute("productEntity",productEntity);
-    return "auth/drink_detail";
-  }
-
   //product 마이메뉴에 등록하기(save)
   @PostMapping("/user/mymenuRegi")
   public @ResponseBody CMRespDto<Mymenu> mymenuRegi(@RequestBody MymenuSaveReqDto mymenuSaveReqDto) {
     System.out.println("나 실행됨??/user/mymenuRegi");
+    //인증된 사용자 : session에 저장된 User객체 들고오기
+    User principal=(User)session.getAttribute("principal");
+    //인증안된 사용자는 쫓아내면 된다!
+    if(principal==null) {
+    return new CMRespDto<>(0, "로그인하세요", null);
+   }
 
     Mymenu mymenu=new Mymenu();
     Product product=productRepository.findById(mymenuSaveReqDto.getProductId()).get();
-    User principal=(User)session.getAttribute("principal");
+    //User principal=(User)session.getAttribute("principal");
     mymenu.setProducts(product);
     mymenu.setUser(principal);
     mymenu.setProNickname(mymenuSaveReqDto.getProNickname());
@@ -91,6 +86,39 @@ public class MymenuController {
     System.out.println("나 실행됨??/user/mymenuRegi 2222");
 
     return new CMRespDto<>(1, "성공", mymenuEntity);
+  }
+
+  /*
+  @GetMapping("/user/mymenu/{id}")
+  public String mymenu(@PathVariable int id,Model model) {
+    Product productEntity=productRepository.findById(id).get();
+    model.addAttribute("productEntity",productEntity);
+    return "auth/drink_detail";
+  }
+  */
+
+  //마이메뉴 삭제
+  @DeleteMapping("/user/mymenuDel")
+  public @ResponseBody String mymenuDel(@RequestBody MymenuDelReqDto<String> dto ) {
+    int length=dto.getLength();
+    ArrayList<String> arr=dto.getArr();
+    System.out.println(length);
+    System.out.println(dto.getArr());
+
+    if(arr == null) {
+      return "fail";
+    } 
+    for (int i = 1; i < length; i++) {
+      
+      String id_str=arr.get(i);
+      System.out.println(id_str);
+
+      int id=Integer.parseInt(id_str);
+      System.out.println(id);
+      myMenuRepository.deleteById(id);
+      
+    }
+    return "ok";
   }
 
 }

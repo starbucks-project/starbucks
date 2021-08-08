@@ -86,9 +86,9 @@
           <c:when test="${sessionScope.principal != null}">
             <div class="upper-nav-item"><a class="active" href="/">Home</a></div>
             <div class="upper-nav-item" onclick="kakaoLogout()"><a href="javascript:void(0);">logout</a></div>
-            <div class="upper-nav-item"><a href="#">cart</a></div>
+            <div class="upper-nav-item"><a href="/user/cart">cart</a></div>
             <div class="upper-nav-item"><a href="/user/mypage">mystarbucks</a></div>
-            <div class="upper-nav-item"><a href="#">find a store</a></div>
+            <div class="upper-nav-item"><a href="/auth/store_map">find a store</a></div>
           </c:when>
           <c:when test="${sessionScope.managerPrincipal != null}">
             <div class="upper-nav-item"><a class="active" href="/manager">Home</a></div>
@@ -114,8 +114,8 @@
         <div class="dropdown"><a href="/menu"><span>Menu</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
             <li><a href="/auth/drink_list">Drink</a></li>
-            <li><a href="#">Food</a></li>
-            <li><a href="#">Product</a></li>
+            <li><a href="/auth/food_list">Food</a></li>
+            <li><a href="/auth/product_list">Product</a></li>
           </ul>
           
         </div> <!-- end dropdown-->

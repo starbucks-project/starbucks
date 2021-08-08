@@ -27,7 +27,7 @@ public class ProductController {
 
   @GetMapping("/auth/drink_list")
   public String drinkList(Model model) {
-    model.addAttribute("productsEntity", productRepository.findAll());
+    model.addAttribute("productsEntity", productRepository.mfindAllByCategory("drink"));
     return "auth/drink_list";
   }
 
@@ -38,4 +38,29 @@ public class ProductController {
     return "auth/drink_detail";
   }
 
+  @GetMapping("/auth/food_detail/{id}")
+  public String foodDetail(@PathVariable int id,Model model) {
+    Product productEntity=productRepository.findById(id).get();
+    model.addAttribute("productEntity",productEntity);
+    return "auth/food_detail";
+  }
+
+  @GetMapping("/auth/product_detail/{id}")
+  public String productDetail(@PathVariable int id,Model model) {
+    Product productEntity=productRepository.findById(id).get();
+    model.addAttribute("productEntity",productEntity);
+    return "auth/product_detail";
+  }
+
+  @GetMapping("/auth/food_list")
+  public String foodList(Model model) {
+    model.addAttribute("productsEntity", productRepository.mfindAllByCategory("food"));
+    return "auth/food_list";
+  }
+
+  @GetMapping("/auth/product_list")
+  public String productList(Model model) {
+    model.addAttribute("productsEntity", productRepository.mfindAllByCategory("product"));
+    return "auth/product_list";
+  }
 }

@@ -46,19 +46,15 @@
 									<col width="120">
 									<col width="72">
 									<col width="78">
-									<col width="85">
-									<col width="84">
-									<col width="66">
-									<col width="80">
 								</colgroup>
 								<thead>
 									<tr>
-										<th scope="col"><div class="ez-checkbox">
-												<div class="ez-checkbox">
-													<input type="checkbox" name="egiftCard_shopBag_ck_all"
+										<th scope="col">
+											<div class="ez-checkbox">
+												<input type="checkbox" name="egiftCard_shopBag_ck_all"
 														id="ckAll" title="전체 선택" class="ez-hide">
-												</div>
-											</div></th>
+											</div>
+										</th>
 										<th scope="col">상품 이미지</th>
 										<th scope="col">받는사람</th>
 										<th scope="col">주문수량</th>
@@ -67,25 +63,26 @@
 									</tr>
 								</thead>
 								<tbody>
+									<c:forEach var="cart" items="${carts}">
 									<tr>
-										<td><div class="ez-checkbox">
-												<div class="ez-checkbox">
-													<input type="checkbox" name="egiftCard_shopBag_ck1"
-														title="선택" value="103530" data-totalamount="10000"
-														data-ordercnt="1" class="ez-hide">
-												</div>
-											</div></td>
-										<td><img
-											src="https://image.istarbucks.co.kr/cardThumbImg/20210503/008046_thumb.png"
-											alt="e-gift 카드" class="cardImg"
-											onerror="this.src='https://image.istarbucks.co.kr/upload/common/img/icon/card_672x423.png';"></td>
-										<td>정용주<br>[010-5710-2570]
+										<td>
+											<div class="ez-checkbox">
+												<input type="checkbox" name="egiftCard_shopBag_ck1"
+													title="선택" value="103530" data-totalamount="10000"
+													data-ordercnt="1" class="ez-hide">
+											</div>
 										</td>
-										<td>1장</td>
-										<td>10,000원</td>
-										<td><strong>10,000원</strong></td>
-										
+										<td>
+											<img src="/images/${cart.product.productImg}"
+													alt="e-gift 카드" class="cardImg"
+													onerror="this.src='https://image.istarbucks.co.kr/upload/common/img/icon/card_672x423.png';"></td>
+										<td>${cart.receiver}<br>[010-5710-2570]
+										</td>
+										<td>1</td>
+										<td>${cart.price}원</td>
+										<td><strong>${cart.price}원</strong></td>
 									</tr>
+									</c:forEach>
 								</tbody>
 							</table>
 
@@ -155,7 +152,7 @@
 										<span class="arrow"><a href="javascript:void(0);"></a></span>
 									</dt>
 									<dd>
-										<div class="reg_charge_amount">
+										<div class="reg_charge_amount" >
 											<ul class="bullet_disc_grey">
 												<li>법인 카드 결제 시 청구서 상 [상품권]으로 표기되며, 신용카드로 상품권 결제 시 구매
 													한도가 적용될 수 있습니다.</li>

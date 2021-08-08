@@ -1039,6 +1039,12 @@ div.product_view_detail h4 {
   padding-bottom: 18px;
   margin-bottom: 20px;
 }
+div.product_view_detail h4 span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 20px;
+}
 div.product_view_detail p.t1 {
   font-size: 16px;
   color: #444;
@@ -2301,7 +2307,6 @@ img.m_pic {
   z-index: 99;
   opacity: 0.7;
   filter: alpha(opacity=70);
-  display: none;
 }
 .only_my_drink {
   position: absolute;
@@ -5246,17 +5251,27 @@ table.egiftCard_shopBag_info_tbl {
   font-size: 14px;
   text-align: center;
 }
-div.egiftCard_shopBag_total {
-  background: #f4f4f2;
-  border-bottom: 1px solid #dbdbdb;
-  padding: 17px 20px 15px 20px;
-  width: 790px;
+
+/* gh plus */
+table.egiftCard_shopBag_info_tbl tr {
+  width: 100%;
+
+  background-color: white;
+  font-size: 14px;
+  text-align: center;
 }
+
 div.egiftCard_shopBag_total {
   background: #f4f4f2;
   border-bottom: 1px solid #dbdbdb;
-  padding: 17px 20px 15px 20px;
-  width: 790px;
+  padding: 17px 35px 15px 20px;
+  width: 100%;
+  margin: 0;
+}
+div.egiftCard_shopBag_total p {
+  color: #222;
+  font-size: 14px;
+  text-align: right;
 }
 div.egiftCard_shopBag_total p span {
   padding: 0 10px;
@@ -5267,6 +5282,7 @@ div.egiftCard_shopBag_total p strong {
 }
 div.egiftCard_shopBag_btnZone01 {
   padding: 20px 0 30px 0;
+  margin-bottom: 20px;
 }
 div.egiftCard_shopBag_btnZone01 ul {
   margin-left: -5px;
@@ -5284,7 +5300,7 @@ div.egiftCard_shopBag_btnZone01 ul li {
 div.egiftCard_shopBag_btnZone01 ul li a {
   color: #444;
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   height: 28px;
   line-height: 28px;
@@ -5295,23 +5311,26 @@ section.shopBag_infoBox_pick {
   background: #fff;
   border: 1px solid #ddd;
   border-radius: 3px;
-  width: 788px;
+  width: 100%;
   margin-bottom: 20px;
   padding: 0 20px 0 20px;
 }
+
 dl.shopBag_infoBox01 {
-  border-bottom: 1px solid #ddd;
-  height: 28px;
-  padding: 10px 0 10px 0;
-  width: 788px;
+  border-bottom: 0 1px 0 0 solid #ddd;
+  height: 100px;
+  margin-bottom: 5px;
+  padding: 5px 0 5px 0;
+  width: 90%;
+
 }
 dl.shopBag_infoBox01 dt {
   color: #222;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   height: 30px;
   line-height: 30px;
-  width: 85px;
+  width: 30%px;
 }
 
 dl.shopBag_infoBox01 dt,
@@ -5324,7 +5343,7 @@ dl.shopBag_infoBox01 dd label {
 }
 dl.shopBag_infoBox01 dd {
   color: #444;
-  font-size: 12px;
+  font-size: 14px;
   height: 30px;
   line-height: 30px;
   width: 700px;
@@ -5347,12 +5366,15 @@ dl.shopBag_infoBox01 dd label {
   margin: 0 0 0 5px;
 }
 dl.shopBag_infoBox02 {
+  height: 100px;
+  padding: 10px 0 10px 0;
+  width: 90%;
   padding: 17px 0 20px 0;
 }
 dl.shopBag_infoBox02 dt {
   float: left;
   color: #222;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   width: 100px;
 }
@@ -5368,6 +5390,9 @@ dl.shopBag_infoBox02 dd ul li {
   padding-left: 10px;
 }
 div.pay_sel_wrap {
+  display: none;
+}
+.m_myCart_warning {
   display: none;
 }
 div.egiftCard_shopBag_btnZone02 {
@@ -5483,24 +5508,6 @@ table.egiftCard_shopBag_info_tbl tbody tr td strong {
   font-weight: bold;
   color: #006633;
 }
-div.egiftCard_shopBag_total {
-  background: #f4f4f2;
-  border-bottom: 1px solid #dbdbdb;
-  padding: 17px 20px 15px 20px;
-  width: 790px;
-}
-div.egiftCard_shopBag_total p {
-  color: #222;
-  font-size: 12px;
-  text-align: right;
-}
-div.egiftCard_shopBag_total p span {
-  padding: 0 10px;
-}
-div.egiftCard_shopBag_total p strong {
-  color: #006633;
-  font-size: 14px;
-}
 div.egiftCard_shopBag_btnZone01 {
   padding: 20px 0 30px 0;
 }
@@ -5509,14 +5516,6 @@ div.egiftCard_shopBag_btnZone01 ul {
   float: left;
 }
 
-section.shopBag_infoBox_pick {
-  background: #fff;
-  border: 1px solid #ddd;
-  border-radius: 3px;
-  width: 788px;
-  margin-bottom: 20px;
-  padding: 0 20px 0 20px;
-}
 dl.shopBag_infoBox01 {
   border-bottom: 1px solid #ddd;
   height: 28px;
@@ -5666,6 +5665,11 @@ table.drinkShop_view_info_tbl tbody tr td.tl {
 
 table.drinkShop_view_info_tbl tbody tr td.tl a {
   color: #000;
+}
+
+.btn_show_pop_detail {
+  border: none;
+  background-color: white;
 }
 
 /* (My 음료/매장) 버튼  */
