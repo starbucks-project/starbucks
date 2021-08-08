@@ -1039,6 +1039,12 @@ div.product_view_detail h4 {
   padding-bottom: 18px;
   margin-bottom: 20px;
 }
+div.product_view_detail h4 span {
+  font-size: 18px;
+  font-weight: bold;
+  color: #444;
+  margin-bottom: 20px;
+}
 div.product_view_detail p.t1 {
   font-size: 16px;
   color: #444;

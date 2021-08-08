@@ -114,8 +114,8 @@
         <div class="dropdown"><a href="/menu"><span>Menu</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
             <li><a href="/auth/drink_list">Drink</a></li>
-            <li><a href="#">Food</a></li>
-            <li><a href="#">Product</a></li>
+            <li><a href="/auth/food_list">Food</a></li>
+            <li><a href="/auth/product_list">Product</a></li>
           </ul>
           
         </div> <!-- end dropdown-->
