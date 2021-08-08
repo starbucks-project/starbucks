@@ -11,7 +11,6 @@ import com.project.starbucksproject.domain.product.ProductRepository;
 import com.project.starbucksproject.domain.user.User;
 import com.project.starbucksproject.domain.user.UserRepository;
 
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,7 +31,9 @@ public class ManagerController {
   private final HttpSession session;
 
   @GetMapping("/manager")
-  public String managerHome() {
+  public String managerHome(Model model) {
+    model.addAttribute("productsEntity", productRepository.findAll());
+
     return "manager/managerHome";
   }
 
@@ -88,11 +89,12 @@ public class ManagerController {
     System.out.println("=========들어옴=========");
     System.out.println(product);
 
-    UUID uuid = UUID.randomUUID();
-
     // 저장될 파일 이름
-    String imageFileName = uuid + "_" + productImage.getOriginalFilename();
+    String imageFileName = productImage.getOriginalFilename();
+    String imageTest = productImage.getContentType();
+    // System.out.println(imageTest);
     // Path imagePath = Paths.get(MyPath.IMAGEPATH + imageFileName);
+    // System.out.println(imageFileName);
 
     product.setProductImg(imageFileName);
 
