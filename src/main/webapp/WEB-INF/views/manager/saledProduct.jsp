@@ -60,15 +60,17 @@
                     </tr>
                 </thead>
                 <tbody id="notice">
+                    <c:forEach var="saleditems" items="${saleditemsEntity}">
                     <tr>     
-                        <td>01</td>     
-                        <td>김철수</td>
-                        <td class="left"><a>아메리카노</a></td>     
-                        <td>2021-07-18</td>     
+                        <td>${saleditems.id}</td>     
+                        <td>${saleditems.user.name}</td>
+                        <td class="left"><a>${saleditems.cart.product.productName}</a></td>     
+                        <td>${saleditems.date}</td>     
                         <td>4,100</td> 
                         <td>1</td>
                     </tr>
-                    <tr>     
+                    </c:forEach>
+                    <%-- <tr>     
                         <td>02</td> 
                         <td>김영희</td>    
                         <td class="left"><a>카페라떼</a></td>     
@@ -99,7 +101,7 @@
                         <td>2021-07-28</td>     
                         <td>4,500</td> 
                         <td>2</td>
-                    </tr>
+                    </tr> --%>
                     <tr class="last-tr">     
                         <td>No</td>     
                         <td>구매자</td>

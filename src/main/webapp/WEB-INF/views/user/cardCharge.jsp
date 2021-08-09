@@ -91,7 +91,13 @@
 												</p>
 											</div>
 											<div class="charge_options">
-												<ul>
+												<select>
+													<option id="price1" value="100000" name="totPrice">10만원</option>
+													<option id="price2" value="50000" name="totPrice">5만원</option>
+													<option id="price3" value="30000" name="totPrice">3만원</option>
+													<option id="price4" value="10000" name="totPrice">1만원</option>
+												</select>
+												<!-- <ul>
 													<li>
 														<label>
 															<input type="radio" value="100000" name="totPrice" />10만원
@@ -110,7 +116,7 @@
 															name="totPrice" />1만원</label>
 													</li>
 													
-												</ul>
+												</ul> -->
 											</div>
 											<p class="charge_level_guide txt">스타벅스 카드 온라인 충전은 1만원
 												단위로 최대 10만원까지 가능하며, 충전 후 합계 잔액이 55만원을 초과할 수 없습니다.</p>
@@ -278,12 +284,12 @@ function pay() {
       // param
       pg: "html5_inicis",
       pay_method: "card",
-      merchant_uid: "ORD20180131-0000011", // 상품 PK
+      merchant_uid: "123", // 상품 PK
       name: "노르웨이 회전 의자",
       amount: 100, // 값
       buyer_email: "gildong@gmail.com", // session 값
-      buyer_name: buyername, // session 값
-      buyer_tel: buyeremail, // session 값
+      buyer_name: "hsh", // session 값
+      buyer_tel: "010-7711-7830", // session 값
       buyer_addr: "서울특별시 강남구 신사동", // session 값
       buyer_postcode: "01181", // session 값
     },

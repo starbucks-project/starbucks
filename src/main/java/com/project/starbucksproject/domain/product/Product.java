@@ -13,7 +13,8 @@ import javax.persistence.Lob;
 // import javax.persistence.OneToMany;
 import javax.persistence.OneToMany;
 
-import com.project.starbucksproject.domain.mymenu.Mymenu;
+import com.project.starbucksproject.domain.card.Card;
+import com.project.starbucksproject.domain.mymenu.MyMenu;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -52,8 +53,10 @@ public class Product {
     private Timestamp createDate; // 등록일
 
     @OneToMany(mappedBy = "products")
-    private List<Mymenu> mymenus; // 마이메뉴 조인
+    private List<MyMenu> mymenus; // 마이메뉴 조인
 
     // @OneToMany(mappedBy = "cart")
     // private List<Cart> carts; // 카트 조인
+
+   
 }

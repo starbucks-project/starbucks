@@ -15,7 +15,7 @@
             
             <div class="bottom-area">
                 <hr />
-            <form action="/manager/upload" method="post" enctype="multipart/form-data">
+            <form action="/manager/product/${productEntity.id}" method="post" enctype="multipart/form-data">
             <div class="category-box">
                 <select name="category" class="category-select">
                     <option value="">--카테고리--</option>
@@ -32,7 +32,7 @@
 
                 <div class="imageupload-btn-box">
                     <div class="imageupload-btn">
-                        <input type="file" name="productImage" id="upload_file" accept="image/*" required=true value="업로드">
+                        <input type="file" name="productImage" id="upload_file" accept="image/*" required=true">
                     </div> <!-- end imageupload-btn-->
                 </div> <!-- end imageupload-btn-box-->
             </div> <!-- end productImageupload-box-->
@@ -48,7 +48,7 @@
                     <a>제품 영문 이름</a>
                 </div>
                 <div class="product-name-input-box">
-                    <input name="productNameEng" type="text" name="productNameEng" placeholder="제품 영문 이름을 입력하세요." value="${productEntity.productNameEng" />
+                    <input name="productNameEng" type="text" name="productNameEng" placeholder="제품 영문 이름을 입력하세요." value="${productEntity.productNameEng}" />
                 </div>
             </div> <!-- end product-name-area-box-->
             
@@ -92,7 +92,7 @@
                             <a>나트륨(g)</a>
                         </td>
                         <td class="nuturiton_input">
-                            <input name="natrium" type="text" placeholder="나트륨 입력" value="${productEntity.natruium}">
+                            <input name="natrium" type="text" placeholder="나트륨 입력" value="${productEntity.natrium}">
                         </td>
                     </tr>
                     <tr>

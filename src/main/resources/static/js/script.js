@@ -197,6 +197,28 @@ $(document).ready(function () {
   $("div.product_list > dl > dd > ul > li").bind("click", function () {
     goUrl = $(this).find("a").attr("href");
     location.href = goUrl;
+<<<<<<< HEAD
+  });
+});
+
+
+// -----------------------------
+//  Drink Detail
+// -----------------------------
+$(document).ready(function () {
+  // [나만의 음료로 등록]
+  $("#myDrink").on("click", function () {
+    console.log("1");
+    showPopMyDrink();
+  });
+
+  // [닫기]
+  $(".btn_close").on("click", hidePopMyDrink);
+  //나만의 메뉴에 등록
+  $(".btn_go_my_drink_step3").on("click", goMyDrinkStep3);
+  //$(".btn_myMenuRegister").on("click", myMenuRegister);
+  $(".cartSave").on("click", cartSave);
+=======
     }
 );
 // 음료 - 카테고리 별 - 사진으로 보기 & 영양정보로 보기
@@ -207,6 +229,7 @@ $("dl.product_view_tab01 > dt > a").bind("click", function () {
   $("dl.product_view_tab01 > dd").hide();
   $(this).parent().next().show();
   return false;
+>>>>>>> 6254cddb8115345013311cc6ae21458653d204a5
 });
 
 // 음료 - 서비스 별 - 사진으로 보기 & 영양정보로 보기
@@ -247,6 +270,7 @@ document
 //  Card Register
 // -----------------------------
 
+<<<<<<< HEAD
 async function cardRegi(){
   event.preventDefault();
 
@@ -279,3 +303,12 @@ async function cardRegi(){
     alert("카드저장 실패");
   }
 }
+=======
+// -----------------------------
+// update drink select jquery
+// -----------------------------
+$(document).ready(function () {
+  category_val = $('select.category').attr('data-type');
+  $('select.category option[value=' + category_val + ']').attr('selected', 'selected');
+});
+>>>>>>> c359fe071b723897b888c1716ae02d30111359b2

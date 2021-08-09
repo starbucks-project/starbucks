@@ -18,7 +18,7 @@
           <div class="product_big_pic">
             <p>
               <a href="javascript:void(0)" tabindex="-1" aria-hidden="true" role="presentation"><!-- 접근성_20171123 tabindex, aria, role 추가 -->
-              <img class="zoomImg" src="/images/drink-detail/아이스크림 블렌딩 콜드 브루.jpg" 
+              <img class="zoomImg" src="/images/drink-detail/${productEntity.productImg}" 
               data-zoom-image="https://image.istarbucks.co.kr/upload/store/skuimg/2021/06/[9200000003643]_20210623101238875.jpg" alt="상세이미지">
             </a>
           </p>
@@ -31,96 +31,72 @@
           <div class="product_thum_wrap" id="product_thum_wrap">
             <ul class="product_thum">
               <li>
-                <a href="javascript:void(0)" data-image="https://image.istarbucks.co.kr/upload/store/skuimg/2021/06/[9200000003643]_20210623101238875.jpg" data-zoom-image="https://image.istarbucks.co.kr/upload/store/skuimg/2021/06/[9200000003643]_20210623101238875.jpg" class="elevatezoom-gallery active"><img src="https://image.istarbucks.co.kr/upload/store/skuimg/2021/06/[9200000003643]_20210623101238875.jpg" alt="상세이미지 1번"></a>
+                <a href="javascript:void(0)" data-image="https://image.istarbucks.co.kr/upload/store/skuimg/2021/06/[9200000003643]_20210623101238875.jpg" data-zoom-image="https://image.istarbucks.co.kr/upload/store/skuimg/2021/06/[9200000003643]_20210623101238875.jpg" class="elevatezoom-gallery active">
+                <img src="/images/drink_list/${productEntity.productImg}" alt="상세이미지 1번"></a>
               </li>
             </ul>
           </div>
         </div>
         <div class="product_view_detail">
           <div class="myAssignZone">
-            <h4>아이스크림 블렌딩 콜드 브루<br><span>Ice Cream Blending Cold Brew</span></h4>
-            <p class="t1">콜드 브루와 바닐라빈이 콕콕 박힌 아이스크림이 블렌딩 되어 진하고 부드러운 콜드 브루 풍미를 느낄 수 있는 콜드 브루
+            <h4>${productEntity.productName}<br><span>${productEntity.productNameEng}</span></h4>
+            <p class="t1">${productEntity.productInfo}
             <br> * 아이스크림 블렌딩 콜드 브루는 BOGO쿠폰, 무료음료 쿠폰 등 일부 쿠폰 사용이 제한됩니다</p>
           </div>
 
-          <form method="post">
-            <fieldset>
-              <legend class="hid">제품 영양 정보</legend>
-              <div class="product_view_info">
-                <div class="product_info_head">
-                  <p class="tit">제품 영양 정보</p>
-                  
-                </div>
-                <div class="product_info_content">
-                   <ul>
-                      <li class="kcal">
-                        <dl>
-                          <dt>1회 제공량 (kcal)</dt>
-                            <dd>420</dd>
-                          </dl>
-                      </li>
-                      <li class="sat_FAT">
-                        <dl>
-                          <dt>포화지방 (g)</dt>
-                          <dd>6</dd>
-                        </dl>
-                      </li>
-                      <li class="protein">
-                        <dl>
-                          <dt>단백질 (g)</dt>
-                            <dd>10</dd>
-                        </dl>
-                      </li>
-                      <li class="fat" style="display:none;">
-                        <dl>
-                          <dt>지방 (g)</dt>
-                          <dd>11</dd>
-                        </dl>
-                      </li>
-                      <li class="trans_FAT" style="display:none;">
-                        <dl>
-                          <dt>트랜스지방 (g)</dt>
-                          <dd>0.3</dd>
-                        </dl>
-                      </li>
-                    </ul>
-                    <ul>
-                      <li class="sodium">
-                        <dl>
-                          <dt>나트륨 (mg)</dt>
-                          <dd>140</dd>
-                        </dl>
-                      </li>
-                      <li class="sugars">
-                        <dl>
-                          <dt>당류 (g)</dt>
-                          <dd>53</dd>
-                        </dl>
-                      </li>
-                      <li class="caffeine last">
-                        <dl>
-                          <dt>카페인 (mg)</dt>
-                          <dd>210</dd>
-                        </dl>
-                      </li>
-                      <li class="cholesterol" style="display:none;">
-                        <dl>
-                          <dt>콜레스테롤 (mg)</dt>
-                          <dd>30</dd>
-                        </dl>
-                      </li>
-                      <li class="chabo" style="display:none;">
-                        <dl>
-                          <dt>탄수화물 (g)</dt>
-                          <dd>69</dd>
-                        </dl>
-                      </li>
-                    </ul>
-                </div>
+         <%-- <form> --%>
+          <fieldset>
+            <legend class="hid">제품 영양 정보</legend>
+            <div class="product_view_info">
+              <div class="product_info_head">
+                <p class="tit">제품 영양 정보</p>
+              </div>
+              <div class="product_info_content">
+                <ul>
+                  <li class="kcal">
+                    <dl>
+                      <dt>1회 제공량 (kcal)</dt>
+                      <dd>${productEntity.kcal}</dd>
+                    </dl>
+                  </li>
+                  <li class="sat_FAT">
+                    <dl>
+                      <dt>포화지방 (g)</dt>
+                      <dd>${productEntity.saturatedFat}</dd>
+                    </dl>
+                  </li>
+                  <li class="protein">
+                    <dl>
+                      <dt>단백질 (g)</dt>
+                      <dd>${productEntity.protein}</dd>
+                    </dl>
+                  </li>
+                </ul>
+                <ul>
+                  <li class="sodium">
+                    <dl>
+                      <dt>나트륨 (mg)</dt>
+                      <dd>${productEntity.natrium}</dd>
+                    </dl>
+                  </li>
+                  <li class="sugars">
+                    <dl>
+                      <dt>당류 (g)</dt>
+                      <dd>${productEntity.sugar}</dd>
+                    </dl>
+                  </li>
+                  <li class="caffeine last">
+                    <dl>
+                      <dt>카페인 (mg)</dt>
+                      <dd>${productEntity.caffeine}</dd>
+                    </dl>
+                  </li>
+                </ul>
+              </div>
                <hr />
                 <div class="edit-btn-box">
                   <div class="edit-btn">
-                    <a href="/manager/product/${product.id}">수정</a>
+                    <a href="/manager/product/${productEntity.id}">수정</a>
                   </div>
                   <div class="edit-btn">
                     <a href="#">삭제</a>
@@ -128,7 +104,7 @@
                 </div>
               </div>
             </fieldset>
-          </form>
+          <%-- </form> --%>
         </div>
       </div>
       <div class="product_view_wrap2">

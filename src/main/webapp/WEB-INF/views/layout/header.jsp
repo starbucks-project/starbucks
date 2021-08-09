@@ -127,9 +127,9 @@
             <li><a href="/auth/store_reserve">리저브 매장</a></li>
           </ul>
         </div> <!--end dropdown --> 
-        </c:when>
+        </c:when> 
         <c:otherwise>
-          <div class="dropdown"><a href="/manager/home"><span>상품 리스트</span></a></div>
+          <div class="dropdown"><a href="/manager"><span>상품 리스트</span></a></div>
           <div class="dropdown"><a href="/manager/uploadForm"><span>상품 등록</span></a></div>
           <div class="dropdown"><a href="/manager/userlist"><span>회원관리</span></a></div>
           <div class="dropdown"><a href="/manager/saledProduct"><span>판매현황</span></a></div>
