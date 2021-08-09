@@ -1,6 +1,7 @@
 package com.project.starbucksproject.domain.product;
 
 import java.sql.Timestamp;
+import java.util.Arrays;
 import java.util.List;
 
 // import java.util.List;
@@ -12,6 +13,7 @@ import javax.persistence.Id;
 import javax.persistence.Lob;
 // import javax.persistence.OneToMany;
 import javax.persistence.OneToMany;
+import javax.persistence.Transient;
 
 import com.project.starbucksproject.domain.card.Card;
 import com.project.starbucksproject.domain.myMenu.*;
@@ -30,6 +32,9 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; // 기본키
+
+    @Transient
+    private List<String> categorys = Arrays.asList("drink", "food", "product");
 
     private String category; // 카테고리
     private String productName; // 상품 명

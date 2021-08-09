@@ -1295,6 +1295,14 @@ div.productView_top_right p.txt {
   margin-bottom: 15px;
   line-height: 1.6;
 }
+
+.product_price_box {
+  display: inline;
+}
+
+.product_price_box h6 {
+  display: inline;
+}
 /*--------------------------------------------------------------
 # Drink List
 --------------------------------------------------------------*/
@@ -4576,7 +4584,6 @@ input[type="email"] {
   text-decoration: underline;
 }
 
-
 .hyphen_bg17 {
   background: url("/images/hyphen_bg17.gif") no-repeat;
   float: left;
@@ -5370,7 +5377,6 @@ dl.shopBag_infoBox01 {
   margin-bottom: 5px;
   padding: 5px 0 5px 0;
   width: 90%;
-
 }
 dl.shopBag_infoBox01 dt {
   color: #222;

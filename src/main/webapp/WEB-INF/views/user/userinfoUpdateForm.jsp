@@ -19,7 +19,7 @@
         <div class="name-text-box">
           <h6>이름</h6>
         </div> <!-- end name-text-box -->
-        <div class="under-name-text">
+        <div class="under-name-text"> 
         <div class="name-output-box">
           <input type="text" name="name" value="${principal.name}" />
         </div> <!-- end name-output-box-->
