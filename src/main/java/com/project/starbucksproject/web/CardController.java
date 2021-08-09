@@ -31,19 +31,24 @@ public class CardController {
 
   @PostMapping("/user/cardRegi")
   public @ResponseBody String cardRegiForm(@RequestBody Card card) {
-      System.out.println(card.getCardName());
+      System.out.println("CardName:"+card.getCardName());
       System.out.println(card.getCardNum());
       System.out.println(card.getPin());
-
+      
       User principal=(User)session.getAttribute("principal");
       if(principal==null) {
         return "fail";
       }
-
+      
       card.setUser(principal);
       card.setCardImage("cardImg.png");
-      cardRepository.save(card);
-
+      Card cardEntity=cardRepository.save(card);
+      if(cardEntity.getCardName()==null){
+        cardEntity.setCardName("카드_"+cardEntity.getId());
+        System.out.println("CardName:"+cardEntity.getCardName());
+        cardRepository.save(cardEntity);
+      }
+      
       return "ok";
   }
 
