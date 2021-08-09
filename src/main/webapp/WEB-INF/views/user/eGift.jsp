@@ -96,22 +96,25 @@
 								<th>금액 선택</th>
 								<td>
 									<div class="tbl_card_radio">
-									
-										<input id="price1" name="price" type="radio" value="100000">
+										<select>
+											<option id="price1" value="100000"  name="price">10만원</option>
+											<option id="price2" value="50000"  name="price">5만원</option>
+											<option id="price3" value="30000"  name="price">3만원</option>
+											<option id="price4" value="10000"  name="price">1만원</option>
+										</select>
+										<!-- <input id="price1" name="price" type="radio" value="100000">
 					                    <label for="price1">10만원</label>
 					                    <input id="price2" name="price" type="radio" value="50000">
 					                    <label for="price2">5만원</label>
 					                    <input id="price3" name="price" type="radio" value="30000">
 					                    <label for="price3">3만원</label>
 					                    <input id="price4" name="price" type="radio" value="10000" checked="checked">
-					                    <label for="price4">1만원</label>
+					                    <label for="price4">1만원</label> -->
 										
-										<input id="price5" name="price" type="radio" value="">
-										<label for="price5">다른 금액</label>
-										<!-- 20180117 추가 -->
-										<input type="text" name="amount" id="amount" title="선물 금액" maxlength="6" placeholder="직접입력" class="amountInput">										
+										
+												
 									</div>
-									<p class="gift_info_adding txt_red">- 장당 금액은 5천원 또는 1만원~50만원까지 선물 가능합니다. (1만원 이상부터는 만원 단위로 가능)</p>
+									<p class="gift_info_adding txt_red">- 장당 금액은 또는 1만원~10만원까지 선물 가능합니다. (1만원 이상부터는 만원 단위로 가능)</p>
 								</td>
 							</tr>
 							<tr>
@@ -130,7 +133,7 @@
 								<td>
 									<div class="tbl_card_radio">
 										<input id="payMethod1" name="gopaymethod" type="radio" value="onlycard" checked="checked">
-										<label for="payMethod1">신용카드</label>
+										<label for="payMethod1" >신용카드</label>
 									</div>
 								</td>
 							</tr>
@@ -149,6 +152,7 @@
 							</tr>
 						</tbody></table>
 					</fieldset>
+					<button>결제하기</button>
 				</form>
 			</section>
 		</div>

@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import com.project.starbucksproject.domain.card.Card;
+import com.project.starbucksproject.domain.card.CardRepository;
 import com.project.starbucksproject.domain.cart.Cart;
 import com.project.starbucksproject.domain.cart.CartRepository;
 import com.project.starbucksproject.domain.product.Product;
@@ -74,4 +76,33 @@ public class CartController {
   }
 
   
+  // e-gift 카드 선물하기에서 장바구니로 이동
+  @GetMapping("/user/cardcart/{id}")
+  public String cartcard(@PathVariable int id,Model model){
+     //인증된 사용자 : session에 저장된 User객체 들고오기
+    User principal=(User)session.getAttribute("principal");
+     //인증안된 사용자는 쫓아내면 된다!
+    if(principal==null) {
+      return "redirect:/auth/login";
+     }
+
+    String receivPhoneNum=principal.getPhoneNum();
+    String receiver=principal.getName();
+    if (receivPhoneNum==null) {
+      receivPhoneNum="";
+    }
+
+     Card cardEntity = CardRepository.findById(id).get();
+
+
+     Cart cart=new Cart();
+     cart.setPrice(cardEntity.getPrice());
+     cart.setProduct(cardEntity.getCardName());
+     cart.setReceiver(receiver);
+     cart.setUser(principal);
+     cartRepository.save(cart);
+     model.addAttribute("cart", cart);
+
+    return "user/Cart";
+  }
 }

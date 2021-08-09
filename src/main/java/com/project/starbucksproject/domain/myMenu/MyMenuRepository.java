@@ -7,9 +7,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 
 
-public interface MyMenuRepository extends JpaRepository<Mymenu, Integer> {  
+public interface MyMenuRepository extends JpaRepository<MyMenu, Integer> {  
     
     @Query(value = "SELECT * FROM mymenu WHERE userId= :userId", nativeQuery = true)
-    List<Mymenu> mfindByuserId(int userId);
+    List<MyMenu> mfindByuserId(int userId);
     
 }
