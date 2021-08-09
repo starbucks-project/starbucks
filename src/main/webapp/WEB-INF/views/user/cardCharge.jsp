@@ -46,7 +46,7 @@
 										<td>
 											<div class="sel_wrap">
 												<p class="user_sel_wrap">
-													<label for="cardNum_NORMAL">${card.cardName}</label> 
+													<label for="cardNum_NORMAL">${cardEntity.cardName}</label> 
 														<select id="cardNum_NORMAL" name="cardNum">
 														<option value="">--카드선택--</option>
 														<option
