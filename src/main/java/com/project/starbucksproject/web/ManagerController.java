@@ -90,8 +90,8 @@ public class ManagerController {
   }
 
   // 회원 관리 페이지에서 이름 검색 했을 때
-  @PostMapping("/manager/{name}")
-  public String searchUser(@PathVariable String name, Model model) {
+  @PostMapping("/manager/searchname")
+  public String searchUser(String name, Model model) {
     User userEntity = userRepository.mfindByName(name);
 
     return "redirect:/manager/userlist";
