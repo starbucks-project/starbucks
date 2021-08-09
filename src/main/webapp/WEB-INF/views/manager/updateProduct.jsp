@@ -22,19 +22,19 @@
                     <%-- 반복문 --%>
                     <c:forEach var="category" items="${productEntity.categorys}">
                         
-                        <option value="${category}" ${productEntity.category eq category}>${category}</option>
+                        <option value="${category}" ${productEntity.category eq category? "selected" : null}>${category}</option>
                     </c:forEach>
                 </select>
             </div> <!-- end cateogry-box-->
 
             <div class="productImageupload-box">
                 <div class="productImage-box">
-                    <img src="/images/preview.png" id="img_section" style="width: 120px; height: 150px;">
+                    <img src="/images/drink_list/${productEntity.productImg}" id="img_section" style="width: 120px; height: 150px;">
                 </div> <!-- end productImage-->
 
                 <div class="imageupload-btn-box">
                     <div class="imageupload-btn">
-                        <input type="file" name="productImage" id="upload_file" accept="image/*" required="true">
+                        <input type="file" name="productImage" id="upload_file" accept="image/*" >
                     </div> <!-- end imageupload-btn-->
                 </div> <!-- end imageupload-btn-box-->
             </div> <!-- end productImageupload-box-->
@@ -44,13 +44,19 @@
                     <a>제품 이름</a>
                 </div>
                 <div class="product-name-input-box">
-                    <input name="productName" type="text" name="productName" placeholder="제품 이름을 입력하세요." value="${productEntity.productName}" />
+                    <input name="productName" type="text" placeholder="제품 이름을 입력하세요." value="${productEntity.productName}" />
                 </div>
                 <div class="product-title-box">
                     <a>제품 영문 이름</a>
                 </div>
                 <div class="product-name-input-box">
-                    <input name="productNameEng" type="text" name="productNameEng" placeholder="제품 영문 이름을 입력하세요." value="${productEntity.productNameEng}" />
+                    <input name="productNameEng" type="text"" placeholder="제품 영문 이름을 입력하세요." value="${productEntity.productNameEng}" />
+                </div>
+                <div class="product-title-box">
+                    <a>제품 가격</a>
+                </div>
+                <div class="product-name-input-box">
+                    <input name="price" type="number" placeholder="상품 가격을 입력하세요" value="${productEntity.price}" />
                 </div>
             </div> <!-- end product-name-area-box-->
             

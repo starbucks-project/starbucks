@@ -23,7 +23,7 @@ public class Card {
     private String cardImage; // 카드 이미지
     private String pin; // 카드 핀번호
     private String cardNum; // 카드 번호
-    private int valance; // 잔액
+    private int balance; // 잔액
     // 충전금액
     private int price;
 
