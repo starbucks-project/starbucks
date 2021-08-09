@@ -18,7 +18,7 @@
           <div class="product_big_pic">
             <p>
               <a href="javascript:void(0)" tabindex="-1" aria-hidden="true" role="presentation"><!-- 접근성_20171123 tabindex, aria, role 추가 -->
-              <img class="zoomImg" src="/images/drink-detail/${productEntity.productImg}" 
+              <img class="zoomImg" src="/images/drink_list/${productEntity.productImg}" 
               data-zoom-image="https://image.istarbucks.co.kr/upload/store/skuimg/2021/06/[9200000003643]_20210623101238875.jpg" alt="상세이미지">
             </a>
           </p>
@@ -41,7 +41,6 @@
           <div class="myAssignZone">
             <h4>${productEntity.productName}<br><span>${productEntity.productNameEng}</span></h4>
             <p class="t1">${productEntity.productInfo}
-            <br> * 아이스크림 블렌딩 콜드 브루는 BOGO쿠폰, 무료음료 쿠폰 등 일부 쿠폰 사용이 제한됩니다</p>
           </div>
 
          <%-- <form> --%>
@@ -94,6 +93,9 @@
                 </ul>
               </div>
                <hr />
+               <div class="product_price_box">
+                 <h6>가격 : ${productEntity.price}</h6>
+               </div>
                 <div class="edit-btn-box">
                   <div class="edit-btn">
                     <a href="/manager/product/${productEntity.id}">수정</a>

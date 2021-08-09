@@ -1,4 +1,4 @@
-package com.project.starbucksproject.domain.mymenu;
+package com.project.starbucksproject.domain.myMenu;
 
 
 import java.util.List;
@@ -13,3 +13,4 @@ public interface MyMenuRepository extends JpaRepository<MyMenu, Integer> {
     List<MyMenu> mfindByuserId(int userId);
     
 }
+   

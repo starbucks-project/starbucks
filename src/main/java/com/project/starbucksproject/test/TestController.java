@@ -11,15 +11,12 @@ public class TestController {
         return "test/test";
     }
 
-    @GetMapping("/user/mypage")
-    public String mypage() {
-        return "user/mypage";
-    }
+    // @GetMapping("/user/mypage")
+    // public String mypage() {
+    //     return "user/mypage";
+    // }
 
-    @GetMapping("/user/cardCharge")
-    public String cardCharge() {
-        return "user/cardCharge";
-    }
+   
 
     @GetMapping("/user/egift")
     public String eGift() {

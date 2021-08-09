@@ -36,7 +36,7 @@
                           <dl>                     
                             <dt>                         
                               <a href="/manager/detail/${product.id}" class="goDrinkView" prod="9200000003643">
-                                <img src="/images/${product.productImg}" alt="아이스크림 블렌딩 콜드 브루">
+                                <img src="/images/${product.category}_list/${product.productImg}" alt="아이스크림 블렌딩 콜드 브루">
                               </a>                                                  
                               <ul>                                                          
                                 <li>

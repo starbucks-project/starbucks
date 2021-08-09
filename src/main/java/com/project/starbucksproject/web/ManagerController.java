@@ -14,7 +14,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+
 import org.springframework.web.multipart.MultipartFile;
 
 import lombok.RequiredArgsConstructor;
@@ -63,12 +63,17 @@ public class ManagerController {
   @PostMapping("/manager/product/{id}")
   public String update(@PathVariable int id, Product product, MultipartFile productImage) {
     Product productEntity = productRepository.findById(id).get();
-
+    
     String imageFileName = productImage.getOriginalFilename();
+    System.out.println("imageFileName : " + imageFileName);
+    if(imageFileName == null || imageFileName.equals("")){
+    }else{
+      productEntity.setProductImg(imageFileName);
+    }
     productEntity.setCategory(product.getCategory());
-    productEntity.setProductImg(imageFileName);
     productEntity.setProductName(product.getProductName());
     productEntity.setProductNameEng(product.getProductNameEng());
+    productEntity.setPrice(product.getPrice());
     productEntity.setProductInfo(product.getProductInfo());
     productEntity.setKcal(product.getKcal());
     productEntity.setSaturatedFat(product.getSaturatedFat());
@@ -93,6 +98,7 @@ public class ManagerController {
   @PostMapping("/manager/searchname")
   public String searchUser(String name, Model model) {
     User userEntity = userRepository.mfindByName(name);
+    model.addAttribute("userEntity", userEntity);
 
     return "redirect:/manager/userlist";
   }
@@ -136,7 +142,7 @@ public class ManagerController {
     } else {
 
       session.setAttribute("managerPrincipal", managerEntity);
-      return "manager/managerHome";
+      return "redirect:/manager";
     }
 
   }

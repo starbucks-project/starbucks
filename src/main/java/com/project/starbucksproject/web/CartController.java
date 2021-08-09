@@ -86,23 +86,23 @@ public class CartController {
     if(principal==null) {
       return "redirect:/auth/login";
      }
-
-    String receivPhoneNum=principal.getPhoneNum(); //??????받는 사람 이름,번호 받아서 ! principal이 아님
-    String receiver=principal.getName();                         //??????받는 사람 이름,번호 받아서 ! principal이 아님
+ 
+    String receivPhoneNum = principal.getPhoneNum();
+    String receiver=principal.getName();
     if (receivPhoneNum==null) {
       receivPhoneNum="";
     }
+  
+    //  Card cardEntity = CardRepository.findById(id).get();
 
-     Card cardEntity = cardRepository.findById(id).get(); //선물하고자하는 카드가 이미 카드 db에 등록되어있나요???
 
-
-     Cart cart=new Cart();
-     cart.setPrice(cardEntity.getPrice());
-     //cart.setProduct(cardEntity.getCardName());
-     cart.setReceiver(receiver);
-     cart.setUser(principal);
-     cartRepository.save(cart);
-     model.addAttribute("cart", cart);
+    //  Cart cart=new Cart();
+    //  cart.setPrice(cardEntity.getPrice()); 
+    //  cart.setProduct(cardEntity.getCardName());
+    //  cart.setReceiver(receiver);
+    //  cart.setUser(principal);
+    //  cartRepository.save(cart);
+    //  model.addAttribute("cart", cart);
 
     return "redirect:/user/Cart";
   }

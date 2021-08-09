@@ -30,6 +30,11 @@ public class UserController {
     return "auth/loginForm";
   }
 
+  @GetMapping("/user/mypage")
+  public String myPageForm(){
+    return "user/mypage";
+  }
+
   @GetMapping("/auth/manager/loginform")
   public String managerLoginForm() {
     return "auth/managerLoginForm";
@@ -86,7 +91,10 @@ public class UserController {
 
   @GetMapping("user/logout")
   public String logout() {
+    // System.out.println(session.getAttribute("principal"));
+    
     session.invalidate();
+    // System.out.println(session.getAttribute("principal"));
     return "redirect:/";
   }
 

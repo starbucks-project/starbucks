@@ -50,6 +50,12 @@
                 <div class="product-name-input-box">
                     <input name="productNameEng" type="text" name="productNameEng" placeholder="제품 영문 이름을 입력하세요." />
                 </div>
+                <div class="product-title-box">
+                    <a>제품 가격</a>
+                </div>
+                <div class="product-name-input-box">
+                    <input name="price" type="number" placeholder="상품 가격을 입력하세요" value="${productEntity.price}" />
+                </div>
             </div> <!-- end product-name-area-box-->
             
             <div class="product-detail-area-box">
