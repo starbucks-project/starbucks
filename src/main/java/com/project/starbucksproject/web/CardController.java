@@ -31,19 +31,24 @@ public class CardController {
 
   @PostMapping("/user/cardRegi")
   public @ResponseBody String cardRegiForm(@RequestBody Card card) {
-      System.out.println(card.getCardName());
+      System.out.println("CardName:"+card.getCardName());
       System.out.println(card.getCardNum());
       System.out.println(card.getPin());
-
+      
       User principal=(User)session.getAttribute("principal");
       if(principal==null) {
         return "fail";
       }
-
+      
       card.setUser(principal);
       card.setCardImage("cardImg.png");
-      cardRepository.save(card);
-
+      Card cardEntity=cardRepository.save(card);
+      if(cardEntity.getCardName()==null){
+        cardEntity.setCardName("카드_"+cardEntity.getId());
+        System.out.println("CardName:"+cardEntity.getCardName());
+        cardRepository.save(cardEntity);
+      }
+      
       return "ok";
   }
 
@@ -71,12 +76,12 @@ public class CardController {
   }
 
 
-  @GetMapping("user/cardCharge")
+  @GetMapping("/user/cardCharge")
   public String userinfo(Model model) {
     User principal=(User)session.getAttribute("principal");
     int userid = principal.getId();
-    List<Card> cardsEntity = cardRepository.mfindByAlluserId(userid);
-    model.addAttribute("cardsEntity", cardsEntity);
+    Card cardEntity = cardRepository.findById(1).get();
+    model.addAttribute("cardEntity", cardEntity);
 
     return "/user/cardCharge"; 
   }

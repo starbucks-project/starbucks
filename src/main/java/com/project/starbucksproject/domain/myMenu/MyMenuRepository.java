@@ -1,6 +1,5 @@
 package com.project.starbucksproject.domain.mymenu;
 
-
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
