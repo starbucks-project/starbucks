@@ -1,12 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
 <%@include file="../layout/header.jsp"%>
-<main id="main">
+<main id="main" >
 <div class="container">
 <!-- LoginForm -->
 	<div class="saveProduct-page-box">
 			<!-- section title -->
-			<div class="userinfo-title-box">
+			<div class="userinf o-title-box">
 			<div class="userinfo-title" >
 				<a><strong>상품 등록</strong></a>				
 			</div> <!-- end userinfo-title-box-->
@@ -19,9 +19,11 @@
             <div class="category-box">
                 <select name="category" class="category-select">
                     <option value="">--카테고리--</option>
-                    <option value="drink">Drink</option>
-                    <option value="food">Food</option>
-                    <option value="product">Product</option>
+                    <%-- 반복문 --%>
+                    <c:forEach var="category" items="${productEntity.categorys}">
+                        
+                        <option value="${category}" ${productEntity.category eq category}>${category}</option>
+                    </c:forEach>
                 </select>
             </div> <!-- end cateogry-box-->
 
@@ -32,7 +34,7 @@
 
                 <div class="imageupload-btn-box">
                     <div class="imageupload-btn">
-                        <input type="file" name="productImage" id="upload_file" accept="image/*" required=true">
+                        <input type="file" name="productImage" id="upload_file" accept="image/*" required="true">
                     </div> <!-- end imageupload-btn-->
                 </div> <!-- end imageupload-btn-box-->
             </div> <!-- end productImageupload-box-->
