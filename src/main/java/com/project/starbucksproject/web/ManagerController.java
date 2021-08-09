@@ -90,7 +90,9 @@ public class ManagerController {
   // 회원 관리 페이지 이동
   @GetMapping("/manager/userlist")
   public String userlistForm(Model model) {
-    model.addAttribute("usersEntity", userRepository.findAll());
+    
+      model.addAttribute("usersEntity", userRepository.findAll());
+    
     return "manager/manageUser";
   }
 
@@ -98,7 +100,7 @@ public class ManagerController {
   @PostMapping("/manager/searchname")
   public String searchUser(String name, Model model) {
     User userEntity = userRepository.mfindByName(name);
-    model.addAttribute("userEntity", userEntity);
+    model.addAttribute("usersEntity", userEntity);
 
     return "redirect:/manager/userlist";
   }

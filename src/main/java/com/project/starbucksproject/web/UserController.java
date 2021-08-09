@@ -30,10 +30,7 @@ public class UserController {
     return "auth/loginForm";
   }
 
-  @GetMapping("/user/mypage")
-  public String myPageForm(){
-    return "user/mypage";
-  }
+  
 
   @GetMapping("/auth/manager/loginform")
   public String managerLoginForm() {
@@ -78,7 +75,6 @@ public class UserController {
     if (userEntity == null) {
 
       user.setName(user.getNickname());
-      user.setBalance(0);
       User principal = userRepository.save(user); // id:1, name: "정용주", nickname:"정용주", email:ssar@daum.com,
                                                   // createDate:// 자동
       session.setAttribute("principal", principal);
@@ -106,6 +102,11 @@ public class UserController {
     return "/user/userinfoUpdateForm";
   }
 
+  @GetMapping("/user/mypage")
+  public String myPageForm(){
+    return "user/mypage";
+  }
+  
   @PostMapping("user/userinfo/{id}")
   public String userinfoUpdate(@PathVariable int id, User user) {
     User userEntity = userRepository.findById(id).get();

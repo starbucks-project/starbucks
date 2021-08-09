@@ -79,4 +79,19 @@ public class CardController {
       return "user/inMyCard";
   }
 
+<<<<<<< HEAD
+=======
+
+  @GetMapping("/user/cardCharge")
+  public String userinfo(Model model) {
+    User principal=(User)session.getAttribute("principal");
+    int userid = principal.getId();
+    Card cardEntity = cardRepository.findById(1).get();
+    model.addAttribute("cardEntity", cardEntity);
+
+    return "/user/cardCharge"; 
+  }
+
+
+>>>>>>> 26dbfd8ffdabeba42bd0e42e7e898cc82c05fca5
 }

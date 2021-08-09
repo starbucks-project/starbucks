@@ -86,13 +86,21 @@ public class CartController {
     if(principal==null) {
       return "redirect:/auth/login";
      }
+<<<<<<< HEAD
+
+=======
  
+>>>>>>> 2b924b8ee8b3847f4be41fb3029c836085e67a75
     String receivPhoneNum = principal.getPhoneNum();
     String receiver=principal.getName();
     if (receivPhoneNum==null) {
       receivPhoneNum="";
     }
-  
+<<<<<<< HEAD
+
+=======
+   
+>>>>>>> 2b924b8ee8b3847f4be41fb3029c836085e67a75
     //  Card cardEntity = CardRepository.findById(id).get();
 
 
@@ -104,6 +112,10 @@ public class CartController {
     //  cartRepository.save(cart);
     //  model.addAttribute("cart", cart);
 
+<<<<<<< HEAD
+    return "user/Cart";
+=======
     return "redirect:/user/Cart";
+>>>>>>> 2b924b8ee8b3847f4be41fb3029c836085e67a75
   }
 }

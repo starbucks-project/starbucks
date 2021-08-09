@@ -52,37 +52,9 @@
                         <td class="left"><a>${user.name}</a></td>     
                         <td>${user.email}</td>     
                         <td>${user.createDate}</td> 
-                        <td>${user.balance}</td>
+                        <td>0</td>
                     </tr>
                     </c:forEach>
-                    <%-- <tr>     
-                        <td>02</td>     
-                        <td class="left"><a>김철수</a></td>     
-                        <td>kim@google.com</td>     
-                        <td>2019-08-09</td> 
-                        <td>50,000</td>
-                    </tr>
-                    <tr>     
-                        <td>03</td>     
-                        <td class="left"><a>김영희</a></td>     
-                        <td>hee@google.com</td>     
-                        <td>2012-01-26</td> 
-                        <td>10,000</td>
-                    </tr>
-                    <tr>     
-                        <td>04</td>     
-                        <td class="left"><a>최원희</a></td>     
-                        <td>choi@naver.com</td>     
-                        <td>2021-03-24</td> 
-                        <td>100,000</td>
-                    </tr>
-                    <tr>     
-                        <td>05</td>     
-                        <td class="left"><a>박다정</a></td>     
-                        <td>park@google.com</td>     
-                        <td>2018-05-18</td> 
-                        <td>30,000</td>
-                    </tr> --%>
             </table>
         </div>  <!-- end user-list-area-box-->
 

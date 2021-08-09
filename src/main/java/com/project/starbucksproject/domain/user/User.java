@@ -16,7 +16,7 @@ import com.project.starbucksproject.domain.mymenu.*;
 
 import org.hibernate.annotations.CreationTimestamp;
 
-// import com.project.starbucksproject.domain.card.Card;
+import com.project.starbucksproject.domain.card.Card;
 // import com.project.starbucksproject.domain.saledItems.SaledItems;
 
 import lombok.Data;
@@ -35,18 +35,18 @@ public class User {
     private String year; // 생년월일
     private String month; // 월
     private String date; // 일
-    private int balance; // 충전 잔액
+    
 
     @CreationTimestamp
     private Timestamp createDate; // 회원가입 일
 
     @OneToMany(mappedBy = "user")
-    private List<MyMenu> mymenus; // 마이메뉴 조인
+    private List<Mymenu> mymenus; // 마이메뉴 조인
 
     // @OneToMany(mappedBy = "mymenu")
     // private List<MyMenu> mymenus;
 
-    // @OneToMany(mappedBy = "card")
+    // @OneToMany(mappedBy = "user")
     // private List<Card> cards;
 
     // @OneToMany(mappedBy = "sailed_items")
