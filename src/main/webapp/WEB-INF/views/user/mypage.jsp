@@ -146,11 +146,11 @@
                       </ul>
                     </div>
                     <!-- <div class="bx-controls bx-has-controls-direction">
-                      <div class="bx-controls-direction">
-                        <a class="bx-prev disabled" href="">Prev</a>
-                        <a class="bx-next disabled" href="">Next</a>
-                      </div> -->
-                    </div>
+                              <div class="bx-controls-direction">
+                                <a class="bx-prev disabled" href="">Prev</a>
+                                <a class="bx-next disabled" href="">Next</a>
+                               </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
@@ -190,9 +190,8 @@
                   </a>
                   <ul style="display: block;">
                     <li>
-						<a href="/user/egift" required="login" data-href="#">
-						  · 선물하기</a>
-					  </li>         
+						          <a href="/user/egift" required="login" data-href="#"> · 선물하기</a>
+					          </li>         
                   </ul>
                 </li>
 

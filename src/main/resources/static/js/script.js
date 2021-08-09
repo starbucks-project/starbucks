@@ -197,7 +197,6 @@ $(document).ready(function () {
   $("div.product_list > dl > dd > ul > li").bind("click", function () {
     goUrl = $(this).find("a").attr("href");
     location.href = goUrl;
-<<<<<<< HEAD
   });
 });
 
@@ -218,29 +217,6 @@ $(document).ready(function () {
   $(".btn_go_my_drink_step3").on("click", goMyDrinkStep3);
   //$(".btn_myMenuRegister").on("click", myMenuRegister);
   $(".cartSave").on("click", cartSave);
-=======
-    }
-);
-// 음료 - 카테고리 별 - 사진으로 보기 & 영양정보로 보기
-$("dl.product_view_tab01 > dt > a:not(.selected)").parent().next().hide();
-$("dl.product_view_tab01 > dt > a").bind("click", function () {
-  $("dl.product_view_tab01 > dt > a").removeClass("selected");
-  $(this).addClass("selected");
-  $("dl.product_view_tab01 > dd").hide();
-  $(this).parent().next().show();
-  return false;
->>>>>>> 6254cddb8115345013311cc6ae21458653d204a5
-});
-
-// 음료 - 서비스 별 - 사진으로 보기 & 영양정보로 보기
-$("dl.product_view_tab02 > dt > a:not(.selected)").parent().next().hide();
-$("dl.product_view_tab02 > dt > a").bind("click", function () {
-  $("dl.product_view_tab02 > dt > a").removeClass("selected");
-  $(this).addClass("selected");
-  $("dl.product_view_tab02 > dd").hide();
-  $(this).parent().next().show();
-  return false;
-  });
 });
 
 /**=======================
@@ -270,22 +246,25 @@ document
 //  Card Register
 // -----------------------------
 
-<<<<<<< HEAD
 async function cardRegi(){
   event.preventDefault();
 
+  console.log("1");
   let CR2=document.querySelector("#CR2").value;
+  console.log(CR2);
   let CR2_2=document.querySelector("#CR2_2").value;
   let CR2_3=document.querySelector("#CR2_3").value;
   let CR2_4=document.querySelector("#CR2_4").value;
   let cardNum=CR2+"-"+CR2_2+"-"+CR2_3+"-"+CR2_4;
   
+  console.log("3");
   let cardSaveDto = {
     cardName: document.querySelector("#CR1").value,
     cardNum: cardNum,
     pin: document.querySelector("#CR3").value
   };  
   
+  console.log("4");
   let response = await fetch("/user/cardRegi", {
     method: "post",
     body: JSON.stringify(cardSaveDto),
@@ -294,16 +273,18 @@ async function cardRegi(){
     }
   });
   
+  console.log("5");
   let parseResponse = await response.text();
   
   if(parseResponse === "ok"){
+    console.log("6");
     alert("카드저장 성공");
     location.href = "/user/inMyCard";
   }else{
+    console.log("7");
     alert("카드저장 실패");
   }
 }
-=======
 // -----------------------------
 // update drink select jquery
 // -----------------------------
@@ -311,4 +292,3 @@ $(document).ready(function () {
   category_val = $('select.category').attr('data-type');
   $('select.category option[value=' + category_val + ']').attr('selected', 'selected');
 });
->>>>>>> c359fe071b723897b888c1716ae02d30111359b2

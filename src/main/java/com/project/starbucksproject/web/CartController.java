@@ -73,7 +73,7 @@ public class CartController {
     cartRepository.save(cart);
     model.addAttribute("cart", cart);
 
-    return "user/Cart";
+    return "redirect:/user/cart";
   }
 
   
@@ -104,6 +104,6 @@ public class CartController {
      cartRepository.save(cart);
      model.addAttribute("cart", cart);
 
-    return "user/Cart";
+    return "redirect:/user/Cart";
   }
 }

@@ -4541,9 +4541,14 @@ input[type="email"] {
   right: 0;
   width: 177px;
 }
-.card_regi_btns li.card_regi_btn1 {
+.card_regi_btns li.card_regi_btn1 button{
   background: #e2c383;
   border: 1px solid #bb9f65;
+  border-radius: 3px;
+  font-weight: bold;
+  float: left;
+  height: 28px;
+  width: 84px;
 }
 .card_regi_btns li.card_regi_btn2 {
   background: #222;
