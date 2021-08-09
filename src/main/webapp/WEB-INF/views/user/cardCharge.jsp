@@ -46,12 +46,12 @@
 										<td>
 											<div class="sel_wrap">
 												<p class="user_sel_wrap">
-													<label for="cardNumber_NORMAL">${cardEntity.cardName}</label> 
+													<label for="cardNumber_NORMAL">${cardsEntity.cardName}</label> 
 														<select id="cardNumber_NORMAL" name="cardNumber">
 														<option
-															value="${cardEntity.id}"
-															data-cardnumber="${cardEntity.cardNumber}"
-															data-cardnickname="${cardEntity.cardName}"
+															value="${cardsEntity.id}"
+															data-cardnumber="${cardsEntity.cardNumber}"
+															data-cardnickname="${cardsEntity.cardName}"
 															data-cardimgurl="https://image.istarbucks.co.kr/cardImg/20190805/005949.png"
 															data-balance="2800" data-autoreloadtype="9"
 															data-autoreloadday="" data-autoreloaddaysub=""
@@ -59,7 +59,7 @@
 															data-balanceconfirmdate="2021-07-08 13:31:00"
 															data-cardregdate="2021-02-14 11:14:43"
 															data-autoreloadpaymethod="" data-delegatecardyn="Y"
-															data-cardregnumber="${cardEntity.id}">${cardEntity.cardName}</option></select>
+															data-cardregnumber="${cardsEntity.id}">${cardsEntity.cardName}</option></select>
 												</p>
 											</div>
 											<div class="user_card_wrap">
@@ -71,7 +71,7 @@
 														src="https://image.istarbucks.co.kr/cardImg/20190805/005949.png">
 												</figure>
 												<p>
-													<strong class="en cardNumber">${cardEntity.cardNumber}</strong><br>
+													<strong class="en cardNumber">${cardsEntity.cardNumber}</strong><br>
 													<br> 최종 사용일 : 
 													<span class="balanceConfirmDate">2021-07-08 13:31:00</span>
 													<br> 카드 등록일 : <span class="cardRegDate">2021-02-14 11:14:43</span>
@@ -91,11 +91,12 @@
 												</p>
 											</div>
 											<div class="charge_options">
-												<select class = "charge">
+												<select id = "charge">
 													<option id="price1" value="100000" name="totPrice">10만원</option>
 													<option id="price2" value="50000" name="totPrice">5만원</option>
 													<option id="price3" value="30000" name="totPrice">3만원</option>
 													<option id="price4" value="10000" name="totPrice">1만원</option>
+													<option id="price5" value="100" name="totPrice">100원</option>
 												</select>
 												<!-- <ul>
 													<li>
@@ -211,7 +212,7 @@
 					<ul style="display: block;">
 					  
 					  <li>
-						<a href="/user/cardRegiForm" required="login" data-href="#">
+						<a href="/user/cardRegi" required="login" data-href="#">
 						  · 카드 등록</a>
 					  </li>
 					  <li>
@@ -275,14 +276,11 @@ function pay() {
   const IMP = window.IMP; // 생략해도 괜찮습니다.
   IMP.init("imp68218098"); // "imp00000000" 대신 발급받은 "가맹점 식별코드"를 사용합니다.
 
-  let buyername = "${principal.name}";
-  let buyeremail = "${principal.email}";
-  let buyertel = "${principal.phoneNum}";
-  
-  const merchantuid = document.querySelector();
-  let productname = document.querySelector(".charge").value;
 
-  let price
+  
+//   const merchantuid = document.querySelector();
+  let price = document.querySelector("#charge").value;
+
   // IMP.request_pay(param, callback) 호출
   // 변수화
   IMP.request_pay(
@@ -292,10 +290,10 @@ function pay() {
       pay_method: "card",
       merchant_uid: "123", // 상품 PK
       name: "노르웨이 회전 의자",
-      amount: productname, // 값
-      buyer_email: buyeremail, // session 값
-      buyer_name: buyername, // session 값
-      buyer_tel: buyertel, // session 값
+      amount: price, // 값
+      buyer_email: "${principal.email}", // session 값
+      buyer_name: "${principal.name}", // session 값
+      buyer_tel: "${principal.phoneNum}", // session 값
       buyer_addr: "서울특별시 강남구 신사동", // session 값
       buyer_postcode: "01181", // session 값
     },

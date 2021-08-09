@@ -149,8 +149,8 @@
                       <div class="bx-controls-direction">
                         <a class="bx-prev disabled" href="">Prev</a>
                         <a class="bx-next disabled" href="">Next</a>
-                      </div> -->
-                    </div>
+                      </div>
+                    </div> -->
                   </div>
                 </div>
               </div>
