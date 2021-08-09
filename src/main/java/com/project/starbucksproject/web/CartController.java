@@ -86,22 +86,22 @@ public class CartController {
       return "redirect:/auth/login";
      }
 
-    String receivPhoneNum=principal.getPhoneNum();
+    String receivPhoneNum = principal.getPhoneNum();
     String receiver=principal.getName();
     if (receivPhoneNum==null) {
       receivPhoneNum="";
     }
 
-     Card cardEntity = CardRepository.findById(id).get();
+    //  Card cardEntity = CardRepository.findById(id).get();
 
 
-     Cart cart=new Cart();
-     cart.setPrice(cardEntity.getPrice());
-     cart.setProduct(cardEntity.getCardName());
-     cart.setReceiver(receiver);
-     cart.setUser(principal);
-     cartRepository.save(cart);
-     model.addAttribute("cart", cart);
+    //  Cart cart=new Cart();
+    //  cart.setPrice(cardEntity.getPrice());
+    //  cart.setProduct(cardEntity.getCardName());
+    //  cart.setReceiver(receiver);
+    //  cart.setUser(principal);
+    //  cartRepository.save(cart);
+    //  model.addAttribute("cart", cart);
 
     return "user/Cart";
   }

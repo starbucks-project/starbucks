@@ -50,7 +50,7 @@
             <ul style="display: block;">
               
               <li>
-                <a href="/user/cardRegi" required="login" data-href="#">
+                <a href="/user/cardRegiForm" required="login" data-href="#">
                   · 카드 등록</a>
               </li>
               <li>

@@ -12,6 +12,7 @@ import com.project.starbucksproject.domain.user.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -68,5 +69,17 @@ public class CardController {
 
       return "user/inMyCard";
   }
+
+
+  @GetMapping("user/cardCharge")
+  public String userinfo(Model model) {
+    User principal=(User)session.getAttribute("principal");
+    int userid = principal.getId();
+    List<Card> cardsEntity = cardRepository.mfindByAlluserId(userid);
+    model.addAttribute("cardsEntity", cardsEntity);
+
+    return "/user/cardCharge"; 
+  }
+
 
 }

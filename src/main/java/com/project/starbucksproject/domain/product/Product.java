@@ -14,7 +14,7 @@ import javax.persistence.Lob;
 import javax.persistence.OneToMany;
 
 import com.project.starbucksproject.domain.card.Card;
-import com.project.starbucksproject.domain.mymenu.MyMenu;
+import com.project.starbucksproject.domain.myMenu.*;
 
 import org.hibernate.annotations.CreationTimestamp;
 

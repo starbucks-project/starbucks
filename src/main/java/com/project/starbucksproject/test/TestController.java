@@ -16,10 +16,7 @@ public class TestController {
         return "user/mypage";
     }
 
-    @GetMapping("/user/cardCharge")
-    public String cardCharge() {
-        return "user/cardCharge";
-    }
+   
 
     @GetMapping("/user/egift")
     public String eGift() {

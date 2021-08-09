@@ -45,21 +45,24 @@
 							<tr class="egift_phone_cert_info">
 								<th scope="row">보내는 사람</th>
 								<td>
-									<p class="pre_regi_number">010-5710-2570</p>
+									<p class="pre_regi_number">${principal.phoneNum}</p>
 									<p class="phone_chg_num">보내는 사람의 전화번호는 <a href="/user/userinfo">개인정보확인 및 수정</a> 페이지에서 변경 가능합니다.</p>
 								</td>
 							</tr>
 							<tr>
-								<th>받는 사람<br>
-								<p><div class="ez-checkbox">
+								<th>받는 사람
+								<%-- <br>
+								 <p><div class="ez-checkbox">
 									<input type="checkbox" id="giftMe" data-username="정용주" data-phone="010-5710-2570" data-email="judyjak2@naver.com" class="ez-hide">
 									</div>
-									<label for="giftMe">나에게 선물하기</label></p></th>
+									<label for="giftMe">나에게 선물하기</label></p>--%>
+									</th>
 								<td>
 									
 									<div class="tbl_card_sending">	
 										<p>1</p>	
-										<input class="sender" placeholder="받는 사람 이름" type="text" name="name" />	
+										<input class="receiver" placeholder="받는 사람 이름" type="text" name="name" />	
+										<br />
 										<div class="sel_wrap">		
 											<div class="tbl_card_select">			
 												<label for="phone1_1">선택</label>			
@@ -76,7 +79,6 @@
 										<span>-</span>
 										<input type="tel" name="phone3" class="pnum_input" maxlength="4" title="휴대폰 세번째 자리">
 										<a class="sender_addel_btn addPhone" href="javascript:void(0);">추가</a>
-										<a class="sender_addel_btn removePhone" href="javascript:void(0);">삭제</a>
 										</div>	
 											
 									
@@ -152,7 +154,8 @@
 							</tr>
 						</tbody></table>
 					</fieldset>
-					<button>결제하기</button>
+					<br />
+					<button> <a href="/user/cardcart/{id}"> 결제하기</button>
 				</form>
 			</section>
 		</div>
