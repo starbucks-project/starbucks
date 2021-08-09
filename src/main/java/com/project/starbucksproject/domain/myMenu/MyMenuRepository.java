@@ -1,5 +1,4 @@
-package com.project.starbucksproject.domain.mymenu;
-
+package com.project.starbucksproject.domain.myMenu;
 
 import java.util.List;
 
