@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class SaledItems {
+public class Saleditems {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; // 기본키

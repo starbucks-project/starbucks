@@ -11,10 +11,10 @@ public class TestController {
         return "test/test";
     }
 
-    @GetMapping("/user/mypage")
-    public String mypage() {
-        return "user/mypage";
-    }
+    // @GetMapping("/user/mypage")
+    // public String mypage() {
+    //     return "user/mypage";
+    // }
 
    
 

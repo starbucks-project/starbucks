@@ -12,6 +12,7 @@ CREATE DATABASE starbucks;
 
 ```sql
 INSERT INTO manager(managerId, managerPw) VALUES('admin', '1234');
+INSERT INTO card(cardName, cardImage, pin, cardNum, balance, userId) VALUES('카드1','카드이미지', '1234', '1111-2222-3333-4444', 0, 1);
 ```
 
 ### 추가 의존성
