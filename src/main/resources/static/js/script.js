@@ -244,5 +244,38 @@ document
   });
 
 // -----------------------------
-//  Mymenu Popup
+//  Card Register
 // -----------------------------
+
+async function cardRegi(){
+  event.preventDefault();
+
+  let CR2=document.querySelector("#CR2").value;
+  let CR2_2=document.querySelector("#CR2_2").value;
+  let CR2_3=document.querySelector("#CR2_3").value;
+  let CR2_4=document.querySelector("#CR2_4").value;
+  let cardNum=CR2+"-"+CR2_2+"-"+CR2_3+"-"+CR2_4;
+  
+  let cardSaveDto = {
+    cardName: document.querySelector("#CR1").value,
+    cardNum: cardNum,
+    pin: document.querySelector("#CR3").value
+  };  
+  
+  let response = await fetch("/user/cardRegi", {
+    method: "post",
+    body: JSON.stringify(cardSaveDto),
+    headers: {
+    "Content-Type": "application/json; charset=utf-8"
+    }
+  });
+  
+  let parseResponse = await response.text();
+  
+  if(parseResponse === "ok"){
+    alert("카드저장 성공");
+    location.href = "/user/inMyCard";
+  }else{
+    alert("카드저장 실패");
+  }
+}

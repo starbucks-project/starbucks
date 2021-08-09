@@ -102,7 +102,7 @@ $(document).ready(function () {
     if (parseResponse.code === 1) {
       alert("저장 성공");
       //history.back();
-      location.href = "/auth/drink_detail/"+parseResponse.data.products.id;
+      location.href = "/auth/"+parseResponse.data.products.category+"_detail/"+parseResponse.data.products.id;
     } else {
       alert("저장 실패");
       location.href="/auth/login";

@@ -4413,7 +4413,7 @@ element.style {
   background: url("/img/common/bullet_star_red.gif") no-repeat;
   bottom: 0;
   color: #666;
-  font-size: 12px;
+  font-size: 14px;
   position: absolute;
   right: 0;
   text-indent: 12px;
@@ -4476,7 +4476,7 @@ input[type="email"] {
   border: 1px solid #ccc;
   border-radius: 2px;
   color: #545454;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: bold;
   box-sizing: border-box;
 }
@@ -4493,7 +4493,7 @@ input {
 }
 .card_regi_dl dd span {
   color: #666;
-  font-size: 12px;
+  font-size: 14px;
 }
 .card_regi_dl dt img {
   float: left;
@@ -4524,10 +4524,58 @@ input[type="email"] {
   border: 1px solid #ccc;
   border-radius: 2px;
   color: #545454;
-  font-size: 11px;
+  font-size: 14px;
   font-weight: bold;
   box-sizing: border-box;
 }
+
+.my_card_info_inner {
+  height: 30px;
+  margin-top: 20px;
+  position: relative;
+}
+.card_regi_btns {
+  bottom: 0;
+  height: 30px;
+  position: absolute;
+  right: 0;
+  width: 177px;
+}
+.card_regi_btns li.card_regi_btn1 {
+  background: #e2c383;
+  border: 1px solid #bb9f65;
+}
+.card_regi_btns li.card_regi_btn2 {
+  background: #222;
+  border: 1px solid #222;
+  color: #fff;
+  margin-left: 5px;
+}
+.card_regi_btns li {
+  border-radius: 3px;
+  float: left;
+  height: 28px;
+  width: 84px;
+}
+.card_regi_btns li.card_regi_btn1 a {
+  color: #222;
+}
+.card_regi_btns li.card_regi_btn2 a {
+  color: #fff;
+}
+.card_regi_btns li a {
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  height: 28px;
+  line-height: 28px;
+  text-align: center;
+  width: 85px;
+}
+.card_regi_btns li a:hover {
+  text-decoration: underline;
+}
+
 
 .hyphen_bg17 {
   background: url("/images/hyphen_bg17.gif") no-repeat;

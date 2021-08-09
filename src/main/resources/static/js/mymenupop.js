@@ -70,7 +70,7 @@ $(document).ready(function () {
                                      <p class="landing_comments_date">${parseResponse.data.createDate}</p>
                                      <div class="landing_conts_wrap">
                                        <div class="landing_conts_img">
-                                         <img src="/images/${parseResponse.data.productImg}">
+                                         <img src="/images/${parseResponse.data.category}_list/${parseResponse.data.productImg}">
                                        </div>
                                        <div class="landing_conts_txt">
                                          <dl>
@@ -78,7 +78,7 @@ $(document).ready(function () {
                                            <dd>${parseResponse.data.productName}</dd>
                                          </dl>
                                          <div class="btn_bev_info">
-                                           <p><a href="/auth/drink_detail/${parseResponse.data.id}">음료 정보</a></p>
+                                           <p><a href="/auth/${parseResponse.data.category}_detail/${parseResponse.data.id}">음료 정보</a></p>
                                          </div>
                                        </div>
                                      </div>

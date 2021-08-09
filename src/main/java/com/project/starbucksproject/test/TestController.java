@@ -16,30 +16,10 @@ public class TestController {
         return "user/mypage";
     }
 
-    @GetMapping("/mymenu_pop")
-    public String mymenuPop() {
-        return "user/mymenu_popup";
-    }
-
     @GetMapping("/user/cardCharge")
     public String cardCharge() {
         return "user/cardCharge";
     }
-
-    @GetMapping("/user/cardRegi")
-    public String cardRegi() {
-        return "user/cardRegi";
-    }
-
-    @GetMapping("/user/inMyCard")
-    public String inMyCard() {
-        return "user/inMyCard";
-    }
-
-    //@GetMapping("/user/cart")
-    //public String cart() {
-    //    return "user/Cart";
-    //}
 
     @GetMapping("/user/egift")
     public String eGift() {
@@ -56,13 +36,4 @@ public class TestController {
         return "user/userinfoUpdateForm";
     }
 
-    @GetMapping("/user/mymenu_re1")
-    public String mymenuRegister1() {
-        return "user/mymenu_register1";
-    }
-
-    @GetMapping("/user/mymenu_re2")
-    public String mymenuRegister2() {
-        return "user/mymenu_register2";
-    }
 }

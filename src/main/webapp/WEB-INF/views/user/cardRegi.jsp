@@ -24,7 +24,7 @@
     <!-- ms cont part-->
     <div class="container">
       <div class="ms_cont">
-        <form method="POST">
+        <form action="#" onsubmit="cardRegi()"><!--form태그 시작-->
           <fieldset>
            <section class="my_card_info_wrap">
             <header>
@@ -37,9 +37,7 @@
                 <dt><label for="CR1">카드명</label></dt>
                 <dd>
                   <input class="card_regi_input1" id="CR1" maxlength="20" placeholder="카드명 최대 20자 (선택)" type="text">
-                  <!-- 150707 DOM 수정 - 텍스트 추가 -->
                   &nbsp;&nbsp;&nbsp;<span style="font-size:11px; color:#666;">* 카드명은 미입력 시 자동으로 부여됩니다.</span>
-                  <!-- 150707 DOM 수정 - 텍스트 추가 end -->
                 </dd>
               </dl>
               <dl class="card_regi_dl">
@@ -56,16 +54,21 @@
               </dl>
               <dl class="card_regi_dl">
                 <dt><label for="CR3"><p>PIN 번호</p></label><img alt="" src="/images/bullet_star_red.gif"></dt>
-                <dd><input type="tel" id="CR3" class="card_regi_input1" placeholder="PIN 번호 8자리 입력 (필수)" maxlength="8" ref="num">
-                
+                <dd>
+                  <input type="tel" id="CR3" class="card_regi_input1" placeholder="PIN 번호 8자리 입력 (필수)" maxlength="8" ref="num">
                 </dd>
               </dl>
    
-              
             </section>
            </section>
           </fieldset>
-        </form>
+          <div class="my_card_info_inner">
+            <ul class="card_regi_btns">
+              <li class="card_regi_btn1"><button id="cardRegistOkBtn">등록</button></li>
+              <li class="card_regi_btn2"><a href="javascript:void(0);" id="cancleBtn">취소</a></li>
+            </ul>
+          </div>
+        </form><!--form태그 end-->
       </div>
 
       <div class="ms_nav" id="msRnb">
