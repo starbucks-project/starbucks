@@ -79,15 +79,15 @@
                           <strong class="en">2,800</strong>원
                           <ul class="op0 my_ms_card_btns">
                             <li class="card_charge_btn">
-                              <a href="#" data-type="CHARGE" data-cardregnumber="34655033">
+                              <a href="/user/cardCharge" data-type="CHARGE" data-cardregnumber="34655033">
                                 카드 충전
                               </a>
                             </li>
-                            <li class="card_manage_btn">
+                            <!--<li class="card_manage_btn">
                               <a href="#" data-type="MANAGEMENT" data-cardregnumber="34655033">
                                 카드 관리
                               </a>
-                            </li>
+                            </li>-->
                           </ul>
                         </div>
 
@@ -142,7 +142,7 @@
           </li>
 
           <li>
-            <a href="#" required="login" data-href="#">
+            <a href="/user/mymenu" required="login" data-href="#">
                My메뉴
               </a>
           </li>
