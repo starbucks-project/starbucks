@@ -1,5 +1,6 @@
 package com.project.starbucksproject.web;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -10,11 +11,13 @@ import com.project.starbucksproject.domain.cardcart.Cardcart;
 import com.project.starbucksproject.domain.cardcart.CardcartRepository;
 import com.project.starbucksproject.domain.product.ProductRepository;
 import com.project.starbucksproject.domain.user.User;
+import com.project.starbucksproject.web.dto.CMRespDto;
 import com.project.starbucksproject.web.dto.CardcartReqDto;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -90,7 +93,13 @@ public class CardController {
   public String userinfo(Model model) {
     User principal = (User) session.getAttribute("principal");
     int userid = principal.getId();
+<<<<<<< HEAD
+    //Card cardEntity = cardRepository.findById(1).get();
+    //model.addAttribute("cardEntity", cardEntity);
+    List<Card> cardsEntity=cardRepository.mfindByAlluserId(userid);
+=======
     List<Card> cardsEntity = cardRepository.mfindByAlluserId(userid);
+>>>>>>> f9a91e64d40d2cf273a80546182181aaeee42272
     model.addAttribute("cardsEntity", cardsEntity);
 
     return "/user/cardCharge";
@@ -122,6 +131,16 @@ public class CardController {
       cardcartRepository.save(cardcart);
   
       return "redirect:/user/egift";
+    }
+
+    @GetMapping("/user/cardInfo/{id}")
+    public @ResponseBody CMRespDto<Card> cardInfo(@PathVariable int id){
+      
+      Card cardEntity=cardRepository.findById(id).get();
+      System.out.println(cardEntity);
+
+      return new CMRespDto<>(1, "성공", cardEntity);
+
     }
 
 }
