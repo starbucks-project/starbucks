@@ -1,31 +1,30 @@
-<<<<<<< HEAD
 async function myFunction(str) {
-    console.log("0");
-    alert("내카드: "+ str + " 을 선택하였습니다." );
-    let cardId=$("#cardNum_NORMAL option:selected").val();
-    console.log("cardId:"+cardId);
-    cardInfo(cardId);
-    console.log("1");
+  console.log("0");
+  alert("내카드: " + str + " 을 선택하였습니다.");
+  let cardId = $("#cardNum_NORMAL option:selected").val();
+  console.log("cardId:" + cardId);
+  cardInfo(cardId);
+  console.log("1");
 
-    console.log("2");
-    
-    let response = await fetch("/user/cardInfo/"+cardId, {
-      method: "get"
-    });
-    
-    console.log("3");
-    let parseResponse = await response.json();
+  console.log("2");
 
-    console.log(parseResponse);
+  let response = await fetch("/user/cardInfo/" + cardId, {
+    method: "get",
+  });
 
-    if(parseResponse.code === 1){
-        console.log("4");
-        let boxEL=document.querySelector(".sel_wrap");
-     
-         let popupItem = document.createElement("div");
-         popupItem.className = "user_card_wrap";
+  console.log("3");
+  let parseResponse = await response.json();
 
-   let temp =`
+  console.log(parseResponse);
+
+  if (parseResponse.code === 1) {
+    console.log("4");
+    let boxEL = document.querySelector(".sel_wrap");
+
+    let popupItem = document.createElement("div");
+    popupItem.className = "user_card_wrap";
+
+    let temp = `
    <figure>
        <i class="representative_icon"><a
            href="javascript:void(0);"></a></i>
@@ -40,19 +39,15 @@ async function myFunction(str) {
        <br> 카드 등록일 : <span class="cardRegDate">${parseResponse.data.createDate}</span>
    </p>
    `;
-     
+
     popupItem.innerHTML = temp;
     boxEL.prepend(popupItem);
-
-    } else {
-        alert("cardInfo 뿌리기 실패");
-    }
+  } else {
+    alert("cardInfo 뿌리기 실패");
+  }
 }
 
-async function cardInfo(cardId){
-      
-  }
-=======
+async function cardInfo(cardId) {}
 function chargepay() {
   const IMP = window.IMP; // 생략해도 괜찮습니다.
   IMP.init("imp68218098"); // "imp00000000" 대신 발급받은 "가맹점 식별코드"를 사용합니다.
@@ -65,7 +60,6 @@ function chargepay() {
   let produtname = $("#cardNum_NORMAL option:selected").text();
   let productamount = document.querySelector(".charge").value;
 
-  let price;
   // IMP.request_pay(param, callback) 호출
   // 변수화
   IMP.request_pay(
@@ -141,4 +135,3 @@ function egiftpay() {
     }
   );
 }
->>>>>>> f9a91e64d40d2cf273a80546182181aaeee42272
