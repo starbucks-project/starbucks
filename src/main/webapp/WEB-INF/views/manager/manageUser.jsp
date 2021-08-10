@@ -16,7 +16,7 @@
         <div class="manageUser-bottom-area">
         
         <div class="search-area-box">
-            <form action="/manager/searchname" method="post">
+            <form onsubmit="searchByName()">
             <div class="search-input-box">
                 <input type="text" name="name" placeholder="검색어를 입력해주세요." />
             </div>

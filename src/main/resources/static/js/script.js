@@ -286,9 +286,14 @@ async function cardRegi(){
   }
 }
 // -----------------------------
-// update drink select jquery
+// search by name
 // -----------------------------
-$(document).ready(function () {
-  category_val = $('select.category').attr('data-type');
-  $('select.category option[value=' + category_val + ']').attr('selected', 'selected');
-});
+function searchByName(){
+  event.preventDefault();
+
+  let searchReqDto= {
+    name: document.querySelector("#name").value,
+  }
+
+  console.log(JSON.stringify(searchReqDto));
+}

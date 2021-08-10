@@ -24,14 +24,9 @@ public class Card {
     private String pin; // 카드 핀번호
     private String cardNum; // 카드 번호
     private int balance; // 잔액
-<<<<<<< HEAD
-=======
-
->>>>>>> 2b924b8ee8b3847f4be41fb3029c836085e67a75
 
     @ManyToOne
     @JoinColumn(name = "userId")
     private User user; // user 조인
 
-  
 }

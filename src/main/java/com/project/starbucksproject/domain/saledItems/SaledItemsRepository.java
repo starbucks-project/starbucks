@@ -1,4 +1,4 @@
-package com.project.starbucksproject.domain.saledItems;
+package com.project.starbucksproject.domain.saleditems;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
