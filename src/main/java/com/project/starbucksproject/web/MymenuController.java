@@ -6,7 +6,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import com.project.starbucksproject.domain.mymenu.*;
+import com.project.starbucksproject.domain.myMenu.*;
 import com.project.starbucksproject.domain.product.Product;
 import com.project.starbucksproject.domain.product.ProductRepository;
 import com.project.starbucksproject.domain.user.User;
@@ -48,7 +48,7 @@ public class MymenuController {
 		  return "redirect:/auth/login";//주소를 호출, 인증안된 사용자 접근에 대해선 친절히 alert안해줘도 된다
 		}
       int userId=principal.getId();
-      List<Mymenu> mymenuEntity=myMenuRepository.mfindByuserId(userId);
+      List<MyMenu> mymenuEntity=myMenuRepository.mfindByuserId(userId);
       modelMymenu.addAttribute("mymenuEntity",mymenuEntity);
 
         return "user/mymenu";
@@ -57,7 +57,7 @@ public class MymenuController {
   //마이메뉴 product별로 팝업창 띄우기 
   @GetMapping("/user/mymenuPop/{id}")
   public @ResponseBody CMRespDto<Product> mymenuPop(@PathVariable int id) {
-    Mymenu mymenuEntity=myMenuRepository.findById(id).get();
+    MyMenu mymenuEntity=myMenuRepository.findById(id).get();
     Product product=mymenuEntity.getProducts(); 
     
     return new CMRespDto<>(1, "성공", product);
@@ -65,7 +65,7 @@ public class MymenuController {
 
   //product 마이메뉴에 등록하기(save)
   @PostMapping("/user/mymenuRegi")
-  public @ResponseBody CMRespDto<Mymenu> mymenuRegi(@RequestBody MymenuSaveReqDto mymenuSaveReqDto) {
+  public @ResponseBody CMRespDto<MyMenu> mymenuRegi(@RequestBody MymenuSaveReqDto mymenuSaveReqDto) {
     System.out.println("나 실행됨??/user/mymenuRegi");
     //인증된 사용자 : session에 저장된 User객체 들고오기
     User principal=(User)session.getAttribute("principal");
@@ -74,14 +74,14 @@ public class MymenuController {
     return new CMRespDto<>(0, "로그인하세요", null);
    }
 
-    Mymenu mymenu=new Mymenu();
+    MyMenu mymenu=new MyMenu();
     Product product=productRepository.findById(mymenuSaveReqDto.getProductId()).get();
     //User principal=(User)session.getAttribute("principal");
     mymenu.setProducts(product);
     mymenu.setUser(principal);
     mymenu.setProNickname(mymenuSaveReqDto.getProNickname());
 
-    Mymenu mymenuEntity= myMenuRepository.save(mymenu);
+    MyMenu mymenuEntity= myMenuRepository.save(mymenu);
     System.out.println("나 실행됨??/user/mymenuRegi 2222");
 
     return new CMRespDto<>(1, "성공", mymenuEntity);

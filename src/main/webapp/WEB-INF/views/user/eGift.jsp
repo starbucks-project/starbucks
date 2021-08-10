@@ -12,7 +12,7 @@
 
 			</header>
 			<section class="card_gift_info_section">
-				<form id="frmUpload" method="post" enctype="multipart/form-data">
+				<form id="frmUpload" action="/user/cardcart" method="post" enctype="multipart/form-data">
 					<fieldset>
 						<legend>선물할 정보 입력 및 메시지 입력을 해주세요.</legend>
 						<div class="gift_card_visual">
@@ -61,7 +61,7 @@
 									
 									<div class="tbl_card_sending">	
 										<p>1</p>	
-										<input class="receiver" placeholder="받는 사람 이름" type="text" name="name" />	
+										<input class="receiver" placeholder="받는 사람 이름" type="text" name="receiverName" />	
 										<br />
 										<div class="sel_wrap">		
 											<div class="tbl_card_select">			
@@ -90,7 +90,7 @@
 							<tr id="trReqMsg">
 								<th>메시지 입력</th>
 								<td>
-								<textarea id="reqMsg" placeholder="내용을 입력해 주세요. (200자 내외)"></textarea>
+								<textarea id="reqMsg" name="message" placeholder="내용을 입력해 주세요. (200자 내외)"></textarea>
 								<p id="reqMsgCnt" class="gift_info_adding">(0/200)</p>
 								</td>
 							</tr>
@@ -98,7 +98,7 @@
 								<th>금액 선택</th>
 								<td>
 									<div class="tbl_card_radio">
-										<select>
+										<select id="price">
 											<option id="price1" value="100000"  name="price">10만원</option>
 											<option id="price2" value="50000"  name="price">5만원</option>
 											<option id="price3" value="30000"  name="price">3만원</option>
@@ -155,11 +155,16 @@
 						</tbody></table>
 					</fieldset>
 					<br />
-					<button> <a href="/user/cardcart/{id}"> 결제하기</button>
+					<!--<button> <a href="/user/cardcart"> 결제하기</button>-->
+					<button> <a href="javascript:void(0);" onclick="egiftpay();">결제하기</a></button>
 				</form>
 			</section>
+			<div id = "principalname" value = "${principal.name}"></div>
+			<div id = "principalemail" value = "${principal.email}"></div>
+			<div id = "principaltel" value = "${principal.phoneNum}"></div>
 		</div>
 	</div>
+	
 </main>	
 
 <%@include file="../layout/footer.jsp"%>

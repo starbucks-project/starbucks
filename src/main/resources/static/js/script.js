@@ -215,7 +215,6 @@ $(document).ready(function () {
   //나만의 메뉴에 등록
   $(".btn_go_my_drink_step3").on("click", goMyDrinkStep3);
   //$(".btn_myMenuRegister").on("click", myMenuRegister);
-  $(".cartSave").on("click", cartSave);
 });
 
 /**=======================

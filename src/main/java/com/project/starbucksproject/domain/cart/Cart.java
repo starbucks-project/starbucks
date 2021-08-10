@@ -18,9 +18,7 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; // 기본키
 
-    private String receiver; // 받는 사람
-
-    private int price; // 주문 금액
+    //private String receiver; // 받는 사람
 
     @ManyToOne
     private Product product; // product 조인
