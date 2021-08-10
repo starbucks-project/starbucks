@@ -46,6 +46,7 @@
 										<td>
 											<div class="sel_wrap">
 												<%-- <p class="user_sel_wrap"> --%>
+<<<<<<< HEAD
 													<%-- <label for="cardNum_NORMAL">${cardEntity.cardName}</label>  --%>
 														<select id="cardNum_NORMAL" name="cardNum" onchange="myFunction(this.value)">
 															<option value="">--내카드--</option>
@@ -55,6 +56,17 @@
 														</select>
 															
 												<%-- </p> --%>
+=======
+													<%-- <label for="cardNum_NORMAL">--카드 선택--</label>  --%>
+														<select id="cardNum_NORMAL" name="cardNum">
+														
+															<c:forEach var = "card" items="${cardsEntity}">
+																<option id="${card}" value="${card.id}">${card.cardName}</option>
+															</c:forEach>
+														</select>
+												<%-- </p> --%>
+												
+>>>>>>> f9a91e64d40d2cf273a80546182181aaeee42272
 											</div>
 											<br />
 											<!--
@@ -63,14 +75,18 @@
 													<i class="representative_icon"><a
 														href="javascript:void(0);"></a></i>
 													<img alt="" class="cardImgUrl"
-														onerror="this.src='https://image.istarbucks.co.kr/upload/common/img/icon/card_672x423.png';"
-														src="https://image.istarbucks.co.kr/cardImg/20190805/005949.png">
+														src="${card.cardImg}">
 												</figure>
 												<p>
+<<<<<<< HEAD
 													<strong class="en cardNum">카드번호</strong><br>
+=======
+													<strong class="en cardNumber">1111-2222-333-4444</strong><br>
+>>>>>>> f9a91e64d40d2cf273a80546182181aaeee42272
 													<br> 최종 사용일 : 
 													<span class="balanceConfirmDate">2021-07-08 13:31:00</span>
-													<br> 카드 등록일 : <span class="cardRegDate">2021-02-14 11:14:43</span>
+													
+													
 												</p>
 											</div> -->
 										</td>
@@ -83,37 +99,18 @@
 											<div class="sel_wrap">
 												<p class="charge_change">
 													충전 후 총 카드 잔액 : <span class="en t_006633 afterChargeBalance"
-														name="totPrice">${cardEntity.balance}</span>원
+														name="totPrice">0</span>원
 												</p>
 											</div>
 											<div class="charge_options">
-												<select id = "charge">
+												<select class = "charge">
 													<option id="price1" value="100000" name="totPrice">10만원</option>
 													<option id="price2" value="50000" name="totPrice">5만원</option>
 													<option id="price3" value="30000" name="totPrice">3만원</option>
 													<option id="price4" value="10000" name="totPrice">1만원</option>
-													<option id="price5" value="100" name="totPrice">100원</option>
+													<option id="price5" value="10" name="totPrice">10원</option>
 												</select>
-												<!-- <ul>
-													<li>
-														<label>
-															<input type="radio" value="100000" name="totPrice" />10만원
-															
-														</label>
-													</li>
-													<li>
-														<label>
-															<input type="radio" value="50000" name="totPrice">5만원
-														</label>
-													</li>
-													<li><label><input type="radio" value="30000"
-															name="totPrice" />3만원</label>
-													</li>
-													<li><label><input type="radio" value="10000"
-															name="totPrice" />1만원</label>
-													</li>
-													
-												</ul> -->
+											
 											</div>
 											<p class="charge_level_guide txt">스타벅스 카드 온라인 충전은 1만원
 												단위로 최대 10만원까지 가능하며, 충전 후 합계 잔액이 55만원을 초과할 수 없습니다.</p>
@@ -186,16 +183,15 @@
 						
 						<ul class="charge_tbl_btns">
 							<li class="charge_tbl_btn1"><a href="javascript:void(0);"
-								class="charge_normal" onclick="pay();">카드 충전</a></li>
-							<li class="charge_tbl_btn2"><a href="/user/mypage">취소</a></li>
+								class="charge_normal" onclick="chargepay();">카드 충전</a></li>
+							<li class="charge_tbl_btn2"><a href="javascript:void(0);">취소</a></li>
 						</ul>
 					</article>
-
-					<!-- 웹테이블 end -->
-					<input type="text" style="display: none;">
-
 					
 				</section>
+				<div id = "principalname" value = "${principal.name}"></div>
+				<div id = "principalemail" value = "${principal.email}"></div>
+				<div id = "principaltel" value = "${principal.phoneNum}"></div>
 			</div>
 
 			<div class="ms_nav" id="msRnb">
@@ -208,7 +204,7 @@
 					<ul style="display: block;">
 					  
 					  <li>
-						<a href="/user/cardRegi" required="login" data-href="#">
+						<a href="/user/cardRegiForm" required="login" data-href="#">
 						  · 카드 등록</a>
 					  </li>
 					  <li>
@@ -238,7 +234,7 @@
 				  </li>
   
 				  <li>
-					<a href="/user/mymenu" required="login" data-href="#">
+					<a href="#" required="login" data-href="#">
 					   My메뉴
 					  </a>
 				  </li>
@@ -267,51 +263,5 @@
 	</div>
 	<!-- Body inner end -->
 </main>
-<script>
-function pay() {
-  const IMP = window.IMP; // 생략해도 괜찮습니다.
-  IMP.init("imp68218098"); // "imp00000000" 대신 발급받은 "가맹점 식별코드"를 사용합니다.
-
-
-  
-//   const merchantuid = document.querySelector();
-  let price = document.querySelector("#charge").value;
-
-  // IMP.request_pay(param, callback) 호출
-  // 변수화
-  IMP.request_pay(
-    {
-      // param
-      pg: "html5_inicis",
-      pay_method: "card",
-      merchant_uid: "123", // 상품 PK
-      name: "${cardEntity.cardName}" + " 카드 충전",
-      amount: price, // 값
-      buyer_email: "${principal.email}", // session 값
-      buyer_name: "${principal.name}", // session 값
-      buyer_tel: "${principal.phoneNum}", // session 값
-    //   buyer_addr: "서울특별시 강남구 신사동", // session 값
-    //   buyer_postcode: "01181", // session 값
-    },
-    (rsp) => {
-      // callback
-      if (rsp.success) {
-        console.log("결제 성공");
-        console.log(rsp);
-        // 결제 성공 시 로직,
-      } else {
-        console.log("결제 실패");
-        console.log(rsp);
-        // 결제 실패 시 로직,
-      }
-    }
-  );
-}
-
-</script>
-<!-- jQuery -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
-<!-- iamport.payment.js -->
-<script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
 
 <%@include file="../layout/footer.jsp"%>

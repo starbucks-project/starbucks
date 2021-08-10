@@ -93,9 +93,13 @@ public class CardController {
   public String userinfo(Model model) {
     User principal = (User) session.getAttribute("principal");
     int userid = principal.getId();
+<<<<<<< HEAD
     //Card cardEntity = cardRepository.findById(1).get();
     //model.addAttribute("cardEntity", cardEntity);
     List<Card> cardsEntity=cardRepository.mfindByAlluserId(userid);
+=======
+    List<Card> cardsEntity = cardRepository.mfindByAlluserId(userid);
+>>>>>>> f9a91e64d40d2cf273a80546182181aaeee42272
     model.addAttribute("cardsEntity", cardsEntity);
 
     return "/user/cardCharge";

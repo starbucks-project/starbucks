@@ -125,4 +125,13 @@
   <script src="/js/ezmark.js"></script>
   <!--<script src="/plugins/js/main.js"></script>-->
   <script></script>
+
+  <!--payment-->
+  <!-- jQuery -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+  <!-- iamport.payment.js -->
+  <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+  <script type="text/javascript" src="/js/my/payment.js"></script>
+
+
   </html>

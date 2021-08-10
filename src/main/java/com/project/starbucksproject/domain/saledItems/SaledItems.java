@@ -1,4 +1,4 @@
-package com.project.starbucksproject.domain.saleditems;
+package com.project.starbucksproject.domain.saledItems;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -13,7 +13,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Saleditems {
+public class SaledItems {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; // 기본키
