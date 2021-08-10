@@ -4328,7 +4328,7 @@ element.style {
 }
 .my_ms_card_btns {
   height: 30px;
-  margin-top: 19px;
+  margin-top: 0;
 }
 .my_ms_slider_txt_r ul.op0 li.card_charge_btn {
   background: #e2c383;
@@ -4336,9 +4336,9 @@ element.style {
 }
 .my_ms_slider_txt_r ul.op0 li {
   border-radius: 3px;
-  float: left;
-  height: 28px;
-  width: 81px;
+  float: right;
+  height: 100%;
+  width: 60%;
 }
 div.my_ms_slider_txt li {
   color: #555;
@@ -4354,12 +4354,12 @@ div.my_ms_slider_txt li {
 
 .my_ms_slider_txt_r ul.op0 li a {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   height: 28px;
   line-height: 28px;
   text-align: center;
   text-indent: 0;
-  width: 85px;
+  width: 100%;
 }
 .my_ms_slider_txt_r ul.op0 li.card_manage_btn {
   background: #222;
@@ -5533,6 +5533,9 @@ table.egiftCard_shopBag_info_tbl thead tr th {
   color: #222;
   height: 46px;
   vertical-align: middle;
+}
+table.egiftCard_shopBag_info_tbl thead tr {
+  height: 66px;
 }
 table.egiftCard_shopBag_info_tbl tbody tr td {
   border-bottom: 1px solid #dbdbdb;

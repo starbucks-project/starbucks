@@ -185,3 +185,45 @@ $(document).ready(function () {
                 
             }
         }
+
+      //cart 삭제하기   
+      async function deleteCart(){
+        console.log("delete 1");
+        let length=$(".ez-checked").length;
+        let arr = new Array();
+        $(".ez-checked").each(function() {
+            arr.push($(this).attr('id'));
+        });
+        
+        let cartDelReqDto = {
+             arr: arr,
+              length: length
+              };
+
+        console.log(length);
+        console.log("delete 2");
+        if(length === 1 || length === 0) {
+            alert("선택된 글이 없습니다");
+        } else {
+            console.log("delete 3");
+            console.log(cartDelReqDto);
+            console.log(JSON.stringify(cartDelReqDto));
+            let response = await fetch("/user/cartDel", {
+                method: "delete",
+                body: JSON.stringify(cartDelReqDto),
+          headers: {
+        "Content-Type": "application/json; charset=utf-8"
+          }
+            });
+            
+            let parseResponse = await response.text();
+            console.log(parseResponse);    
+            if(parseResponse === "ok"){
+                alert("삭제성공");
+                location.reload();
+            } else {
+                alert("삭제실패");
+            }
+            
+        }
+    }

@@ -50,7 +50,7 @@
 								<thead>
 									<tr>
 										<th scope="col">
-											<div class="ez-checkbox">
+											<div class="ez-mcheckbox"  id="0">
 												<input type="checkbox" name="egiftCard_shopBag_ck_all"
 														id="ckAll" title="전체 선택" class="ez-hide">
 											</div>
@@ -66,7 +66,7 @@
 									<c:forEach var="cart" items="${carts}">
 									<tr>
 										<td>
-											<div class="ez-checkbox">
+											<div class="ez-mcheckbox" id="${cart.id}">
 												<input type="checkbox" name="egiftCard_shopBag_ck1"
 													title="선택" value="103530" data-totalamount="10000"
 													data-ordercnt="1" class="ez-hide">
@@ -76,31 +76,11 @@
 											<img src="/images/${cart.product.category}_list/${cart.product.productImg}"
 													alt="e-gift 카드" class="cardImg"
 													onerror="this.src='https://image.istarbucks.co.kr/upload/common/img/icon/card_672x423.png';"></td>
-										<td>${cart.receiver}<br>[010-5710-2570]
+										<td>받는사람이름<br>전화번호
 										</td>
 										<td>1</td>
-										<td>${cart.price}원</td>
-										<td><strong>${cart.price}원</strong></td>
-									</tr>
-									</c:forEach>
-									<c:forEach var="cart" items="${carts}">
-									<tr>
-										<td>
-											<div class="ez-checkbox">
-												<input type="checkbox" name="egiftCard_shopBag_ck1"
-													title="선택" value="103530" data-totalamount="10000"
-													data-ordercnt="1" class="ez-hide">
-											</div>
-										</td>
-										<td>
-											<img src="/images/${cart.product.category}_list/${cart.product.productImg}"
-													alt="e-gift 카드" class="cardImg"
-													onerror="this.src='https://image.istarbucks.co.kr/upload/common/img/icon/card_672x423.png';"></td>
-										<td>${cart.receiver}<br>[010-5710-2570]
-										</td>
-										<td>1</td>
-										<td>${cart.price}원</td>
-										<td><strong>${cart.price}원</strong></td>
+										<td>${cart.product.price}원</td>
+										<td><strong>${cart.product.price}원</strong></td>
 									</tr>
 									</c:forEach>
 								</tbody>
@@ -115,15 +95,11 @@
 								</p>
 							</div>
 
-						
-
-	
-
 							<!-- (e-Gift 카드 장바구니 내역) 버튼 1-->
 							<div class="egiftCard_shopBag_btnZone01">
 								<ul>
-									<li class="li1"><a href="javascript:void(0);">전체선택</a></li>
-									<li class="li2"><a href="javascript:void(0);">선택 삭제</a></li>
+									<li class="li1"><a href="javascript:void(0);" id="Allcheck">전체선택</a></li>
+									<li class="li2"><a href="javascript:void(0);" onclick="deleteCart()">선택 삭제</a></li>
 								</ul>
 							</div>
 							<!-- (e-Gift 카드 장바구니 내역) 버튼 end -->

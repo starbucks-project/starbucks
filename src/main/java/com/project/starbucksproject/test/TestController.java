@@ -9,19 +9,7 @@ public class TestController {
     @GetMapping("/test")
     public String test() {
         return "test/test";
-    }
-
-    // @GetMapping("/user/mypage")
-    // public String mypage() {
-    //     return "user/mypage";
-    // }
-
-   
-
-    @GetMapping("/user/egift")
-    public String eGift() {
-        return "user/eGift";
-    }
+    } 
 
     @GetMapping("/user/purchaseHistory")
     public String purchaseHistory() {
