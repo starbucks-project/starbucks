@@ -1,5 +1,7 @@
 package com.project.starbucksproject.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import com.project.starbucksproject.domain.manager.Manager;
@@ -8,13 +10,16 @@ import com.project.starbucksproject.domain.product.Product;
 import com.project.starbucksproject.domain.product.ProductRepository;
 import com.project.starbucksproject.domain.user.User;
 import com.project.starbucksproject.domain.user.UserRepository;
+import com.project.starbucksproject.web.dto.UserSearchReqDto;
+import com.project.starbucksproject.web.dto.UserSearchRespDto;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import lombok.RequiredArgsConstructor;
@@ -98,11 +103,14 @@ public class ManagerController {
 
   // 회원 관리 페이지에서 이름 검색 했을 때
   @PostMapping("/manager/searchname")
-  public String searchUser(String name, Model model) {
-    User userEntity = userRepository.mfindByName(name);
-    model.addAttribute("usersEntity", userEntity);
+  public @ResponseBody UserSearchRespDto<User> searchUser(@RequestBody UserSearchReqDto dto) {
+    User userEntity = userRepository.mfindByName(dto.getName());
 
-    return "redirect:/manager/userlist";
+    if(userEntity != null){
+      return new UserSearchRespDto<>(1, "사용자 찾기 성공", userEntity);
+    }else{
+      return new UserSearchRespDto<>(-1, "사용자 찾기 실패", userEntity);
+    }
   }
 
   // 상품 등록 페이지 이동

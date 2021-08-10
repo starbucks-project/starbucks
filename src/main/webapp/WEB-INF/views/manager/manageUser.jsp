@@ -18,7 +18,7 @@
         <div class="search-area-box">
             <form onsubmit="searchByName()">
             <div class="search-input-box">
-                <input type="text" name="name" placeholder="검색어를 입력해주세요." />
+                <input id="name" type="text" name="name" placeholder="검색어를 입력해주세요." />
             </div>
             <div class="search-btn-box">
                 <input type="submit" name="search_btn" value="검색"/>

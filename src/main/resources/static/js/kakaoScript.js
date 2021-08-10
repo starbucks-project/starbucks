@@ -50,7 +50,7 @@ function kakaoLogin() {
   }); // end kakao.Auth.login()
 }
 
-카카오로그아웃;
+//카카오로그아웃;
 function kakaoLogout() {
   if (Kakao.Auth.getAccessToken()) {
     Kakao.API.request({

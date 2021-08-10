@@ -119,6 +119,7 @@ public class UserController {
 
     System.out.println(userEntity);
     userRepository.save(userEntity);
+    session.setAttribute("principal", userEntity);
 
     return "redirect:/user/mypage";
   }

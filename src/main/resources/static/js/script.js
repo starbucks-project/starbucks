@@ -200,7 +200,6 @@ $(document).ready(function () {
   });
 });
 
-
 // -----------------------------
 //  Drink Detail
 // -----------------------------
@@ -246,41 +245,41 @@ document
 //  Card Register
 // -----------------------------
 
-async function cardRegi(){
+async function cardRegi() {
   event.preventDefault();
 
   console.log("1");
-  let CR2=document.querySelector("#CR2").value;
+  let CR2 = document.querySelector("#CR2").value;
   console.log(CR2);
-  let CR2_2=document.querySelector("#CR2_2").value;
-  let CR2_3=document.querySelector("#CR2_3").value;
-  let CR2_4=document.querySelector("#CR2_4").value;
-  let cardNum=CR2+"-"+CR2_2+"-"+CR2_3+"-"+CR2_4;
-  
+  let CR2_2 = document.querySelector("#CR2_2").value;
+  let CR2_3 = document.querySelector("#CR2_3").value;
+  let CR2_4 = document.querySelector("#CR2_4").value;
+  let cardNum = CR2 + "-" + CR2_2 + "-" + CR2_3 + "-" + CR2_4;
+
   console.log("3");
   let cardSaveDto = {
     cardName: document.querySelector("#CR1").value,
     cardNum: cardNum,
-    pin: document.querySelector("#CR3").value
-  };  
-  
+    pin: document.querySelector("#CR3").value,
+  };
+
   console.log("4");
   let response = await fetch("/user/cardRegi", {
     method: "post",
     body: JSON.stringify(cardSaveDto),
     headers: {
-    "Content-Type": "application/json; charset=utf-8"
-    }
+      "Content-Type": "application/json; charset=utf-8",
+    },
   });
-  
+
   console.log("5");
   let parseResponse = await response.text();
-  
-  if(parseResponse === "ok"){
+
+  if (parseResponse === "ok") {
     console.log("6");
     alert("카드저장 성공");
     location.href = "/user/inMyCard";
-  }else{
+  } else {
     console.log("7");
     alert("카드저장 실패");
   }
@@ -288,12 +287,50 @@ async function cardRegi(){
 // -----------------------------
 // search by name
 // -----------------------------
-function searchByName(){
+async function searchByName() {
   event.preventDefault();
 
-  let searchReqDto= {
+  let searchReqDto = {
     name: document.querySelector("#name").value,
-  }
+    // userId: userId,
+  };
 
   console.log(JSON.stringify(searchReqDto));
+
+  let response = await fetch("/manager/searchname", {
+    method: "post",
+    body: JSON.stringify(searchReqDto),
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
+  });
+
+  let parseResponse = await response.json();
+  console.log(parseResponse);
+
+  if (parseResponse.code === 1) {
+    let userBoxEl = document.querySelector("#notice");
+    let userItem = document.createElement("tr");
+    // userItem.id = "user-" + parseResponse.data.id;
+
+    console.log(parseResponse.data);
+
+    let temp = `
+      
+      <td>${parseResponse.data.id}</td>
+      <td class="left"><a>${parseResponse.data.name}</a></td>
+      <td><a>${parseResponse.data.email}</a></td>
+      <td><a>${parseResponse.data.createDate}</a></td>
+      <td>0</td>
+      
+    `;
+    userItem.innerHTML = temp;
+
+    userBoxEl.innerHTML = "";
+
+    userBoxEl.prepend(userItem);
+  } else {
+    alert("해당 이름의 사용자가 존재하지 않습니다.");
+    location.reload();
+  }
 }
