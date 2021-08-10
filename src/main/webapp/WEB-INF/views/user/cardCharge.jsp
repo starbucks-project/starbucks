@@ -46,37 +46,34 @@
 										<td>
 											<div class="sel_wrap">
 												<p class="user_sel_wrap">
-													<label for="cardNum_NORMAL">${cardEntity.cardName}</label> 
-														<select id="cardNum_NORMAL" name="cardNum">
-														<option value="">--카드선택--</option>
+													<label for="cardNumber_NORMAL">${cardsEntity.cardName}</label> 
+														<select id="cardNumber_NORMAL" name="cardNumber">
+														<c:forEach var = {cards} items="${cardsEntity.id}">
 														<option
 															value="${cardEntity.id}"
-															data-cardnumber="${cardEntity.cardNum}"
+															data-cardnumber="${cardEntity.cardNumber}"
 															data-cardnickname="${cardEntity.cardName}"
 															data-cardimgurl="https://image.istarbucks.co.kr/cardImg/20190805/005949.png"
-															data-balance="${cardEntity.balance}" data-autoreloadtype="9"
+															data-balance="2800" data-autoreloadtype="9"
 															data-autoreloadday="" data-autoreloaddaysub=""
 															data-lowestamount="" data-autoreloadamount="0"
 															data-balanceconfirmdate="2021-07-08 13:31:00"
 															data-cardregdate="2021-02-14 11:14:43"
 															data-autoreloadpaymethod="" data-delegatecardyn="Y"
 															data-cardregnumber="${cardEntity.id}">${cardEntity.cardName}</option>
+															</c:forEach>
 															</select>
-															
 												</p>
-												
 											</div>
-											<br />
 											<div class="user_card_wrap">
 												<figure>
 													<i class="representative_icon"><a
 														href="javascript:void(0);"></a></i>
 													<img alt="" class="cardImgUrl"
-														onerror="this.src='https://image.istarbucks.co.kr/upload/common/img/icon/card_672x423.png';"
-														src="https://image.istarbucks.co.kr/cardImg/20190805/005949.png">
+														onerror="this.src="${cardsEntity.cardImg}">
 												</figure>
 												<p>
-													<strong class="en cardNum">${cardEntity.cardNum}</strong><br>
+													<strong class="en cardNumber">${cardEntity.cardNumber}</strong><br>
 													<br> 최종 사용일 : 
 													<span class="balanceConfirmDate">2021-07-08 13:31:00</span>
 													<br> 카드 등록일 : <span class="cardRegDate">2021-02-14 11:14:43</span>
@@ -92,16 +89,15 @@
 											<div class="sel_wrap">
 												<p class="charge_change">
 													충전 후 총 카드 잔액 : <span class="en t_006633 afterChargeBalance"
-														name="totPrice">${cardEntity.balance}</span>원
+														name="totPrice">${cardsEntity.balance}</span>원
 												</p>
 											</div>
 											<div class="charge_options">
-												<select id = "charge">
+												<select class = "charge">
 													<option id="price1" value="100000" name="totPrice">10만원</option>
 													<option id="price2" value="50000" name="totPrice">5만원</option>
 													<option id="price3" value="30000" name="totPrice">3만원</option>
 													<option id="price4" value="10000" name="totPrice">1만원</option>
-													<option id="price5" value="100" name="totPrice">100원</option>
 												</select>
 												<!-- <ul>
 													<li>
@@ -196,7 +192,7 @@
 						<ul class="charge_tbl_btns">
 							<li class="charge_tbl_btn1"><a href="javascript:void(0);"
 								class="charge_normal" onclick="pay();">카드 충전</a></li>
-							<li class="charge_tbl_btn2"><a href="/user/mypage">취소</a></li>
+							<li class="charge_tbl_btn2"><a href="javascript:void(0);">취소</a></li>
 						</ul>
 					</article>
 
@@ -217,7 +213,7 @@
 					<ul style="display: block;">
 					  
 					  <li>
-						<a href="/user/cardRegi" required="login" data-href="#">
+						<a href="/user/cardRegiForm" required="login" data-href="#">
 						  · 카드 등록</a>
 					  </li>
 					  <li>
@@ -281,11 +277,14 @@ function pay() {
   const IMP = window.IMP; // 생략해도 괜찮습니다.
   IMP.init("imp68218098"); // "imp00000000" 대신 발급받은 "가맹점 식별코드"를 사용합니다.
 
-
+  let buyername = "${principal.name}";
+  let buyeremail = "${principal.email}";
+  let buyertel = "${principal.phoneNum}";
   
-//   const merchantuid = document.querySelector();
-  let price = document.querySelector("#charge").value;
+  const merchantuid = document.querySelector();
+  let productname = document.querySelector(".charge").value;
 
+  let price
   // IMP.request_pay(param, callback) 호출
   // 변수화
   IMP.request_pay(
@@ -294,13 +293,13 @@ function pay() {
       pg: "html5_inicis",
       pay_method: "card",
       merchant_uid: "123", // 상품 PK
-      name: "${cardEntity.cardName}" + " 카드 충전",
-      amount: price, // 값
-      buyer_email: "${principal.email}", // session 값
-      buyer_name: "${principal.name}", // session 값
-      buyer_tel: "${principal.phoneNum}", // session 값
-    //   buyer_addr: "서울특별시 강남구 신사동", // session 값
-    //   buyer_postcode: "01181", // session 값
+      name: "노르웨이 회전 의자",
+      amount: productname, // 값
+      buyer_email: buyeremail, // session 값
+      buyer_name: buyername, // session 값
+      buyer_tel: buyertel, // session 값
+      buyer_addr: "서울특별시 강남구 신사동", // session 값
+      buyer_postcode: "01181", // session 값
     },
     (rsp) => {
       // callback
