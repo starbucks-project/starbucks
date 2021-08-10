@@ -45,28 +45,19 @@
 										<th scope="row">충전 카드 선택</th>
 										<td>
 											<div class="sel_wrap">
-												<p class="user_sel_wrap">
-													<label for="cardNum_NORMAL">${cardEntity.cardName}</label> 
-														<select id="cardNum_NORMAL" name="cardNum">
-														<option value="">--카드선택--</option>
-														<option
-															value="${cardEntity.id}"
-															data-cardnumber="${cardEntity.cardNum}"
-															data-cardnickname="${cardEntity.cardName}"
-															data-cardimgurl="https://image.istarbucks.co.kr/cardImg/20190805/005949.png"
-															data-balance="${cardEntity.balance}" data-autoreloadtype="9"
-															data-autoreloadday="" data-autoreloaddaysub=""
-															data-lowestamount="" data-autoreloadamount="0"
-															data-balanceconfirmdate="2021-07-08 13:31:00"
-															data-cardregdate="2021-02-14 11:14:43"
-															data-autoreloadpaymethod="" data-delegatecardyn="Y"
-															data-cardregnumber="${cardEntity.id}">${cardEntity.cardName}</option>
-															</select>
+												<%-- <p class="user_sel_wrap"> --%>
+													<%-- <label for="cardNum_NORMAL">${cardEntity.cardName}</label>  --%>
+														<select id="cardNum_NORMAL" name="cardNum" onchange="myFunction(this.value)">
+															<option value="">--내카드--</option>
+															<c:forEach var="card" items="${cardsEntity}">
+															<option id="${card.id}" value="${card.id}" name="${card.id}">${card.cardName}</option>	
+															</c:forEach>														
+														</select>
 															
-												</p>
-												
+												<%-- </p> --%>
 											</div>
 											<br />
+											<!--
 											<div class="user_card_wrap">
 												<figure>
 													<i class="representative_icon"><a
@@ -76,12 +67,12 @@
 														src="https://image.istarbucks.co.kr/cardImg/20190805/005949.png">
 												</figure>
 												<p>
-													<strong class="en cardNum">${cardEntity.cardNum}</strong><br>
+													<strong class="en cardNum">카드번호</strong><br>
 													<br> 최종 사용일 : 
 													<span class="balanceConfirmDate">2021-07-08 13:31:00</span>
 													<br> 카드 등록일 : <span class="cardRegDate">2021-02-14 11:14:43</span>
 												</p>
-											</div>
+											</div> -->
 										</td>
 									</tr>
 

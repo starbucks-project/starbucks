@@ -1,5 +1,7 @@
 package com.project.starbucksproject.domain.card;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,6 +11,8 @@ import javax.persistence.ManyToOne;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.project.starbucksproject.domain.user.User;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.Data;
 
@@ -24,6 +28,9 @@ public class Card {
     private String pin; // 카드 핀번호
     private String cardNum; // 카드 번호
     private int balance; // 잔액
+
+    @CreationTimestamp
+    private Timestamp createDate;
 
     @ManyToOne
     @JoinColumn(name = "userId")
