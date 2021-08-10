@@ -98,7 +98,7 @@
 								<th>금액 선택</th>
 								<td>
 									<div class="tbl_card_radio">
-										<select name="price">
+										<select id="price">
 											<option id="price1" value="100000"  name="price">10만원</option>
 											<option id="price2" value="50000"  name="price">5만원</option>
 											<option id="price3" value="30000"  name="price">3만원</option>
@@ -156,11 +156,15 @@
 					</fieldset>
 					<br />
 					<!--<button> <a href="/user/cardcart"> 결제하기</button>-->
-					<button>결제하기</button>
+					<button> <a href="javascript:void(0);" onclick="egiftpay();">결제하기</a></button>
 				</form>
 			</section>
+			<div id = "principalname" value = "${principal.name}"></div>
+			<div id = "principalemail" value = "${principal.email}"></div>
+			<div id = "principaltel" value = "${principal.phoneNum}"></div>
 		</div>
 	</div>
+	
 </main>	
 
 <%@include file="../layout/footer.jsp"%>
