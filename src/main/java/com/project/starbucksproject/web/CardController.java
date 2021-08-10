@@ -26,7 +26,7 @@ import lombok.RequiredArgsConstructor;
 public class CardController {
 
   // DI
-  //private final UserRepository userRepository;
+  // private final UserRepository userRepository;
   private final HttpSession session;
   private final ProductRepository productRepository;
   private final CardRepository cardRepository;
@@ -35,6 +35,7 @@ public class CardController {
   //카드등록 
   @PostMapping("/user/cardRegi")
   public @ResponseBody String cardRegiForm(@RequestBody Card card) {
+<<<<<<< HEAD
       System.out.println("CardName:"+card.getCardName());
       System.out.println(card.getCardNum());
       System.out.println(card.getPin());
@@ -60,47 +61,80 @@ public class CardController {
       }
       
       return "ok";
+=======
+    System.out.println("CardName:" + card.getCardName());
+    System.out.println(card.getCardNum());
+    System.out.println(card.getPin());
+
+    if (card.getCardName() == null) {
+      List<Card> cardList = cardRepository.findAll();
+      // cardList.
+    }
+
+    User principal = (User) session.getAttribute("principal");
+    if (principal == null) {
+      return "fail";
+    }
+
+    card.setUser(principal);
+    card.setCardImage("cardImg.png");
+    Card cardEntity = cardRepository.save(card);
+    if (cardEntity.getCardName() == null) {
+      cardEntity.setCardName("카드_" + cardEntity.getId());
+      System.out.println("CardName:" + cardEntity.getCardName());
+      cardRepository.save(cardEntity);
+    }
+
+    return "ok";
+>>>>>>> 448ae7d8cfcd47bd657e7bf0d09ad4ed5305622d
   }
 
   //카드등록 페이지 이동
   @GetMapping("/user/cardRegi")
   public String cardRegi() {
 
-      return "user/cardRegi";
+    return "user/cardRegi";
   }
 
+<<<<<<< HEAD
   @GetMapping("/user/egift")
   public String eGift() {
       return "user/eGift";
   }
 
   //보유카드
+=======
+>>>>>>> 448ae7d8cfcd47bd657e7bf0d09ad4ed5305622d
   @GetMapping("/user/inMyCard")
   public String inMyCard(Model model) {
-    User principal=(User)session.getAttribute("principal");
-      if(principal==null) {
-        return "redirect:/auth/login";
-      }
+    User principal = (User) session.getAttribute("principal");
+    if (principal == null) {
+      return "redirect:/auth/login";
+    }
 
-      int userId=principal.getId();
-      //List<Card> cardsEntity=cardRepository.mfindByAlluserId(userId);
-      //model.addAttribute("cardsEntity", cardsEntity);
-      Card cardEntity=cardRepository.findById(1).get();
-      model.addAttribute("cardEntity", cardEntity);
+    int userId = principal.getId();
+    // List<Card> cardsEntity=cardRepository.mfindByAlluserId(userId);
+    // model.addAttribute("cardsEntity", cardsEntity);
+    Card cardEntity = cardRepository.findById(1).get();
+    model.addAttribute("cardEntity", cardEntity);
 
-      return "user/inMyCard";
+<<<<<<< HEAD
+=======
+    return "user/inMyCard";
   }
 
+>>>>>>> 448ae7d8cfcd47bd657e7bf0d09ad4ed5305622d
   @GetMapping("/user/cardCharge")
   public String userinfo(Model model) {
-    User principal=(User)session.getAttribute("principal");
+    User principal = (User) session.getAttribute("principal");
     int userid = principal.getId();
     Card cardEntity = cardRepository.findById(1).get();
     model.addAttribute("cardEntity", cardEntity);
 
-    return "/user/cardCharge"; 
+    return "/user/cardCharge";
   }
 
+<<<<<<< HEAD
     // e-gift 카드 선물하기에서 '결제하기 버튼 클릭'
     @PostMapping("/user/cardcart")
     public String cardCart(CardcartReqDto cardcartReqDto){
@@ -129,4 +163,6 @@ public class CardController {
       return "redirect:/user/egift";
     }
 
+=======
+>>>>>>> 448ae7d8cfcd47bd657e7bf0d09ad4ed5305622d
 }

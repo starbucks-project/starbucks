@@ -29,5 +29,4 @@ public class Card {
     @JoinColumn(name = "userId")
     private User user; // user 조인
 
-  
 }

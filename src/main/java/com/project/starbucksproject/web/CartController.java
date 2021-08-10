@@ -38,40 +38,53 @@ public class CartController {
   private final CardRepository cardRepository;
 
   @GetMapping("/user/cart")
-  public String cartForm(Model model){
-    User principal=(User)session.getAttribute("principal");
-    if(principal==null) {
+  public String cartForm(Model model) {
+    User principal = (User) session.getAttribute("principal");
+    if (principal == null) {
       return "redirect:/auth/login";
     }
-    int userId=principal.getId();
-    List<Cart> carts=cartRepository.mfindAllByuserId(userId);
-    model.addAttribute("carts",carts);
+    int userId = principal.getId();
+    List<Cart> carts = cartRepository.mfindAllByuserId(userId);
+    model.addAttribute("carts", carts);
 
     return "user/Cart";
   }
 
-  //product detail페이지에서 장바구니 담기 
+  // product detail페이지에서 장바구니 담기
   @GetMapping("/user/cartSave/{id}")
-  public String cartSave(@PathVariable int id,Model model) {
-    
-    //인증된 사용자 : session에 저장된 User객체 들고오기
-    User principal=(User)session.getAttribute("principal");
-    //인증안된 사용자는 쫓아내면 된다!
-    if(principal==null) {
+  public String cartSave(@PathVariable int id, Model model) {
+
+    // 인증된 사용자 : session에 저장된 User객체 들고오기
+    User principal = (User) session.getAttribute("principal");
+    // 인증안된 사용자는 쫓아내면 된다!
+    if (principal == null) {
       return "redirect:/auth/login";
     }
 
+<<<<<<< HEAD
     //String receivPhoneNum=principal.getPhoneNum();
     //String receiver=principal.getName();
     // if (receivPhoneNum==null) {
     //   receivPhoneNum="";
     // }
+=======
+    String receivPhoneNum = principal.getPhoneNum();
+    String receiver = principal.getName();
+    if (receivPhoneNum == null) {
+      receivPhoneNum = "";
+    }
+>>>>>>> 448ae7d8cfcd47bd657e7bf0d09ad4ed5305622d
 
-    Product productEntity=productRepository.findById(id).get();
+    Product productEntity = productRepository.findById(id).get();
     model.addAttribute("productEntity", productEntity);
 
+<<<<<<< HEAD
     Cart cart=new Cart();
     //cart.setPrice(productEntity.getPrice());
+=======
+    Cart cart = new Cart();
+    cart.setPrice(productEntity.getPrice());
+>>>>>>> 448ae7d8cfcd47bd657e7bf0d09ad4ed5305622d
     cart.setProduct(productEntity);
     //cart.setReceiver(receiver);
     cart.setUser(principal);
@@ -81,6 +94,7 @@ public class CartController {
     return "redirect:/user/cart";
   }
 
+<<<<<<< HEAD
   //장바구니에 담은 product 삭제
   @DeleteMapping("/user/cartDel")
   public @ResponseBody String mymenuDel(@RequestBody CartDelReqDto<String> dto ) {
@@ -103,5 +117,32 @@ public class CartController {
       
     }
     return "ok";
+=======
+  // e-gift 카드 선물하기에서 장바구니로 이동
+  @GetMapping("/user/cardcart/{id}")
+  public String cartcard(@PathVariable int id, Model model) {
+    // 인증된 사용자 : session에 저장된 User객체 들고오기
+    User principal = (User) session.getAttribute("principal");
+    // 인증안된 사용자는 쫓아내면 된다!
+    if (principal == null) {
+      return "redirect:/auth/login";
+    }
+
+    String receivPhoneNum = principal.getPhoneNum();
+    String receiver = principal.getName();
+    if (receivPhoneNum == null) {
+      receivPhoneNum = "";
+    }
+    // Card cardEntity = CardRepository.findById(id).get();
+
+    // Cart cart=new Cart();
+    // cart.setPrice(cardEntity.getPrice());
+    // cart.setProduct(cardEntity.getCardName());
+    // cart.setReceiver(receiver);
+    // cart.setUser(principal);
+    // cartRepository.save(cart);
+    // model.addAttribute("cart", cart);
+    return "redirect:/user/Cart";
+>>>>>>> 448ae7d8cfcd47bd657e7bf0d09ad4ed5305622d
   }
 }
