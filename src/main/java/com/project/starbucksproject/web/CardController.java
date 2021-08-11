@@ -96,6 +96,16 @@ public class CardController {
     return "/user/cardCharge";
   }
 
+  @GetMapping("/user/cardCharge/complete")
+  public @ResponseBody void chargePoint(Long amount, Model model){
+    System.out.println(amount);
+    User principal = (User) session.getAttribute("principal");
+    int userid = principal.getId();
+
+
+    
+  }
+
     // e-gift 카드 선물하기에서 '결제하기 버튼 클릭'
     @PostMapping("/user/cardcart")
     public String cardCart(CardcartReqDto cardcartReqDto){
@@ -124,4 +134,5 @@ public class CardController {
       return "redirect:/user/egift";
     }
 
+  
 }
