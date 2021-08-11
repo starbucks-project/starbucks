@@ -17,7 +17,7 @@
 								</div>
 							</div>
 						</header>
-					</div>
+					</div> 
 					<!-- Col end -->
 				</div>
 				<!-- Row end -->

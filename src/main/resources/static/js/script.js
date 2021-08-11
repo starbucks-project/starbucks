@@ -325,7 +325,7 @@ async function searchByName() {
     `;
     userItem.innerHTML = temp;
 
-    userBoxEl.innerHTML = "";
+    userBoxEl.innerHTML = ""; // userBoxEl 안 html 태그 날리기
 
     userBoxEl.prepend(userItem);
   } else {

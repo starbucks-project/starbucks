@@ -70,39 +70,8 @@
                         <td>1</td>
                     </tr>
                     </c:forEach>
-                    <%-- <tr>     
-                        <td>02</td> 
-                        <td>김영희</td>    
-                        <td class="left"><a>카페라떼</a></td>     
-                        <td>2021-07-21</td>     
-                        <td>5,200</td> 
-                        <td>3</td>
-                    </tr>
-                    <tr>     
-                        <td>03</td> 
-                        <td>홍길동</td>    
-                        <td class="left"><a>카페모카</a></td>     
-                        <td>2021-07-21</td>     
-                        <td>4,800</td> 
-                        <td>1</td>
-                    </tr>
-                    <tr>     
-                        <td>04</td> 
-                        <td>박다정</td>    
-                        <td class="left"><a>에스프레소</a></td>     
-                        <td>2021-07-28</td>     
-                        <td>3,200</td> 
-                        <td>2</td>
-                    </tr>
-                    <tr>     
-                        <td>05</td>
-                        <td>홍길동</td>     
-                        <td class="left"><a>디카페인 아메리카노</a></td>     
-                        <td>2021-07-28</td>     
-                        <td>4,500</td> 
-                        <td>2</td>
-                    </tr> --%>
-                    <tr class="last-tr">     
+                    
+                    <tr class="last-tr">      
                         <td>No</td>     
                         <td>구매자</td>
                         <td>상품명</td>     
@@ -116,11 +85,8 @@
     </div> <!-- end bottom-area -->
     <div class="pagination-box">
         <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            <li class="page-item"><a class="page-link" href="?page=${saledItems.number-1}">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="?page=${saledItems.number+1}">Next</a></li>
           </ul>
     </div>
 </div> <!-- end manageUser-page-box-->

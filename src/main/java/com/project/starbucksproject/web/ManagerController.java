@@ -8,11 +8,13 @@ import com.project.starbucksproject.domain.manager.Manager;
 import com.project.starbucksproject.domain.manager.ManagerRepository;
 import com.project.starbucksproject.domain.product.Product;
 import com.project.starbucksproject.domain.product.ProductRepository;
+import com.project.starbucksproject.domain.saleditems.SaledItemsRepository;
 import com.project.starbucksproject.domain.user.User;
 import com.project.starbucksproject.domain.user.UserRepository;
 import com.project.starbucksproject.web.dto.UserSearchReqDto;
 import com.project.starbucksproject.web.dto.UserSearchRespDto;
 
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -31,6 +33,7 @@ public class ManagerController {
   private final UserRepository userRepository;
   private final ProductRepository productRepository;
   private final ManagerRepository managerRepository;
+  private final SaledItemsRepository saledItemsRepository;
   private final HttpSession session;
 
   @GetMapping("/manager")
@@ -51,7 +54,13 @@ public class ManagerController {
 
   // 상품 판매 현황 페이지로 이동
   @GetMapping("/manager/saledProduct")
-  public String saledProductForm() {
+  public String saledProductForm(Model model, Integer page) {
+    if (page == null) {
+      page = 0;
+    }
+
+    model.addAttribute("saledItemsEntity", saledItemsRepository.findAll(PageRequest.of(page, 5)));
+
     return "manager/saledProduct";
   }
 
@@ -68,11 +77,11 @@ public class ManagerController {
   @PostMapping("/manager/product/{id}")
   public String update(@PathVariable int id, Product product, MultipartFile productImage) {
     Product productEntity = productRepository.findById(id).get();
-    
+
     String imageFileName = productImage.getOriginalFilename();
     System.out.println("imageFileName : " + imageFileName);
-    if(imageFileName == null || imageFileName.equals("")){
-    }else{
+    if (imageFileName == null || imageFileName.equals("")) {
+    } else {
       productEntity.setProductImg(imageFileName);
     }
     productEntity.setCategory(product.getCategory());
@@ -94,10 +103,17 @@ public class ManagerController {
 
   // 회원 관리 페이지 이동
   @GetMapping("/manager/userlist")
-  public String userlistForm(Model model) {
-    
-      model.addAttribute("usersEntity", userRepository.findAll());
-    
+  public String userlistForm(Model model, Integer page) {
+
+    if (page == null) {
+      page = 0;
+    }
+
+    model.addAttribute("usersEntity", userRepository.findAll(PageRequest.of(page, 5)));
+
+    boolean flag = model.getAttribute("userEntity") == null;
+    System.out.println(flag);
+
     return "manager/manageUser";
   }
 
@@ -106,9 +122,9 @@ public class ManagerController {
   public @ResponseBody UserSearchRespDto<User> searchUser(@RequestBody UserSearchReqDto dto) {
     User userEntity = userRepository.mfindByName(dto.getName());
 
-    if(userEntity != null){
+    if (userEntity != null) {
       return new UserSearchRespDto<>(1, "사용자 찾기 성공", userEntity);
-    }else{
+    } else {
       return new UserSearchRespDto<>(-1, "사용자 찾기 실패", userEntity);
     }
   }

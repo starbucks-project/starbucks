@@ -180,7 +180,7 @@
                       <a href="/user/inMyCard" required="login" data-href="#">
                         · 보유카드</a>
                     </li>
-                  </ul>
+                  </ul> 
                 </li>
 
                 <li>
