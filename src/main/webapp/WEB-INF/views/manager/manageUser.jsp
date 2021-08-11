@@ -46,7 +46,7 @@
                     </tr>
                 </thead>
                 <tbody id="notice">
-                    <c:forEach var="user" items="${usersEntity}">
+                    <c:forEach var="user" items="${usersEntity.content}">
                     <tr>     
                         <td>${user.id}</td>     
                         <td class="left"><a>${user.name}</a></td>     
@@ -61,12 +61,10 @@
     </div> <!-- end bottom-area -->
     <div class="pagination-box">
         <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+            <li class="page-item"><a class="page-link" href="?page=${userEntity.number-1}">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="?page=${userEntity.number+1}">Next</a></li>
           </ul>
+          
     </div>
 </div> <!-- end manageUser-page-box-->
 </div> <!-- end div -contatiner-->
