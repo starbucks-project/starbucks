@@ -1,9 +1,5 @@
 package com.project.starbucksproject.domain.card;
 
-<<<<<<< HEAD
-=======
-
->>>>>>> f9a91e64d40d2cf273a80546182181aaeee42272
 import java.sql.Timestamp;
 
 import javax.persistence.Entity;
@@ -34,11 +30,7 @@ public class Card {
     private int balance; // 잔액
 
     @CreationTimestamp
-<<<<<<< HEAD
     private Timestamp createDate;
-=======
-    private Timestamp createDate; // 
->>>>>>> f9a91e64d40d2cf273a80546182181aaeee42272
 
     @ManyToOne
     @JoinColumn(name = "userId")
