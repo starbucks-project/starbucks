@@ -47,11 +47,7 @@ async function myFunction(str) {
   }
 }
 
-<<<<<<< HEAD
-/*======================================================*/
-=======
 async function cardInfo(cardId) {}
->>>>>>> 9e4e0e6fd95a55923246390025b455a08e738d6e
 function chargepay() {
   const IMP = window.IMP; // 생략해도 괜찮습니다.
   IMP.init("imp68218098"); // "imp00000000" 대신 발급받은 "가맹점 식별코드"를 사용합니다.
@@ -139,7 +135,6 @@ function egiftpay() {
     }
   );
 }
-<<<<<<< HEAD
 /*======================================================*/
 //Cart 선택된 최종 결제 금액
 let arrProductId = new Array();
@@ -232,5 +227,3 @@ async function success(saledReqDto) {
 
   location.href = "/user/purchaseHistory";
 } //결제 성공시 실행되는 함수 end
-=======
->>>>>>> 9e4e0e6fd95a55923246390025b455a08e738d6e

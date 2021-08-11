@@ -24,14 +24,7 @@ public class Saleditems {
     private int id; // 기본키
 
     @CreationTimestamp
-<<<<<<< HEAD
-    private Timestamp createDate; //구매날짜
-
-    //@ManyToOne
-    //private Cart cart; // cart 조인
-=======
     private Timestamp date; // 구매 날짜
->>>>>>> 9e4e0e6fd95a55923246390025b455a08e738d6e
 
     @ManyToOne
     private Product product; // product 조인
