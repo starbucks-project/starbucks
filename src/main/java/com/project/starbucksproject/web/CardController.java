@@ -95,6 +95,8 @@ public class CardController {
 
     // Card cardEntity = cardRepository.findById(userId).get();
     Page<Card> cardEntity = cardRepository.mfindByIdPage(userId, pageRequest);
+    
+    System.out.println("=====================\n"+cardEntity.getContent()+"\n==================");
 
     // 등록된 카드가 없으면 카드 등록 페이지로 이동
     if (cardEntity == null) {
