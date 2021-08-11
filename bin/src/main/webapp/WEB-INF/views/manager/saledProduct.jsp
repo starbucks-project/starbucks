@@ -27,12 +27,12 @@
         </div> <!-- end search-area-box-->
 
         <div class="search-area-box">
-            <form>
+            <form onsubmit="saledItemByName()">
             <div class="search-input-box">
-                <input type="text" name="search" placeholder="검색어를 입력해주세요." />
+                <input id="name" type="text" name="name" placeholder="검색어를 입력해주세요." />
             </div>
             <div class="search-btn-box">
-                <input type="button" name="search-btn" value="검색"/>
+                <input type="submit" name="search-btn" value="검색"/>
             </div>
             </form>
         </div> <!-- end search-area-box-->
@@ -60,53 +60,24 @@
                     </tr>
                 </thead>
                 <tbody id="notice">
+                    <c:forEach var="saleditems" items="${saledItemsEntity.content}">
                     <tr>     
-                        <td>01</td>     
-                        <td>김철수</td>
-                        <td class="left"><a>아메리카노</a></td>     
-                        <td>2021-07-18</td>     
-                        <td>4,100</td> 
+                        <td>${saleditems.id}</td>     
+                        <td>${saleditems.user.name}</td>
+                        <td class="left"><a>${saleditems.product.productName}</a></td>     
+                        <td>${saleditems.date}</td>     
+                        <td>${saleditems.product.price}</td> 
                         <td>1</td>
                     </tr>
-                    <tr>     
-                        <td>02</td> 
-                        <td>김영희</td>    
-                        <td class="left"><a>카페라떼</a></td>     
-                        <td>2021-07-21</td>     
-                        <td>5,200</td> 
-                        <td>3</td>
-                    </tr>
-                    <tr>     
-                        <td>03</td> 
-                        <td>홍길동</td>    
-                        <td class="left"><a>카페모카</a></td>     
-                        <td>2021-07-21</td>     
-                        <td>4,800</td> 
-                        <td>1</td>
-                    </tr>
-                    <tr>     
-                        <td>04</td> 
-                        <td>박다정</td>    
-                        <td class="left"><a>에스프레소</a></td>     
-                        <td>2021-07-28</td>     
-                        <td>3,200</td> 
-                        <td>2</td>
-                    </tr>
-                    <tr>     
-                        <td>05</td>
-                        <td>홍길동</td>     
-                        <td class="left"><a>디카페인 아메리카노</a></td>     
-                        <td>2021-07-28</td>     
-                        <td>4,500</td> 
-                        <td>2</td>
-                    </tr>
-                    <tr class="last-tr">     
-                        <td>No</td>     
-                        <td>구매자</td>
+                    </c:forEach>
+                    
+                    <tr class="last_tr">      
+                        <td>No.</td>     
+                        <td>구매자</td> 
                         <td>상품명</td>     
                         <td>구매일</td>     
-                        <td>총 액 : 21,800</td> 
-                        <td>총 판매수량 : 9</td>
+                        <td>총 액 : ${totalPrice}</td> 
+                        <td>총 판매수량 : ${amount}</td>
                     </tr>
             </table>
         </div>  <!-- end user-list-area-box-->
@@ -114,11 +85,27 @@
     </div> <!-- end bottom-area -->
     <div class="pagination-box">
         <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        <c:choose>
+        <c:when test="${saledItemsEntity.number==0 && saledItemsEntity.totalPages == 1}">
+            <li class="page-item disabled"><a class="page-link" href="?page=${saledItemsEntity.number-1}">Previous</a></li>
+            <c:forEach var="pages" items="saledItemsEntity.totalPages">
+            <li class="page-item"><a class="page-link" href="?page=${pages.number}">${pages.number+1}</a></li>
+            </c:forEach>
+            <li class="page-item disabled"><a class="page-link" href="?page=${saledItemsEntity.number+1}">Next</a></li>
+        </c:when>
+        <c:when test="${saledItemsEntity.number==0 && saledItemsEntity.totalPages != 1}">
+            <li class="page-item disabled"><a class="page-link" href="?page=${saledItemsEntity.number-1}">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="?page=${saledItemsEntity.number+1}">Next</a></li>
+        </c:when>
+        <c:when test="${saledItemsEntity.number== saledItemsEntity.totalPages - 1}">
+            <li class="page-item"><a class="page-link" href="?page=${saledItemsEntity.number-1}">Previous</a></li>
+            <li class="page-item disabled"><a class="page-link" href="?page=${saledItemsEntity.number+1}">Next</a></li>
+        </c:when>
+        <c:otherwise>
+            <li class="page-item"><a class="page-link" href="?page=${saledItemsEntity.number-1}">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="?page=${saledItemsEntity.number+1}">Next</a></li>
+        </c:otherwise>
+        </c:choose>
           </ul>
     </div>
 </div> <!-- end manageUser-page-box-->

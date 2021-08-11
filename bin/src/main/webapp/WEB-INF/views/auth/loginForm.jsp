@@ -23,8 +23,8 @@
 						<div class="form_box">
 							
 								<hr>
-								<div class="kakaologin_button" onclick="kakaoLogin()">
-									<a href="javascript:void(0)">
+								<div class="kakaologin_button" >
+									<a onclick="kakaoLogin()">
 									<img src="../images/kakao_login_large_narrow.png">
 									<a>
 								</div> <!-- end kakaologin-button-->
@@ -37,7 +37,7 @@
 								</div> <!-- end login-warn-box -->
 								<hr />
 								<div class="managerlogin_button_box">
-									<a class="managerlogin_button" href="/auth/manager/login">관리자 로그인</a>						
+									<a class="managerlogin_button" href="/auth/manager/loginform">관리자 로그인</a>						
 								</div> <!-- end managerlogin-button-box -->						
 							
 						</div> <!-- end form-box -->

@@ -16,6 +16,13 @@
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+	<!-- <repositories>
+		<repository>
+			<id>jitpack.io</id>
+			<url>https://jitpack.io</url>
+		</repository>
+	</repositories> -->
+
 	<dependencies>
 
 		<dependency>
@@ -23,7 +30,12 @@
 			<artifactId>tomcat-jasper</artifactId>
 			<version>9.0.46</version>
 		</dependency>
-
+		<!-- dependencies 안에 추가합니다 -->
+		<dependency>
+			<groupId>com.github.iamport</groupId>
+			<artifactId>iamport-rest-client-java</artifactId>
+			<version>0.2.15</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/javax.servlet/jstl -->
 		<dependency>
 			<groupId>javax.servlet</groupId>

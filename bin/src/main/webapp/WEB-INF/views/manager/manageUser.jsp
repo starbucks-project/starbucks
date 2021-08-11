@@ -16,12 +16,12 @@
         <div class="manageUser-bottom-area">
         
         <div class="search-area-box">
-            <form>
+            <form onsubmit="searchByName()">
             <div class="search-input-box">
-                <input type="text" name="search" placeholder="검색어를 입력해주세요." />
+                <input id="name" type="text" name="name" placeholder="검색어를 입력해주세요." />
             </div>
             <div class="search-btn-box">
-                <input type="button" name="search_btn" value="검색"/>
+                <input type="submit" name="search_btn" value="검색"/>
             </div>
             </form>
         </div> <!-- end search-area-box-->
@@ -46,53 +46,41 @@
                     </tr>
                 </thead>
                 <tbody id="notice">
+                    <c:forEach var="user" items="${usersEntity.content}">
                     <tr>     
-                        <td>01</td>     
-                        <td class="left"><a>홍길동</a></td>     
-                        <td>hong@google.com</td>     
-                        <td>2021-07-23</td> 
-                        <td>20,000</td>
+                        <td>${user.id}</td>     
+                        <td class="left"><a>${user.name}</a></td>     
+                        <td>${user.email}</td>     
+                        <td>${user.createDate}</td> 
+                        <td>0</td>
                     </tr>
-                    <tr>     
-                        <td>02</td>     
-                        <td class="left"><a>김철수</a></td>     
-                        <td>kim@google.com</td>     
-                        <td>2019-08-09</td> 
-                        <td>50,000</td>
-                    </tr>
-                    <tr>     
-                        <td>03</td>     
-                        <td class="left"><a>김영희</a></td>     
-                        <td>hee@google.com</td>     
-                        <td>2012-01-26</td> 
-                        <td>10,000</td>
-                    </tr>
-                    <tr>     
-                        <td>04</td>     
-                        <td class="left"><a>최원희</a></td>     
-                        <td>choi@naver.com</td>     
-                        <td>2021-03-24</td> 
-                        <td>100,000</td>
-                    </tr>
-                    <tr>     
-                        <td>05</td>     
-                        <td class="left"><a>박다정</a></td>     
-                        <td>park@google.com</td>     
-                        <td>2018-05-18</td> 
-                        <td>30,000</td>
-                    </tr>
+                    </c:forEach>
             </table>
         </div>  <!-- end user-list-area-box-->
 
     </div> <!-- end bottom-area -->
     <div class="pagination-box">
         <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="#">1</a></li>
-            <li class="page-item"><a class="page-link" href="#">2</a></li>
-            <li class="page-item"><a class="page-link" href="#">3</a></li>
-            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+        <c:choose>
+        <c:when test="${usersEntity.number==0 && usersEntity.totalPages == 1}">
+            <li class="page-item disabled"><a class="page-link" href="?page=${usersEntity.number-1}">Previous</a></li>
+            <li class="page-item disabled"><a class="page-link" href="?page=${usersEntity.number+1}">Next</a></li>
+        </c:when>
+        <c:when test="${usersEntity.number==0 && usersEntity.totalPages != 1}">
+            <li class="page-item disabled"><a class="page-link" href="?page=${usersEntity.number-1}">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="?page=${usersEntity.number+1}">Next</a></li>
+        </c:when>
+        <c:when test="${usersEntity.number== usersEntity.totalPages - 1}">
+            <li class="page-item"><a class="page-link" href="?page=${usersEntity.number-1}">Previous</a></li>
+            <li class="page-item disabled"><a class="page-link" href="?page=${usersEntity.number+1}">Next</a></li>
+        </c:when>
+        <c:otherwise>
+            <li class="page-item"><a class="page-link" href="?page=${usersEntity.number-1}">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="?page=${usersEntity.number+1}">Next</a></li>
+        </c:otherwise>
+        </c:choose>
           </ul>
+          
     </div>
 </div> <!-- end manageUser-page-box-->
 </div> <!-- end div -contatiner-->

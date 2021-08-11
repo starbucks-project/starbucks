@@ -11,7 +11,7 @@
               <div class="ms_sub_tit_bg">
                 <div class="ms_sub_tit_inner">
                   <h4>
-                    <img alt="inMyCard" src="images/inmycard_ttl.png" />
+                    <img alt="inMyCard" src="/images/inmycard_ttl.png" />
                   </h4>
                 </div>
               </div>
@@ -25,10 +25,10 @@
     <div class="container">
       <div class="ms_cont">
         <section class="my_ms_index_slide">
-          <header>
+          <div class="header">
             <h5 class="userName">길동님의 스타벅스 카드</h5>
             <strong>총 보유카드 : <span class="en totalCnt">1</span>장</strong>
-          </header> <!-- ms_cont .header end-->
+          </div> <!-- ms_cont .header end-->
           <article class="my_ms_slide_wrap">
             <i class="card_list_btn2">
               <a href="#">
@@ -45,10 +45,11 @@
                   <img alt="" class="arrow_off" src="images/mscard_arrow_r_off.png">
                   <img alt="" class="arrow_on" src="images/mscard_arrow_r_on.png">
                 </a>
+                <c:forEach var="card" items="${cardEntity.content}">
                 <div class="swiper-wrapper" style="padding-left: 0px; padding-right: 0px; width: 828px; height: 584px;">
                   <div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width: 828px;">
                     <div class="swiper_slide_inner">
-                      <figure class="swiper-slide_img">
+                      <figure class="swiper-slide_img"> 
                         <i class="representative_icon">
                           <a href="#" class="goMycard" data-cardregnumber="34655033">
                           </a>
@@ -59,7 +60,7 @@
                       <!--카드-->
                       <div class="my_ms_slider_txt">
                         <div class="my_ms_slider_txt_l">
-                          <strong class="cardNickname">부산 시티 카드</strong>
+                          <strong class="cardNickname">${card.cardName}</strong>
                             <a class="icon_pencil_g pencil" href="#" data-cardstatus="R" data-cardnickname="부산 시티 카드">
                               정보수정버튼
                             </a>
@@ -72,28 +73,36 @@
                                 취소
                               </a>
                             </div>
-                            <p>●●●● - ●●●● - ●●20 - 1234</p>
+                            <p>${card.cardNum}</p>
                         </div>
+                        
                         <div class="my_ms_slider_txt_r">
                           잔액
-                          <strong class="en">2,800</strong>원
+                          <strong class="en">${card.balance}</strong>원
                           <ul class="op0 my_ms_card_btns">
                             <li class="card_charge_btn">
-                              <a href="#" data-type="CHARGE" data-cardregnumber="34655033">
+                              <a href="/user/cardCharge" data-type="CHARGE" data-cardregnumber="34655033">
                                 카드 충전
                               </a>
                             </li>
-                            <li class="card_manage_btn">
+                            <!--<li class="card_manage_btn">
                               <a href="#" data-type="MANAGEMENT" data-cardregnumber="34655033">
                                 카드 관리
                               </a>
-                            </li>
+                            </li>-->
                           </ul>
                         </div>
 
                       </div>
                     </div>
                   </div>
+                </div>
+                </c:forEach>
+                <div class="pagination-box">
+                  <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="?page=${cardEntity.number-1}">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="?page=${cardEntity.number+1}">Next</a></li>
+                  </ul>
                 </div>
                 <div class="card-actions" style="display:block; background:#626260;"></div>
               </div>
@@ -110,58 +119,59 @@
               <span class="sbox_arrow_down"></span>
             </a>
             <ul style="display: block;">
-  
+              
               <li>
-                <a href="#" required="login" data-href="#">
+                <a href="/user/cardRegi" required="login" data-href="#">
                   · 카드 등록</a>
               </li>
               <li>
-                <a href="#" required="login" data-href="#">
+                <a href="/user/cardCharge" required="login" data-href="#">
                   · 카드 충전</a>
               </li>
               <li>
-                <a href="#" required="login" data-href="#">
+                <a href="/user/inMyCard" required="login" data-href="#">
                   · 보유카드</a>
               </li>
             </ul>
           </li>
-  
+
           <li>
             <a href="#">
               My 스타벅스 e-Gift Card
               <span class="sbox_arrow_down"></span>
             </a>
             <ul style="display: block;">
-  
-              <li>
-                <a href="#" required="login" data-href="#">
-                  · 선물하기</a>
-              </li>
-              <li>
-                <a href="#" required="login" data-href="#">
-                  · 선물내역</a>
-              </li>
-  
+              
+             <li>
+						<a href="/user/egift" required="login" data-href="#">
+						  · 선물하기</a>
+					  </li>
+             
             </ul>
           </li>
-  
+
           <li>
-            <a href="#" required="login" data-href="#">
-              My메뉴
-            </a>
+            <a href="/user/mymenu" required="login" data-href="#">
+               My메뉴
+              </a>
+          </li>
+          <li>
+            <a href="/user/purchaseHistory" required="login" data-href="#">
+               구매내역
+              </a>
           </li>
           <li>
             <a href="#">
-              개인정보 관리
+             개인정보 관리
               <span class="sbox_arrow_down"></span>
             </a>
             <ul style="display: block;">
-  
+              
               <li>
-                <a href="#" required="login" data-href="#">
+                <a href="/user/userinfo" required="login" data-href="#">
                   · 개인정보 확인 및 수정</a>
               </li>
-  
+             
             </ul>
           </li>
         </ul>

@@ -12,6 +12,7 @@ import com.project.starbucksproject.domain.product.ProductRepository;
 import com.project.starbucksproject.domain.user.User;
 import com.project.starbucksproject.web.dto.CardcartReqDto;
 
+import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -83,7 +84,6 @@ public class CardController {
     Card cardEntity = cardRepository.findById(1).get();
     model.addAttribute("cardEntity", cardEntity);
 
-<<<<<<< HEAD
     // Card cardEntity = cardRepository.findById(userId).get();
     Page<Card> cardEntity = cardRepository.mfindByIdPage(userId, pageRequest);
     
@@ -97,9 +97,7 @@ public class CardController {
 
       return "user/inMyCard";
     }
-=======
     return "user/inMyCard";
->>>>>>> ab67adb798eb518aade4bc5f9ef95ab717a00d1a
   }
 
   @GetMapping("/user/cardCharge")
