@@ -28,6 +28,40 @@
           <form method="post">
             <fieldset>
               <legend>기간 선택 폼</legend>
+              <table class="egiftCard_shopBag_info_tbl"
+								summary="my e-Gift 카드 카드이미지, 내용, 받는사람, 선물할 방법, 전송 방법, 수량, 주문금액, 결제금액, 주문수정에 대한 테이블">
+			
+								<colgroup>
+									<col width="78">
+									<col width="120">
+									<col width="72">
+									<col width="78">
+                  <col width="90">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">상품 이미지</th>
+										<th scope="col">상품명</th>
+										<th scope="col">주문수량</th>
+										<th scope="col">결제금액</th>
+                    <th scope="col">구매날짜</th>
+									</tr>
+								</thead>
+								<tbody>
+									<c:forEach var="saleditem" items="${saleditemsEntity}">
+									<tr class="ez-mcheck" id="tr_${saleditem.id}"  name="${saleditem.price}">
+										<td>
+											<img src="/images/${saleditem.product.category}_list/${saleditem.product.productImg}"
+													alt="e-gift 카드" class="cardImg"
+													onerror="this.src='https://image.istarbucks.co.kr/upload/common/img/icon/card_672x423.png';"></td>
+										<td>${saleditem.product.productName}</td>
+										<td>1</td>
+										<td><strong>${saleditem.product.price}원</strong></td>
+                    <td>8/11</td>
+									</tr>
+									</c:forEach>
+								</tbody>
+							</table>
               
               
             </fieldset>

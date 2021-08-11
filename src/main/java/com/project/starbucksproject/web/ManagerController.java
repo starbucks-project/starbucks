@@ -8,8 +8,12 @@ import com.project.starbucksproject.domain.manager.Manager;
 import com.project.starbucksproject.domain.manager.ManagerRepository;
 import com.project.starbucksproject.domain.product.Product;
 import com.project.starbucksproject.domain.product.ProductRepository;
+<<<<<<< HEAD
 import com.project.starbucksproject.domain.saleditems.SaledItemsRepository;
 import com.project.starbucksproject.domain.saleditems.Saleditems;
+=======
+import com.project.starbucksproject.domain.saledItems.SaledItemsRepository;
+>>>>>>> ab67adb798eb518aade4bc5f9ef95ab717a00d1a
 import com.project.starbucksproject.domain.user.User;
 import com.project.starbucksproject.domain.user.UserRepository;
 import com.project.starbucksproject.web.dto.UserSearchReqDto;

@@ -12,7 +12,7 @@ import javax.persistence.Id;
 // import javax.persistence.OneToMany;
 import javax.persistence.OneToMany;
 
-import com.project.starbucksproject.domain.mymenu.*;
+import com.project.starbucksproject.domain.myMenu.*;
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -41,7 +41,7 @@ public class User {
     private Timestamp createDate; // 회원가입 일
 
     @OneToMany(mappedBy = "user")
-    private List<Mymenu> mymenus; // 마이메뉴 조인
+    private List<MyMenu> mymenus; // 마이메뉴 조인
 
     // @OneToMany(mappedBy = "mymenu")
     // private List<MyMenu> mymenus;
