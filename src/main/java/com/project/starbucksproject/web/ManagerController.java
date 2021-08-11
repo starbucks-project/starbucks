@@ -8,12 +8,15 @@ import com.project.starbucksproject.domain.manager.Manager;
 import com.project.starbucksproject.domain.manager.ManagerRepository;
 import com.project.starbucksproject.domain.product.Product;
 import com.project.starbucksproject.domain.product.ProductRepository;
-import com.project.starbucksproject.domain.saleditems.SaledItemsRepository;
+import com.project.starbucksproject.domain.saledItems.SaledItemsRepository;
+import com.project.starbucksproject.domain.saledItems.SaledItems;
+import com.project.starbucksproject.domain.saledItems.SaledItemsRepository;
 import com.project.starbucksproject.domain.user.User;
 import com.project.starbucksproject.domain.user.UserRepository;
 import com.project.starbucksproject.web.dto.UserSearchReqDto;
 import com.project.starbucksproject.web.dto.UserSearchRespDto;
 
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -58,10 +61,31 @@ public class ManagerController {
     if (page == null) {
       page = 0;
     }
+    // 총 판매량
+    Long amount = managerRepository.mfindAmount();
+
+    Long totalPrice = managerRepository.mTotalprice();
+    model.addAttribute("amount", amount);
+    model.addAttribute("totalPrice", totalPrice);
 
     model.addAttribute("saledItemsEntity", saledItemsRepository.findAll(PageRequest.of(page, 5)));
 
     return "manager/saledProduct";
+  }
+
+  // 판매현황 페이지에서 이름 검색 했을 때
+  @PostMapping("/manager/saleditemsByName")
+  public @ResponseBody UserSearchRespDto<List> saledItemsByName(@RequestBody UserSearchReqDto dto) {
+    User userEntity = userRepository.mfindByName(dto.getName());
+    int userId = userEntity.getId();
+
+    List<SaledItems> saleditemsEntity = saledItemsRepository.mfindByUsername(userId);
+
+    if (saleditemsEntity != null) {
+      return new UserSearchRespDto<>(1, "이름 검색 성공", saleditemsEntity);
+    } else {
+      return new UserSearchRespDto<>(-1, "이름 검색 실패", saleditemsEntity);
+    }
   }
 
   // 상품 수정 페이지로 이동
@@ -109,13 +133,14 @@ public class ManagerController {
       page = 0;
     }
 
-    model.addAttribute("usersEntity", userRepository.findAll(PageRequest.of(page, 5)));
-
-    boolean flag = model.getAttribute("userEntity") == null;
-    System.out.println(flag);
+    Model userEntity = model.addAttribute("usersEntity", userRepository.findAll(PageRequest.of(page, 5)));
+    
+    System.out.println("================\n" + userEntity);
 
     return "manager/manageUser";
   }
+
+  
 
   // 회원 관리 페이지에서 이름 검색 했을 때
   @PostMapping("/manager/searchname")

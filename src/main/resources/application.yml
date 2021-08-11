@@ -17,7 +17,7 @@ spring:
     driver-class-name: org.mariadb.jdbc.Driver
     username: starbucks
     password: starbucks1234
-    url: jdbc:mysql://localhost:3306/starbucks
+    url: jdbc:mysql://localhost:3307/starbucks
 
   jpa:
     hibernate:

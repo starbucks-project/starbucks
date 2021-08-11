@@ -6,8 +6,8 @@ import java.util.List;
 import com.project.starbucksproject.domain.cart.CartRepository;
 import com.project.starbucksproject.domain.product.Product;
 import com.project.starbucksproject.domain.product.ProductRepository;
-import com.project.starbucksproject.domain.saleditems.SaledItemsRepository;
-import com.project.starbucksproject.domain.saleditems.Saleditems;
+import com.project.starbucksproject.domain.saledItems.SaledItemsRepository;
+import com.project.starbucksproject.domain.saledItems.SaledItems;
 import com.project.starbucksproject.domain.user.User;
 import com.project.starbucksproject.web.dto.SaledReqDto;
 
@@ -45,7 +45,7 @@ public class SaledItemsService {
           System.out.println(productEnity);
           //productsEntity.add(productEnity);
   
-          Saleditems saleditem=new Saleditems();
+          SaledItems saleditem=new SaledItems();
           saleditem.setUser(principal);
           saleditem.setProduct(productEnity);
           saledItemsRepository.save(saleditem);

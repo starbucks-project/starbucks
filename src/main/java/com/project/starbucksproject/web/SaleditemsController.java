@@ -6,8 +6,8 @@ import javax.servlet.http.HttpSession;
 
 import com.project.starbucksproject.domain.cart.CartRepository;
 import com.project.starbucksproject.domain.product.ProductRepository;
-import com.project.starbucksproject.domain.saleditems.SaledItemsRepository;
-import com.project.starbucksproject.domain.saleditems.Saleditems;
+import com.project.starbucksproject.domain.saledItems.SaledItemsRepository;
+import com.project.starbucksproject.domain.saledItems.SaledItems;
 import com.project.starbucksproject.domain.user.User;
 import com.project.starbucksproject.service.SaledItemsService;
 import com.project.starbucksproject.web.dto.SaleRespDto;
@@ -42,14 +42,14 @@ public class SaleditemsController {
     }
     int userId=principal.getId();
 
-    List<Saleditems> saleditemsEntity= saledItemsRepository.mfindAllByuserId(userId);
+    List<SaledItems> saleditemsEntity= saledItemsRepository.mfindAllByuserId(userId);
     model.addAttribute("saleditemsEntity", saleditemsEntity);
 
       return "user/purchaseHistory";
   }
     
     @PostMapping("/user/purchaseHistory")
-    public @ResponseBody SaleRespDto<Saleditems> purchaseHistory(@RequestBody SaledReqDto<String> saledReqDto, Model model) {
+    public @ResponseBody SaleRespDto<SaledItems> purchaseHistory(@RequestBody SaledReqDto<String> saledReqDto, Model model) {
       User principal = (User) session.getAttribute("principal");
       System.out.println("결재후처리 전");
 

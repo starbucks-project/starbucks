@@ -82,80 +82,13 @@
   </body>
     <!-- kakao login/logout -->
     <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-    <script>
-        // SDK를 초기화 합니다. 사용할 앱의 JavaScript 키를 설정해 주세요.
-        Kakao.init('8498c5d6105d211ea5242bbea6536b1e');
-
-        // SDK 초기화 여부를 판단합니다.
-        console.log(Kakao.isInitialized());
-
-        function kakaoLogin() {
-          Kakao.Auth.login({
-          success: function (response) {
-            Kakao.API.request({
-              url: '/v2/user/me',
-              success: async function (response) {
-                console.log(response);
-                let email = response.kakao_account.email;
-                let nickname = response.kakao_account.profile.nickname;
-                console.log(nickname);
-
-                let userDto={
-                  email: email,
-                  nickname: nickname
-                };
-
-                let dataResponse = await fetch("/kakao/login", {
-                  method:"POST",
-                  body: JSON.stringify(userDto),
-                  headers:{
-                    "Content-Type":"application/json; charset=utf-8"
-                  }
-                });
-
-              let parseResposne = await dataResponse.text();
-
-              if(parseResponse === "ok"){
-                alert("로그인 성공!");
-              }else{
-                alert("수정실패");
-              }
-              },
-              fail: function (error) {
-              console.log(error)
-               },
-              }) // end kakao.API.request
-          }, // end success
-          fail: function (error) {
-            console.log(error)
-          },
-          }) // end kakao.Auth.login()
-        }
-        //카카오로그아웃  
-        function kakaoLogout() {
-            if (Kakao.Auth.getAccessToken()) {
-              Kakao.API.request({
-                url: '/v1/user/unlink',
-                success: function (response) {
-                  console.log(response)   
-                },
-                fail: function (error) {
-                  console.log(error)
-                },
-              })
-              Kakao.Auth.setAccessToken(undefined)
-            } // end if
-          }  // end kakaoLogout()
-      </script>
+    <script src="/js/kakaoScript.js"></script>
 
     <!-- 
     Essential Scripts
     =====================================-->
     <!-- Main jQuery -->
     <script src="/plugins/jquery/jquery.min.js"></script>
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBu5nZKbeK-WHQ70oqOWo-_4VmwOwKP9YQ"></script>
-    <script  src="/plugins/google-map/gmap.js"></script>
 
     <!-- Form Validation -->
     <script src="/plugins/form-validation/jquery.form.js"></script> 
@@ -175,7 +108,11 @@
     <script src="/plugins/smooth-scroll/smooth-scroll.min.js"></script>
     
     <!-- Custom js -->
-    <%-- <script src="/js/script.js"></script> --%>
+    <script src="/js/script.js"></script>
+    <script src="/js/drinkdetail.js"></script>
+    <script src="/js/mymenupop.js"></script>
+        <script src="/js/my/payment.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Vendor JS Files -->
   <script src="/plugins/vendor/aos/aos.js"></script>
@@ -185,7 +122,16 @@
   <script src="/plugins/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Template Main JS File -->
-  <script src="/plugins/js/main.js"></script>
+  <script src="/js/ezmark.js"></script>
+  <!--<script src="/plugins/js/main.js"></script>-->
+  <script></script>
+
+  <!--payment-->
+  <!-- jQuery -->
+  <script type="text/javascript" src="https://code.jquery.com/jquery-1.12.4.min.js" ></script>
+  <!-- iamport.payment.js -->
+  <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
+  <script type="text/javascript" src="/js/my/payment.js"></script>
 
 
   </html>

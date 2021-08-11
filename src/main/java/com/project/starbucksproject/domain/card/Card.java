@@ -30,7 +30,7 @@ public class Card {
     private int balance; // 잔액
 
     @CreationTimestamp
-    private Timestamp createDate;
+    private Timestamp createDate; // 
 
     @ManyToOne
     @JoinColumn(name = "userId")
