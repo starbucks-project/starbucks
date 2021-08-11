@@ -49,7 +49,7 @@
                 <div class="swiper-wrapper" style="padding-left: 0px; padding-right: 0px; width: 828px; height: 584px;">
                   <div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width: 828px;">
                     <div class="swiper_slide_inner">
-                      <figure class="swiper-slide_img">
+                      <figure class="swiper-slide_img"> 
                         <i class="representative_icon">
                           <a href="#" class="goMycard" data-cardregnumber="34655033">
                           </a>

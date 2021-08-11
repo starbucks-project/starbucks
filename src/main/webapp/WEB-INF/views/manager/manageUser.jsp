@@ -61,8 +61,24 @@
     </div> <!-- end bottom-area -->
     <div class="pagination-box">
         <ul class="pagination">
-            <li class="page-item"><a class="page-link" href="?page=${userEntity.number-1}">Previous</a></li>
-            <li class="page-item"><a class="page-link" href="?page=${userEntity.number+1}">Next</a></li>
+        <c:choose>
+        <c:when test="${usersEntity.number==0 && usersEntity.totalPages == 1}">
+            <li class="page-item disabled"><a class="page-link" href="?page=${usersEntity.number-1}">Previous</a></li>
+            <li class="page-item disabled"><a class="page-link" href="?page=${usersEntity.number+1}">Next</a></li>
+        </c:when>
+        <c:when test="${usersEntity.number==0 && usersEntity.totalPages != 1}">
+            <li class="page-item disabled"><a class="page-link" href="?page=${usersEntity.number-1}">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="?page=${usersEntity.number+1}">Next</a></li>
+        </c:when>
+        <c:when test="${usersEntity.number== usersEntity.totalPages - 1}">
+            <li class="page-item"><a class="page-link" href="?page=${usersEntity.number-1}">Previous</a></li>
+            <li class="page-item disabled"><a class="page-link" href="?page=${usersEntity.number+1}">Next</a></li>
+        </c:when>
+        <c:otherwise>
+            <li class="page-item"><a class="page-link" href="?page=${usersEntity.number-1}">Previous</a></li>
+            <li class="page-item"><a class="page-link" href="?page=${usersEntity.number+1}">Next</a></li>
+        </c:otherwise>
+        </c:choose>
           </ul>
           
     </div>

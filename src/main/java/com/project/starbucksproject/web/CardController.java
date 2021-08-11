@@ -83,7 +83,23 @@ public class CardController {
     Card cardEntity = cardRepository.findById(1).get();
     model.addAttribute("cardEntity", cardEntity);
 
+<<<<<<< HEAD
+    // Card cardEntity = cardRepository.findById(userId).get();
+    Page<Card> cardEntity = cardRepository.mfindByIdPage(userId, pageRequest);
+    
+    System.out.println("=====================\n"+cardEntity.getContent()+"\n==================");
+
+    // 등록된 카드가 없으면 카드 등록 페이지로 이동
+    if (cardEntity == null) {
+      return "redirect:/user/cardRegi";
+    } else {
+      model.addAttribute("cardEntity", cardEntity);
+
+      return "user/inMyCard";
+    }
+=======
     return "user/inMyCard";
+>>>>>>> ab67adb798eb518aade4bc5f9ef95ab717a00d1a
   }
 
   @GetMapping("/user/cardCharge")

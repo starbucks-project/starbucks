@@ -3627,8 +3627,6 @@ img {
   margin-bottom: 90px;
 }
 
-
-
 /* News Listing
 ================================================== */
 
@@ -3822,7 +3820,7 @@ strong {
   width: 770px;
 }
 
-.my_ms_index_slide header{
+.my_ms_index_slide header {
   display: flex;
   border-bottom: 1px solid #eae9e6;
   height: 38px;
@@ -4561,7 +4559,7 @@ input[type="email"] {
   right: 0;
   width: 177px;
 }
-.card_regi_btns li.card_regi_btn1 button{
+.card_regi_btns li.card_regi_btn1 button {
   background: #e2c383;
   border: 1px solid #bb9f65;
   border-radius: 3px;
