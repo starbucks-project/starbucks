@@ -91,7 +91,9 @@
                               <span>Coffee on Me</span>
                               <a href="javascript:void(0);" class="icon_pencil" data-cardstatus="R" data-cardnickname="coffee on me" title=" 카드명 수정">정보수정</a>
                             </p>
-                            <p class="my_ms_card_price"><strong>2,800</strong>원</p>
+                            <c:forEach var="card" items="${cardsEntity}">
+                            <p class="my_ms_card_price"><strong>${card.balance}</strong>원</p>
+                            </c:forEach>
                             <p class="my_ms_card_date">최종 사용일 : <span class="en">2021-07-08 13:31:00</span></p>
                             <div class="my_ms_card_btns">                                                          
                               <p class="my_ms_card_btn2">
@@ -111,7 +113,10 @@
                               <a href="javascript:void(0);" class="icon_pencil" data-cardstatus="R" data-cardnickname="부산 시티 카드" title=" 카드명 수정">정보수정</a>
 
                             </p>
-                            <p class="my_ms_card_price"><span class="a11y">잔여금액</span><!-- 접근성_20171201 span 추가 --><strong class="en t_0d5f34">2,800</strong>원</p>
+                            <p class="my_ms_card_price"><span class="a11y">잔여금액</span><!-- 접근성_20171201 span 추가 -->
+                             <c:forEach var="card" items="${cardsEntity}">
+                            <p class="my_ms_card_price"><span class="a11y">잔여금액</span>
+                              <strong class="en t_0d5f34">${card.balance}</strong>원</p> </c:forEach>
                             <p class="my_ms_card_date">최종 사용일 : <span class="en">2021-07-08 13:31:00</span></p>
                             <div class="my_ms_card_btns">
                                                                                         
@@ -132,8 +137,9 @@
                               <a href="javascript:void(0);" class="icon_pencil" data-cardstatus="R" data-cardnickname="LoveYa" title=" 카드명 수정">정보수정</a>
 
                             </p>
+                             <c:forEach var="card" items="${cardsEntity}">
                             <p class="my_ms_card_price"><span class="a11y">잔여금액</span>
-                              <strong class="en t_0d5f34">2,800</strong>원</p>
+                              <strong class="en t_0d5f34">${card.balance}</strong>원</p> </c:forEach>
                             <p class="my_ms_card_date">최종 사용일 : <span class="en">2021-07-08 13:31:00</span></p>
                             <div class="my_ms_card_btns">
                               <                                                         

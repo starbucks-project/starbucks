@@ -49,7 +49,7 @@
 								</thead>
 								<tbody>
 									<c:forEach var="saleditem" items="${saleditemsEntity}">
-									<tr class="ez-mcheck" id="tr_${saleditem.id}"  name="${saleditem.price}">
+									<tr class="ez-mcheck" id="tr_${saleditem.id}"  name="${saleditem.product.price}">
 										<td>
 											<img src="/images/${saleditem.product.category}_list/${saleditem.product.productImg}"
 													alt="e-gift 카드" class="cardImg"
@@ -57,7 +57,7 @@
 										<td>${saleditem.product.productName}</td>
 										<td>1</td>
 										<td><strong>${saleditem.product.price}원</strong></td>
-                    <td>8/11</td>
+                    <td>${saleditem.date}</td>
 									</tr>
 									</c:forEach>
 								</tbody>

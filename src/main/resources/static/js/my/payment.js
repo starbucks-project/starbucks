@@ -48,28 +48,35 @@ async function myFunction(str) {
 }
 
 async function cardInfo(cardId) {}
+/*=====================================================================*/
+
+
+
 function chargepay() {
-  const IMP = window.IMP; // 생략해도 괜찮습니다.
-  IMP.init("imp68218098"); // "imp00000000" 대신 발급받은 "가맹점 식별코드"를 사용합니다.
 
   let buyername = document.querySelector("#principalname").value;
   let buyeremail = document.querySelector("#principalemail").value;
   let buyertel = document.querySelector("#principaltel").value;
 
-  let merchantuid = $("#cardNum_NORMAL option:selected").val();
   let produtname = $("#cardNum_NORMAL option:selected").text();
-  let productamount = document.querySelector(".charge").value; //결제금액
+  let cardid = $("#cardNum_NORMAL option:selected").val();
+  let productamount = document.querySelector(".charge").value;
 
-  // IMP.request_pay(param, callback) 호출
-  // 변수화
+  let payreqDto = {
+    amount: productamount,
+    cardid: cardid,
+  };
+  var IMP = window.IMP; // 생략 가능
+  IMP.init("imp68218098"); // 예: imp00000000s
+  // IMP.request_pay(param, callback) 결제창 호출
   IMP.request_pay(
     {
       // param
       pg: "html5_inicis",
       pay_method: "card",
-      merchant_uid: merchantuid, // 상품 PK
-      name: produtname + " 카드 충전",
-      amount: productamount, // 값 - 결제금액
+      merchant_uid: "merchant_" + new Date().getTime(), // 주문번호
+      name: produtname,
+      amount: productamount, // 값
       buyer_email: buyeremail, // session 값
       buyer_name: buyername, // session 값
       buyer_tel: buyertel, // session 값
@@ -80,17 +87,61 @@ function chargepay() {
         console.log("결제 성공");
         console.log(rsp);
         // 결제 성공 시 로직,
-        location.href = "/user/purchaseHistory";
+        successCharge(payreqDto);
+
+        /*
+        jQuery
+          .ajax({
+            url: "/user/cardCharge/complete", // 예: https://www.myservice.com/payments/complete 가맹점 서버
+            method: "post",
+            headers: { "Content-Type": "application/json" },
+            data: {
+              imp_uid: rsp.imp_uid,
+              merchant_uid: rsp.merchant_uid,
+              buyername: buyername,
+              buyeremail: buyeremail,
+              o_paytype: rsp.pay_method,
+            },
+          })
+          .done(function (data) {
+            if (everythings_fine) {
+              var msg = "결제가 완료되었습니다.";
+              msg += "\n고유ID : " + rsp.imp_uid;
+              msg += "\n상점 거래ID : " + rsp.merchant_uid;
+              msg += "결제 금액 : " + rsp.paid_amount;
+              msg += "카드 승인번호 : " + rsp.apply_num;
+
+              alert(msg);
+              document.location.href = "/user/mypage"; 
+            } else {
+              //[3] 아직 제대로 결제가 되지 않았습니다.
+              //[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
+            } 
+          });                                                  */
+
+
       } else {
-        console.log("결제 실패");
         console.log(rsp);
-        // 결제 실패 시 로직,
-        alert("결제를 실패했습니다.");
+        alert("결제에 실패하였습니다. 에러 내용: " + rsp.error_msg);
       }
     }
   );
 }
 
+async function  successCharge(payreqDto) {
+  console.log("확인", payreqDto);
+  console.log("결제 성공시, 로직 start!");
+  let response = await fetch("/user/cardCharge/complete", {
+    method: "post",
+    body: JSON.stringify(payreqDto),
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
+  });
+
+  console.log("controller완료!!!");
+  location.href = "/user/mypage";
+} //결제 성공시 실행되는 함수 end
 /*=================================================================================================*/
 
 function egiftpay() {
@@ -101,10 +152,23 @@ function egiftpay() {
   let buyeremail = document.querySelector("#principalemail").value;
   let buyertel = document.querySelector("#principaltel").value;
 
-  //   let merchantuid = $("#cardNum_NORMAL option:selected").val();
   let productamount = document.querySelector("#price").value;
 
-  let price;
+  let receiver = document.querySelector("#receiver").value;
+  let phone1 = $("#phone1 option:selected").val();
+  let phone2 = document.querySelector("#phone2").value;
+  let phone3 = document.querySelector("#phone3").value;
+  let reqMsg = document.querySelector("#reqMsg").value;
+
+  let cardcartreqDto = {
+    amount: productamount,
+    receiver: receiver,
+    phone1: phone1,
+    phone2: phone2,
+    phone3: phone3,
+    reqMsg: reqMsg
+  }
+
   // IMP.request_pay(param, callback) 호출
   // 변수화
   IMP.request_pay(
@@ -124,8 +188,8 @@ function egiftpay() {
       if (rsp.success) {
         console.log("결제 성공");
         console.log(rsp);
-        // 결제 성공 시 로직,
-        location.href = "/user/purchaseHistory";
+      // 결제 성공 시 로직,
+      successEgift(cardcartreqDto);
       } else {
         console.log("결제 실패");
         console.log(rsp);
@@ -135,6 +199,20 @@ function egiftpay() {
     }
   );
 }
+async function  successEgift(cardcartreqDto) {
+  console.log("확인", cardcartreqDto);
+  console.log("결제 성공시, 로직 start!");
+  let response = await fetch("/user/egift/complete", {
+    method: "post",
+    body: JSON.stringify(cardcartreqDto),
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
+  });
+
+  console.log("controller완료!!!");
+  location.href = "/user/purchaseHistory";
+} //결제 성공시 실행되는 함수 end
 /*======================================================*/
 //Cart 선택된 최종 결제 금액
 let arrProductId = new Array();

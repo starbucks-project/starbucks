@@ -24,7 +24,7 @@
     <!-- ms cont part-->
     <div class="container">
       <div class="ms_cont">
-        <form action="#" onsubmit="cardRegi()"><!--form태그 시작-->
+        <form name="form" action="#" onsubmit="cardRegi()"><!--form태그 시작-->
           <fieldset>
            <section class="my_card_info_wrap">
             <header>
@@ -36,7 +36,7 @@
               <dl class="card_regi_dl">
                 <dt><label for="CR1">카드명</label></dt>
                 <dd>
-                  <input class="card_regi_input1" id="CR1" maxlength="20" placeholder="카드명 최대 20자 (선택)" type="text">
+                  <input class="card_regi_input1" name="CR1" id="CR1" maxlength="20" placeholder="카드명 최대 20자 (선택)" type="text">
                   &nbsp;&nbsp;&nbsp;<span style="font-size:11px; color:#666;">* 카드명은 미입력 시 자동으로 부여됩니다.</span>
                 </dd>
               </dl>
@@ -55,7 +55,7 @@
               <dl class="card_regi_dl">
                 <dt><label for="CR3"><p>PIN 번호</p></label><img alt="" src="/images/bullet_star_red.gif"></dt>
                 <dd>
-                  <input type="tel" id="CR3" class="card_regi_input1" placeholder="PIN 번호 8자리 입력 (필수)" maxlength="8" ref="num">
+                  <input type="tel" id="CR3" class="card_regi_input1" name="pin" placeholder="PIN 번호 8자리 입력 (필수)" maxlength="8" ref="num">
                 </dd>
               </dl>
    

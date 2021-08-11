@@ -79,17 +79,19 @@
 										<td class="charge_select">
 
 											<div class="sel_wrap">
+											<!--
 												<p class="charge_change">
 													충전 후 총 카드 잔액 : <span class="en t_006633 afterChargeBalance"
 														name="totPrice">0</span>원
 												</p>
+												-->
 											</div>
 											<div class="charge_options">
 												<select class = "charge">
-													<option id="price1" value="100000" name="totPrice">10만원</option>
-													<option id="price2" value="50000" name="totPrice">5만원</option>
-													<option id="price3" value="30000" name="totPrice">3만원</option>
-													<option id="price4" value="10000" name="totPrice">1만원</option>
+													<option id="price1" value="100" name="totPrice">10만원</option>
+													<option id="price2" value="100" name="totPrice">5만원</option>
+													<option id="price3" value="10" name="totPrice">3만원</option>
+													<option id="price4" value="10" name="totPrice">1만원</option>
 													<option id="price5" value="10" name="totPrice">10원</option>
 												</select>
 											
@@ -186,7 +188,7 @@
 					<ul style="display: block;">
 					  
 					  <li>
-						<a href="/user/cardRegiForm" required="login" data-href="#">
+						<a href="/user/cardRegi" required="login" data-href="#">
 						  · 카드 등록</a>
 					  </li>
 					  <li>

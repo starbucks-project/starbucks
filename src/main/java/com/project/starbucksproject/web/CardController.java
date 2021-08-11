@@ -13,6 +13,7 @@ import com.project.starbucksproject.domain.product.ProductRepository;
 import com.project.starbucksproject.domain.user.User;
 import com.project.starbucksproject.web.dto.CMRespDto;
 import com.project.starbucksproject.web.dto.CardcartReqDto;
+import com.project.starbucksproject.web.dto.PayreqDto;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -117,7 +118,7 @@ public class CardController {
   }
 
   // e-gift 카드 선물하기에서 '결제하기 버튼 클릭'
-  @PostMapping("/user/cardcart")
+  @PostMapping("/user/egift/complete")
   public String cardCart(CardcartReqDto cardcartReqDto) {
 
     User principal = (User) session.getAttribute("principal");
@@ -131,12 +132,12 @@ public class CardController {
     int price = cardcartReqDto.getPrice();
 
     String receiverPhonenum = phone1 + phone2 + phone3;
-    String receiverName = cardcartReqDto.getReceiverName();
+    String receiver = cardcartReqDto.getReceiver();
     String message = cardcartReqDto.getMessage();
 
     Cardcart cardcart = new Cardcart();
     cardcart.setPrice(price);
-    cardcart.setReceiverName(receiverName);
+    cardcart.setReceiverName(receiver);
     cardcart.setReceiverPhonenum(receiverPhonenum);
     cardcart.setUser(principal);
     cardcartRepository.save(cardcart);
@@ -154,4 +155,24 @@ public class CardController {
 
   }
 
+  @PostMapping("/user/cardCharge/complete")
+  public String chargePoint(@RequestBody PayreqDto payreqDto){
+    
+    System.out.println(payreqDto.getAmount());
+    System.out.println(payreqDto.getCardid());
+    int cardid=payreqDto.getCardid();
+    int amount=payreqDto.getAmount();
+
+    Card cardEntity= cardRepository.findById(cardid).get();
+    int  balance= cardEntity.getBalance();
+    balance+=amount;
+    cardEntity.setBalance(balance);
+    cardRepository.save(cardEntity);
+
+    return "ok";
+  }
+
+  
+
 }
+
