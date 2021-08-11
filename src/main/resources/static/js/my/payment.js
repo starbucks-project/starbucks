@@ -124,6 +124,87 @@ function egiftpay() {
               //[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
             }
           });
+        console.log("결제 성공");
+        console.log(rsp);
+        // 결제 성공 시 로직,
+        location.href = "/user/purchaseHistory";
+      } else {
+        console.log("결제 실패");
+        console.log(rsp);
+        // 결제 실패 시 로직,
+        alert("결제를 실패했습니다.");
+      }
+    }
+  );
+}
+/*======================================================*/
+//Cart 선택된 최종 결제 금액
+let arrProductId = new Array();
+$(".ez-checked").each(function () {
+  arrProductId.push($(this).attr("id"));
+});
+
+/*======================================================*/
+function cartpay() {
+  console.log("cartpay()함수 실행");
+  const IMP = window.IMP; // 생략해도 괜찮습니다.
+  IMP.init("imp68218098"); // "imp00000000" 대신 발급받은 "가맹점 식별코드"를 사용합니다.
+
+  let buyername = document.querySelector("#principalname").value;
+  let buyeremail = document.querySelector("#principalemail").value;
+  let buyertel = document.querySelector("#principaltel").value;
+
+  let length = $(".ez-checked").length;
+  let arrProductId = new Array();
+  $(".ez-check").each(function () {
+    arrProductId.push($(this).attr("id"));
+  });
+
+  let arrCartId = new Array();
+  $(".ez-checked").each(function () {
+    arrCartId.push($(this).attr("id"));
+  });
+
+  let id_str;
+  for (let index = 0; index < length; index++) {
+    id_str = id_str + arrProductId[index];
+  } // ["0", "4", "5"] => "045"
+
+  let merchantuid = id_str; //선택된 상품들의 아이디
+  let produtname = arrProductId; //상품이름
+  let productamount = document.querySelector(".checkedTotalAmount").textContent; //결제금액
+
+  let price;
+
+  let saledReqDto = {
+    arrProductId: arrProductId, //productId
+    arrCartId: arrCartId, // cartId
+    length: length,
+    applyNum: "",
+  };
+
+  // IMP.request_pay(param, callback) 호출
+  // 변수화
+  IMP.request_pay(
+    {
+      // param
+      pg: "html5_inicis",
+      pay_method: "card",
+      merchant_uid: "merchant_" + new Date().getTime(), // 주문번호
+      name: produtname + "장바구니 상품결제",
+      amount: productamount, // 값 - 결제금액
+      buyer_email: buyeremail, // session 값
+      buyer_name: buyername, // session 값
+      buyer_tel: buyertel, // session 값
+    },
+    (rsp) => {
+      // callback
+      if (rsp.success) {
+        console.log("결제 성공");
+        console.log(rsp);
+        // 결제 성공 시 로직,
+        saledReqDto.applyNum = rsp.apply_num;
+        success(saledReqDto);
       } else {
         console.log(rsp);
         alert("결제에 실패하였습니다. 에러 내용: " + rsp.error_msg);
@@ -131,6 +212,20 @@ function egiftpay() {
     }
   );
 }
+async function success(saledReqDto) {
+  console.log("확인", saledReqDto);
+  console.log("결제 성공시, 로직 start!");
+  alert(saledReqDto.arrProductId);
+  let response = await fetch("/user/purchaseHistory", {
+    method: "post",
+    body: JSON.stringify(saledReqDto),
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    },
+  });
+
+  location.href = "/user/purchaseHistory";
+} //결제 성공시 실행되는 함수 end
 
 /*=======================================================================*/
 

@@ -37,10 +37,10 @@ public class SaledItemsService {
         //List<Saleditems> saleditems=new ArrayList<>(length-1);
         ArrayList<String> arrProductId= saledReqDto.getArrProductId();
         System.out.println("arrProductId: "+arrProductId);
-        for (int i = 1; i < arrProductId.size(); i++) {
+        for (int i = 0; i < arrProductId.size(); i++) {
           int productId=Integer.parseInt(arrProductId.get(i));
           System.out.println("productId: "+productId);
-          
+
           Product productEnity= productRepository.findById(productId).get();
           System.out.println(productEnity);
           //productsEntity.add(productEnity);
