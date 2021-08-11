@@ -56,7 +56,7 @@
 											</div>
 										</th>
 										<th scope="col">상품 이미지</th>
-										<th scope="col">받는사람</th>
+										<th scope="col">상품명</th>
 										<th scope="col">주문수량</th>
 										<th scope="col">주문금액</th>
 										<th scope="col">결제금액</th>
@@ -64,9 +64,10 @@
 								</thead>
 								<tbody>
 									<c:forEach var="cart" items="${carts}">
-									<tr>
+									<tr class="ez-mcheck" id="${cart.product.id}"  name="${cart.product.price}">
 										<td>
 											<div class="ez-mcheckbox" id="${cart.id}">
+												<a href="javascript:void(0);">
 												<input type="checkbox" name="egiftCard_shopBag_ck1"
 													title="선택" value="103530" data-totalamount="10000"
 													data-ordercnt="1" class="ez-hide">
@@ -76,8 +77,7 @@
 											<img src="/images/${cart.product.category}_list/${cart.product.productImg}"
 													alt="e-gift 카드" class="cardImg"
 													onerror="this.src='https://image.istarbucks.co.kr/upload/common/img/icon/card_672x423.png';"></td>
-										<td>받는사람이름<br>전화번호
-										</td>
+										<td>${cart.product.productName}</td>
 										<td>1</td>
 										<td>${cart.product.price}원</td>
 										<td><strong>${cart.product.price}원</strong></td>
@@ -162,10 +162,8 @@
 							<!-- (e-Gift 카드 장바구니 내역) 버튼 2-->
 							<div class="egiftCard_shopBag_btnZone02">
 								<ul>
-									<li class="btns_1"><a href="javascript:void(0);"
-										class="btn_present_continue">선물 계속하기</a></li>
 									<li class="btns_2"><a href="javascript:void(0);"
-										class="btn_payment">선택 상품 결제하기</a></li>
+										class="btn_payment" onclick="cartpay();">선택 상품 결제하기</a></li>
 									<li class="btns_3"><a href="javascript:void(0);"
 										class="btn_payment_all">전체 상품 결제하기</a></li>
 								</ul>
@@ -176,6 +174,9 @@
 					</form>
 				</section>
 				<!-- (e-Gift 카드 장바구니 내역) 목록 end -->
+				<div id = "principalname" value = "${principal.name}"></div>
+				<div id = "principalemail" value = "${principal.email}"></div>
+				<div id = "principaltel" value = "${principal.phoneNum}"></div>
 			</div>
 			<!-- //ms_cont -->
 

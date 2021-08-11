@@ -27,9 +27,12 @@ function chargepay() {
     (rsp) => {
       // callback
       if (rsp.success) {
-        // 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
-        // axios로 HTTP 요청
-        // jQuery로 HTTP 요청
+        let payDto = {
+          imp_uid: rsp.imp_uid,
+          merchant_uid: rsp.merchant_uid,
+          amount: productamount,
+          cardid: cardid,
+        };
         jQuery
           .ajax({
             url: "/user/cardCharge/complete", // 예: https://www.myservice.com/payments/complete 가맹점 서버

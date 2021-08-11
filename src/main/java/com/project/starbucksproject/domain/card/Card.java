@@ -1,6 +1,5 @@
 package com.project.starbucksproject.domain.card;
 
-
 import java.sql.Timestamp;
 
 import javax.persistence.Entity;

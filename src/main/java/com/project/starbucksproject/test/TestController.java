@@ -11,11 +11,6 @@ public class TestController {
         return "test/test";
     } 
 
-    @GetMapping("/user/purchaseHistory")
-    public String purchaseHistory() {
-        return "user/purchaseHistory";
-    }
-
     @GetMapping("/user/userinfo")
     public String userInfo() {
         return "user/userinfoUpdateForm";

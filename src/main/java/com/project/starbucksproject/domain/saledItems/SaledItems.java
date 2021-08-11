@@ -1,5 +1,7 @@
 package com.project.starbucksproject.domain.saledItems;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -7,7 +9,10 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import com.project.starbucksproject.domain.cart.Cart;
+import com.project.starbucksproject.domain.product.Product;
 import com.project.starbucksproject.domain.user.User;
+
+import org.hibernate.annotations.CreationTimestamp;
 
 import lombok.Data;
 
@@ -18,10 +23,14 @@ public class SaledItems {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; // 기본키
 
-    private String date; // 구매 날짜
+    @CreationTimestamp
+    private Timestamp createDate; //구매날짜
+
+    //@ManyToOne
+    //private Cart cart; // cart 조인
 
     @ManyToOne
-    private Cart cart; // cart 조인
+    private Product product; // product 조인
 
     @ManyToOne
     private User user; // user 조인

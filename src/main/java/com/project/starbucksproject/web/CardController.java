@@ -102,7 +102,7 @@ public class CardController {
     User principal = (User) session.getAttribute("principal");
     int userid = principal.getId();
 
-
+    
     
   }
 

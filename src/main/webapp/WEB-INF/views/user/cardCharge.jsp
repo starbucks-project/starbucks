@@ -17,7 +17,7 @@
 								</div>
 							</div>
 						</header>
-					</div>
+					</div> 
 					<!-- Col end -->
 				</div>
 				<!-- Row end -->
@@ -46,17 +46,18 @@
 										<td>
 											<div class="sel_wrap">
 												<%-- <p class="user_sel_wrap"> --%>
-													<%-- <label for="cardNum_NORMAL">--카드 선택--</label>  --%>
-														<select id="cardNum_NORMAL" name="cardNum">
-														
-															<c:forEach var = "card" items="${cardsEntity}">
-																<option id="${card}" value="${card.id}">${card.cardName}</option>
-															</c:forEach>
+													<%-- <label for="cardNum_NORMAL">${cardEntity.cardName}</label>  --%>
+														<select id="cardNum_NORMAL" name="cardNum" onchange="myFunction(this.value)">
+															<option value="">--내카드--</option>
+															<c:forEach var="card" items="${cardsEntity}">
+															<option id="${card.id}" value="${card.id}" name="${card.id}">${card.cardName}</option>	
+															</c:forEach>														
 														</select>
+															
 												<%-- </p> --%>
-												
 											</div>
 											<br />
+											<!--
 											<div class="user_card_wrap">
 												<figure>
 													<i class="representative_icon"><a
@@ -65,13 +66,11 @@
 														src="${card.cardImg}">
 												</figure>
 												<p>
-													<strong class="en cardNumber">1111-2222-333-4444</strong><br>
+													<strong class="en cardNum">카드번호</strong><br>
 													<br> 최종 사용일 : 
 													<span class="balanceConfirmDate">2021-07-08 13:31:00</span>
-													
-													
 												</p>
-											</div>
+											</div> -->
 										</td>
 									</tr>
 

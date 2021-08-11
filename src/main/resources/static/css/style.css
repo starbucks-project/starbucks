@@ -3570,23 +3570,24 @@ dl.rs_bottom01 dd p {
 }
 
 .banner-area {
-  position: relative;
+  /* position: relative; */
   color: #fff;
   background-position: 50% 50%;
   background-size: cover;
+  display: block;
 }
 
 .ms_sub_tit_wrap {
   background: #231a11;
   height: 178px;
-  position: relative;
+  /* position: relative; */
   width: 100%;
 }
 .ms_sub_tit_wrap div.ms_sub_tit_inner {
   height: 74px;
   margin: 0 auto;
   padding-top: 104px;
-  position: relative;
+  /* position: relative; */
   width: 1100px;
 }
 
@@ -3625,6 +3626,8 @@ img {
   width: 220px;
   margin-bottom: 90px;
 }
+
+
 
 /* News Listing
 ================================================== */
@@ -3728,6 +3731,7 @@ strong {
 }
 .userName {
   color: #0d5f34;
+  margin-top: 300px;
 }
 
 .ms_user_info.ms_user_add .ms_user_info_right .ms_user_stat_btns {
@@ -3817,6 +3821,14 @@ strong {
   height: 38px;
   width: 770px;
 }
+
+.my_ms_index_slide header{
+  display: flex;
+  border-bottom: 1px solid #eae9e6;
+  height: 38px;
+  width: 770px;
+}
+
 .card_header_box_one {
   display: flex;
   flex: 4;
@@ -5463,7 +5475,7 @@ div.egiftCard_shopBag_btnZone02 ul {
   position: absolute;
   right: 0;
   top: 0;
-  width: 408px;
+  width: 270px;
 }
 div.egiftCard_shopBag_btnZone02 ul li.btns_1 {
   border: 1px solid #222;

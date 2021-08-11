@@ -160,7 +160,7 @@
 				</form>
 			</section>
 			<div id = "principalname" value = "${principal.name}"></div>
-			<div id = "principalemail" value = "${principal.email}"></div>
+			<div id = "principalemail" value = "${principal.email}"></div> 
 			<div id = "principaltel" value = "${principal.phoneNum}"></div>
 		</div>
 	</div>

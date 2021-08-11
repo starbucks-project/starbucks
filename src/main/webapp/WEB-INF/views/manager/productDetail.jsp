@@ -18,7 +18,7 @@
           <div class="product_big_pic">
             <p>
               <a href="javascript:void(0)" tabindex="-1" aria-hidden="true" role="presentation"><!-- 접근성_20171123 tabindex, aria, role 추가 -->
-              <img class="zoomImg" src="/images/drink_list/${productEntity.productImg}" 
+              <img class="zoomImg" src="/images/${productEntity.category}_list/${productEntity.productImg}" 
               data-zoom-image="https://image.istarbucks.co.kr/upload/store/skuimg/2021/06/[9200000003643]_20210623101238875.jpg" alt="상세이미지">
             </a>
           </p>
@@ -32,7 +32,7 @@
             <ul class="product_thum">
               <li>
                 <a href="javascript:void(0)" data-image="https://image.istarbucks.co.kr/upload/store/skuimg/2021/06/[9200000003643]_20210623101238875.jpg" data-zoom-image="https://image.istarbucks.co.kr/upload/store/skuimg/2021/06/[9200000003643]_20210623101238875.jpg" class="elevatezoom-gallery active">
-                <img src="/images/drink_list/${productEntity.productImg}" alt="상세이미지 1번"></a>
+                <img src="/images/${productEntity.category}_list/${productEntity.productImg}" alt="상세이미지 1번"></a>
               </li>
             </ul>
           </div>

@@ -45,6 +45,7 @@
                   <img alt="" class="arrow_off" src="images/mscard_arrow_r_off.png">
                   <img alt="" class="arrow_on" src="images/mscard_arrow_r_on.png">
                 </a>
+                <c:forEach var="card" items="${cardEntity.content}">
                 <div class="swiper-wrapper" style="padding-left: 0px; padding-right: 0px; width: 828px; height: 584px;">
                   <div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width: 828px;">
                     <div class="swiper_slide_inner">
@@ -59,7 +60,7 @@
                       <!--카드-->
                       <div class="my_ms_slider_txt">
                         <div class="my_ms_slider_txt_l">
-                          <strong class="cardNickname">부산 시티 카드</strong>
+                          <strong class="cardNickname">${card.cardName}</strong>
                             <a class="icon_pencil_g pencil" href="#" data-cardstatus="R" data-cardnickname="부산 시티 카드">
                               정보수정버튼
                             </a>
@@ -72,11 +73,12 @@
                                 취소
                               </a>
                             </div>
-                            <p>●●●● - ●●●● - ●●20 - 1234</p>
+                            <p>${card.cardNum}</p>
                         </div>
+                        
                         <div class="my_ms_slider_txt_r">
                           잔액
-                          <strong class="en">2,800</strong>원
+                          <strong class="en">${card.balance}</strong>원
                           <ul class="op0 my_ms_card_btns">
                             <li class="card_charge_btn">
                               <a href="/user/cardCharge" data-type="CHARGE" data-cardregnumber="34655033">
@@ -94,6 +96,13 @@
                       </div>
                     </div>
                   </div>
+                </div>
+                </c:forEach>
+                <div class="pagination-box">
+                  <ul class="pagination">
+                    <li class="page-item"><a class="page-link" href="?page=${cardEntity.number-1}">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="?page=${cardEntity.number+1}">Next</a></li>
+                  </ul>
                 </div>
                 <div class="card-actions" style="display:block; background:#626260;"></div>
               </div>

@@ -5,7 +5,7 @@
     <!-- 서브 타이틀 -->
     <div class="sub_tit_wrap">
       <div class="sub_tit_inner">
-        <h2><img src="/images/drink_list/menu_tit1.jpg" alt="상품 목록"></h2>
+        <h2>상품 리스트</h2>
       </div>
     </div>
     <!-- 서브 타이틀 end -->

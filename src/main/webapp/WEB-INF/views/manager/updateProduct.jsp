@@ -29,7 +29,7 @@
 
             <div class="productImageupload-box">
                 <div class="productImage-box">
-                    <img src="/images/drink_list/${productEntity.productImg}" id="img_section" style="width: 120px; height: 150px;">
+                    <img src="/images/${productEntity.category}_list/${productEntity.productImg}" id="img_section" style="width: 120px; height: 150px;">
                 </div> <!-- end productImage-->
 
                 <div class="imageupload-btn-box">

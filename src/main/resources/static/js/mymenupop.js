@@ -10,9 +10,11 @@
     // $(".btn_pop_close").on("click", hidePopMyMenu);
 	// });
 
+/*============================= mymenu 팝업 ================================== */
 //팝업 동적 코딩
 $(document).ready(function () {
     console.log("mymen1");
+    total();
      $(".btn_pop_close").on("click", function() {
         console.log("mymen9");
         $(".sArea_pop").attr("aria-hidden", "true").attr("tabindex", "0").fadeOut();
@@ -107,6 +109,7 @@ $(document).ready(function () {
         $(".sArea_pop").attr("aria-hidden","false").attr("tabindex","0").focus(); 
      }
 */
+
    // "나만의 메뉴 자세히보기" 팝업 닫기
      function hidePopMyMenu() {
         console.log("mymen9");
@@ -123,14 +126,35 @@ $(document).ready(function () {
              if($(".ez-mcheckbox").attr("class")=="ez-mcheckbox ez-checked") { 
                    console.log("6");
                    //해당화면에 모든 checkbox들의 체크를해제시킨다. 
-                   $(".ez-mcheckbox").attr("class","ez-mcheckbox").focus(); 
+                   $(".ez-mcheckbox").attr("class","ez-mcheckbox").focus();
+                   $(".ez-mcheck").attr("class","ez-mcheck").focus();
+                   total();
                    console.log("7");
                  } else { 
                    console.log("8");
                    //해당화면에 전체 checkbox들을 체크해준다 
                   $(".ez-mcheckbox").attr("class","ez-mcheckbox ez-checked").focus(); 
+                  $(".ez-mcheck").attr("class","ez-mcheck ez-check").focus(); 
+                  total();
+                  console.log("8-2");
                      } 
            });
+
+            //$(".ez-mcheck").attr('class').change(total());
+          
+          function total(){
+            let arrProductprice = new Array();
+             $(".ez-check").each(function() {
+                  arrProductprice.push($(this).attr('name'));
+              });
+            let sum=0;
+            arrProductprice.forEach(element => {
+              element=parseInt(element);
+              sum+=element;
+            });
+            console.log(sum);
+            $(".checkedTotalAmount").text(sum);
+          }
  
          $(".chkAll checkbox").on("click",function(){ 
              //전체선택 체크박스 클릭 
@@ -140,6 +164,7 @@ $(document).ready(function () {
              console.log("10");
            });
 
+/*=============================mymenu 삭제하기================================== */
         //mymenu 삭제하기   
         async function deleteMymenu(){
             console.log("delete 1");
@@ -186,6 +211,7 @@ $(document).ready(function () {
             }
         }
 
+/*============================= cart 삭제하기 ================================== */
       //cart 삭제하기   
       async function deleteCart(){
         console.log("delete 1");
