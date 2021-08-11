@@ -7,8 +7,13 @@ function chargepay() {
   let buyertel = document.querySelector("#principaltel").value;
 
   let produtname = $("#cardNum_NORMAL option:selected").text();
-  let cardid = $("#cardNum_NORMAL option:selected").value();
+  let cardid = $("#cardNum_NORMAL option:selected").value;
   let productamount = document.querySelector(".charge").value;
+
+  let payrepDto = {
+    amount: productamount,
+    cardid: cardid,
+  };
 
   // IMP.request_pay(param, callback) 결제창 호출
   IMP.request_pay(
@@ -27,12 +32,6 @@ function chargepay() {
     (rsp) => {
       // callback
       if (rsp.success) {
-        let payDto = {
-          imp_uid: rsp.imp_uid,
-          merchant_uid: rsp.merchant_uid,
-          amount: productamount,
-          cardid: cardid,
-        };
         jQuery
           .ajax({
             url: "/user/cardCharge/complete", // 예: https://www.myservice.com/payments/complete 가맹점 서버
