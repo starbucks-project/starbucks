@@ -48,5 +48,9 @@ async function searchByName() {
       alert("해당 이름의 사용자가 존재하지 않습니다.");
       location.reload();
     }
+<<<<<<< HEAD
   }
   
+=======
+  }
+>>>>>>> 816f419ff514c4aaaa09b0fedd49c1b7192aad9b
