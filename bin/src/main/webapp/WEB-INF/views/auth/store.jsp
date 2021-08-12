@@ -13,17 +13,15 @@
 
   <!--=========store slide Area==========-->
   <div class="storeSlideArea">
-    <div class="bxslide-main">
       <div class="temporary_store_bnr">
-        <div class="bnr_temp_store">
+        <section class="bnr_temp_store">
           <div class="bnr_temp_store_inner">
             <div class="bnr_temp_store_txt_wrap">
               <p class="bnr_temp_store_txt">STARBUCKS 1000호점 <strong>청담스타점</strong> 스타벅스 1,000호점인 청담스타점에서 홈메이드 스타일의 전용 푸드와 스타벅스 리저브TM 커피를 만나보세요</p>
             </div>
           </div>
-        </div>
+        </section>
       </div>
-    </div>
   </div>
   <!--========End store slide Area=======-->
 

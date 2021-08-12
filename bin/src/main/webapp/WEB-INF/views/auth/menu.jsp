@@ -31,7 +31,7 @@
       <div class="menu_food_txt01">
         <img class="w_pic" src="/images/menu_main/menu_btxt2.png" alt="푸드 간편하지만 든든하게 채워지는 만족감을 느껴보세요. 신선함과 영양이 가득한 스타벅스 푸드가 완벽한 하루를 만들어 드립니다.">
       </div>
-      <div class="menu_food_btn01"><a href="#" title="스타벅스 푸드 자세히 보기">자세히 보기</a></div>
+      <div class="menu_food_btn01"><a href="/auth/food_list" title="스타벅스 푸드 자세히 보기">자세히 보기</a></div>
     </div>
   </div>
 
@@ -41,7 +41,7 @@
       <div class="menu_product_txt01">
         <img class="w_pic" src="/images/menu_main/menu_btxt3.png" alt="상품 스타벅스 상품으로 즐거움을 선사해보세요. 독특하고 다양한 스타벅스만의 상품은 당신에게 특별한 선물이 될 것입니다.">
       </div>
-      <div class="menu_product_btn01"><a href="#" title="스타벅스 상품 자세히 보기">자세히 보기</a>
+      <div class="menu_product_btn01"><a href="/auth/product_list" title="스타벅스 상품 자세히 보기">자세히 보기</a>
       </div>
     </div>
   </div>

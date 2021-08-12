@@ -12,16 +12,16 @@
 			</div> <!-- end userinfo-title-box-->
 			</div> <!-- end userinfo-title-->
 			<!-- /section title -->
-
+    <form action="/user/userinfo/${principal.id}" method="POST">
 			<div class="outer-info-box">
       <div class="info-box">  
       <div class="user-name-box">
         <div class="name-text-box">
           <h6>이름</h6>
         </div> <!-- end name-text-box -->
-        <div class="under-name-text">
+        <div class="under-name-text"> 
         <div class="name-output-box">
-          <input type="text" name="name" value="홍길동" readonly />
+          <input type="text" name="name" value="${principal.name}" />
         </div> <!-- end name-output-box-->
       </div> <!-- under-name-text-->
       </div> <!-- end user-name-box-->
@@ -32,7 +32,11 @@
           <h6>생년월일</h6>
         </div><!-- end user-birth-text-box -->
         <div class="user-birth-output-box">
-          <input type="text" value="1999/02/08" readonly />
+          <div class="birthday-box">
+          <input type="text" value="${principal.year}" name="year"/>년 
+          <input type="text" value="${principal.month}" name="month"/>월
+          <input type="text" value="${principal.date}" name="date"/>일
+          </div>
           <p>생일 무료 음료 쿠폰은 1년에 1번만 발행되므로, 변경 후에도 해당 연도 내 발행 이력이 있는 경우 추가 발행되지 않습니다.</p>
         </div> <!-- end user-birth-output-box -->
       </div> <!-- end user-birth-box-->
@@ -43,17 +47,17 @@
           <h6>휴대폰</h6>
         </div><!-- end user-phonenum-text-box -->
         <div class="user-phonenum-output-box">
-          <input type="text" value="010-****-2570" readonly />
+          <input type="text" value="${principal.phoneNum}" name="phoneNum" />
         </div> <!-- end user-phonenum-output-box -->
       </div> <!-- end user-phonenum-box-->
     <hr />
 
       <div class="user-email-box">
         <div class="user-email-text-box">
-          <h6>메일</h6>
+          <h6>이메일</h6>
         </div><!-- end user-email-text-box -->
         <div class="user-email-output-box">
-          <input type="text" value="example@naver.com" readonly />
+          <input type="text" value="${principal.email}" readonly />
         </div> <!-- end user-email-output-box -->
       </div> <!-- end user-email-box-->
     <hr />
@@ -77,7 +81,7 @@
             <strong>※ 귀하께서는 개인정보 수집·이용에 대한 동의를 거부하실 수 있으나, 동의를 거부하실 경우 서비스 이용을 하실 수 없습니다.</strong></p>
           </div>
           <div class="nickname-input-box">
-            <input type="text" name="nickname" value="홍길동" />
+            <input type="text" name="nickname" value="${principal.nickname}" />
           </div> <!-- end nickname-input-box-->
         </div> <!--end nickname-agreement-box-->
         <hr />
@@ -85,11 +89,12 @@
           <p><strong> *선택항목은 입력하지 않거나 동의하지 않아도 스타벅스 서비스를 이용하실 수 있습니다.</strong></p>
         </div>
         <div class="updateUserinfo-button-box">
-          <button>정보수정</button>
+          <input type="submit" value="정보수정">
         </div>
       </div> <!-- end nickname-info-->
 
 		</div> <!--end outer-info-box-->
+    </form>
   </div>
 	</div> <!-- end page-box -->
 </div> <!-- end div -contatiner-->

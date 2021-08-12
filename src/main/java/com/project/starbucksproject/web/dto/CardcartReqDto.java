@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data 
 public class CardcartReqDto { 
-	private String receiverName; // 받는 사람
+	private String receiver; // 받는 사람
     private String phone1;
 	private String phone2;
 	private String phone3;

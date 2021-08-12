@@ -10,7 +10,7 @@
   
   <meta name="author" content="Themefisher.com">
 
-  <title>starbucks</title>
+  <title>Starbucks Coffee Korea</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -18,6 +18,10 @@
   <link href="../images/starbuckslogo.png" rel="icon">
   <link href="../images/starbuckslogo.png" rel="apple-touch-icon">
   <link rel="shortcut icon"	href="https://image.istarbucks.co.kr/common/img/common/favicon.ico?v=200828"	type="image/ico">
+<%-- 
+  <link href="jquery.bxslider/jquery.bxslider.css" rel="stylesheet" /> 
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script> 
+  <script src="jquery.bxslider/jquery.bxslider.js"></script> --%>
 
   <!-- Google Fonts -->
   <link
@@ -35,6 +39,10 @@
   <link href="../plugins/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
   <link href="../plugins/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="../plugins/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 
    <!-- CSS
   ================================================== -->
@@ -54,6 +62,9 @@
   <!-- Template Main CSS File -->
   <link href="/css/style.css" rel="stylesheet">
 
+
+  <!-- script -->
+<script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
 </head>
 
 <body>
@@ -63,41 +74,75 @@
     <div class="outer">
       <div class="logo_box">
       <a class="navbar-brand logo" href="/">
-        <img class="logo" src="../images/starbuckslogo.png" />
+        <img class="logo" src="/images/starbuckslogo.png" />
       </a>
     </div> <!-- end logo_box-->
 
       <nav id="navbar" class="navbar order-last order-lg-0">
         <div class="upper">
         <div class="upper-nav">
+        <c:choose>
+            <%-- <div class="upper-nav-item"><a href="/manager/logout">logout</a></div> --%>
+          <c:when test="${sessionScope.principal != null}">
+            <div class="upper-nav-item"><a class="active" href="/">Home</a></div>
+            <div class="upper-nav-item" onclick="kakaoLogout()"><a>logout</a></div>
+            <div class="upper-nav-item"><a href="/user/cart">cart</a></div>
+            <div class="upper-nav-item"><a href="/user/mypage">mystarbucks</a></div>
+            <div class="upper-nav-item"><a href="/auth/store_map">find a store</a></div>
+          </c:when>
+          <c:when test="${sessionScope.managerPrincipal != null}">
+            <div class="upper-nav-item"><a class="active" href="/manager">Home</a></div>
+            <div class="upper-nav-item"><a href="/manager/logout">logout</a></div>
+            
+          </c:when>
+          <c:otherwise>
             <div class="upper-nav-item"><a class="active" href="/">Home</a></div>
             <div class="upper-nav-item"><a href="/auth/login">Login</a></div>
             <div class="upper-nav-item"><a href="/user/cart">cart</a></div>
             <div class="upper-nav-item"><a href="/user/mypage">mystarbucks</a></div>
-            <div class="upper-nav-item"><a href="/store">find a store</a></div>
-         
+            <div class="upper-nav-item"><a href="/auth/store_map">find a store</a></div>
+          </c:otherwise>
+
+        </c:choose>
+             <%-- <div class="upper-nav-item"><a onclick="kakaoLogout()">logout</a></div> --%>
+             
         </div><!-- end upper-nav-->
       </div> <!-- end upper-->
       <div class="lower">
-        
-        <div class="dropdown"><a href="#"><span>Menu</span> <i class="bi bi-chevron-down"></i></a>
+        <c:choose>
+          <c:when test="${empty sessionScope.managerPrincipal}">
+        <div class="dropdown"><a href="/menu"><span>Menu</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
             <li><a href="/auth/drink_list">Drink</a></li>
-
-            <li><a href="#">Food</a></li>
-            <li><a href="#">Product</a></li>
-            <li><a href="#">Card</a></li>
+            <li><a href="/auth/food_list">Food</a></li>
+            <li><a href="/auth/product_list">Product</a></li>
           </ul>
+          
         </div> <!-- end dropdown-->
-        <div class="dropdown"><a href="#"><span>Store</span> <i class="bi bi-chevron-down"></i></a>
+        <div class="dropdown"><a href="/store"><span>Store</span> <i class="bi bi-chevron-down"></i></a>
           <ul>
-            <li><a href="/store">매장 찾기</a></li>
+            <li><a href="/auth/store_map">매장 찾기</a></li>
 
             <li><a href="/auth/store_drive">드라이브 스루</a></li>
             <li><a href="/auth/store_reserve">리저브 매장</a></li>
           </ul>
+        </div> <!--end dropdown --> 
+        </c:when>  
+        <c:otherwise>
+          <div class="dropdown"><a href="/manager"><span>상품 리스트</span></a></div>
+          <div class="dropdown"><a href="/manager/uploadForm"><span>상품 등록</span></a></div>
+          <div class="dropdown"><a href="/manager/userlist"><span>회원관리</span></a></div>
+          <div class="dropdown"><a href="/manager/saledProduct"><span>판매현황</span></a></div>
+          <div class="dropdown"><a href="/manager/logout"><span>로그아웃</span></a></div>
+        </c:otherwise>
+        </c:choose>
           
-<%-- 
+  </nav>
+
+      
+  </header><!-- End Header -->
+
+  <%-- 
           <c:choose>
           <!-- 회원/관리자 모두 로그인 전 -->
           <c:when test="${(empty sessionScope.principal)&&(empty sessionScope.managerPrincipal)}"> 
@@ -152,8 +197,4 @@
           </c:choose>
         </div><!-- end dropdown-->
       </div> <!-- end lower--> --%>
-
-      </nav><!-- .navbar -->
-    </div> <!-- end outer-->
-  </header><!-- End Header -->
 

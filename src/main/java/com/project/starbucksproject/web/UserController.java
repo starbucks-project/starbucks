@@ -1,7 +1,11 @@
 package com.project.starbucksproject.web;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
+import com.project.starbucksproject.domain.card.Card;
+import com.project.starbucksproject.domain.card.CardRepository;
 import com.project.starbucksproject.domain.manager.ManagerRepository;
 import com.project.starbucksproject.domain.user.User;
 import com.project.starbucksproject.domain.user.UserRepository;
@@ -24,6 +28,7 @@ public class UserController {
   private final UserRepository userRepository;
   private final HttpSession session;
   private final ManagerRepository managerRepository;
+  private final CardRepository cardRepository;
 
   @GetMapping("/auth/login")
   public String loginForm() {
@@ -101,7 +106,12 @@ public class UserController {
   }
 
   @GetMapping("/user/mypage")
-  public String myPageForm() {
+  public String myPageForm(Model model) {
+    User principal = (User) session.getAttribute("principal");
+    int userid = principal.getId();
+
+    List<Card> cardsEntity = cardRepository.mfindByAlluserId(userid);
+    model.addAttribute("cardsEntity", cardsEntity);
     return "user/mypage";
   }
 

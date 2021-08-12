@@ -248,18 +248,50 @@ async function cardRegi() {
   event.preventDefault();
 
   console.log("1");
+  let cardName=document.querySelector("#CR1").value;
+
   let CR2 = document.querySelector("#CR2").value;
-  console.log(CR2);
   let CR2_2 = document.querySelector("#CR2_2").value;
   let CR2_3 = document.querySelector("#CR2_3").value;
   let CR2_4 = document.querySelector("#CR2_4").value;
+  let numRegExp = /^[0-9]{4}$/;  //pin번호 유효성 검사
+    if (!numRegExp.test(CR2)) {
+      alert("번호는 각각 4자리로 입력해야합니다!");
+      form.CR2.focus();
+      return false;
+    }  
+    if (!numRegExp.test(CR2_2)) {
+      alert("번호는 각각 4자리로 입력해야합니다!");
+      form.CR2_2.focus();
+      return false;
+    }
+    if (!numRegExp.test(CR2_3)) {
+      alert("번호는 각각 4자리로 입력해야합니다!");
+      form.CR2_3.focus();
+      return false;
+    }
+    if (!numRegExp.test(CR2_4)) {
+      alert("번호는 각각 4자리로 입력해야합니다!");
+      form.CR2_4.focus();
+      return false;
+    }
+
   let cardNum = CR2 + "-" + CR2_2 + "-" + CR2_3 + "-" + CR2_4;
+
+  let pin= document.querySelector("#CR3").value;
+  let pinRegExp = /^[0-9]{8}$/;  //pin번호 유효성 검사
+  if (!pinRegExp.test(pin)) {
+    alert("pin번호는 8자리로 입력해야합니다!");
+    //form.pin.value = "";
+    form.pin.focus();
+    return false;
+  }
 
   console.log("3");
   let cardSaveDto = {
-    cardName: document.querySelector("#CR1").value,
+    cardName: cardName,
     cardNum: cardNum,
-    pin: document.querySelector("#CR3").value,
+    pin: pin,
   };
 
   console.log("4");

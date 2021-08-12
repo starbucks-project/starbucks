@@ -15,9 +15,9 @@
             
             <div class="bottom-area">
                 <hr />
-            <form>
+            <form action="/manager/upload" method="post" enctype="multipart/form-data">
             <div class="category-box">
-                <select class="category-select">
+                <select name="category" class="category-select">
                     <option value="">--카테고리--</option>
                     <option value="drink">Drink</option>
                     <option value="food">Food</option>
@@ -27,18 +27,13 @@
 
             <div class="productImageupload-box">
                 <div class="productImage-box">
-                    <div class="productImage">
-                        <a>제품 이미지</a>
-                    </div>
+                    <img src="/images/preview.png" id="img_section" style="width: 120px; height: 150px;">
                 </div> <!-- end productImage-->
 
                 <div class="imageupload-btn-box">
                     <div class="imageupload-btn">
-                        <button>이미지 업로드</button>
+                        <input type="file" name="productImage" id="upload_file" accept="image/*" required=true value="업로드">
                     </div> <!-- end imageupload-btn-->
-                    <div class="imagefile-box">
-                        <input type="text" name="imagePath" value="이미지경로" readonly/>
-                    </div>
                 </div> <!-- end imageupload-btn-box-->
             </div> <!-- end productImageupload-box-->
 
@@ -47,13 +42,19 @@
                     <a>제품 이름</a>
                 </div>
                 <div class="product-name-input-box">
-                    <input type="text" name="productName" placeholder="제품 이름을 입력하세요." />
+                    <input name="productName" type="text" name="productName" placeholder="제품 이름을 입력하세요." />
                 </div>
                 <div class="product-title-box">
                     <a>제품 영문 이름</a>
                 </div>
                 <div class="product-name-input-box">
-                    <input type="text" name="productName" placeholder="제품 영문 이름을 입력하세요." />
+                    <input name="productNameEng" type="text" name="productNameEng" placeholder="제품 영문 이름을 입력하세요." />
+                </div>
+                <div class="product-title-box">
+                    <a>제품 가격</a>
+                </div>
+                <div class="product-name-input-box">
+                    <input name="price" type="number" placeholder="상품 가격을 입력하세요" value="${productEntity.price}" />
                 </div>
             </div> <!-- end product-name-area-box-->
             
@@ -62,8 +63,7 @@
                     <a>제품 상세 설명</a>
                 </div>
                 <div class="product-content-box">
-                    <textarea  name="productDetail" cols="60" rows="10" placeholder="제품 상세 설명을 입력해주세요.">  
-                    </textarea>
+                    <textarea  name="productInfo" cols="60" rows="10" placeholder="제품 상세 설명을 입력해주세요."></textarea>
                 </div>
             </div> <!-- end product-detail-area-box-->
 
@@ -78,13 +78,13 @@
                             <a>1회 제공량(kcal)</a>
                         </td>
                         <td class="nuturiton_input">
-                            <input type="text" placeholder="1회제공량 입력">
+                            <input name="kcal" type="text" placeholder="1회제공량 입력">
                         </td>
                         <td class="nuturition_title_right">
                             <a>포화지방(g)</a>
                         </td>
                         <td class="nuturiton_input">
-                            <input type="text" placeholder="포화지방 입력">
+                            <input name="saturatedFat" type="text" placeholder="포화지방 입력">
                         </td>
                     </tr>
                     <tr>
@@ -92,13 +92,13 @@
                             <a>단백질(g)</a>
                         </td>
                         <td class="nuturiton_input">
-                            <input type="text" placeholder="단백질 입력">
+                            <input name="protein" type="text" placeholder="단백질 입력">
                         </td>
                         <td class="nuturition_title_right">
                             <a>나트륨(g)</a>
                         </td>
                         <td class="nuturiton_input">
-                            <input type="text" placeholder="나트륨 입력">
+                            <input name="natrium" type="text" placeholder="나트륨 입력">
                         </td>
                     </tr>
                     <tr>
@@ -106,13 +106,13 @@
                             <a>당류(g)</a>
                         </td>
                         <td class="nuturiton_input">
-                            <input type="text" placeholder="당류 입력">
+                            <input name="sugar" type="text" placeholder="당류 입력">
                         </td>
                         <td class="nuturition_title_right">
                             <a>카페인(mg)</a>
                         </td>
                         <td class="nuturiton_input">
-                            <input type="text" placeholder="카페인 입력">
+                            <input name="caffeine" type="text" placeholder="카페인 입력">
                         </td>
                     </tr>
                     </table>
@@ -124,7 +124,7 @@
             <div>
                 <div class="savebtn-box">
                     <a href="/manager">
-                        <input type="button" name="saveBtn" value="등록">
+                        <input type="submit" name="saveBtn" value="등록">
                     </a>
                 </div>
             </div>
@@ -133,4 +133,23 @@
 </div>
 </div> <!-- end div -contatiner-->
 </main>
+
+            <script>
+                const reader = new FileReader();
+
+                reader.onload = (readerEvent) => {
+                    document.querySelector("#img_section").setAttribute("src", readerEvent.target.result);
+                    //파일을 읽는 이벤트가 발생하면 img_section의 src 속성을 readerEvent의 결과물로 대체함
+                };
+
+                document.querySelector("#upload_file").addEventListener("change", (changeEvent) => {
+                //upload_file 에 이벤트리스너를 장착
+
+                const imgFile = changeEvent.target.files[0];
+                reader.readAsDataURL(imgFile);
+                //업로드한 이미지의 URL을 reader에 등록
+
+                
+                })
+            </script>
 <%@include file="../layout/footer.jsp"%>

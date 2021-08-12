@@ -8,8 +8,9 @@ import com.project.starbucksproject.domain.manager.Manager;
 import com.project.starbucksproject.domain.manager.ManagerRepository;
 import com.project.starbucksproject.domain.product.Product;
 import com.project.starbucksproject.domain.product.ProductRepository;
-import com.project.starbucksproject.domain.saleditems.SaledItemsRepository;
-import com.project.starbucksproject.domain.saleditems.Saleditems;
+import com.project.starbucksproject.domain.saledItems.SaledItemsRepository;
+import com.project.starbucksproject.domain.saledItems.SaledItems;
+import com.project.starbucksproject.domain.saledItems.SaledItemsRepository;
 import com.project.starbucksproject.domain.user.User;
 import com.project.starbucksproject.domain.user.UserRepository;
 import com.project.starbucksproject.web.dto.UserSearchReqDto;
@@ -78,7 +79,7 @@ public class ManagerController {
     User userEntity = userRepository.mfindByName(dto.getName());
     int userId = userEntity.getId();
 
-    List<Saleditems> saleditemsEntity = saledItemsRepository.mfindByUsername(userId);
+    List<SaledItems> saleditemsEntity = saledItemsRepository.mfindByUsername(userId);
 
     if (saleditemsEntity != null) {
       return new UserSearchRespDto<>(1, "이름 검색 성공", saleditemsEntity);

@@ -17,8 +17,11 @@ import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.project.starbucksproject.domain.card.Card;
-import com.project.starbucksproject.domain.mymenu.*;
-import com.project.starbucksproject.domain.saleditems.Saleditems;
+
+import com.project.starbucksproject.domain.myMenu.*;
+import com.project.starbucksproject.domain.saledItems.SaledItems;
+import com.project.starbucksproject.domain.saledItems.*;
+
 
 import org.hibernate.annotations.CreationTimestamp;
 
@@ -60,11 +63,11 @@ public class Product {
     private Timestamp createDate; // 등록일
 
     @OneToMany(mappedBy = "products")
-    private List<Mymenu> mymenus; // 마이메뉴 조인
+    private List<MyMenu> mymenus; // 마이메뉴 조인
 
     @JsonIgnoreProperties({"product"})
     @OneToMany(mappedBy = "product")
-    private List<Saleditems> saleditems; // saledItems 조인
+    private List<SaledItems> saleditems; // saledItems 조인
 
     // @OneToMany(mappedBy = "cart")
     // private List<Cart> carts; // 카트 조인

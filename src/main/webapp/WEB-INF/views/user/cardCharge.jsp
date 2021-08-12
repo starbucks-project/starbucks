@@ -46,7 +46,6 @@
 										<td>
 											<div class="sel_wrap">
 												<%-- <p class="user_sel_wrap"> --%>
-<<<<<<< HEAD
 													<%-- <label for="cardNum_NORMAL">${cardEntity.cardName}</label>  --%>
 														<select id="cardNum_NORMAL" name="cardNum" onchange="myFunction(this.value)">
 															<option value="">--내카드--</option>
@@ -56,17 +55,6 @@
 														</select>
 															
 												<%-- </p> --%>
-=======
-													<%-- <label for="cardNum_NORMAL">--카드 선택--</label>  --%>
-														<select id="cardNum_NORMAL" name="cardNum">
-														
-															<c:forEach var = "card" items="${cardsEntity}">
-																<option id="${card}" value="${card.id}">${card.cardName}</option>
-															</c:forEach>
-														</select>
-												<%-- </p> --%>
-												
->>>>>>> f9a91e64d40d2cf273a80546182181aaeee42272
 											</div>
 											<br />
 											<!--
@@ -78,15 +66,9 @@
 														src="${card.cardImg}">
 												</figure>
 												<p>
-<<<<<<< HEAD
 													<strong class="en cardNum">카드번호</strong><br>
-=======
-													<strong class="en cardNumber">1111-2222-333-4444</strong><br>
->>>>>>> f9a91e64d40d2cf273a80546182181aaeee42272
 													<br> 최종 사용일 : 
 													<span class="balanceConfirmDate">2021-07-08 13:31:00</span>
-													
-													
 												</p>
 											</div> -->
 										</td>
@@ -97,17 +79,19 @@
 										<td class="charge_select">
 
 											<div class="sel_wrap">
+											<!--
 												<p class="charge_change">
 													충전 후 총 카드 잔액 : <span class="en t_006633 afterChargeBalance"
 														name="totPrice">0</span>원
 												</p>
+												-->
 											</div>
 											<div class="charge_options">
 												<select class = "charge">
-													<option id="price1" value="100000" name="totPrice">10만원</option>
-													<option id="price2" value="50000" name="totPrice">5만원</option>
-													<option id="price3" value="30000" name="totPrice">3만원</option>
-													<option id="price4" value="10000" name="totPrice">1만원</option>
+													<option id="price1" value="100" name="totPrice">10만원</option>
+													<option id="price2" value="100" name="totPrice">5만원</option>
+													<option id="price3" value="10" name="totPrice">3만원</option>
+													<option id="price4" value="10" name="totPrice">1만원</option>
 													<option id="price5" value="10" name="totPrice">10원</option>
 												</select>
 											
@@ -204,7 +188,7 @@
 					<ul style="display: block;">
 					  
 					  <li>
-						<a href="/user/cardRegiForm" required="login" data-href="#">
+						<a href="/user/cardRegi" required="login" data-href="#">
 						  · 카드 등록</a>
 					  </li>
 					  <li>

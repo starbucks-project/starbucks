@@ -61,12 +61,12 @@
 									
 									<div class="tbl_card_sending">	
 										<p>1</p>	
-										<input class="receiver" placeholder="받는 사람 이름" type="text" name="receiverName" />	
+										<input class="receiver" id="receiver" placeholder="받는 사람 이름" type="text" name="receiverName" />	
 										<br />
 										<div class="sel_wrap">		
 											<div class="tbl_card_select">			
 												<label for="phone1_1">선택</label>			
-												<select id="phone1_1" name="phone1" title="휴대폰 첫번째 자리">				
+												<select id="phone1" name="phone1" title="휴대폰 첫번째 자리">				
 													<option value="" selected="selected">선택</option>				
 													<option value="010">010</option><option value="011">011</option>
 													<option value="016">016</option><option value="017">017</option>
@@ -75,9 +75,9 @@
 											</div>	
 										</div>
 										<span>-</span>
-										<input type="tel" name="phone2" class="pnum_input" maxlength="4" title="휴대폰 두번째 자리">
+										<input type="tel" id="phone2" name="phone2" class="pnum_input" maxlength="4" title="휴대폰 두번째 자리">
 										<span>-</span>
-										<input type="tel" name="phone3" class="pnum_input" maxlength="4" title="휴대폰 세번째 자리">
+										<input type="tel" id="phone3" name="phone3" class="pnum_input" maxlength="4" title="휴대폰 세번째 자리">
 										<a class="sender_addel_btn addPhone" href="javascript:void(0);">추가</a>
 										</div>	
 											
@@ -104,17 +104,7 @@
 											<option id="price3" value="30000"  name="price">3만원</option>
 											<option id="price4" value="10000"  name="price">1만원</option>
 										</select>
-										<!-- <input id="price1" name="price" type="radio" value="100000">
-					                    <label for="price1">10만원</label>
-					                    <input id="price2" name="price" type="radio" value="50000">
-					                    <label for="price2">5만원</label>
-					                    <input id="price3" name="price" type="radio" value="30000">
-					                    <label for="price3">3만원</label>
-					                    <input id="price4" name="price" type="radio" value="10000" checked="checked">
-					                    <label for="price4">1만원</label> -->
-										
-										
-												
+								
 									</div>
 									<p class="gift_info_adding txt_red">- 장당 금액은 또는 1만원~10만원까지 선물 가능합니다. (1만원 이상부터는 만원 단위로 가능)</p>
 								</td>
@@ -166,5 +156,4 @@
 	</div>
 	
 </main>	
-
 <%@include file="../layout/footer.jsp"%>
