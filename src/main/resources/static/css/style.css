@@ -4094,6 +4094,7 @@ strong {
 
 /* ------------------my_ms_index_slide*/
 .ms_cont .my_ms_index_slide {
+  position: relative;
   border-radius: 3px;
   height: 597px;
   width: 800px;
@@ -4103,6 +4104,7 @@ strong {
   position: absolute;
   text-align: center;
   top: 50px;
+  z-index: 99;
 }
 .ms_cont .my_ms_index_slide .header h5 {
   color: #fff;
