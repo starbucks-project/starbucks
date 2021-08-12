@@ -88,9 +88,9 @@
         <c:choose>
         <c:when test="${saledItemsEntity.number==0 && saledItemsEntity.totalPages == 1}">
             <li class="page-item disabled"><a class="page-link" href="?page=${saledItemsEntity.number-1}">Previous</a></li>
-            <c:forEach var="pages" items="saledItemsEntity.totalPages">
+            <%-- <c:forEach var="pages" items="saledItemsEntity.totalPages">
             <li class="page-item"><a class="page-link" href="?page=${pages.number}">${pages.number+1}</a></li>
-            </c:forEach>
+            </c:forEach> --%>
             <li class="page-item disabled"><a class="page-link" href="?page=${saledItemsEntity.number+1}">Next</a></li>
         </c:when>
         <c:when test="${saledItemsEntity.number==0 && saledItemsEntity.totalPages != 1}">
