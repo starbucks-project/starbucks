@@ -128,12 +128,12 @@ public class CardController {
     int price = cardcartReqDto.getPrice();
 
     String receiverPhonenum = phone1 + phone2 + phone3;
-    String receiver = cardcartReqDto.getReceiver();
+    String receiverName = cardcartReqDto.getReceiver();
     String message = cardcartReqDto.getMessage();
 
     Cardcart cardcart = new Cardcart();
     cardcart.setPrice(price);
-    cardcart.setReceiverName(receiver);
+    cardcart.setReceiverName(receiverName);
     cardcart.setReceiverPhonenum(receiverPhonenum);
     cardcart.setUser(principal);
     cardcartRepository.save(cardcart);

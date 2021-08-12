@@ -158,7 +158,7 @@ function egiftpay() {
 
   let productamount = document.querySelector("#price").value;
 
-  let receiver = document.querySelector("#receiver").value;
+  let receiverName = document.querySelector("#receiver").value;
   let phone1 = $("#phone1 option:selected").val();
   let phone2 = document.querySelector("#phone2").value;
   let phone3 = document.querySelector("#phone3").value;
@@ -166,7 +166,7 @@ function egiftpay() {
 
   let cardcartreqDto = {
     amount: productamount,
-    receiver: receiver,
+    receiverName: receiverName,
     phone1: phone1,
     phone2: phone2,
     phone3: phone3,
