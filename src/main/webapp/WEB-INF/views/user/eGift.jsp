@@ -78,7 +78,6 @@
 										<input type="tel" id="phone2" name="phone2" class="pnum_input" maxlength="4" title="휴대폰 두번째 자리">
 										<span>-</span>
 										<input type="tel" id="phone3" name="phone3" class="pnum_input" maxlength="4" title="휴대폰 세번째 자리">
-										<a class="sender_addel_btn addPhone" href="javascript:void(0);">추가</a>
 										</div>	
 											
 									
@@ -99,7 +98,7 @@
 								<td>
 									<div class="tbl_card_radio">
 										<select id="price">
-											<option id="price1" value="100000"  name="price">10만원</option>
+											<option id="price1" value="100"  name="price">10만원</option>
 											<option id="price2" value="50000"  name="price">5만원</option>
 											<option id="price3" value="30000"  name="price">3만원</option>
 											<option id="price4" value="10000"  name="price">1만원</option>

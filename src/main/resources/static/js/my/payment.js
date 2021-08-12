@@ -1,23 +1,66 @@
-var IMP = window.IMP; // 생략 가능
-IMP.init("imp68218098"); // 예: imp00000000
+async function myFunction(str) {
+  console.log("0");
+  alert("내카드: "+ str + " 을 선택하였습니다." );
+  let cardId=$("#cardNum_NORMAL option:selected").val();
+  console.log("cardId:"+cardId);
+  //cardInfo(cardId);
+  console.log("1");
+  
+  console.log("2");
+  
+  let response = await fetch("/user/cardInfo/"+cardId, {
+    method: "get"
+  });
 
-<<<<<<< HEAD
-async function cardInfo(cardId) {}
+  console.log("3");
+  let parseResponse = await response.json();
+
+  console.log(parseResponse);
+
+  if(parseResponse.code === 1){
+      console.log("4");
+      let boxEL=document.querySelector(".sel_box");
+      
+      let popupItem = document.createElement("div");
+      popupItem.className = "user_card_wrap";
+      
+      let temp =`
+      <figure>
+      <i class="representative_icon"><a
+      href="javascript:void(0);"></a></i>
+      <img alt="" class="cardImgUrl"
+      onerror="this.src='https://image.istarbucks.co.kr/upload/common/img/icon/card_672x423.png';"
+      src="https://image.istarbucks.co.kr/cardImg/20190805/005949.png">
+      </figure>
+      <p>
+      <strong class="en cardNum">${parseResponse.data.cardNum}</strong><br>
+      <br> 최종 사용일 : 
+      <span class="balanceConfirmDate">2021-07-08 13:31:00</span>
+      <br> 카드 등록일 : <span class="cardRegDate">${parseResponse.data.createDate}</span>
+      </p>
+      `;
+      
+      popupItem.innerHTML = temp;
+      boxEL.append(popupItem);
+      
+
+  } else {
+      alert("cardInfo 뿌리기 실패");
+  }
+}
+
+//async function cardInfo(cardId) {}
 /*=====================================================================*/
 
 
 
 function chargepay() {
 
-=======
-function chargepay() {
->>>>>>> a68b54c97b4cae7787b5d58ba0d104a60c867845
   let buyername = document.querySelector("#principalname").value;
   let buyeremail = document.querySelector("#principalemail").value;
   let buyertel = document.querySelector("#principaltel").value;
 
   let produtname = $("#cardNum_NORMAL option:selected").text();
-<<<<<<< HEAD
   let cardid = $("#cardNum_NORMAL option:selected").val();
   let productamount = document.querySelector(".charge").value;
 
@@ -27,16 +70,6 @@ function chargepay() {
   };
   var IMP = window.IMP; // 생략 가능
   IMP.init("imp68218098"); // 예: imp00000000s
-=======
-  let cardid = $("#cardNum_NORMAL option:selected").value;
-  let productamount = document.querySelector(".charge").value;
-
-  let payrepDto = {
-    amount: productamount,
-    cardid: cardid,
-  };
-
->>>>>>> a68b54c97b4cae7787b5d58ba0d104a60c867845
   // IMP.request_pay(param, callback) 결제창 호출
   IMP.request_pay(
     {
@@ -54,15 +87,12 @@ function chargepay() {
     (rsp) => {
       // callback
       if (rsp.success) {
-<<<<<<< HEAD
         console.log("결제 성공");
         console.log(rsp);
         // 결제 성공 시 로직,
         successCharge(payreqDto);
 
         /*
-=======
->>>>>>> a68b54c97b4cae7787b5d58ba0d104a60c867845
         jQuery
           .ajax({
             url: "/user/cardCharge/complete", // 예: https://www.myservice.com/payments/complete 가맹점 서버
@@ -85,23 +115,18 @@ function chargepay() {
               msg += "카드 승인번호 : " + rsp.apply_num;
 
               alert(msg);
-<<<<<<< HEAD
               document.location.href = "/user/mypage"; 
             } else {
               //[3] 아직 제대로 결제가 되지 않았습니다.
               //[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
             } 
-          });                                                  */
-
-
-=======
+          });                                                  
               document.location.href = "/user/mypage";
             } else {
               //[3] 아직 제대로 결제가 되지 않았습니다.
               //[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
             }
-          });
->>>>>>> a68b54c97b4cae7787b5d58ba0d104a60c867845
+          });         */
       } else {
         console.log(rsp);
         alert("결제에 실패하였습니다. 에러 내용: " + rsp.error_msg);
@@ -110,7 +135,6 @@ function chargepay() {
   );
 }
 
-<<<<<<< HEAD
 async function  successCharge(payreqDto) {
   console.log("확인", payreqDto);
   console.log("결제 성공시, 로직 start!");
@@ -126,9 +150,6 @@ async function  successCharge(payreqDto) {
   location.href = "/user/mypage";
 } //결제 성공시 실행되는 함수 end
 /*=================================================================================================*/
-=======
-/*===================================================================================================*/
->>>>>>> a68b54c97b4cae7787b5d58ba0d104a60c867845
 
 function egiftpay() {
   let buyername = document.querySelector("#principalname").value;
@@ -137,7 +158,6 @@ function egiftpay() {
 
   let productamount = document.querySelector("#price").value;
 
-<<<<<<< HEAD
   let receiver = document.querySelector("#receiver").value;
   let phone1 = $("#phone1 option:selected").val();
   let phone2 = document.querySelector("#phone2").value;
@@ -154,10 +174,9 @@ function egiftpay() {
   }
 
   // IMP.request_pay(param, callback) 호출
+  var IMP = window.IMP; // 생략 가능
+  IMP.init("imp68218098"); // 예: imp00000000s
   // 변수화
-=======
-  // IMP.request_pay(param, callback) 결제창 호출
->>>>>>> a68b54c97b4cae7787b5d58ba0d104a60c867845
   IMP.request_pay(
     {
       // param
@@ -176,6 +195,7 @@ function egiftpay() {
         // 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
         // axios로 HTTP 요청
         // jQuery로 HTTP 요청
+        /*
         jQuery
           .ajax({
             url: "/payments/complete", // 예: https://www.myservice.com/payments/complete 가맹점 서버
@@ -202,6 +222,7 @@ function egiftpay() {
               //[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
             }
           });
+          */
         console.log("결제 성공");
         console.log(rsp);
       // 결제 성공 시 로직,
@@ -215,6 +236,7 @@ function egiftpay() {
     }
   );
 }
+
 async function  successEgift(cardcartreqDto) {
   console.log("확인", cardcartreqDto);
   console.log("결제 성공시, 로직 start!");

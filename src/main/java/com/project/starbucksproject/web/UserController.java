@@ -68,10 +68,6 @@ public class UserController {
   // 로그인
   @PostMapping("/user/login")
   public @ResponseBody String login(@RequestBody User user) {
-    // String name = user.getNickname();
-    // String nickname = user.getNickname();
-    // String email = user.getEmail();
-    // String birthday = user.getBirth();
 
     User userEntity = userRepository.mfindByemail(user.getEmail());
 

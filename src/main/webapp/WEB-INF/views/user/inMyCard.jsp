@@ -45,7 +45,7 @@
                   <img alt="" class="arrow_off" src="images/mscard_arrow_r_off.png">
                   <img alt="" class="arrow_on" src="images/mscard_arrow_r_on.png">
                 </a>
-                <c:forEach var="card" items="${cardEntity.content}">
+                <%-- <c:forEach var="card" items="${cardEntity.content}"> --%>
                 <div class="swiper-wrapper" style="padding-left: 0px; padding-right: 0px; width: 828px; height: 584px;">
                   <div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width: 828px;">
                     <div class="swiper_slide_inner">
@@ -97,11 +97,11 @@
                     </div>
                   </div>
                 </div>
-                </c:forEach>
+                <%-- </c:forEach> --%>
                 <div class="pagination-box">
                   <ul class="pagination">
-                    <li class="page-item"><a class="page-link" href="?page=${cardEntity.number-1}">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="?page=${cardEntity.number+1}">Next</a></li>
+                    <%-- <li class="page-item"><a class="page-link" href="?page=${cardEntity.number-1}">Previous</a></li>
+                    <li class="page-item"><a class="page-link" href="?page=${cardEntity.number+1}">Next</a></li> --%>
                   </ul>
                 </div>
                 <div class="card-actions" style="display:block; background:#626260;"></div>

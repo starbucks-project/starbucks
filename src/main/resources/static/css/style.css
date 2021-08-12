@@ -5011,6 +5011,12 @@ select:not(:-internal-list-box) {
   width: 100%;
 }
 
+.card_charge_wrap article table tr td div.sel_wrap2 {
+  height: 150px;
+  position: relative;
+  width: 100%;
+}
+
 .t_006633 {
   color: #006633;
 }

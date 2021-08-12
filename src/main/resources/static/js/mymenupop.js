@@ -13,7 +13,6 @@
 /*============================= mymenu 팝업 ================================== */
 //팝업 동적 코딩
 $(document).ready(function () {
-<<<<<<< HEAD
   console.log("mymen1");
   $(".btn_pop_close").on("click", function () {
     console.log("mymen9");
@@ -32,18 +31,6 @@ let myMenuDetail = async (mymenuId) => {
   event.preventDefault();
   let response = await fetch("/user/mymenuPop/" + mymenuId, {
     method: "get",
-=======
-    console.log("mymen1");
-    total();
-     $(".btn_pop_close").on("click", function() {
-        console.log("mymen9");
-        $(".sArea_pop").attr("aria-hidden", "true").attr("tabindex", "0").fadeOut();
-        $(".only_my_dimm").attr("aria-hidden", "true").attr("tabindex", "0").fadeOut();
-     }
-     );
-     //$(".btn_show_pop_detail").on("click", myMenuDetail);
-     
->>>>>>> ab67adb798eb518aade4bc5f9ef95ab717a00d1a
   });
   console.log("mymen3");
   let parseResponse = await response.json();
@@ -122,274 +109,147 @@ let myMenuDetail = async (mymenuId) => {
         $(".sArea_pop").attr("aria-hidden","false").attr("tabindex","0").focus(); 
      }
 */
-<<<<<<< HEAD
+
 // "나만의 메뉴 자세히보기" 팝업 닫기
 function hidePopMyMenu() {
   console.log("mymen9");
-  $(".sArea_pop, .only_my_dimm")
-    .attr("aria-hidden", "true")
-    .attr("tabindex", "0")
-    .fadeOut();
-  $(".btn_show_pop_detail > button").focus();
+   $(".sArea_pop, .only_my_dimm").attr("aria-hidden", "true").attr("tabindex", "0").fadeOut();
+   $(".btn_show_pop_detail > button").focus(); 
 }
 
 //전체 선택 & 선택 삭제
-//All checkbox
-$("#Allcheck").on("click", function () {
-  //전체선택 체크박스 클릭
-  console.log("5");
-  //해당화면에 전체 checkbox들을 체크해준다
-  if ($(".ez-mcheckbox").attr("class") == "ez-mcheckbox ez-checked") {
-    console.log("6");
-    //해당화면에 모든 checkbox들의 체크를해제시킨다.
-    $(".ez-mcheckbox").attr("class", "ez-mcheckbox").focus();
-    console.log("7");
-  } else {
-    console.log("8");
-    //해당화면에 전체 checkbox들을 체크해준다
-    $(".ez-mcheckbox").attr("class", "ez-mcheckbox ez-checked").focus();
-  }
-});
+  //All checkbox
+   $("#Allcheck").on("click",function(){ 
+       //전체선택 체크박스 클릭 
+       console.log("5");
+       //해당화면에 전체 checkbox들을 체크해준다 
+       if($(".ez-mcheckbox").attr("class")=="ez-mcheckbox ez-checked") { 
+             console.log("6");
+             //해당화면에 모든 checkbox들의 체크를해제시킨다. 
+             $(".ez-mcheckbox").attr("class","ez-mcheckbox").focus();
+             $(".ez-mcheck").attr("class","ez-mcheck").focus();
+             total();
+             console.log("7");
+           } else { 
+             console.log("8");
+             //해당화면에 전체 checkbox들을 체크해준다 
+            $(".ez-mcheckbox").attr("class","ez-mcheckbox ez-checked").focus(); 
+            $(".ez-mcheck").attr("class","ez-mcheck ez-check").focus(); 
+            total();
+            console.log("8-2");
+               } 
+     });
 
-$(".chkAll checkbox").on("click", function () {
-  //전체선택 체크박스 클릭
-  console.log("9");
-  //해당화면에 전체 checkbox들을 체크해준다
-  $(".ez-mcheckbox").attr("class", "ez-mcheckbox ez-checked").focus();
-  console.log("10");
-});
-
-//mymenu 삭제하기
-async function deleteMymenu() {
-  console.log("delete 1");
-  //let mymenuEL = document.querySelector("#my-menu-"+commentId);
-  let length = $(".ez-checked").length;
-  let arr = new Array();
-  $(".ez-checked").each(function () {
-    arr.push($(this).attr("id"));
-  });
-
-  let mymenuDelReqDto = {
-    arr: arr,
-    length: length,
-  };
-
-  console.log(length);
-  console.log("delete 2");
-  if (length === 1 || length === 0) {
-    alert("선택된 글이 없습니다");
-  } else {
-    console.log("delete 3");
-    console.log(mymenuDelReqDto);
-    console.log(JSON.stringify(mymenuDelReqDto));
-    let response = await fetch("/user/mymenuDel", {
-      method: "delete",
-      body: JSON.stringify(mymenuDelReqDto),
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-      },
-    });
-
-    let parseResponse = await response.text();
-    console.log(parseResponse);
-    if (parseResponse === "ok") {
-      alert("삭제성공");
-      location.reload();
-      //let deleteEL = document.querySelector("#reply-"+commentId);
-      //deleteEL.remove();
-      //console.log(deleteEL);
-    } else {
-      alert("삭제실패");
+      //$(".ez-mcheck").attr('class').change(total());
+    
+    function total(){
+      let arrProductprice = new Array();
+       $(".ez-check").each(function() {
+            arrProductprice.push($(this).attr('name'));
+        });
+      let sum=0;
+      arrProductprice.forEach(element => {
+        element=parseInt(element);
+        sum+=element;
+      });
+      console.log(sum);
+      $(".checkedTotalAmount").text(sum);
     }
-  }
-}
 
-//cart 삭제하기
-async function deleteCart() {
-  console.log("delete 1");
-  let length = $(".ez-checked").length;
-  let arr = new Array();
-  $(".ez-checked").each(function () {
-    arr.push($(this).attr("id"));
-  });
-
-  let cartDelReqDto = {
-    arr: arr,
-    length: length,
-  };
-
-  console.log(length);
-  console.log("delete 2");
-  if (length === 1 || length === 0) {
-    alert("선택된 글이 없습니다");
-  } else {
-    console.log("delete 3");
-    console.log(cartDelReqDto);
-    console.log(JSON.stringify(cartDelReqDto));
-    let response = await fetch("/user/cartDel", {
-      method: "delete",
-      body: JSON.stringify(cartDelReqDto),
-      headers: {
-        "Content-Type": "application/json; charset=utf-8",
-      },
-    });
-
-    let parseResponse = await response.text();
-    console.log(parseResponse);
-    if (parseResponse === "ok") {
-      alert("삭제성공");
-      location.reload();
-    } else {
-      alert("삭제실패");
-=======
-
-   // "나만의 메뉴 자세히보기" 팝업 닫기
-     function hidePopMyMenu() {
-        console.log("mymen9");
-         $(".sArea_pop, .only_my_dimm").attr("aria-hidden", "true").attr("tabindex", "0").fadeOut();
-         $(".btn_show_pop_detail > button").focus(); 
-     }
-
-     //전체 선택 & 선택 삭제
-        //All checkbox
-         $("#Allcheck").on("click",function(){ 
-             //전체선택 체크박스 클릭 
-             console.log("5");
-             //해당화면에 전체 checkbox들을 체크해준다 
-             if($(".ez-mcheckbox").attr("class")=="ez-mcheckbox ez-checked") { 
-                   console.log("6");
-                   //해당화면에 모든 checkbox들의 체크를해제시킨다. 
-                   $(".ez-mcheckbox").attr("class","ez-mcheckbox").focus();
-                   $(".ez-mcheck").attr("class","ez-mcheck").focus();
-                   total();
-                   console.log("7");
-                 } else { 
-                   console.log("8");
-                   //해당화면에 전체 checkbox들을 체크해준다 
-                  $(".ez-mcheckbox").attr("class","ez-mcheckbox ez-checked").focus(); 
-                  $(".ez-mcheck").attr("class","ez-mcheck ez-check").focus(); 
-                  total();
-                  console.log("8-2");
-                     } 
-           });
-
-            //$(".ez-mcheck").attr('class').change(total());
-          
-          function total(){
-            let arrProductprice = new Array();
-             $(".ez-check").each(function() {
-                  arrProductprice.push($(this).attr('name'));
-              });
-            let sum=0;
-            arrProductprice.forEach(element => {
-              element=parseInt(element);
-              sum+=element;
-            });
-            console.log(sum);
-            $(".checkedTotalAmount").text(sum);
-          }
- 
-         $(".chkAll checkbox").on("click",function(){ 
-             //전체선택 체크박스 클릭 
-             console.log("9");
-             //해당화면에 전체 checkbox들을 체크해준다 
-             $(".ez-mcheckbox").attr("class","ez-mcheckbox ez-checked").focus(); 
-             console.log("10");
-           });
+   $(".chkAll checkbox").on("click",function(){ 
+       //전체선택 체크박스 클릭 
+       console.log("9");
+       //해당화면에 전체 checkbox들을 체크해준다 
+       $(".ez-mcheckbox").attr("class","ez-mcheckbox ez-checked").focus(); 
+       console.log("10");
+     });
 
 /*=============================mymenu 삭제하기================================== */
-        //mymenu 삭제하기   
-        async function deleteMymenu(){
-            console.log("delete 1");
-            //let mymenuEL = document.querySelector("#my-menu-"+commentId);
-            let length=$(".ez-checked").length;
-            let arr = new Array();
-            $(".ez-checked").each(function() {
-                arr.push($(this).attr('id'));
-            });
-            
-            let mymenuDelReqDto = {
-				arr: arr,
-				length: length
-	    	};
+  //mymenu 삭제하기   
+  async function deleteMymenu(){
+      console.log("delete 1");
+      //let mymenuEL = document.querySelector("#my-menu-"+commentId);
+      let length=$(".ez-checked").length;
+      let arr = new Array();
+      $(".ez-checked").each(function() {
+          arr.push($(this).attr('id'));
+      });
+      
+      let mymenuDelReqDto = {
+  arr: arr,
+  length: length
+  };
 
-            console.log(length);
-            console.log("delete 2");
-            if(length === 1 || length === 0) {
-                alert("선택된 글이 없습니다");
-            } else {
-                console.log("delete 3");
-                console.log(mymenuDelReqDto);
-                console.log(JSON.stringify(mymenuDelReqDto));
-                let response = await fetch("/user/mymenuDel", {
-                    method: "delete",
-                    body: JSON.stringify(mymenuDelReqDto),
-			        headers: {
-				    "Content-Type": "application/json; charset=utf-8"
-			        }
-                });
-                
-                let parseResponse = await response.text();
-                console.log(parseResponse);    
-                if(parseResponse === "ok"){
-                    alert("삭제성공");
-                    location.reload();
-                    //let deleteEL = document.querySelector("#reply-"+commentId);
-                    //deleteEL.remove();
-                    //console.log(deleteEL);
-                } else {
-                    alert("삭제실패");
-                }
-                
-            }
+      console.log(length);
+      console.log("delete 2");
+      if(length === 1 || length === 0) {
+          alert("선택된 글이 없습니다");
+      } else {
+          console.log("delete 3");
+          console.log(mymenuDelReqDto);
+          console.log(JSON.stringify(mymenuDelReqDto));
+          let response = await fetch("/user/mymenuDel", {
+              method: "delete",
+              body: JSON.stringify(mymenuDelReqDto),
+        headers: {
+      "Content-Type": "application/json; charset=utf-8"
         }
+          });
+          
+          let parseResponse = await response.text();
+          console.log(parseResponse);    
+          if(parseResponse === "ok"){
+              alert("삭제성공");
+              location.reload();
+              //let deleteEL = document.querySelector("#reply-"+commentId);
+              //deleteEL.remove();
+              //console.log(deleteEL);
+          } else {
+              alert("삭제실패");
+          }
+          
+      }
+  }
 
 /*============================= cart 삭제하기 ================================== */
-      //cart 삭제하기   
-      async function deleteCart(){
-        console.log("delete 1");
-        let length=$(".ez-checked").length;
-        let arr = new Array();
-        $(".ez-checked").each(function() {
-            arr.push($(this).attr('id'));
-        });
-        
-        let cartDelReqDto = {
-             arr: arr,
-              length: length
-              };
+//cart 삭제하기   
+async function deleteCart(){
+  console.log("delete 1");
+  let length=$(".ez-checked").length;
+  let arr = new Array();
+  $(".ez-checked").each(function() {
+      arr.push($(this).attr('id'));
+  });
+  
+  let cartDelReqDto = {
+       arr: arr,
+        length: length
+        };
 
-        console.log(length);
-        console.log("delete 2");
-        if(length === 1 || length === 0) {
-            alert("선택된 글이 없습니다");
-        } else {
-            console.log("delete 3");
-            console.log(cartDelReqDto);
-            console.log(JSON.stringify(cartDelReqDto));
-            let response = await fetch("/user/cartDel", {
-                method: "delete",
-                body: JSON.stringify(cartDelReqDto),
-          headers: {
-        "Content-Type": "application/json; charset=utf-8"
-          }
-            });
-            
-            let parseResponse = await response.text();
-            console.log(parseResponse);    
-            if(parseResponse === "ok"){
-                alert("삭제성공");
-                location.reload();
-            } else {
-                alert("삭제실패");
-            }
-            
-        }
->>>>>>> ab67adb798eb518aade4bc5f9ef95ab717a00d1a
+  console.log(length);
+  console.log("delete 2");
+  if(length === 1 || length === 0) {
+      alert("선택된 글이 없습니다");
+  } else {
+      console.log("delete 3");
+      console.log(cartDelReqDto);
+      console.log(JSON.stringify(cartDelReqDto));
+      let response = await fetch("/user/cartDel", {
+          method: "delete",
+          body: JSON.stringify(cartDelReqDto),
+    headers: {
+  "Content-Type": "application/json; charset=utf-8"
     }
+      });
+      
+      let parseResponse = await response.text();
+      console.log(parseResponse);    
+      if(parseResponse === "ok"){
+          alert("삭제성공");
+          location.reload();
+      } else {
+          alert("삭제실패");
+      }
+      
   }
-}
-function test() {
-  event.preventDefault;
-  alert("떠라ㅏ라ㅏ");
 }

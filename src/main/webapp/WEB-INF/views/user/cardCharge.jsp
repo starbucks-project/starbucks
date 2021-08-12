@@ -41,19 +41,20 @@
 								<caption>충전 카드 선택, 충전 금액 선택, 결제 수단 선택, 온라인 충전 시 유의 사항에
 									대한 테이블</caption>
 								<tbody>
-									<tr>
+									<tr class="selectcard">
 										<th scope="row">충전 카드 선택</th>
 										<td>
-											<div class="sel_wrap">
+											<div class="sel_wrap2">
 												<%-- <p class="user_sel_wrap"> --%>
 													<%-- <label for="cardNum_NORMAL">${cardEntity.cardName}</label>  --%>
+													<div class="sel_box">
 														<select id="cardNum_NORMAL" name="cardNum" onchange="myFunction(this.value)">
 															<option value="">--내카드--</option>
 															<c:forEach var="card" items="${cardsEntity}">
 															<option id="${card.id}" value="${card.id}" name="${card.id}">${card.cardName}</option>	
 															</c:forEach>														
 														</select>
-															
+													</div>		
 												<%-- </p> --%>
 											</div>
 											<br />
@@ -78,14 +79,14 @@
 										<th scope="row">충전 금액 선택</th>
 										<td class="charge_select">
 
-											<div class="sel_wrap">
 											<!--
+											<div class="sel_wrap">
 												<p class="charge_change">
 													충전 후 총 카드 잔액 : <span class="en t_006633 afterChargeBalance"
 														name="totPrice">0</span>원
 												</p>
-												-->
 											</div>
+												-->
 											<div class="charge_options">
 												<select class = "charge">
 													<option id="price1" value="100" name="totPrice">10만원</option>

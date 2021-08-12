@@ -50,7 +50,7 @@
                 </div>
               </article>
             </section>
-            <section class="my_ms_card">
+            <section class="my_ms_card" >
               <div class="my_ms_card_inner">
                 <header>
                   <div class="card_header_box_one">
@@ -102,6 +102,8 @@
                             </div>
                           </div>
                         </li>
+
+                        <c:forEach var="card" items="${cardsEntity}">
                         <li style="float: left; list-style: none; position: relative; width: 770px;" class="bx-clone">
                           <figure>
                             <i class="representative_icon" aria-hidden="true"></i>
@@ -114,9 +116,8 @@
 
                             </p>
                             <p class="my_ms_card_price"><span class="a11y">잔여금액</span><!-- 접근성_20171201 span 추가 -->
-                             <c:forEach var="card" items="${cardsEntity}">
                             <p class="my_ms_card_price"><span class="a11y">잔여금액</span>
-                              <strong class="en t_0d5f34">${card.balance}</strong>원</p> </c:forEach>
+                              <strong class="en t_0d5f34">${card.balance}</strong>원</p> 
                             <p class="my_ms_card_date">최종 사용일 : <span class="en">2021-07-08 13:31:00</span></p>
                             <div class="my_ms_card_btns">
                                                                                         
@@ -126,6 +127,7 @@
                             </div>
                           </div>
                         </li>
+                        </c:forEach>
                         <li style="float: left; list-style: none; position: relative; width: 770px;" class="bx-clone">
                           <figure>
                             <i class="representative_icon" aria-hidden="true"></i>

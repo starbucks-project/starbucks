@@ -4,14 +4,14 @@
 <main id="main">
 <div class="manage-User-container">
 <!-- LoginForm -->
-	<div class="manageUser-page-box">
-		<!-- section title -->
-		<div class="manageUser-title-box">
-		<div class="manageUser-title" >
-			<a><strong>판매현황</strong></a>				
-		</div> <!-- end userinfo-title-box-->
-		</div> <!-- end userinfo-title-->
-		<!-- /section title -->
+   <div class="manageUser-page-box">
+      <!-- section title -->
+      <div class="manageUser-title-box">
+      <div class="manageUser-title" >
+         <a><strong>판매현황</strong></a>            
+      </div> <!-- end userinfo-title-box-->
+      </div> <!-- end userinfo-title-->
+      <!-- /section title -->
         <hr />   
         <div class="manageUser-bottom-area">
         <div class="top_box">
@@ -68,7 +68,7 @@
                         <td>${saleditems.date}</td>     
                         <td>${saleditems.product.price}</td> 
                         <td>1</td>
-                    </tr>
+                    </tr> 
                     </c:forEach>
                     
                     <tr class="last_tr">      
@@ -88,9 +88,9 @@
         <c:choose>
         <c:when test="${saledItemsEntity.number==0 && saledItemsEntity.totalPages == 1}">
             <li class="page-item disabled"><a class="page-link" href="?page=${saledItemsEntity.number-1}">Previous</a></li>
-            <c:forEach var="pages" items="saledItemsEntity.totalPages">
+            <%-- <c:forEach var="pages" items="saledItemsEntity.totalPages">
             <li class="page-item"><a class="page-link" href="?page=${pages.number}">${pages.number+1}</a></li>
-            </c:forEach>
+            </c:forEach> --%>
             <li class="page-item disabled"><a class="page-link" href="?page=${saledItemsEntity.number+1}">Next</a></li>
         </c:when>
         <c:when test="${saledItemsEntity.number==0 && saledItemsEntity.totalPages != 1}">
