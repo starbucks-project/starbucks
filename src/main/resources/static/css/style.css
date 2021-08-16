@@ -762,10 +762,19 @@ iframe {
   border-radius: 3px;
 }
 
+.category-box{
+  display: flex;
+}
+
+.category-box form{
+  display: flex;
+}
+
 .category-select {
   width: 150px;
   border: solid rgb(207, 207, 207) 1.5px;
   border-radius: 3px;
+  margin-right: 20px;
 }
 
 .product-title-box {

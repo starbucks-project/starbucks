@@ -1,5 +1,7 @@
 package com.project.starbucksproject.web;
 
+import java.lang.ProcessBuilder.Redirect;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -12,9 +14,12 @@ import com.project.starbucksproject.domain.saleditems.SaleditemsRepository;
 import com.project.starbucksproject.domain.saleditems.Saleditems;
 import com.project.starbucksproject.domain.user.User;
 import com.project.starbucksproject.domain.user.UserRepository;
+import com.project.starbucksproject.web.dto.ProductSearchReqDto;
+import com.project.starbucksproject.web.dto.ProductSearchRespDto;
 import com.project.starbucksproject.web.dto.UserSearchReqDto;
 import com.project.starbucksproject.web.dto.UserSearchRespDto;
 
+import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Producer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
@@ -26,6 +31,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
+import javassist.bytecode.Mnemonic;
 import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
@@ -40,6 +46,10 @@ public class ManagerController {
 
   @GetMapping("/manager")
   public String managerHome(Model model) {
+    Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
+    if (managerEntity == null) {
+      return "redirect:/manager/login";
+    }
     model.addAttribute("productsEntity", productRepository.findAll());
 
     return "manager/managerHome";
@@ -48,6 +58,10 @@ public class ManagerController {
   // 상품 상세보기 페이지로 이동
   @GetMapping("/manager/detail/{id}")
   public String productDetailForm(@PathVariable int id, Model model) {
+    Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
+    if (managerEntity == null) {
+      return "redirect:/manager/login";
+    }
     Product productEntity = productRepository.findById(id).get();
     model.addAttribute("productEntity", productEntity);
 
@@ -57,6 +71,10 @@ public class ManagerController {
   // 상품 판매 현황 페이지로 이동
   @GetMapping("/manager/saledProduct")
   public String saledProductForm(Model model, Integer page) {
+    Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
+    if (managerEntity == null) {
+      return "redirect:/manager/login";
+    }
     if (page == null) {
       page = 0;
     }
@@ -75,21 +93,75 @@ public class ManagerController {
   // 판매현황 페이지에서 이름 검색 했을 때
   @PostMapping("/manager/saleditemsByName")
   public @ResponseBody UserSearchRespDto<List> saledItemsByName(@RequestBody UserSearchReqDto dto) {
-    User userEntity = userRepository.mfindByName(dto.getName());
-    int userId = userEntity.getId();
+    Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
 
-    List<Saleditems> saleditemsEntity = saledItemsRepository.mfindByUsername(userId);
+    // 검색된 이름의 사용자 정보 가져오기
+    List<User> userEntity = userRepository.mfindUserList(dto.getName());
 
-    if (saleditemsEntity != null) {
-      return new UserSearchRespDto<>(1, "이름 검색 성공", saleditemsEntity);
+    // saleditems 정보를 가질 list 선언
+    List<Saleditems> saleditemsEntity = new ArrayList<>();
+
+    // 관리자 로그인 되어 있다면
+    if (managerEntity != null) {
+      // 검색된 이름의 사용자가 없을 때
+      if (userEntity == null) {
+        return new UserSearchRespDto<>(-1, "이름 검색 실패", saleditemsEntity);
+      } else { // 검색된 이름의 사용자가 있을 때 (동명이인이 있을 수 있으므로 list에 추가하면서 저장해줌)
+        for (int i = 0; i < userEntity.size(); i++) {
+          int userId = userEntity.get(i).getId();
+          List<Saleditems> saleditemsByUser = saledItemsRepository.mfindSaledList(userId);
+          for (int j = 0; j < saleditemsByUser.size(); j++) {
+            Saleditems saleditems = saleditemsByUser.get(j);
+            saleditemsEntity.add(saleditems);
+          } // end inner for
+        } // end outer for
+
+        // 정상적으로 이름이 검색 됐을 때
+        return new UserSearchRespDto<>(1, "이름 검색 성공", saleditemsEntity);
+      } // end inner if-else
     } else {
-      return new UserSearchRespDto<>(-1, "이름 검색 실패", saleditemsEntity);
+      return new UserSearchRespDto<>(0, "세션 만료", saleditemsEntity);
+    } // end outer if-else
+
+  }
+
+  // 판매현황 카테고리 검색
+  @PostMapping("/manager/searchCategory")
+  public @ResponseBody ProductSearchRespDto<List> searchByCategory(@RequestBody ProductSearchReqDto dto) {
+    Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
+
+    String category = dto.getCategory();
+    List<Product> productEntity = productRepository.mfindAllByCategory(category);
+    List<Saleditems> saleditemsEntity = new ArrayList<>();
+    if (managerEntity != null) {
+      if (productEntity != null) {
+        for (int i = 0; i < productEntity.size(); i++) {
+          int productId = productEntity.get(i).getId();
+          List<Saleditems> saleditemsByCategory = saledItemsRepository.mfindByCategory(productId);
+          for (int j = 0; j < saleditemsByCategory.size(); j++) {
+            Saleditems saleditems = saleditemsByCategory.get(j);
+            saleditemsEntity.add(saleditems);
+          } // end inner for
+
+        } // end outer for
+
+        return new ProductSearchRespDto<>(1, "카테고리 상품 찾기 성공", saleditemsEntity);
+      } else {
+        return new ProductSearchRespDto<>(-1, "해당 카테고리 상품 없음", saleditemsEntity);
+      }
+    } else {
+      return new ProductSearchRespDto<>(0, "세션 만료", saleditemsEntity);
     }
+
   }
 
   // 상품 수정 페이지로 이동
   @GetMapping("/manager/product/{id}")
   public String updateForm(@PathVariable int id, Model model) {
+    Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
+    if (managerEntity == null) {
+      return "redirect:/manager/login";
+    }
     Product productEntity = productRepository.findById(id).get();
     model.addAttribute("productEntity", productEntity);
 
@@ -99,6 +171,10 @@ public class ManagerController {
   // 수정 완료 후 상품 상세보기 페이지로 이동
   @PostMapping("/manager/product/{id}")
   public String update(@PathVariable int id, Product product, MultipartFile productImage) {
+    Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
+    if (managerEntity == null) {
+      return "redirect:/manager/login";
+    }
     Product productEntity = productRepository.findById(id).get();
 
     String imageFileName = productImage.getOriginalFilename();
@@ -127,41 +203,58 @@ public class ManagerController {
   // 회원 관리 페이지 이동
   @GetMapping("/manager/userlist")
   public String userlistForm(Model model, Integer page) {
+    Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
+    if (managerEntity == null) {
+      return "redirect:/manager/login";
+    }
 
     if (page == null) {
       page = 0;
     }
 
     Model userEntity = model.addAttribute("usersEntity", userRepository.findAll(PageRequest.of(page, 5)));
-    
+
     System.out.println("================\n" + userEntity);
 
     return "manager/manageUser";
   }
 
-  
-
   // 회원 관리 페이지에서 이름 검색 했을 때
   @PostMapping("/manager/searchname")
-  public @ResponseBody UserSearchRespDto<User> searchUser(@RequestBody UserSearchReqDto dto) {
-    User userEntity = userRepository.mfindByName(dto.getName());
+  public @ResponseBody UserSearchRespDto<List> searchUser(@RequestBody UserSearchReqDto dto) {
+    Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
+    List<User> userEntity = userRepository.mfindUserList(dto.getName());
+    System.out.println("====================\n" + userEntity + "\n=====================");
+    if (managerEntity != null) {
 
-    if (userEntity != null) {
-      return new UserSearchRespDto<>(1, "사용자 찾기 성공", userEntity);
+      if (userEntity != null) {
+        return new UserSearchRespDto<>(1, "사용자 찾기 성공", userEntity);
+      } else {
+        return new UserSearchRespDto<>(-1, "사용자 찾기 실패", userEntity);
+      }
     } else {
-      return new UserSearchRespDto<>(-1, "사용자 찾기 실패", userEntity);
+      return new UserSearchRespDto<>(0, "세션 만료", userEntity);
     }
+
   }
 
   // 상품 등록 페이지 이동
   @GetMapping("/manager/uploadForm")
   public String uploadProductForm() {
+    Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
+    if (managerEntity == null) {
+      return "redirect:/manager/login";
+    }
     return "manager/uploadProduct";
   }
 
   // 상품 업로드
   @PostMapping("/manager/upload")
   public String upload(Product product, MultipartFile productImage) {
+    Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
+    if (managerEntity == null) {
+      return "redirect:/manager/login";
+    }
 
     System.out.println(product);
 
@@ -200,7 +293,12 @@ public class ManagerController {
   // manager Logout
   @GetMapping("/manager/logout")
   public String managerLogout() {
+    Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
+    if (managerEntity == null) {
+      return "redirect:/manager/login";
+    }
     session.invalidate();
     return "redirect:/";
   }
+
 }

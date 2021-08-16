@@ -35,13 +35,12 @@ public class User {
     private String year; // 생년월일
     private String month; // 월
     private String date; // 일
-    
 
     @CreationTimestamp
     private Timestamp createDate; // 회원가입 일
 
-    @OneToMany(mappedBy = "user")
-    private List<Mymenu> mymenus; // 마이메뉴 조인
+    // @OneToMany(mappedBy = "user")
+    // private List<Mymenu> mymenus; // 마이메뉴 조인
 
     // @OneToMany(mappedBy = "mymenu")
     // private List<MyMenu> mymenus;

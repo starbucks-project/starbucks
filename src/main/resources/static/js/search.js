@@ -2,7 +2,6 @@
 // search by name
 // -----------------------------
 async function searchByName() {
-    alert("sTop");
     event.preventDefault();
   
     let searchReqDto = {
@@ -25,28 +24,36 @@ async function searchByName() {
   
     if (parseResponse.code === 1) {
       let userBoxEl = document.querySelector("#notice");
-      let userItem = document.createElement("tr");
-      // userItem.id = "user-" + parseResponse.data.id;
   
       console.log(parseResponse.data);
   
-      let temp = `
+      userBoxEl.innerHTML = ""; // userBoxEl 안 html 태그 날리기     
+
+      let items = parseResponse.data;
+
+      items.forEach(users => {
+        let userItem = document.createElement("tr");
+        let temp = `
         
-        <td>${parseResponse.data.id}</td>
-        <td class="left"><a>${parseResponse.data.name}</a></td>
-        <td><a>${parseResponse.data.email}</a></td>
-        <td><a>${parseResponse.data.createDate}</a></td>
+        <td>${users.id}</td>
+        <td class="left"><a>${users.name}</a></td>
+        <td><a>${users.email}</a></td>
+        <td><a>${users.createDate}</a></td>
         <td>0</td>
         
       `;
+
       userItem.innerHTML = temp;
-  
-      userBoxEl.innerHTML = ""; // userBoxEl 안 html 태그 날리기
-  
       userBoxEl.prepend(userItem);
-    } else {
+
+      });
+
+    } else if(parseResponse.code == -1) {
       alert("해당 이름의 사용자가 존재하지 않습니다.");
       location.reload();
+    } else{
+      alert("세션이 만료되었습니다. 다시 로그인해주세요.");
+      location.href = "/auth/manager/loginform";
     }
   }
   

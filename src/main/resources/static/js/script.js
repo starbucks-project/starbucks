@@ -320,6 +320,7 @@ async function cardRegi() {
 // 판매현황 이름 검색
 // -----------------------------
 async function saledItemByName() {
+  alert("함수 실행");
   event.preventDefault();
 
   let searchReqDto = {
@@ -338,33 +339,114 @@ async function saledItemByName() {
   });
 
   let parseResponse = await response.json();
-  console.log(parseResponse);
+  console.log(1, parseResponse);
 
   if (parseResponse.code === 1) {
     let userBoxEl = document.querySelector("#notice");
-    let userItem = document.createElement("tr");
-    // userItem.id = "user-" + parseResponse.data.id;
-
     console.log(parseResponse.data);
 
-    let temp = `
-      
-      <td>${parseResponse.data.id}</td>
-      <td class="left"><a>${parseResponse.data.name}</a></td>
-      <td><a>${parseResponse.data.email}</a></td>
-      <td><a>${parseResponse.data.createDate}</a></td>
-      <td>0</td>
-      
-    `;
-    userItem.innerHTML = temp;
+    let saleditems = parseResponse.data;
 
+    alert("날리기 전 잠깐 멈춤")
     userBoxEl.innerHTML = ""; // userBoxEl 안 html 태그 날리기
 
-    // <c:forEach var="saledItem" items="${parseResponse.data}">
-    //   userBoxEl.prepend(userItem);
-    // </c:forEach>;
-  } else {
+    alert("날리고 잠깐 멈춤")
+
+    saleditems.forEach(saled => {
+      let userItem = document.createElement("tr");
+      let temp = `
+      <td>${saled.id}</td>     
+      <td>${saled.user.name}</td>
+      <td class="left"><a>${saled.product.productName}</a></td>     
+      <td>${saled.date}</td>     
+      <td>${saled.product.price}</td> 
+      <td>1</td>    
+    `;
+
+     userItem.innerHTML = temp;
+     userBoxEl.prepend(userItem);
+    });
+    
+    // userItem.id = "user-" + parseResponse.data.id;  
+    //userItem.innerHTML = temp;
+
+    
+
+    // let bottomItem = document.createElement("tr");
+    // // bottomItem.className = "last_tr";
+    
+    // let temp2 = `
+    //   <td>No.</td>     
+    //   <td>구매자</td>
+    //   <td class="left"><a>상품명</a></td>     
+    //   <td>구매일</td>     
+    //   <td>총 액 : </td> 
+    //   <td>총 판매수량 : </td>
+    // `;
+    // bottomItem.innerHTML=temp2
+    // userBoxEl.innerHTML= bottomItem;
+    
+      // userBoxEl.prepend(userItem);
+    
+  } else if(parseResponse.code == -1){
     alert("해당 이름의 사용자가 존재하지 않습니다.");
     location.reload();
+  } else if(parseResponse.code == 0){
+    alert("세션이 만료되었습니다. 다시 로그인 해주세요.");
+    location.href = "/auth/manager/loginform";
+  }
+}
+
+// ===========================
+// category search
+// ===========================
+async function categorySearch(){
+  event.preventDefault();
+
+  let categoryDto = {
+    category : document.querySelector("#category").value
+  };
+
+  console.log(JSON.stringify(categoryDto));
+
+  let respCategory = await fetch("/manager/searchCategory", {
+    method: "post",
+    body: JSON.stringify(categoryDto),
+    headers: {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  });
+
+  let parseRespCategory = await respCategory.json();
+  console.log(parseRespCategory);
+  
+  if(parseRespCategory.code == 1){
+    let itemBoxEL = document.querySelector("#notice");
+    console.log(parseRespCategory.data);
+    itemBoxEL.innerHTML = "";
+
+    let itemsByCategory = parseRespCategory.data;
+
+    itemsByCategory.forEach(items => {
+      let itemLine = document.createElement("tr");
+      let innerLine = `
+      <td>${items.id}</td>     
+      <td>${items.user.name}</td>
+      <td class="left"><a>${items.product.productName}</a></td>     
+      <td>${items.date}</td>     
+      <td>${items.product.price}</td> 
+      <td>1</td>  
+      `;
+
+      itemLine.innerHTML=innerLine;
+      itemBoxEL.prepend(itemLine);
+    });
+
+  }else if(parseRespCategory.code == -1){
+    alert("해당 카테고리 제품이 없습니다.");
+    location.reload();
+  }else{
+    alert("세션이 만료되었습니다. 다시 로그인해주세요.")
+    location.href="/auth/manager/loginform";
   }
 }

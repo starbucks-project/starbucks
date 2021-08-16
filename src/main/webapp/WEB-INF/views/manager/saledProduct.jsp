@@ -17,12 +17,17 @@
         <div class="top_box">
         <div class="category-area-box">
             <div class="category-box">
-                <select class="category-select">
+            <form onsubmit="categorySearch()">
+                <select id="category" class="category-select">
                     <option value="">--카테고리--</option>
                     <option value="drink">Drink</option>
                     <option value="food">Food</option>
                     <option value="product">Product</option>
                 </select>
+                <div class="search-btn-box">
+                    <input type="submit" name="search-btn" value="검색"/>
+                </div>
+            </form>
             </div> <!-- end cateogry-box-->
         </div> <!-- end search-area-box-->
 
