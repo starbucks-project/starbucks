@@ -10,8 +10,7 @@ import com.project.starbucksproject.domain.manager.Manager;
 import com.project.starbucksproject.domain.manager.ManagerRepository;
 import com.project.starbucksproject.domain.product.Product;
 import com.project.starbucksproject.domain.product.ProductRepository;
-import com.project.starbucksproject.domain.saleditems.SaleditemsRepository;
-import com.project.starbucksproject.domain.saleditems.Saleditems;
+import com.project.starbucksproject.domain.saledItems.*;
 import com.project.starbucksproject.domain.user.User;
 import com.project.starbucksproject.domain.user.UserRepository;
 import com.project.starbucksproject.web.dto.ProductSearchReqDto;
@@ -41,7 +40,7 @@ public class ManagerController {
   private final UserRepository userRepository;
   private final ProductRepository productRepository;
   private final ManagerRepository managerRepository;
-  private final SaleditemsRepository saledItemsRepository;
+  private final SaledItemsRepository saledItemsRepository;
   private final HttpSession session;
 
   @GetMapping("/manager")
@@ -99,7 +98,7 @@ public class ManagerController {
     List<User> userEntity = userRepository.mfindUserList(dto.getName());
 
     // saleditems 정보를 가질 list 선언
-    List<Saleditems> saleditemsEntity = new ArrayList<>();
+    List<SaledItems> saleditemsEntity = new ArrayList<>();
 
     // 관리자 로그인 되어 있다면
     if (managerEntity != null) {
@@ -109,9 +108,9 @@ public class ManagerController {
       } else { // 검색된 이름의 사용자가 있을 때 (동명이인이 있을 수 있으므로 list에 추가하면서 저장해줌)
         for (int i = 0; i < userEntity.size(); i++) {
           int userId = userEntity.get(i).getId();
-          List<Saleditems> saleditemsByUser = saledItemsRepository.mfindSaledList(userId);
+          List<SaledItems> saleditemsByUser = saledItemsRepository.mfindSaledList(userId);
           for (int j = 0; j < saleditemsByUser.size(); j++) {
-            Saleditems saleditems = saleditemsByUser.get(j);
+            SaledItems saleditems = saleditemsByUser.get(j);
             saleditemsEntity.add(saleditems);
           } // end inner for
         } // end outer for
@@ -132,14 +131,14 @@ public class ManagerController {
 
     String category = dto.getCategory();
     List<Product> productEntity = productRepository.mfindAllByCategory(category);
-    List<Saleditems> saleditemsEntity = new ArrayList<>();
+    List<SaledItems> saleditemsEntity = new ArrayList<>();
     if (managerEntity != null) {
       if (productEntity != null) {
         for (int i = 0; i < productEntity.size(); i++) {
           int productId = productEntity.get(i).getId();
-          List<Saleditems> saleditemsByCategory = saledItemsRepository.mfindByCategory(productId);
+          List<SaledItems> saleditemsByCategory = saledItemsRepository.mfindByCategory(productId);
           for (int j = 0; j < saleditemsByCategory.size(); j++) {
-            Saleditems saleditems = saleditemsByCategory.get(j);
+            SaledItems saleditems = saleditemsByCategory.get(j);
             saleditemsEntity.add(saleditems);
           } // end inner for
 

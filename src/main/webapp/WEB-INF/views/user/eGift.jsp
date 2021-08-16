@@ -59,11 +59,13 @@
 									</th>
 								<td>
 									
-									<div class="tbl_card_sending">	
-										<p>1</p>	
+									<div class="tbl_card_sending">		
 										<input class="receiver" id="receiver" placeholder="받는 사람 이름" type="text" name="receiverName" />	
 										<br />
-										<div class="sel_wrap">		
+										<div class="sel_wrap">
+											<input type="tel" id="receiverPhonenum" placeholder="휴대폰 번호" name="receiverPhonenum" class="receiver" maxlength="11" title="휴대폰 번호">
+										</div>
+										<!-- <div class="sel_wrap">		
 											<div class="tbl_card_select">			
 												<label for="phone1_1">선택</label>			
 												<select id="phone1" name="phone1" title="휴대폰 첫번째 자리">				
@@ -73,11 +75,11 @@
 													<option value="018">018</option><option value="019">019</option>			
 												</select>	
 											</div>	
-										</div>
-										<span>-</span>
+										</div> -->
+										<!-- <span>-</span>
 										<input type="tel" id="phone2" name="phone2" class="pnum_input" maxlength="4" title="휴대폰 두번째 자리">
 										<span>-</span>
-										<input type="tel" id="phone3" name="phone3" class="pnum_input" maxlength="4" title="휴대폰 세번째 자리">
+										<input type="tel" id="phone3" name="phone3" class="pnum_input" maxlength="4" title="휴대폰 세번째 자리"> -->
 										</div>	
 											
 									
@@ -90,7 +92,7 @@
 								<th>메시지 입력</th>
 								<td>
 								<textarea id="reqMsg" name="message" placeholder="내용을 입력해 주세요. (200자 내외)"></textarea>
-								<p id="reqMsgCnt" class="gift_info_adding">(0/200)</p>
+								<p id="reqMsgCnt" class="gift_info_adding"></p>
 								</td>
 							</tr>
 							<tr>
@@ -99,9 +101,9 @@
 									<div class="tbl_card_radio">
 										<select id="price">
 											<option id="price1" value="100"  name="price">10만원</option>
-											<option id="price2" value="50000"  name="price">5만원</option>
-											<option id="price3" value="30000"  name="price">3만원</option>
-											<option id="price4" value="10000"  name="price">1만원</option>
+											<option id="price2" value="100"  name="price">5만원</option>
+											<option id="price3" value="100"  name="price">3만원</option>
+											<option id="price4" value="100"  name="price">1만원</option>
 										</select>
 								
 									</div>
@@ -145,7 +147,7 @@
 					</fieldset>
 					<br />
 					<!--<button> <a href="/user/cardcart"> 결제하기</button>-->
-					<button> <a href="javascript:void(0);" onclick="egiftpay();">결제하기</a></button>
+					<button> <a href="javascript:void(0);" onclick="egiftpay();sendSms();">결제하기</a></button>
 				</form>
 			</section>
 			<div id = "principalname" value = "${principal.name}"></div>

@@ -156,20 +156,16 @@ function egiftpay() {
   let buyeremail = document.querySelector("#principalemail").value;
   let buyertel = document.querySelector("#principaltel").value;
 
-  let productamount = document.querySelector("#price").value;
+  let price = document.querySelector("#price").value;
 
   let receiverName = document.querySelector("#receiver").value;
-  let phone1 = $("#phone1 option:selected").val();
-  let phone2 = document.querySelector("#phone2").value;
-  let phone3 = document.querySelector("#phone3").value;
+  let receiverPhonenum = document.querySelector('#receiverPhonenum').value;
   let reqMsg = document.querySelector("#reqMsg").value;
 
   let cardcartreqDto = {
-    amount: productamount,
+    amount: price,
     receiverName: receiverName,
-    phone1: phone1,
-    phone2: phone2,
-    phone3: phone3,
+    receiverPhonenum: receiverPhonenum,
     reqMsg: reqMsg
   }
 
@@ -184,7 +180,7 @@ function egiftpay() {
       pay_method: "card",
       merchant_uid: "merchant_" + new Date().getTime(), // 주문번호
       name: "e-gift",
-      amount: productamount, // 값
+      amount: price, // 값
       buyer_email: buyeremail, // session 값
       buyer_name: buyername, // session 값
       buyer_tel: buyertel, // session 값
@@ -192,40 +188,11 @@ function egiftpay() {
     (rsp) => {
       // callback
       if (rsp.success) {
-        // 결제 성공 시: 결제 승인 또는 가상계좌 발급에 성공한 경우
-        // axios로 HTTP 요청
-        // jQuery로 HTTP 요청
-        /*
-        jQuery
-          .ajax({
-            url: "/payments/complete", // 예: https://www.myservice.com/payments/complete 가맹점 서버
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            data: {
-              imp_uid: rsp.imp_uid,
-              merchant_uid: rsp.merchant_uid,
-              buyer_name: rsp.buyer_name,
-              buyer_email: rsp.buyer_email,
-            },
-          })
-          .done(function (data) {
-            if (everythings_fine) {
-              var msg = "결제가 완료되었습니다.";
-              msg += "\n고유ID : " + rsp.imp_uid;
-              msg += "\n상점 거래ID : " + rsp.merchant_uid;
-              msg += "결제 금액 : " + rsp.paid_amount;
-              msg += "카드 승인번호 : " + rsp.apply_num;
-
-              alert(msg);
-            } else {
-              //[3] 아직 제대로 결제가 되지 않았습니다.
-              //[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
-            }
-          });
-          */
+       
         console.log("결제 성공");
         console.log(rsp);
       // 결제 성공 시 로직,
+      console.log(JSON.stringify(cardcartreqDto));
       successEgift(cardcartreqDto);
       } else {
         console.log("결제 실패");
@@ -341,68 +308,32 @@ async function success(saledReqDto) {
   location.href = "/user/purchaseHistory";
 } //결제 성공시 실행되는 함수 end
 
-/*=======================================================================*/
+// coolSms
+async function sendSms(){
+  alert('문자 발송 완료!');
+  event.preventDefault();
 
-// // 가맹점 서버 코드(?)
-// app.use(bodyParser.json());
-// // "/payments/complete"에 대한 POST 요청을 처리
-// app.post("/user/mypage/point", async (req, res) => {
-//   try {
-//     const { imp_uid, merchant_uid } = req.body; // req의 body에서 imp_uid, merchant_uid 추출
+  let receiverPhonenum = document.querySelector('#receiverPhonenum').value;
 
-//     // 액세스 토큰(access token) 발급 받기
-//     const getToken = await axios({
-//       url: "https://api.iamport.kr/users/getToken",
-//       method: "post", // POST method
-//       headers: { "Content-Type": "application/json" }, // "Content-Type": "application/json"
-//       data: {
-//         imp_key: "6123528723609391", // REST API키
-//         imp_secret:
-//           "bcf4c659bb721796a41accc009c841574611cf922e67c1a9ae8eed5777db209fe0987ad5849d8b73", // REST API Secret
-//       },
-//     });
-//     const { access_token } = getToken.data.response; // 인증 토큰
+  let reqMsg = document.querySelector("#reqMsg").value;
 
-//     // imp_uid로 아임포트 서버에서 결제 정보 조회
-//     const getPaymentData = await axios({
-//       url: `https://api.iamport.kr/payments/${imp_uid}`, // imp_uid 전달
-//       method: "get", // GET method
-//       headers: { Authorization: access_token }, // 인증 토큰 Authorization header에 추가
-//     });
-//     const paymentData = getPaymentData.data.response; // 조회한 결제 정보
+  let receiverName = document.querySelector("#receiver").value;
 
-//     // DB에서 결제되어야 하는 금액 조회
-//     const order = await Orders.findById(paymentData.merchant_uid);
-//     const amountToBePaid = order.amount; // 결제 되어야 하는 금액
+  let smsDto = {
+    receiverPhonenum : receiverPhonenum,
+    reqMsg: reqMsg,
+    receiverName: receiverName
+  };
 
-//     // 결제 검증하기
-//     const { amount, status } = paymentData;
-//     if (amount === amountToBePaid) {
-//       // 결제 금액 일치. 결제 된 금액 === 결제 되어야 하는 금액
-//       await Orders.findByIdAndUpdate(merchant_uid, { $set: paymentData }); // DB에 결제 정보 저장
+  console.log(JSON.stringify(smsDto));
 
-//       switch (status) {
-//         case "ready": // 가상계좌 발급
-//           // DB에 가상계좌 발급 정보 저장
-//           const { vbank_num, vbank_date, vbank_name } = paymentData;
-//           await Users.findByIdAndUpdate(`${principal.id}` /* 고객 id */, {
-//             $set: { vbank_num, vbank_date, vbank_name },
-//           });
-//           // 가상계좌 발급 안내 문자메시지 발송
-//           SMS.send({
-//             text: `가상계좌 발급이 성공되었습니다. 계좌 정보 ${vbank_num} \${vbank_date} \${vbank_name}`,
-//           });
-//           res.send({ status: "vbankIssued", message: "가상계좌 발급 성공" });
-//           break;
-//         case "paid": // 결제 완료
-//           res.send({ status: "success", message: "일반 결제 성공" });
-//           break;
-//       }
-//     } else {
-//       // 결제 금액 불일치. 위/변조 된 결제
-//       throw { status: "forgery", message: "위조된 결제시도" };
-//     }
-//   } catch (e) {
-//     res.status(400).send(e);
-//   }
-// });
+  let response = await fetch("/user/egift/sms", {
+    method: "post",
+    body: JSON.stringify(smsDto),
+    headers: {
+      "Content-Type": "application/json; charset=utf-8"
+    }
+  });
+
+  console.log("controller완료!!!");
+}

@@ -6,8 +6,8 @@ import java.util.List;
 import com.project.starbucksproject.domain.cart.CartRepository;
 import com.project.starbucksproject.domain.product.Product;
 import com.project.starbucksproject.domain.product.ProductRepository;
-import com.project.starbucksproject.domain.saleditems.SaleditemsRepository;
-import com.project.starbucksproject.domain.saleditems.Saleditems;
+import com.project.starbucksproject.domain.saledItems.SaledItemsRepository;
+import com.project.starbucksproject.domain.saledItems.*;
 import com.project.starbucksproject.domain.user.User;
 import com.project.starbucksproject.web.dto.SaledReqDto;
 
@@ -19,7 +19,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Service
 public class SaledItemsService {
-    private final SaleditemsRepository saledItemsRepository;
+    private final SaledItemsRepository saledItemsRepository;
     private final ProductRepository productRepository;
     private final CartRepository cartRepository;
 
@@ -45,7 +45,7 @@ public class SaledItemsService {
           System.out.println(productEnity);
           //productsEntity.add(productEnity);
   
-          Saleditems saleditem=new Saleditems();
+          SaledItems saleditem=new SaledItems();
           saleditem.setUser(principal);
           saleditem.setProduct(productEnity);
           saledItemsRepository.save(saleditem);

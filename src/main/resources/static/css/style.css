@@ -6186,7 +6186,7 @@ table.gift_info_tbl tr td div.tbl_card_sending {
   line-height: 28px;
   padding-top: 15px;
   margin-bottom: 5px;
-  width: 100%;
+  width: 300px;
 }
 table.gift_info_tbl tr td div.tbl_card_sending p {
   float: left;
@@ -6204,8 +6204,7 @@ table.gift_info_tbl tr td div.tbl_card_sending input.sender {
 table.gift_info_tbl tr td div.sel_wrap {
   float: left;
   height: 28px;
-  margin-left: 10px;
-  width: 75px;
+  width: 300px;
 }
 .tbl_card_select {
   background: url("/images/sbox_arrow_down.png") 56px 10px no-repeat #fff;
