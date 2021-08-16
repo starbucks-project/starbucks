@@ -50,7 +50,7 @@
 								<thead>
 									<tr>
 										<th scope="col">
-											<div class="ez-mcheckbox"  id="0">
+											<div class="ez-mcheckbox 0"  id="0">
 												<input type="checkbox" name="egiftCard_shopBag_ck_all"
 														id="ckAll" title="전체 선택" class="ez-hide">
 											</div>
@@ -63,20 +63,19 @@
 									</tr>
 								</thead>
 								<tbody>
-									<c:forEach var="cart" items="${carts}">
-									<tr class="ez-mcheck" id="${cart.product.id}"  name="${cart.product.price}">
+									<c:forEach var="cart" items="${carts}" varStatus="status">
+									<tr class="ez-mcheck ${status.count}" id="${cart.product.id}"  name="${cart.product.price}">
 										<td>
-											<div class="ez-mcheckbox" id="${cart.id}">
-												<a href="javascript:void(0);">
+											<div class="ez-mcheckbox ${status.count}" id="${cart.id}">
+												<a href="javascript:void(0);" id="check_${status.count}" onclick="check(${status.count})">
 												<input type="checkbox" name="egiftCard_shopBag_ck1"
 													title="선택" value="103530" data-totalamount="10000"
-													data-ordercnt="1" class="ez-hide">
+													data-ordercnt="1" >
 											</div>
 										</td>
 										<td>
 											<img src="/images/${cart.product.category}_list/${cart.product.productImg}"
-													alt="e-gift 카드" class="cardImg"
-													onerror="this.src='https://image.istarbucks.co.kr/upload/common/img/icon/card_672x423.png';"></td>
+													 class="cardImg"></td>
 										<td>${cart.product.productName}</td>
 										<td>1</td>
 										<td>${cart.product.price}원</td>
@@ -108,15 +107,25 @@
 							<!-- (e-Gift 카드 장바구니 내역) infoBox-->
 							<section class="shopBag_infoBox_pick">
 								<dl class="shopBag_infoBox01">
-									<dt>결제 수단 선택</dt>
+									<dt>결제 카드 선택</dt>
 									<dd>
-										<input id="pick_shopBag1" name="pick_shopBag" type="radio"
-											value="onlycard"> <label for="pick_shopBag1">신용카드</label>
-										<input id="pick_shopBag2" name="pick_shopBag" type="radio"
-											value="onlydbank"> <label for="pick_shopBag2">실시간
-											계좌이체</label>
+									<tbody>
+										<tr class="selectcard">
+											<td>
+													<div class="sel_box">
+														<select id="cardNum_NORMAL_sel" name="cardNum">
+															<option value="">--내카드--</option>
+															<c:forEach var="card" items="${cardsEntity}">
+															<option id="${card.id}" value="${card.id}" name="${card.id}">${card.cardName}</option>	
+															</c:forEach>														
+														</select>
+													</div>		
+											</td>
+										</tr>
+									</tbody>
 									</dd>
 								</dl>
+								<br>
 								<dl class="shopBag_infoBox02">
 									<dt>유의사항</dt>
 									<dd>
@@ -163,9 +172,9 @@
 							<div class="egiftCard_shopBag_btnZone02">
 								<ul>
 									<li class="btns_2"><a href="javascript:void(0);"
-										class="btn_payment" onclick="cartpay();">선택 상품 결제하기</a></li>
+										class="btn_payment" onclick="cartpay2();">선택 상품 결제하기</a></li>
 									<li class="btns_3"><a href="javascript:void(0);"
-										class="btn_payment_all">전체 상품 결제하기</a></li>
+										class="btn_payment_all" onclick="cartpay3();">전체 상품 결제하기</a></li>
 								</ul>
 							</div>
 							<!-- (e-Gift 카드 장바구니 내역) 버튼 2 end -->

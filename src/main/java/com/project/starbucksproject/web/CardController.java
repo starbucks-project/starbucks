@@ -106,6 +106,9 @@ public class CardController {
   @GetMapping("/user/cardCharge")
   public String userinfo(Model model) {
     User principal = (User) session.getAttribute("principal");
+    if (principal == null) {
+      return "redirect:/auth/login";
+    }
     int userid = principal.getId();
     List<Card> cardsEntity = cardRepository.mfindByAlluserId(userid);
     model.addAttribute("cardsEntity", cardsEntity);
@@ -115,7 +118,7 @@ public class CardController {
 
   // e-gift 카드 선물하기에서 '결제하기 버튼 클릭'
   @PostMapping("/user/egift/complete")
-  public @ResponseBody String cardCart(CardcartReqDto cardcartReqDto) {
+  public @ResponseBody String cardCart(@RequestBody CardcartReqDto cardcartReqDto) {
 
     User principal = (User) session.getAttribute("principal");
     if (principal == null) {
@@ -126,9 +129,11 @@ public class CardController {
     String phone2 = cardcartReqDto.getPhone2();
     String phone3 = cardcartReqDto.getPhone3();
     int price = cardcartReqDto.getPrice();
+    System.out.println(price);
 
     String receiverPhonenum = phone1 + phone2 + phone3;
     String receiverName = cardcartReqDto.getReceiver();
+    System.out.println(receiverName);
     String message = cardcartReqDto.getMessage();
 
     Cardcart cardcart = new Cardcart();

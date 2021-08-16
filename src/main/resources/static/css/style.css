@@ -3395,6 +3395,7 @@ dl.rs_bottom01 dd p {
   text-align: center;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  
 }
 .find_store_header h2 {
   padding-top: 6px;
@@ -5091,9 +5092,26 @@ ol.charge_warn li ul li ul li {
   min-height: 60px;
   width: 830px;
 }
+.my_card_pick_period2 {
+  background: #f4f4f2;
+  border-radius: 3px;
+  min-height: 60px;
+  width: 830px;
+  margin-top: 100px;
+}
 .my_ms_rank form fieldset legend,
 .my_card_pick_period form fieldset legend,
 .ms_cont form fieldset legend {
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  text-indent: -20000px;
+  width: 0;
+}
+.my_card_pick_period2 form fieldset legend {
   font-size: 0;
   height: 0;
   line-height: 0;
@@ -5597,10 +5615,16 @@ div.egiftCard_shopBag_btnZone01 ul {
 }
 
 dl.shopBag_infoBox01 {
-  border-bottom: 1px solid #ddd;
+  /*border-bottom: 1px solid #ddd;*/
   height: 28px;
   padding: 10px 0 10px 0;
   width: 788px;
+}
+dl.shopBag_infoBox01 dd {
+  float:left;
+  display: inline-block;
+  width: 20%;
+  margin-left: 20px;
 }
 
 /*--------------------------------------------------------------
@@ -5877,8 +5901,8 @@ div.drinkShop_info dl.content_tabmenu dt.tab a {
   width: 100%;
 }
 .sArea_pop .landing_inner_wrap {
-  margin: 0 auto;
-  padding: 5% 0;
+  margin: 0 30px;
+  padding: 4% 0;
   width: 90%;
 }
 header.landing_ttl {
@@ -5933,7 +5957,7 @@ header.landing_ttl h1 {
   width: 100%;
 }
 .sArea_pop .landing_conts_txt {
-  width: 48%;
+  width: 52%;
 }
 .landing_conts_txt {
   border-top: 1px solid #222;
@@ -5948,7 +5972,7 @@ header.landing_ttl h1 {
   color: #222;
   font-weight: bold;
   padding: 15px 0 15px 2%;
-  width: 30%;
+  width: 28%;
   display: inline-block;
 }
 /* .landing_conts_txt dl dt, .landing_conts_txt dl dd {
@@ -5959,7 +5983,7 @@ header.landing_ttl h1 {
 .sArea_pop .landing_conts_txt dl dd {
   color: #444;
   padding: 15px 0 15px 2%;
-  width: 65%;
+  width: 69%;
   display: inline-block;
   margin-left: 0;
 }

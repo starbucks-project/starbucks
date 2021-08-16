@@ -32,4 +32,9 @@ public class TestController {
     public @ResponseBody Page<User> page(int page){
         return userRepository.findAll(PageRequest.of(page, 3));
     }
+
+    @GetMapping("/manager/store_regi")
+    public String testmap() {
+        return "manager/store_regi";
+    } 
 }

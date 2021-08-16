@@ -59,8 +59,8 @@ public class MymenuController {
   public @ResponseBody CMRespDto<Product> mymenuPop(@PathVariable int id) {
     Mymenu mymenuEntity=myMenuRepository.findById(id).get();
     Product product=mymenuEntity.getProducts(); 
-    
-    return new CMRespDto<>(1, "성공", product);
+    String msg=mymenuEntity.getProNickname();
+    return new CMRespDto<>(1, msg, product);
   }
 
   //product 마이메뉴에 등록하기(save)

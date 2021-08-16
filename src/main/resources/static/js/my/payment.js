@@ -19,6 +19,8 @@ async function myFunction(str) {
 
   if(parseResponse.code === 1){
       console.log("4");
+      $(".user_card_wrap").remove();
+      console.log("5");
       let boxEL=document.querySelector(".sel_box");
       
       let popupItem = document.createElement("div");
@@ -156,17 +158,17 @@ function egiftpay() {
   let buyeremail = document.querySelector("#principalemail").value;
   let buyertel = document.querySelector("#principaltel").value;
 
-  let productamount = document.querySelector("#price").value;
+  let price = document.querySelector("#price").value;
 
-  let receiverName = document.querySelector("#receiver").value;
+  let receiver = document.querySelector("#receiver").value;
   let phone1 = $("#phone1 option:selected").val();
   let phone2 = document.querySelector("#phone2").value;
   let phone3 = document.querySelector("#phone3").value;
   let reqMsg = document.querySelector("#reqMsg").value;
 
   let cardcartreqDto = {
-    amount: productamount,
-    receiverName: receiverName,
+    price: price,
+    receiver: receiver,
     phone1: phone1,
     phone2: phone2,
     phone3: phone3,
@@ -184,7 +186,7 @@ function egiftpay() {
       pay_method: "card",
       merchant_uid: "merchant_" + new Date().getTime(), // 주문번호
       name: "e-gift",
-      amount: productamount, // 값
+      amount: price, // 값
       buyer_email: buyeremail, // session 값
       buyer_name: buyername, // session 값
       buyer_tel: buyertel, // session 값
@@ -248,7 +250,7 @@ async function  successEgift(cardcartreqDto) {
     },
   });
 
-  console.log("controller완료!!!");
+  alert("controller완료!!!");
   location.href = "/user/purchaseHistory";
 } //결제 성공시 실행되는 함수 end
 /*======================================================*/
@@ -406,3 +408,102 @@ async function success(saledReqDto) {
 //     res.status(400).send(e);
 //   }
 // });
+/*================================================================================*/
+// Cart.jsp "선택상품 결제하기"
+function cartpay2() {
+  let cardId= $("#cardNum_NORMAL_sel option:selected").val();              //결제할 카드 아이디
+  if(cardId===null || cardId==="") {
+      alert("결제할 카드를 선택해주세요");
+      return false;
+  }
+
+  console.log('1');
+
+  let length = $(".ez-checked").length;
+  let arrProductId = new Array();
+  $(".ez-check").each(function () {
+    arrProductId.push($(this).attr("id"));
+  });
+
+  let arrCartId = new Array();
+  $(".ez-checked").each(function () {
+    arrCartId.push($(this).attr("id"));
+  });
+
+  let productamount = document.querySelector(".checkedTotalAmount").textContent; //결제금액
+
+  let saledReqDto = {
+    arrProductId: arrProductId, //productId
+    arrCartId: arrCartId, // cartId
+    length: length,
+    productamount: productamount,
+    cardId: cardId
+  };
+
+  console.log("2");
+  success2(saledReqDto);
+  
+}
+
+async function success2(saledReqDto) {
+  console.log("확인", saledReqDto);
+  alert("결제금액:"+saledReqDto.productamount);
+  let response = await fetch("/user/purchaseHistory", {
+    method: "post",
+    body: JSON.stringify(saledReqDto),
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    }
+  });
+
+  let parseResponse = await response.json();
+
+console.log(parseResponse);
+
+if(parseResponse.code === 0){
+  alert(parseResponse.msg);
+  return false;
+}
+  
+  alert("결제 성공");
+  location.href = "/user/purchaseHistory";
+} //결제 성공시 실행되는 함수 end
+
+/*================================================================================*/
+// Cart.jsp "전체상품 결제하기"
+function cartpay3() {
+  let cardId= $("#cardNum_NORMAL_sel option:selected").val();              //결제할 카드 아이디
+  if(cardId===null || cardId==="") {
+      alert("결제할 카드를 선택해주세요");
+      return false;
+  }
+
+  console.log('1');
+  allcheck();
+
+  
+  let length = $(".ez-checked").length;
+  let arrProductId = new Array();
+  $(".ez-check").each(function () {
+    arrProductId.push($(this).attr("id"));
+  });
+
+  let arrCartId = new Array();
+  $(".ez-checked").each(function () {
+    arrCartId.push($(this).attr("id"));
+  });
+
+  let productamount = document.querySelector(".checkedTotalAmount").textContent; //결제금액
+
+  let saledReqDtoAll = {
+    arrProductId: arrProductId, //productId
+    arrCartId: arrCartId, // cartId
+    length: length,
+    productamount: productamount,
+    cardId: cardId
+  };
+
+  console.log("2");
+  success2(saledReqDtoAll);
+  
+}

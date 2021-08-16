@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
+import com.project.starbucksproject.domain.card.Card;
 import com.project.starbucksproject.domain.card.CardRepository;
 import com.project.starbucksproject.domain.cardcart.CardcartRepository;
 import com.project.starbucksproject.domain.cart.Cart;
@@ -46,6 +47,10 @@ public class CartController {
     int userId = principal.getId();
     List<Cart> carts = cartRepository.mfindAllByuserId(userId);
     model.addAttribute("carts", carts);
+
+    List<Card> cardsEntity = cardRepository.mfindByAlluserId(userId);
+    model.addAttribute("cardsEntity", cardsEntity);
+
 
     return "user/Cart";
   }

@@ -42,8 +42,6 @@ public class SaledItemsService {
           System.out.println("productId: "+productId);
 
           Product productEnity= productRepository.findById(productId).get();
-          System.out.println(productEnity);
-          //productsEntity.add(productEnity);
   
           Saleditems saleditem=new Saleditems();
           saleditem.setUser(principal);

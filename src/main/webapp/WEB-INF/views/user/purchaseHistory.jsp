@@ -48,6 +48,8 @@
 									</tr>
 								</thead>
 								<tbody>
+                <c:choose>
+                  <c:when test="${ !empty saleditemsEntity}">
 									<c:forEach var="saleditem" items="${saleditemsEntity}">
 									<tr class="ez-mcheck" id="tr_${saleditem.id}"  name="${saleditem.product.price}">
 										<td>
@@ -60,86 +62,135 @@
                     <td>${saleditem.date}</td>
 									</tr>
 									</c:forEach>
+                  </c:when>
+                  <c:otherwise>
+                    <tr>
+                      <td colspan='5'>
+                       <p class="no_egiftcard_list">구매 내역이 없습니다.</p>
+                      </td>
+                    </tr>
+                  </c:otherwise>
+                </c:choose>
 								</tbody>
 							</table>
-              
-              
             </fieldset>
           </form>
         </section>
-        <section class="eGift_list_wrap">
-          <ul class="eGift_list_inner">
-            <p class="no_egiftcard_list">구매 내역이 없습니다.</p>
-          </ul>
+
+        <section class="my_card_pick_period2">
+          <form method="post">
+            <fieldset>
+              <legend>선물한 카드(egift card)</legend>
+              <table class="egiftCard_shopBag_info_tbl"
+								summary="my e-Gift 카드 카드이미지, 내용, 받는사람, 선물할 방법, 전송 방법, 수량, 주문금액, 결제금액, 주문수정에 대한 테이블">
+								<colgroup>
+									<col width="78">
+									<col width="120">
+									<col width="72">
+									<col width="78">
+                  <col width="90">
+								</colgroup>
+								<thead>
+									<tr>
+										<th scope="col">egift-card</th>
+										<th scope="col" colspan='2'>받는사람</th>
+										<th scope="col">주문수량</th>
+										<th scope="col">결제금액</th>
+                    
+									</tr>
+								</thead>
+								<tbody>
+                <c:choose>
+                  <c:when test="${ !empty cardcartsEntity}">
+									<c:forEach var="cardcart" items="${cardcartsEntity}">
+									<tr class="ez-mcheck" id="tr_${cardcart.id}" >
+										<td>
+											<img src="/images/cardImg.png"
+													alt="e-gift 카드" class="cardImg"></td>
+										<td colspan='2'>${cardcart.receiverName}</td>
+										<td>1</td>
+										<td><strong>${cardcart.price}원</strong></td>
+
+									</tr>
+									</c:forEach>
+                  </c:when>
+                  <c:otherwise>
+                    <tr>
+                      <td colspan='5'>
+                       <p class="no_egiftcard_list">egift-card 결제 내역이 없습니다.</p>
+                      </td>
+                    </tr>
+                  </c:otherwise>
+                </c:choose>
+								</tbody>
+							</table>
+            </fieldset>
+          </form>
         </section>
       </div>
       <!-- ms cont part end-->
       <div class="ms_nav" id="msRnb">
-        <ul>
-          <li>
-            <a href="#">
-              My 스타벅스 카드
-              <span class="sbox_arrow_down"></span>
-            </a>
-            <ul style="display: block;">
-              
-              <li>
-                <a href="/user/cardRegi" required="login" data-href="#">
-                  · 카드 등록</a>
-              </li>
-              <li>
-                <a href="/user/cardCharge" required="login" data-href="#">
-                  · 카드 충전</a>
-              </li>
-              <li>
-                <a href="/user/inMyCard" required="login" data-href="#">
-                  · 보유카드</a>
-              </li>
-            </ul>
-          </li>
+              <ul>
+                <li>
+                  <a href="#">
+                    My 스타벅스 카드
+                    <span class="sbox_arrow_down"></span>
+                  </a>
+                  <ul style="display: block;">
+                    
+                    <li>
+                      <a href="/user/cardRegi" required="login" data-href="#">
+                        · 카드 등록</a>
+                    </li>
+                    <li>
+                      <a href="/user/cardCharge" required="login" data-href="#">
+                        · 카드 충전</a>
+                    </li>
+                    <li>
+                      <a href="/user/inMyCard" required="login" data-href="#">
+                        · 보유카드</a>
+                    </li>
+                  </ul> 
+                </li>
 
-          <li>
-            <a href="#">
-              My 스타벅스 e-Gift Card
-              <span class="sbox_arrow_down"></span>
-            </a>
-            <ul style="display: block;">
-              
-               <li>
-						<a href="/user/egift" required="login" data-href="#">
-						  · 선물하기</a>
-					  </li>      
-            </ul>
-          </li>
+                <li>
+                  <a href="#">
+                    My 스타벅스 e-Gift Card
+                    <span class="sbox_arrow_down"></span>
+                  </a>
+                  <ul style="display: block;">
+                    <li>
+						          <a href="/user/egift" required="login" data-href="#"> · 선물하기</a>
+					          </li>         
+                  </ul>
+                </li>
 
-          <li>
-            <a href="#" required="login" data-href="#">
-               My메뉴
-              </a>
-          </li>
-          <li>
-            <a href="/user/purchaseHistory" required="login" data-href="#">
-               구매내역
-              </a>
-          </li>
-          <li>
-            <a href="#">
-             개인정보 관리
-              <span class="sbox_arrow_down"></span>
-            </a>
-            <ul style="display: block;">
-              
-              <li>
-                <a href="/user/userinfo" required="login" data-href="#">
-                  · 개인정보 확인 및 수정</a>
-              </li>
-             
-            </ul>
-          </li>
-        </ul>
-      </div>
-  
-    </div>
+                <li>
+                  <a href="/user/mymenu" required="login" data-href="#">
+                     My메뉴
+                    </a>
+                </li>
+                <li>
+                  <a href="/user/purchaseHistory" required="login" data-href="#">
+                     구매내역
+                    </a>
+                </li>
+                <li>
+                  <a href="#">
+                   개인정보 관리
+                    <span class="sbox_arrow_down"></span>
+                  </a>
+                  <ul style="display: block;">
+                    
+                    <li>
+                      <a href="/user/userinfo" required="login" data-href="#">
+                        · 개인정보 확인 및 수정</a>
+                    </li>
+                   
+                  </ul>
+                </li>
+              </ul>
+            </div>
 
 
   <!-- Template custom -->

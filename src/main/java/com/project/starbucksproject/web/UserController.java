@@ -104,6 +104,9 @@ public class UserController {
   @GetMapping("/user/mypage")
   public String myPageForm(Model model) {
     User principal = (User) session.getAttribute("principal");
+    if (principal == null) {
+      return "redirect:/auth/login";
+    }
     int userid = principal.getId();
 
     List<Card> cardsEntity = cardRepository.mfindByAlluserId(userid);

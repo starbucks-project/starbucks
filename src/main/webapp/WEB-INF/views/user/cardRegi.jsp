@@ -72,72 +72,67 @@
       </div>
 
       <div class="ms_nav" id="msRnb">
-        <ul>
-          <li>
-            <a href="#">
-              My 스타벅스 카드
-              <span class="sbox_arrow_down"></span>
-            </a>
-            <ul style="display: block;">
-              
-              <li>
-                <a href="/user/cardRegi" required="login" data-href="#">
-                  · 카드 등록</a>
-              </li>
-              <li>
-                <a href="/user/cardCharge" required="login" data-href="#">
-                  · 카드 충전</a>
-              </li>
-              <li>
-                <a href="/user/inMyCard" required="login" data-href="#">
-                  · 보유카드</a>
-              </li>
-            </ul>
-          </li>
+              <ul>
+                <li>
+                  <a href="#">
+                    My 스타벅스 카드
+                    <span class="sbox_arrow_down"></span>
+                  </a>
+                  <ul style="display: block;">
+                    
+                    <li>
+                      <a href="/user/cardRegi" required="login" data-href="#">
+                        · 카드 등록</a>
+                    </li>
+                    <li>
+                      <a href="/user/cardCharge" required="login" data-href="#">
+                        · 카드 충전</a>
+                    </li>
+                    <li>
+                      <a href="/user/inMyCard" required="login" data-href="#">
+                        · 보유카드</a>
+                    </li>
+                  </ul> 
+                </li>
 
-          <li>
-            <a href="#">
-              My 스타벅스 e-Gift Card
-              <span class="sbox_arrow_down"></span>
-            </a>
-            <ul style="display: block;">
-              
-              <li>
-						<a href="/user/egift" required="login" data-href="#">
-						  · 선물하기</a>
-					  </li>
-        
-            </ul>
-          </li>
+                <li>
+                  <a href="#">
+                    My 스타벅스 e-Gift Card
+                    <span class="sbox_arrow_down"></span>
+                  </a>
+                  <ul style="display: block;">
+                    <li>
+						          <a href="/user/egift" required="login" data-href="#"> · 선물하기</a>
+					          </li>         
+                  </ul>
+                </li>
 
-          <li>
-            <a href="/user/mymenu" required="login" data-href="#">
-               My메뉴
-              </a>
-          </li>
-          <li>
-            <a href="/user/purchaseHistory" required="login" data-href="#">
-               구매내역
-              </a>
-          </li>
-          <li>
-            <a href="#">
-             개인정보 관리
-              <span class="sbox_arrow_down"></span>
-            </a>
-            <ul style="display: block;">
-              
-              <li>
-                <a href="/user/userinfo" required="login" data-href="#">
-                  · 개인정보 확인 및 수정</a>
-              </li>
-             
-            </ul>
-          </li>
-        </ul>
-      </div>
-  
-    </div>
+                <li>
+                  <a href="/user/mymenu" required="login" data-href="#">
+                     My메뉴
+                    </a>
+                </li>
+                <li>
+                  <a href="/user/purchaseHistory" required="login" data-href="#">
+                     구매내역
+                    </a>
+                </li>
+                <li>
+                  <a href="#">
+                   개인정보 관리
+                    <span class="sbox_arrow_down"></span>
+                  </a>
+                  <ul style="display: block;">
+                    
+                    <li>
+                      <a href="/user/userinfo" required="login" data-href="#">
+                        · 개인정보 확인 및 수정</a>
+                    </li>
+                   
+                  </ul>
+                </li>
+              </ul>
+            </div>
 
 
   <!-- Template custom -->
