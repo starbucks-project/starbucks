@@ -20,4 +20,10 @@ public interface SaleditemsRepository extends JpaRepository<Saleditems, Integer>
 
   @Query(value = "SELECT * FROM saleditems s INNER JOIN user u ON s.product_id = :productId", nativeQuery = true)
   List<Saleditems> mfindByCategory(int productId);
+
+  @Query(value = "SELECT * FROM saleditems s INNER JOIN user u ON s.user_id = u.id AND u.name = :name", nativeQuery = true)
+  List<Saleditems> mfindItemByName(String name);
+
+  @Query(value = "SELECT * FROM saleditems s INNER JOIN product p ON s.product_id = p.id AND p.category = :category", nativeQuery = true)
+  List<Saleditems> mfindItemByCategory(String category);
 }

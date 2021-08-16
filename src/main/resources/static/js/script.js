@@ -367,27 +367,6 @@ async function saledItemByName() {
      userBoxEl.prepend(userItem);
     });
     
-    // userItem.id = "user-" + parseResponse.data.id;  
-    //userItem.innerHTML = temp;
-
-    
-
-    // let bottomItem = document.createElement("tr");
-    // // bottomItem.className = "last_tr";
-    
-    // let temp2 = `
-    //   <td>No.</td>     
-    //   <td>구매자</td>
-    //   <td class="left"><a>상품명</a></td>     
-    //   <td>구매일</td>     
-    //   <td>총 액 : </td> 
-    //   <td>총 판매수량 : </td>
-    // `;
-    // bottomItem.innerHTML=temp2
-    // userBoxEl.innerHTML= bottomItem;
-    
-      // userBoxEl.prepend(userItem);
-    
   } else if(parseResponse.code == -1){
     alert("해당 이름의 사용자가 존재하지 않습니다.");
     location.reload();
