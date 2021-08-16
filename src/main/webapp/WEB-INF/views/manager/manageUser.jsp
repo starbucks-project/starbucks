@@ -55,6 +55,7 @@
                         <td>0</td>
                     </tr>
                     </c:forEach>
+                </tbody>
             </table>
         </div>  <!-- end user-list-area-box-->
 

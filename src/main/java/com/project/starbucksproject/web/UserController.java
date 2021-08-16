@@ -30,36 +30,43 @@ public class UserController {
   private final ManagerRepository managerRepository;
   private final CardRepository cardRepository;
 
+  // 로그인 페이지
   @GetMapping("/auth/login")
   public String loginForm() {
     return "auth/loginForm";
   }
 
+  // 매니저 로그인 페이지
   @GetMapping("/auth/manager/loginform")
   public String managerLoginForm() {
     return "auth/managerLoginForm";
   }
 
+  // 메뉴 페이지
   @GetMapping("/menu")
   public String menu() {
     return "auth/menu";
   }
 
+  // 스토어 페이지
   @GetMapping("/store")
   public String store() {
     return "auth/store";
   }
 
+  // 지도 페이지
   @GetMapping("/auth/store_map")
   public String storeMap() {
     return "auth/store_map";
   }
 
+  // 드라이브 스루 페이지
   @GetMapping("/auth/store_drive")
   public String storeDrive() {
     return "auth/store_drive";
   }
 
+  // 리저브 매장 페이지
   @GetMapping("/auth/store_reserve")
   public String storeReserve() {
     return "auth/store_reserve";
@@ -87,6 +94,12 @@ public class UserController {
   @GetMapping("user/logout")
   public String logout() {
     // System.out.println(session.getAttribute("principal"));
+    User userEntity = (User) session.getAttribute("principal");
+
+    // 로그인 안되어 있다면 메인 페이지로 이동
+    if (userEntity == null) {
+      return "/";
+    }
 
     session.invalidate();
     // System.out.println(session.getAttribute("principal"));
@@ -96,6 +109,11 @@ public class UserController {
   @GetMapping("user/userinfo/{id}")
   public String userinfo(@PathVariable int id, Model model) {
     User userEntity = userRepository.findById(id).get();
+    User loginedUser = (User) session.getAttribute("principal");
+    int loginedId = loginedUser.getId();
+    if (id != loginedId) {
+      return "/auth/login";
+    }
     model.addAttribute("userEntity", userEntity);
 
     return "/user/userinfoUpdateForm";
@@ -104,6 +122,9 @@ public class UserController {
   @GetMapping("/user/mypage")
   public String myPageForm(Model model) {
     User principal = (User) session.getAttribute("principal");
+    if (principal == null) {
+      return "auth/login";
+    }
     int userid = principal.getId();
 
     List<Card> cardsEntity = cardRepository.mfindByAlluserId(userid);
@@ -114,6 +135,11 @@ public class UserController {
   @PostMapping("user/userinfo/{id}")
   public String userinfoUpdate(@PathVariable int id, User user) {
     User userEntity = userRepository.findById(id).get();
+    User loginedUser = (User) session.getAttribute("principal");
+    int loginedId = loginedUser.getId();
+    if (id != loginedId) {
+      return "auth/login";
+    }
     userEntity.setName(user.getName());
     userEntity.setYear(user.getYear());
     userEntity.setMonth(user.getMonth());
