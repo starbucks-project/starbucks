@@ -13,6 +13,12 @@ CREATE DATABASE starbucks;
 ```sql
 INSERT INTO manager(managerId, managerPw) VALUES('admin', '1234');
 INSERT INTO card(cardName, cardImage, pin, cardNum, balance, userId) VALUES('카드1','카드이미지', '1234', '1111-2222-3333-4444', 0, 1);
+
+INSERT INTO store(category,title,latitude,longtitude,content,tel) VALUES('drive','부산재송DT',35.189565,129.121754,'부산광역시 해운대구 해운대로 189 (재송동)','1522-3232');
+INSERT INTO store(category,title,latitude,longtitude,content,tel) VALUES('drive','수영망미DT',35.1775,129.107486,'부산광역시 수영구 과정로 68 (망미동)','1522-3232');
+
+INSERT INTO store(category,title,latitude,longtitude,content,tel) VALUES('reserve','서면중앙대로R',35.15550735339308,129.0507638804846,'부산광역시 부산진구 중앙대로 672 (부전동) 1층 2층','1522-3232');
+INSERT INTO store(category,title,latitude,longtitude,content,tel) VALUES('reserve','서면로R',35.15539667323169,129.05762092711197,'부산광역시 부산진구 서면로 49-1 (부전동)','1522-3232');
 ```
 
 ### 추가 의존성
