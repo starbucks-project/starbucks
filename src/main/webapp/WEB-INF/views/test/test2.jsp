@@ -14,7 +14,8 @@
       $('.slider').bxSlider();
       $('.bxslider').bxSlider({
         slideMargin: 10,
-        slideWidth: 510
+        slideWidth: 600,
+        touchEnabled : (navigator.maxTouchPoints > 0)
       });
     });
   </script>
