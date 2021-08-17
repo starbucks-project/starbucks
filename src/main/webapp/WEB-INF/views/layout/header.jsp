@@ -29,7 +29,7 @@
     rel="stylesheet">
 
   <!-- Bootstrap -->
-  <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css">
+  <%-- <link rel="stylesheet" href="/plugins/bootstrap/bootstrap.min.css"> --%>
 
   <!-- Vendor CSS Files -->
   <link href="../plugins/vendor/animate.css/animate.min.css" rel="stylesheet">
@@ -40,9 +40,10 @@
   <link href="../plugins/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="../plugins/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+  <%-- bxSlider --%>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+  <%-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script> --%>
 
    <!-- CSS
   ================================================== -->
@@ -60,7 +61,7 @@
   <link rel="stylesheet" href="/css/style.css">  
 
   <!-- Template Main CSS File -->
-  <link href="/css/style.css" rel="stylesheet">
+  <%-- <link href="/css/style.css" rel="stylesheet"> --%>
 
 
   <!-- script -->
@@ -197,4 +198,3 @@
           </c:choose>
         </div><!-- end dropdown-->
       </div> <!-- end lower--> --%>
-

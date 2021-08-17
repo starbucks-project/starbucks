@@ -67,7 +67,7 @@ let myMenuDetail = async (mymenuId) => {
                                        <h1>${parseResponse.data.productName}</h1>
                                      </header>
                                      <p class="calling_name_ttl">
-                                       <img alt="콜링네임" src="/images/calling_name_ttl.png">닉네임 '콜드브루'
+                                       <img alt="콜링네임" src="/images/calling_name_ttl.png">${parseResponse.msg}
                                      </p>
                                      <p class="landing_comments_date">${parseResponse.data.createDate}</p>
                                      <div class="landing_conts_wrap">
@@ -116,32 +116,147 @@ function hidePopMyMenu() {
    $(".sArea_pop, .only_my_dimm").attr("aria-hidden", "true").attr("tabindex", "0").fadeOut();
    $(".btn_show_pop_detail > button").focus(); 
 }
-
-//전체 선택 & 선택 삭제
+/*===================================================================*/
+//전체 선택 & 선택 삭제  - mymenu page
   //All checkbox
-   $("#Allcheck").on("click",function(){ 
+  $("#mAllcheck").on("click",mallcheck);
+  function mallcheck() {
+    let checkbox = new Array();
+    $(".ez-mcheckbox").each(function () {
+      checkbox .push($(this).attr("id"));
+    });
+     //전체선택 체크박스 클릭 
+     console.log("5");
+     //해당화면에 전체 checkbox들을 체크해준다 
+     if($(".ez-mcheckbox.0").attr("class")=="ez-mcheckbox ez-checked 0") { 
+           console.log("6");
+           for (let i = 0; i <= checkbox.length; i++) {
+           $(".ez-mcheckbox."+i).attr("class","ez-mcheckbox"+" "+i).focus();
+           }
+           console.log("7");
+         } else { 
+           console.log("8");
+          for (let i = 0; i <= checkbox.length; i++) {
+          $(".ez-mcheckbox."+i).attr("class","ez-mcheckbox ez-checked"+" "+i).focus(); 
+          }
+          console.log("8-2");
+             } 
+   }
+
+   function mcheck(i) {
+    //선택 체크박스 클릭 
+    console.log("전달받은 값: "+i);
+    let mcheckbox=".ez-mcheckbox."+i;
+    let mcheckbox_checked="ez-mcheckbox ez-checked"+" "+i;
+
+    let checkbox = new Array();
+    $(".ez-mcheckbox").each(function () {
+      checkbox .push($(this).attr("id"));
+    });
+    
+    if($(mcheckbox).attr("class")==mcheckbox_checked) { 
+          console.log("check2");
+          //checkbox들의 체크를 해제시킨다. 
+          $(".ez-mcheckbox.0").attr("class","ez-mcheckbox 0").focus();
+          $(mcheckbox).attr("class","ez-mcheckbox"+" "+i).focus();
+          console.log("check3");
+          for (let j = 1; j <= checkbox.length; j++) {
+            if($(".ez-mcheckbox."+j).attr("class")=="ez-mcheckbox ez-checked"+" "+j) { 
+              $(".ez-mcheckbox.0").attr("class","ez-mcheckbox ez-checked 0").focus(); 
+            }//end if
+          }//end for
+        } else { 
+          console.log("check4");
+          //checkbox들을 체크해준다 
+         $(".ez-mcheckbox.0").attr("class","ez-mcheckbox ez-checked 0").focus(); 
+         $(mcheckbox).attr("class",mcheckbox_checked).focus(); 
+         console.log("check5");
+            } 
+  }
+
+ /*===================================================================*/
+//전체 선택 & 선택 삭제  - Cart page
+  //All checkbox
+   $("#Allcheck").on("click",allcheck);
+
+/*
+   for (let i = 0; i < checkbox.length; i++) {
+     let element = "#check_"+(i+1);
+
+     $(element).on("click",check(i+1));
+   }
+*/
+//   $("#check_1").on("click",check);
+//   $("#check_2").on("click",check);
+
+     function allcheck() {
+      let checkbox = new Array();
+      $(".ez-mcheck").each(function () {
+        checkbox .push($(this).attr("id"));
+      });
        //전체선택 체크박스 클릭 
        console.log("5");
        //해당화면에 전체 checkbox들을 체크해준다 
-       if($(".ez-mcheckbox").attr("class")=="ez-mcheckbox ez-checked") { 
+       if($(".ez-mcheckbox.0").attr("class")=="ez-mcheckbox ez-checked 0") { 
              console.log("6");
              //해당화면에 모든 checkbox들의 체크를해제시킨다. 
-             $(".ez-mcheckbox").attr("class","ez-mcheckbox").focus();
-             $(".ez-mcheck").attr("class","ez-mcheck").focus();
+             //$(".ez-mcheckbox.0").attr("class","ez-mcheckbox 0").focus();
+             for (let i = 0; i <= checkbox.length; i++) {
+             $(".ez-mcheckbox."+i).attr("class","ez-mcheckbox"+" "+i).focus();
+             $(".ez-mcheck."+i).attr("class","ez-mcheck"+" "+i).focus();
+             }
              total();
              console.log("7");
            } else { 
              console.log("8");
              //해당화면에 전체 checkbox들을 체크해준다 
-            $(".ez-mcheckbox").attr("class","ez-mcheckbox ez-checked").focus(); 
-            $(".ez-mcheck").attr("class","ez-mcheck ez-check").focus(); 
+            //$(".ez-mcheckbox.0").attr("class","ez-mcheckbox ez-checked 0").focus(); 
+            for (let i = 0; i <= checkbox.length; i++) {
+            $(".ez-mcheckbox."+i).attr("class","ez-mcheckbox ez-checked"+" "+i).focus(); 
+            $(".ez-mcheck."+i).attr("class","ez-mcheck ez-check"+" "+i).focus(); 
+            }
             total();
             console.log("8-2");
                } 
-     });
+     }
+
+     function check(i) {
+      //선택 체크박스 클릭 
+      console.log("전달받은 값: "+i);
+      let mcheckbox=".ez-mcheckbox."+i;
+      console.log(mcheckbox);
+      let mcheckbox_checked="ez-mcheckbox ez-checked"+" "+i;
+      console.log(mcheckbox_checked);
+
+      let mcheck=".ez-mcheck."+i;
+      let mcheck_checked="ez-mcheck ez-check"+" "+i;
+      
+      if($(mcheckbox).attr("class")==mcheckbox_checked) { 
+            console.log("check2");
+            //checkbox들의 체크를 해제시킨다. 
+            $(".ez-mcheckbox.0").attr("class","ez-mcheckbox 0").focus();
+            $(mcheckbox).attr("class","ez-mcheckbox"+" "+i).focus();
+            $(mcheck).attr("class","ez-mcheck"+" "+i).focus();
+            total();
+            console.log("check3");
+          } else { 
+            console.log("check4");
+            //checkbox들을 체크해준다 
+           $(".ez-mcheckbox.0").attr("class","ez-mcheckbox ez-checked 0").focus(); 
+           $(mcheckbox).attr("class",mcheckbox_checked).focus(); 
+           $(mcheck).attr("class",mcheck_checked).focus(); 
+           total();
+           console.log("check5");
+              } 
+    }
 
       //$(".ez-mcheck").attr('class').change(total());
+
+  // 나만의 음료 [부분선택]
+	
+
     
+    //선택된 항목에 대한 총합계(Cart.jsp기능)
     function total(){
       let arrProductprice = new Array();
        $(".ez-check").each(function() {

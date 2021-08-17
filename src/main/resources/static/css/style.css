@@ -3404,6 +3404,7 @@ dl.rs_bottom01 dd p {
   text-align: center;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
+  
 }
 .find_store_header h2 {
   padding-top: 6px;
@@ -3769,6 +3770,7 @@ strong {
   flex: 1;
   background: #222222;
   border: 1px solid #222222;
+  border-radius: 3px;
 }
 .ms_user_info.ms_user_add
   .ms_user_info_right
@@ -3799,10 +3801,10 @@ strong {
 
 .ms_user_stat_btns ul li a {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   height: 100%;
-  line-height: 28px;
+  line-height: 30px;
   text-align: center;
   width: 100%;
 }
@@ -3812,13 +3814,13 @@ strong {
   background: url("/images/card_wave_pattern.png") center bottom no-repeat;
   border: 1px solid #ddd;
   border-radius: 3px;
-  height: 350px;
+  height: 450px;
   margin-top: 40px;
   width: 800px;
 }
 .my_ms_card_inner {
   float: left;
-  height: 230px;
+  height: 400px;
   margin: 29px 0 0 29px;
   width: 770px;
 }
@@ -3906,11 +3908,11 @@ strong {
 
 .my_ms_card_cont {
   width: 100%;
-  height: 191px;
+  height: 400px;
   width: 770px;
 }
 .my_ms_card_cont ul li {
-  height: 191px;
+  height: 300px;
   position: relative;
   width: 770px;
 }
@@ -3921,12 +3923,12 @@ strong {
   top: 15px;
   width: 264px;
 }
-.bx-wrapper {
+/* .bx-wrapper {
   position: relative;
   margin: 0 auto 60px;
   padding: 40px 0 0 20px;
   *zoom: 1;
-}
+} */
 .my_ms_card_cont .representative_icon {
   position: absolute;
   top: 10px;
@@ -3981,7 +3983,7 @@ strong {
 }
 .my_ms_card_price {
   height: 33px;
-  line-height: 33px;
+  line-height: 96px;
   margin-top: 10px;
 }
 .my_ms_card_price strong {
@@ -3990,8 +3992,10 @@ strong {
 }
 .my_ms_card_btns {
   height: 30px;
+  line-height: 136px;
   margin-top: 19px;
   text-align: center;
+  justify-content: center;
 }
 
 .my_ms_card_btns p.my_ms_card_btn1 a,
@@ -5100,9 +5104,26 @@ ol.charge_warn li ul li ul li {
   min-height: 60px;
   width: 830px;
 }
+.my_card_pick_period2 {
+  background: #f4f4f2;
+  border-radius: 3px;
+  min-height: 60px;
+  width: 830px;
+  margin-top: 100px;
+}
 .my_ms_rank form fieldset legend,
 .my_card_pick_period form fieldset legend,
 .ms_cont form fieldset legend {
+  font-size: 0;
+  height: 0;
+  line-height: 0;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  text-indent: -20000px;
+  width: 0;
+}
+.my_card_pick_period2 form fieldset legend {
   font-size: 0;
   height: 0;
   line-height: 0;
@@ -5303,6 +5324,24 @@ dd {
   font-size: 14px;
   padding: 50px 0;
   text-align: center;
+}
+.egiftpay_btn {
+  float: right;
+  background: #e2c383;
+  border: 1px solid #bb9f65;
+  margin: 0 40px;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+.egiftpay_btn a {
+  color: #000;
+}
+.egiftpay_btn a:hover {
+  text-decoration: underline;
+}
+.egiftpay_btn_box {
+  position: relative;
 }
 
 /*�옣諛붽뎄�땲 �궡�뿭 =========================*/
@@ -5606,10 +5645,16 @@ div.egiftCard_shopBag_btnZone01 ul {
 }
 
 dl.shopBag_infoBox01 {
-  border-bottom: 1px solid #ddd;
+  /*border-bottom: 1px solid #ddd;*/
   height: 28px;
   padding: 10px 0 10px 0;
   width: 788px;
+}
+dl.shopBag_infoBox01 dd {
+  float:left;
+  display: inline-block;
+  width: 20%;
+  margin-left: 20px;
 }
 
 /*--------------------------------------------------------------
@@ -5886,8 +5931,8 @@ div.drinkShop_info dl.content_tabmenu dt.tab a {
   width: 100%;
 }
 .sArea_pop .landing_inner_wrap {
-  margin: 0 auto;
-  padding: 5% 0;
+  margin: 0 30px;
+  padding: 4% 0;
   width: 90%;
 }
 header.landing_ttl {
@@ -5942,7 +5987,7 @@ header.landing_ttl h1 {
   width: 100%;
 }
 .sArea_pop .landing_conts_txt {
-  width: 48%;
+  width: 52%;
 }
 .landing_conts_txt {
   border-top: 1px solid #222;
@@ -5957,7 +6002,7 @@ header.landing_ttl h1 {
   color: #222;
   font-weight: bold;
   padding: 15px 0 15px 2%;
-  width: 30%;
+  width: 28%;
   display: inline-block;
 }
 /* .landing_conts_txt dl dt, .landing_conts_txt dl dd {
@@ -5968,7 +6013,7 @@ header.landing_ttl h1 {
 .sArea_pop .landing_conts_txt dl dd {
   color: #444;
   padding: 15px 0 15px 2%;
-  width: 65%;
+  width: 69%;
   display: inline-block;
   margin-left: 0;
 }

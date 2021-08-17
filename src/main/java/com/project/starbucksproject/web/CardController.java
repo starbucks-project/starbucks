@@ -108,6 +108,9 @@ public class CardController {
   @GetMapping("/user/cardCharge")
   public String userinfo(Model model) {
     User principal = (User) session.getAttribute("principal");
+    if (principal == null) {
+      return "redirect:/auth/login";
+    }
     int userid = principal.getId();
     List<Card> cardsEntity = cardRepository.mfindByAlluserId(userid);
     model.addAttribute("cardsEntity", cardsEntity);
@@ -129,6 +132,7 @@ public class CardController {
     }
 
     int price = cardcartReqDto.getPrice();
+    System.out.println(price);
 
     String receiverPhonenum = cardcartReqDto.getReceiverPhonenum();
     String receiverName = cardcartReqDto.getReceiverName();
@@ -165,8 +169,8 @@ public class CardController {
      // 4 params(to, from, type, text) are mandatory. must be filled
      HashMap<String, String> params = new HashMap<String , String>();
      params.put("to", receiverPhonenum);
-     params.put("from", "01077117830"); //principal.getPhoneNum()
-     params.put("type", "SMS");
+     params.put("from", principal.getPhoneNum()); //principal.getPhoneNum()
+     params.put("type", "LMS");
      params.put("text", ""+principal.getName()+" 님께서 "+receiverName+" 님에게 eGift 카드를 보내셨습니다. 금액: "+price+", 내용: ["+message+"]");
      params.put("app_version", "test app 1.2"); // application name and version
      

@@ -80,68 +80,63 @@
     <div id="map" style="width:100%;height:631px;"></div>
 </section>
 
-<!--자바스크립트-->
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a46aa39525659b92f0dda2e367cdde6a"></script>
 <script>
+    $(document).ready(function () {
+      storeInfo();
+    });
+
+    async function storeInfo() {
+      let response = await fetch("/manager/driveInfo", {
+          method: "get"
+      });
+      
+      let parseResponse = await response.json();
+      console.log(parseResponse);    
+      if(parseResponse.code === 1){
+         // alert("store정보 가져오기 성공");
+          let positions=parseResponse.data;
+      
     let container = document.querySelector("#map"); //지도를 담을 영역의 DOM 레퍼런스
     let options = { //지도를 생성할 때 필요한 기본 옵션
                       center: new kakao.maps.LatLng(35.189565, 129.121754), //지도의 중심좌표.
-                      level: 3 //지도의 레벨(확대, 축소 정도)
+                      level: 7 //지도의 레벨(확대, 축소 정도)
                       };          
 
     let map = new kakao.maps.Map(container, options); //지도 생성 및 객체 리턴
 
-    let positions = [
-{
-          //부산재송DT점 /  부산광역시 해운대구 해운대로 189 (재송동) /  위도,경도 : 35.189565, 129.121754
-  title: '부산재송DT', 
-  latlng: new kakao.maps.LatLng(35.189565, 129.121754)
-},
-{
-  title: '수영망미DT', 
-  latlng: new kakao.maps.LatLng(35.177500, 129.107486)
-},
-{
-  title: '부산안락DT', 
-  latlng: new kakao.maps.LatLng(35.199600654462785, 129.10327341310693)
-},
-{
-  title: '수영강변DT',
-  latlng: new kakao.maps.LatLng(35.20398474547014, 129.11936812660127)
-}
-];
+//     let positions = [
+// {
+//           //부산재송DT점 /  부산광역시 해운대구 해운대로 189 (재송동) /  위도,경도 : 35.189565, 129.121754
+//   title: '부산재송DT', 
+//   latlng: new kakao.maps.LatLng(35.189565, 129.121754),
+//   content: '부산광역시 해운대구 해운대로 189 (재송동)',
+//   tel: '1522-3232'
+// },
+// {
+//   title: '수영망미DT', 
+//   latlng: new kakao.maps.LatLng(35.177500, 129.107486),
+//   content: '부산광역시 해운대구 해운대로 189 (재송동)',
+//   tel: '1522-3232'
+// },
+// {
+//   title: '부산안락DT', 
+//   latlng: new kakao.maps.LatLng(35.199600654462785, 129.10327341310693),
+//   content: '부산광역시 해운대구 해운대로 189 (재송동)',
+//   tel: '1522-3232'
+// },
+// {
+//   title: '수영강변DT',
+//   latlng: new kakao.maps.LatLng(35.20398474547014, 129.11936812660127),
+//   content: '부산광역시 해운대구 해운대로 189 (재송동)',
+//   tel: '1522-3232'
+// }
+// ];
 
     let imageSrc = '/images/store/pin_general_DT.png'; // 마커이미지의 주소입니다    
 
-// 커스텀 오버레이에 표시할 컨텐츠 입니다
-// 커스텀 오버레이는 아래와 같이 사용자가 자유롭게 컨텐츠를 구성하고 이벤트를 제어할 수 있기 때문에
-// 별도의 이벤트 메소드를 제공하지 않습니다 
-let content = '<div class="wrap">' + 
-      '    <div class="info">' + 
-      '        <div class="title">' + 
-      '            부산재송DT' + 
-      '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
-      '        </div>' + 
-      '        <div class="body-wrap">' +             
-      '           <div class="body">' + 
-      '               <div class="img">' +
-      '                   <img src="/images/store/icon03.png" >' +
-      '                   <img src="/images/store/icon22.png" >' +
-      '                </div>' + 
-      '                <div class="desc">' +
-      '                   <div class="ellipsis"><img src="/images/store/icon_addr.png" >' + 
-      '                                                     부산광역시 해운대구 해운대로 189 (재송동)</div>' + 
-      '                   <div class="tel"><img src="/images/store/icon_tel.png" >' + 
-      '                                               1522-3232</div>' + 
-      '                </div>' + 
-      '           </div>' + 
-      '        </div>' + 
-      '    </div>' +    
-      '</div>';
-
-for (var i = 0; i < positions.length; i ++) {
-
-// 마커 이미지의 이미지 크기 입니다
+positions.forEach(function(pos) {
+  // 마커 이미지의 이미지 크기 입니다
 let imageSize = new kakao.maps.Size(42, 65); // 마커이미지의 크기입니다
 
 // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다    
@@ -150,40 +145,91 @@ let markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
 // 마커를 생성합니다
 let marker = new kakao.maps.Marker({
     map: map, // 마커를 표시할 지도
-    position: positions[i].latlng, // 마커를 표시할 위치
-    title : positions[i].title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
+    //position: pos.latlng, // 마커를 표시할 위치
+    position: new kakao.maps.LatLng(pos.latitude, pos.longtitude),
+    title : pos.title, // 마커의 타이틀, 마커에 마우스를 올리면 타이틀이 표시됩니다
     image : markerImage // 마커 이미지 
 });
 
+  let overlay = new kakao.maps.CustomOverlay({
+    position: marker.getPosition()
+  });
 
-// 마커 위에 커스텀오버레이를 표시합니다
-// 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
-let overlay = new kakao.maps.CustomOverlay({
-content: content,
-map: map,
-position: marker.getPosition()       
-});
+  var content = document.createElement('div');
+  content.className="wrap";
 
-// 마커를 클릭했을 때 커스텀 오버레이를 표시합니다
+  var info = document.createElement('div');
+  info.className="info";
+  content.appendChild(info);
+
+  var title = document.createElement('div');
+  title.className="title";
+  title.appendChild(document.createTextNode(pos.title));
+  info.appendChild(title);
+ 
+  var closeBtn = document.createElement('button');
+  closeBtn.className="close";
+  //closeBtn.appendChild(document.createTextNode('닫기'));
+  closeBtn.onclick = function() { overlay.setMap(null); };
+  title.appendChild(closeBtn);
+
+  var body_wrap = document.createElement('div');
+  body_wrap.className="body-wrap";
+  info.appendChild(body_wrap);
+
+  var body = document.createElement('div');
+  body.className="body";
+  body_wrap.appendChild(body);
+
+  var img = document.createElement('div');
+  img.className="img";
+  
+  var img1=document.createElement('img');
+   img1.src='/images/store/icon03.png';
+   img.appendChild(img1);
+  var img2=document.createElement('img');
+   img2.src='/images/store/icon22.png';
+   img.appendChild(img2);
+
+  body.appendChild(img);
+
+  var desc = document.createElement('div');
+  desc.className="body-wrap";
+  body.appendChild(desc);
+
+
+  var ellipsis=document.createElement('div');
+  ellipsis.className="ellipsis";
+  var img3=document.createElement('img');
+   img3.src='/images/store/icon_addr.png';
+   ellipsis.appendChild(img3);
+  ellipsis.appendChild(document.createTextNode(pos.content));
+  desc.appendChild(ellipsis);
+
+
+  var tel=document.createElement('div');
+  tel.className="tel";
+  var img4=document.createElement('img');
+   img4.src='/images/store/icon_tel.png';
+   tel.appendChild(img4);
+  tel.appendChild(document.createTextNode(pos.tel));
+  desc.appendChild(tel);
+
+  overlay.setContent(content);
+  overlay.setMap(map);
+
+  // 마커를 클릭했을 때 커스텀 오버레이를 표시합니다
 kakao.maps.event.addListener(marker, 'click', function() {
 overlay.setMap(map);
 });
 
-// 커스텀 오버레이를 닫기 위해 호출되는 함수입니다 
-function closeOverlay() {
-overlay.setMap(null);     
+overlay.setMap(null);
+});
+
+} else {
+          alert("store정보 가져오기 실패");
+      }
 }
-}
-
-    // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
-    // let markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
-    //markerPosition = new kakao.maps.LatLng(35.189565, 129.121754);  // 마커가 표시될 위치입니다
-
-    // 마커가 지도 위에 표시되도록 설정합니다
-    //marker.setMap(map);
-
-    // 아래 코드는 지도 위의 마커를 제거하는 코드입니다
-    // marker.setMap(null);    
 </script>
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=a46aa39525659b92f0dda2e367cdde6a&libraries=services,clusterer,drawing"></script>
 

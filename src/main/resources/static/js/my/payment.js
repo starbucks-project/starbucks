@@ -19,6 +19,8 @@ async function myFunction(str) {
 
   if(parseResponse.code === 1){
       console.log("4");
+      $(".user_card_wrap").remove();
+      console.log("5");
       let boxEL=document.querySelector(".sel_box");
       
       let popupItem = document.createElement("div");
@@ -92,41 +94,7 @@ function chargepay() {
         // 결제 성공 시 로직,
         successCharge(payreqDto);
 
-        /*
-        jQuery
-          .ajax({
-            url: "/user/cardCharge/complete", // 예: https://www.myservice.com/payments/complete 가맹점 서버
-            method: "post",
-            headers: { "Content-Type": "application/json" },
-            data: {
-              imp_uid: rsp.imp_uid,
-              merchant_uid: rsp.merchant_uid,
-              buyername: buyername,
-              buyeremail: buyeremail,
-              o_paytype: rsp.pay_method,
-            },
-          })
-          .done(function (data) {
-            if (everythings_fine) {
-              var msg = "결제가 완료되었습니다.";
-              msg += "\n고유ID : " + rsp.imp_uid;
-              msg += "\n상점 거래ID : " + rsp.merchant_uid;
-              msg += "결제 금액 : " + rsp.paid_amount;
-              msg += "카드 승인번호 : " + rsp.apply_num;
-
-              alert(msg);
-              document.location.href = "/user/mypage"; 
-            } else {
-              //[3] 아직 제대로 결제가 되지 않았습니다.
-              //[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
-            } 
-          });                                                  
-              document.location.href = "/user/mypage";
-            } else {
-              //[3] 아직 제대로 결제가 되지 않았습니다.
-              //[4] 결제된 금액이 요청한 금액과 달라 결제를 자동취소처리하였습니다.
-            }
-          });         */
+      
       } else {
         console.log(rsp);
         alert("결제에 실패하였습니다. 에러 내용: " + rsp.error_msg);
@@ -160,13 +128,26 @@ function egiftpay() {
 
   let receiverName = document.querySelector("#receiver").value;
   let receiverPhonenum = document.querySelector('#receiverPhonenum').value;
-  let reqMsg = document.querySelector("#reqMsg").value;
+  let message = document.querySelector("#reqMsg").value;
+
+  if (receiverName == "") {
+    alert("받는 사람을 입력하세요");
+    form.receiverName.focus();
+    return false;
+  }
+
+  if (receiverPhonenum == "" ) {
+    alert("받는 사람의 번호를 정확히 입력해주세요");
+    form.receiverPhonenum.focus();
+    return false;
+  }
+
 
   let cardcartreqDto = {
     price: price,
     receiverName: receiverName,
     receiverPhonenum: receiverPhonenum,
-    reqMsg: reqMsg
+    message: message
   }
 
   // IMP.request_pay(param, callback) 호출
@@ -215,7 +196,7 @@ async function  successEgift(cardcartreqDto) {
     },
   });
 
-  console.log("controller완료!!!");
+  alert("controller완료!!!");
   location.href = "/user/purchaseHistory";
 } //결제 성공시 실행되는 함수 end
 /*======================================================*/
@@ -338,5 +319,5 @@ async function sendSms(){
     }
   });
 
-  console.log("controller완료!!!");
+  
 }

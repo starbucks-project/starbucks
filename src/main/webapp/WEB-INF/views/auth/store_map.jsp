@@ -12,7 +12,7 @@
             <div class="option">
                 <div>
                     <form onsubmit="searchPlaces(); return false;">
-                        키워드 : <input type="text" value="이태원 맛집" id="keyword" size="10"> 
+                        키워드 : <input type="text" value="스타벅스 서면" id="keyword" size="10"> 
                         <button type="submit">검색</button> 
                     </form>
                 </div>
@@ -227,7 +227,7 @@ function displayPagination(pagination) {
 // 검색결과 목록 또는 마커를 클릭했을 때 호출되는 함수입니다
 // 인포윈도우에 장소명을 표시합니다
 function displayInfowindow(marker, title) {
-    var content = '<div style="padding:5px;z-index:1;">' + title + '</div>';
+    var content = '<div style="padding:3px;z-index:1;">' + title + '</div>';
 
     infowindow.setContent(content);
     infowindow.open(map, marker);

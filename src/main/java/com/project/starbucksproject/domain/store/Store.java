@@ -14,9 +14,11 @@ public class Store {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; // 기본키
 
-    private String storeName; // 가게 명
-    private int latitude; // 위도
-    private int longtitude; // 경도
-    private String address; // 주소
-    private String storeCategory; // 카테고리(드라이브스루/리저브)
+    private String category; // 카테고리(일반/드라이브스루/리저브) =general/drive/reserve 
+    private String title; // 가게 명
+    private double latitude; // 위도
+    private double longtitude; // 경도
+    private String content; // 주소
+    private String tel; //가게번호
+    
 }

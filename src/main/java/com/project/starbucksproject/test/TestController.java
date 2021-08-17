@@ -22,6 +22,11 @@ public class TestController {
         return "test/test";
     } 
 
+    @GetMapping("/test2")
+    public String test2() {
+        return "test/test2";
+    } 
+
     @GetMapping("/user/userinfo")
     public String userInfo() {
         return "user/userinfoUpdateForm";
@@ -32,4 +37,9 @@ public class TestController {
     public @ResponseBody Page<User> page(int page){
         return userRepository.findAll(PageRequest.of(page, 3));
     }
+
+    @GetMapping("/manager/store_regi")
+    public String testmap() {
+        return "manager/store_regi";
+    } 
 }

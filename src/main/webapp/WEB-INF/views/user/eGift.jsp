@@ -12,7 +12,7 @@
 
 			</header>
 			<section class="card_gift_info_section">
-				<form id="frmUpload" action="/user/cardcart" method="post" enctype="multipart/form-data">
+				<form name="form" id="frmUpload" action="/user/cardcart" method="post" enctype="multipart/form-data">
 					<fieldset>
 						<legend>선물할 정보 입력 및 메시지 입력을 해주세요.</legend>
 						<div class="gift_card_visual">
@@ -51,11 +51,11 @@
 							</tr>
 							<tr>
 								<th>받는 사람
-								<%-- <br>
+								<!-- <%-- <br>
 								 <p><div class="ez-checkbox">
 									<input type="checkbox" id="giftMe" data-username="정용주" data-phone="010-5710-2570" data-email="judyjak2@naver.com" class="ez-hide">
 									</div>
-									<label for="giftMe">나에게 선물하기</label></p>--%>
+									<label for="giftMe">나에게 선물하기</label></p>--%> -->
 									</th>
 								<td>
 									
