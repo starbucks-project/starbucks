@@ -29,6 +29,6 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     // true)
     // List<UserDto> mfindUserBalance();
 
-    @Query(value = "SELECT SUM(c.balance) FROM User u INNER JOIN card c ON c.userId=:userId", nativeQuery = true)
-    long mfindUserBalance(int userId);
+    @Query(value = "SELECT SUM(c.balance) FROM User u INNER JOIN card c ON c.userId=:userId AND u.name=:name", nativeQuery = true)
+    long mfindUserBalance(int userId, String name);
 }
