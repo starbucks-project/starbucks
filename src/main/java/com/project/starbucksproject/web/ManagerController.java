@@ -2,6 +2,7 @@ package com.project.starbucksproject.web;
 
 import java.lang.ProcessBuilder.Redirect;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -20,6 +21,7 @@ import com.project.starbucksproject.web.dto.UserDto;
 import com.project.starbucksproject.web.dto.UserSearchReqDto;
 import com.project.starbucksproject.web.dto.UserSearchRespDto;
 
+import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
 import org.springframework.boot.autoconfigure.kafka.KafkaProperties.Producer;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -206,12 +208,21 @@ public class ManagerController {
     if (page == null) {
       page = 0;
     }
-    List<UserDto> usersEntity = userRepository.mfindUserBalace();
-    System.out.println("===============\n" + usersEntity + "\n================");
-    // Model userEntity = model.addAttribute("usersEntity",
-    // userRepository.mfindUserBalace(PageRequest.of(page, 5)));
 
-    model.addAttribute("usersEntity", usersEntity);
+    List<User> userList = userRepository.findAll();
+    List<UserDto> usersDto = new ArrayList<>();
+    for (int i = 0; i < userList.size(); i++) {
+      UserDto userDto = new UserDto();
+      int userId = userList.get(i).getId();
+      Long userBalance = userRepository.mfindUserBalance(userId);
+      userDto.setSUM(userBalance);
+      userDto.setUser(userList.get(i));
+      usersDto.add(userDto);
+    }
+
+    System.out.println("==================\n" + usersDto.toString() + "\n=================");
+
+    model.addAttribute("usersEntity", usersDto);
 
     return "manager/manageUser";
   }

@@ -1,6 +1,7 @@
 package com.project.starbucksproject.web.dto;
 
 import java.security.Timestamp;
+import java.util.Date;
 
 import com.project.starbucksproject.domain.user.User;
 
@@ -12,10 +13,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Data
 public class UserDto {
-    private int id;
-    private String name;
-    private String email;
-    private Timestamp createDate;
+    private User user;
 
     private long SUM;
 

@@ -1,5 +1,6 @@
 package com.project.starbucksproject.domain.user;
 
+import java.util.Iterator;
 import java.util.List;
 
 import com.project.starbucksproject.web.dto.UserDto;
@@ -23,6 +24,11 @@ public interface UserRepository extends JpaRepository<User, Integer> {
     // c.userId=:id;", nativeQuery = true)
     // long mfindUserBalance(int id);
 
-    @Query(value = "SELECT u.id, u.name, u.email, u.createDate, SUM(c.balance) FROM User u INNER JOIN card c ON c.userId=u.id GROUP BY u.id", nativeQuery = true)
-    List<UserDto> mfindUserBalace();
+    // @Query(value = "SELECT u.id, u.name, u.email, u.createDate, SUM(c.balance)
+    // FROM User u INNER JOIN card c ON c.userId=u.id GROUP BY u.id", nativeQuery =
+    // true)
+    // List<UserDto> mfindUserBalance();
+
+    @Query(value = "SELECT SUM(c.balance) FROM User u INNER JOIN card c ON c.userId=:userId", nativeQuery = true)
+    long mfindUserBalance(int userId);
 }

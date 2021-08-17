@@ -59,7 +59,14 @@
               </p>
             </div>
             <div class="btn_egift">
-              <a href="#">e-Gift Card 선물하기</a>
+              <c:choose>
+              <c:when test="${!empty sessionScope.principal}">
+              <a href="/user/egift">e-Gift Card 선물하기</a>
+              </c:when>
+              <c:otherwise>
+              <a href="/auth/login">e-Gift Card 선물하기</a>
+              </c:otherwise>
+              </c:choose>
             </div>
           </div>
         </div>
