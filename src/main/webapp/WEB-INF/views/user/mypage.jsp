@@ -181,12 +181,15 @@
                       <c:forEach var="card" items="${cardsEntity}">
                           <li>
                             <img src="/images/${card.cardImage}" />
-                            <p class="my_ms_card_price"><span class="a11y">잔여금액</span>
-                              <strong class="en t_0d5f34">${card.balance}</strong>원</p> 
-                            <div class="my_ms_card_btns">
-                              <p class="my_ms_card_btn2">
-                                <a href="/user/cardCharge" data-type="CHARGE" data-cardregnumber="34655033">충전하기</a>
-                              </p>                          
+                            <div class="my_ms_card_info">
+                              <p class="card_name">${card.cardName}</p>
+                              <p class="my_ms_card_price"><span class="a11y">잔여금액</span>
+                                <strong class="en t_0d5f34">${card.balance}</strong>원</p> 
+                              <div class="my_ms_card_btns">
+                                <p class="my_ms_card_btn2">
+                                  <a href="/user/cardCharge">충전하기</a>
+                                </p>                          
+                             </div>
                             </div>
                           </li>
                       </c:forEach>
@@ -272,7 +275,8 @@
 
       $('.bxslider').bxSlider({
         slideMargin: 10,
-        slideWidth: 7000
+        slideWidth: 7000,
+        touchEnabled : (navigator.maxTouchPoints > 0)
       });
     });
   </script>
