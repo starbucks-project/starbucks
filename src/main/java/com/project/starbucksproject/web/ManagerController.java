@@ -24,6 +24,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -48,7 +49,7 @@ public class ManagerController {
   public String managerHome(Model model) {
     Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
     if (managerEntity == null) {
-      return "redirect:/manager/login";
+      return "auth/managerLoginForm";
     }
     model.addAttribute("productsEntity", productRepository.findAll());
 
@@ -60,7 +61,7 @@ public class ManagerController {
   public String productDetailForm(@PathVariable int id, Model model) {
     Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
     if (managerEntity == null) {
-      return "redirect:/manager/login";
+      return "auth/managerLoginForm";
     }
     Product productEntity = productRepository.findById(id).get();
     model.addAttribute("productEntity", productEntity);
@@ -73,18 +74,20 @@ public class ManagerController {
   public String saledProductForm(Model model, Integer page) {
     Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
     if (managerEntity == null) {
-      return "redirect:/manager/login";
+      return "auth/managerLoginForm";
     }
     if (page == null) {
       page = 0;
     }
-    // 총 판매량
-    Long amount = managerRepository.mfindAmount();
-
-    Long totalPrice = managerRepository.mTotalprice();
-    model.addAttribute("amount", amount);
-    model.addAttribute("totalPrice", totalPrice);
-
+    List<Saleditems> saleditems = saledItemsRepository.findAll();
+    if (saleditems != null) {
+      // 총 판매량
+      Long amount = managerRepository.mfindAmount();
+      // 총 판매 액
+      Long totalPrice = managerRepository.mTotalprice();
+      model.addAttribute("amount", amount);
+      model.addAttribute("totalPrice", totalPrice);
+    }
     model.addAttribute("saledItemsEntity", saledItemsRepository.findAll(PageRequest.of(page, 5)));
 
     return "manager/saledProduct";
@@ -114,38 +117,6 @@ public class ManagerController {
 
   }
 
-  // // 판매현황 카테고리 검색
-  // @PostMapping("/manager/searchCategory")
-  // public @ResponseBody ProductSearchRespDto<List> searchByCategory(@RequestBody
-  // ProductSearchReqDto dto) {
-  // Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
-
-  // String category = dto.getCategory();
-  // List<Product> productEntity = productRepository.mfindAllByCategory(category);
-  // List<Saleditems> saleditemsEntity = new ArrayList<>();
-  // if (managerEntity != null) {
-  // if (productEntity != null) {
-  // for (int i = 0; i < productEntity.size(); i++) {
-  // int productId = productEntity.get(i).getId();
-  // List<Saleditems> saleditemsByCategory =
-  // saledItemsRepository.mfindByCategory(productId);
-  // for (int j = 0; j < saleditemsByCategory.size(); j++) {
-  // Saleditems saleditems = saleditemsByCategory.get(j);
-  // saleditemsEntity.add(saleditems);
-  // } // end inner for
-
-  // } // end outer for
-
-  // return new ProductSearchRespDto<>(1, "카테고리 상품 찾기 성공", saleditemsEntity);
-  // } else {
-  // return new ProductSearchRespDto<>(-1, "해당 카테고리 상품 없음", saleditemsEntity);
-  // }
-  // } else {
-  // return new ProductSearchRespDto<>(0, "세션 만료", saleditemsEntity);
-  // }
-
-  // }
-
   // 판매현황 카테고리 검색
   @PostMapping("/manager/searchCategory")
   public @ResponseBody ProductSearchRespDto<List> searchByCategory(@RequestBody ProductSearchReqDto dto) {
@@ -165,12 +136,25 @@ public class ManagerController {
 
   }
 
+  // 상품 삭제 버튼 눌렀을 때
+  @PostMapping("/manager/deleteProduct/{id}")
+  public String deleteProduct(@PathVariable int id) {
+    Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
+    if (managerEntity == null) {
+      return "auth/managerLoginForm";
+    }
+
+    productRepository.deleteById(id);
+
+    return "redirect:/manager";
+  }
+
   // 상품 수정 페이지로 이동
   @GetMapping("/manager/product/{id}")
   public String updateForm(@PathVariable int id, Model model) {
     Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
     if (managerEntity == null) {
-      return "redirect:/manager/login";
+      return "auth/managerLoginForm";
     }
     Product productEntity = productRepository.findById(id).get();
     model.addAttribute("productEntity", productEntity);
@@ -183,7 +167,7 @@ public class ManagerController {
   public String update(@PathVariable int id, Product product, MultipartFile productImage) {
     Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
     if (managerEntity == null) {
-      return "redirect:/manager/login";
+      return "auth/managerLoginForm";
     }
     Product productEntity = productRepository.findById(id).get();
 
@@ -215,7 +199,7 @@ public class ManagerController {
   public String userlistForm(Model model, Integer page) {
     Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
     if (managerEntity == null) {
-      return "redirect:/manager/login";
+      return "auth/managerLoginForm";
     }
 
     if (page == null) {
@@ -223,8 +207,6 @@ public class ManagerController {
     }
 
     Model userEntity = model.addAttribute("usersEntity", userRepository.findAll(PageRequest.of(page, 5)));
-
-    System.out.println("================\n" + userEntity);
 
     return "manager/manageUser";
   }
@@ -234,7 +216,7 @@ public class ManagerController {
   public @ResponseBody UserSearchRespDto<List> searchUser(@RequestBody UserSearchReqDto dto) {
     Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
     List<User> userEntity = userRepository.mfindUserList(dto.getName());
-    System.out.println("====================\n" + userEntity + "\n=====================");
+
     if (managerEntity != null) {
 
       if (userEntity != null) {
@@ -253,7 +235,7 @@ public class ManagerController {
   public String uploadProductForm() {
     Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
     if (managerEntity == null) {
-      return "redirect:/manager/login";
+      return "auth/managerLoginForm";
     }
     return "manager/uploadProduct";
   }
@@ -263,7 +245,7 @@ public class ManagerController {
   public String upload(Product product, MultipartFile productImage) {
     Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
     if (managerEntity == null) {
-      return "redirect:/manager/login";
+      return "auth/managerLoginForm";
     }
 
     System.out.println(product);
@@ -305,7 +287,7 @@ public class ManagerController {
   public String managerLogout() {
     Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
     if (managerEntity == null) {
-      return "redirect:/manager/login";
+      return "auth/managerLoginForm";
     }
     session.invalidate();
     return "redirect:/";

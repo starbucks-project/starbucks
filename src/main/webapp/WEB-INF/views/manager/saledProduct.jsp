@@ -54,7 +54,10 @@
                     <col width="20%">
                     <col width="*">
                 </colgroup>
-                <thead>
+                <c:choose>
+                <c:when test="${!empty saledItemsEntity}">
+
+                    <thead>
                     <tr>
                         <th scope="col">No.</th>
                         <th scope="col">구매자</th>
@@ -84,6 +87,32 @@
                         <td>총 액 : ${totalPrice}</td> 
                         <td>총 판매수량 : ${amount}</td>
                     </tr>
+
+               
+                </c:when>
+                <c:otherwise>
+                    <thead>
+                    <tr>
+                        <th scope="col">No.</th>
+                        <th scope="col">구매자</th>
+                        <th scope="col">상품명</th>
+                        <th scope="col">구매 날짜</th>
+                        <th scope="col">상품 가격</th>
+                        <th scope="col">상품 수량</th>
+                    </tr>
+                    </thead>
+                    <tbody id="notice">
+                        <tr class="last_tr">      
+                            <td>No.</td>     
+                            <td>구매자</td> 
+                            <td>상품명</td>     
+                            <td>구매일</td>     
+                            <td>총 액 : 0</td> 
+                            <td>총 판매수량 : 0</td>
+                        </tr>
+                    </c:otherwise>
+                </c:choose>
+                
             </table>
         </div>  <!-- end user-list-area-box-->
 

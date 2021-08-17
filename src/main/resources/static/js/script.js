@@ -347,10 +347,7 @@ async function saledItemByName() {
 
     let saleditems = parseResponse.data;
 
-    alert("날리기 전 잠깐 멈춤")
     userBoxEl.innerHTML = ""; // userBoxEl 안 html 태그 날리기
-
-    alert("날리고 잠깐 멈춤")
 
     saleditems.forEach(saled => {
       let userItem = document.createElement("tr");

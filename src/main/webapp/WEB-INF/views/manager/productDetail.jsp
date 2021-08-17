@@ -101,7 +101,9 @@
                     <a href="/manager/product/${productEntity.id}">수정</a>
                   </div>
                   <div class="edit-btn">
-                    <a href="#">삭제</a>
+                    <form action="/manager/deleteProduct/${productEntity.id}" method="post">
+                    <button>삭제</button>
+                    </form>
                   </div>
                 </div>
               </div>
