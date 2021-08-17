@@ -13,9 +13,11 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 
 import com.project.starbucksproject.domain.mymenu.*;
+import com.project.starbucksproject.domain.saleditems.Saleditems;
 
 import org.hibernate.annotations.CreationTimestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.project.starbucksproject.domain.card.Card;
 // import com.project.starbucksproject.domain.saledItems.SaledItems;
 
@@ -42,12 +44,10 @@ public class User {
     // @OneToMany(mappedBy = "user")
     // private List<Mymenu> mymenus; // 마이메뉴 조인
 
-    // @OneToMany(mappedBy = "mymenu")
-    // private List<MyMenu> mymenus;
-
     // @OneToMany(mappedBy = "user")
     // private List<Card> cards;
 
-    // @OneToMany(mappedBy = "sailed_items")
-    // private List<SaledItems> saledItems;
+    // @JsonIgnoreProperties({ "user" })
+    // @OneToMany(mappedBy = "user")
+    // private List<Saleditems> saleditems;
 }

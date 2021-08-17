@@ -94,61 +94,71 @@ public class ManagerController {
   @PostMapping("/manager/saleditemsByName")
   public @ResponseBody UserSearchRespDto<List> saledItemsByName(@RequestBody UserSearchReqDto dto) {
     Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
-
-    // 검색된 이름의 사용자 정보 가져오기
-    List<User> userEntity = userRepository.mfindUserList(dto.getName());
-
     // saleditems 정보를 가질 list 선언
     List<Saleditems> saleditemsEntity = new ArrayList<>();
 
     // 관리자 로그인 되어 있다면
     if (managerEntity != null) {
-      // 검색된 이름의 사용자가 없을 때
-      if (userEntity == null) {
-        return new UserSearchRespDto<>(-1, "이름 검색 실패", saleditemsEntity);
-      } else { // 검색된 이름의 사용자가 있을 때 (동명이인이 있을 수 있으므로 list에 추가하면서 저장해줌)
-        for (int i = 0; i < userEntity.size(); i++) {
-          int userId = userEntity.get(i).getId();
-          List<Saleditems> saleditemsByUser = saledItemsRepository.mfindSaledList(userId);
-          for (int j = 0; j < saleditemsByUser.size(); j++) {
-            Saleditems saleditems = saleditemsByUser.get(j);
-            saleditemsEntity.add(saleditems);
-          } // end inner for
-        } // end outer for
 
-        // 정상적으로 이름이 검색 됐을 때
-        return new UserSearchRespDto<>(1, "이름 검색 성공", saleditemsEntity);
-      } // end inner if-else
+      saleditemsEntity = saledItemsRepository.mfindItemByName(dto.getName());
+
+      if (saleditemsEntity == null) {
+        return new UserSearchRespDto<>(-1, "이름 검색 실패", saleditemsEntity);
+      }
+      // 정상적으로 이름이 검색 됐을 때
+      return new UserSearchRespDto<>(1, "이름 검색 성공", saleditemsEntity);
+
     } else {
       return new UserSearchRespDto<>(0, "세션 만료", saleditemsEntity);
     } // end outer if-else
 
   }
 
+  // // 판매현황 카테고리 검색
+  // @PostMapping("/manager/searchCategory")
+  // public @ResponseBody ProductSearchRespDto<List> searchByCategory(@RequestBody
+  // ProductSearchReqDto dto) {
+  // Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
+
+  // String category = dto.getCategory();
+  // List<Product> productEntity = productRepository.mfindAllByCategory(category);
+  // List<Saleditems> saleditemsEntity = new ArrayList<>();
+  // if (managerEntity != null) {
+  // if (productEntity != null) {
+  // for (int i = 0; i < productEntity.size(); i++) {
+  // int productId = productEntity.get(i).getId();
+  // List<Saleditems> saleditemsByCategory =
+  // saledItemsRepository.mfindByCategory(productId);
+  // for (int j = 0; j < saleditemsByCategory.size(); j++) {
+  // Saleditems saleditems = saleditemsByCategory.get(j);
+  // saleditemsEntity.add(saleditems);
+  // } // end inner for
+
+  // } // end outer for
+
+  // return new ProductSearchRespDto<>(1, "카테고리 상품 찾기 성공", saleditemsEntity);
+  // } else {
+  // return new ProductSearchRespDto<>(-1, "해당 카테고리 상품 없음", saleditemsEntity);
+  // }
+  // } else {
+  // return new ProductSearchRespDto<>(0, "세션 만료", saleditemsEntity);
+  // }
+
+  // }
+
   // 판매현황 카테고리 검색
   @PostMapping("/manager/searchCategory")
   public @ResponseBody ProductSearchRespDto<List> searchByCategory(@RequestBody ProductSearchReqDto dto) {
     Manager managerEntity = (Manager) session.getAttribute("managerPrincipal");
 
-    String category = dto.getCategory();
-    List<Product> productEntity = productRepository.mfindAllByCategory(category);
     List<Saleditems> saleditemsEntity = new ArrayList<>();
     if (managerEntity != null) {
-      if (productEntity != null) {
-        for (int i = 0; i < productEntity.size(); i++) {
-          int productId = productEntity.get(i).getId();
-          List<Saleditems> saleditemsByCategory = saledItemsRepository.mfindByCategory(productId);
-          for (int j = 0; j < saleditemsByCategory.size(); j++) {
-            Saleditems saleditems = saleditemsByCategory.get(j);
-            saleditemsEntity.add(saleditems);
-          } // end inner for
-
-        } // end outer for
-
-        return new ProductSearchRespDto<>(1, "카테고리 상품 찾기 성공", saleditemsEntity);
-      } else {
-        return new ProductSearchRespDto<>(-1, "해당 카테고리 상품 없음", saleditemsEntity);
+      saleditemsEntity = saledItemsRepository.mfindItemByCategory(dto.getCategory());
+      if (saleditemsEntity == null) {
+        return new ProductSearchRespDto<>(-1, "카테고리 상품 찾기 실패", saleditemsEntity);
       }
+
+      return new ProductSearchRespDto<>(1, "카테고리 상품 찾기 성공", saleditemsEntity);
     } else {
       return new ProductSearchRespDto<>(0, "세션 만료", saleditemsEntity);
     }
