@@ -7,7 +7,7 @@ import javax.servlet.http.HttpSession;
 import com.project.starbucksproject.domain.card.Card;
 import com.project.starbucksproject.domain.card.CardRepository;
 import com.project.starbucksproject.domain.manager.ManagerRepository;
-import com.project.starbucksproject.domain.saledItems.*;
+import com.project.starbucksproject.domain.saleditems.*;
 import com.project.starbucksproject.domain.user.User;
 import com.project.starbucksproject.domain.user.UserRepository;
 
@@ -30,7 +30,7 @@ public class UserController {
   private final HttpSession session;
   private final ManagerRepository managerRepository;
   private final CardRepository cardRepository;
-  private final SaledItemsRepository saleditemsRepository;
+  private final SaleditemsRepository saleditemsRepository;
 
   // 로그인 페이지
   @GetMapping("/auth/login")
@@ -129,7 +129,7 @@ public class UserController {
     }
     int userid = principal.getId();
 
-    List<SaledItems> saleditemsEntity=saleditemsRepository.mfindAllByuserId(userid);
+    List<Saleditems> saleditemsEntity=saleditemsRepository.mfindAllByuserId(userid);
     int saleditems= saleditemsEntity.size();
     model.addAttribute("saleditems", saleditems);
 

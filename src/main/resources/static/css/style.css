@@ -6203,9 +6203,20 @@ table.gift_info_tbl tr td div.tbl_card_radio label {
   margin-right: 12px;
 }
 .pre_regi_number {
-  float: left;
+  color: #000;
+  display: block;
   line-height: 28px;
+  font-weight: 600;
+  font-size: 14px;
 }
+.phone_chg_num  a {
+  color: #009900;
+  font-weight: 700;
+}
+.phone_chg_num  a:hover{
+  text-decoration: underline;
+}
+
 .btn_pre_regi {
   background: #006633;
   border-radius: 3px;

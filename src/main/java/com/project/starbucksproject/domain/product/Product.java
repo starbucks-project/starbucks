@@ -18,8 +18,8 @@ import javax.persistence.Transient;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.project.starbucksproject.domain.card.Card;
 
-import com.project.starbucksproject.domain.myMenu.*;
-import com.project.starbucksproject.domain.saledItems.*;
+import com.project.starbucksproject.domain.mymenu.*;
+import com.project.starbucksproject.domain.saleditems.*;
 
 
 import org.hibernate.annotations.CreationTimestamp;

@@ -6,7 +6,7 @@ import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
-import com.project.starbucksproject.domain.myMenu.*;
+import com.project.starbucksproject.domain.mymenu.*;
 import com.project.starbucksproject.domain.product.Product;
 import com.project.starbucksproject.domain.product.ProductRepository;
 import com.project.starbucksproject.domain.user.User;
