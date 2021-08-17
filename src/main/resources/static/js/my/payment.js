@@ -163,7 +163,7 @@ function egiftpay() {
   let reqMsg = document.querySelector("#reqMsg").value;
 
   let cardcartreqDto = {
-    amount: price,
+    price: price,
     receiverName: receiverName,
     receiverPhonenum: receiverPhonenum,
     reqMsg: reqMsg
@@ -319,10 +319,13 @@ async function sendSms(){
 
   let receiverName = document.querySelector("#receiver").value;
 
+  let price = document.querySelector("#price").value;
+
   let smsDto = {
     receiverPhonenum : receiverPhonenum,
-    reqMsg: reqMsg,
-    receiverName: receiverName
+    message: reqMsg,
+    receiverName: receiverName,
+    price: price
   };
 
   console.log(JSON.stringify(smsDto));

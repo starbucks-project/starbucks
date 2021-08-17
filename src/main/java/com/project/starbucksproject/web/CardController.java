@@ -121,7 +121,7 @@ public class CardController {
   }
   // e-gift 카드 선물하기에서 '결제하기 버튼 클릭'
   @PostMapping("/user/egift/complete")
-  public @ResponseBody String cardCart(CardcartReqDto cardcartReqDto) {
+  public @ResponseBody String cardCart(@RequestBody CardcartReqDto cardcartReqDto) {
 
     User principal = (User) session.getAttribute("principal");
     if (principal == null) {
@@ -130,7 +130,7 @@ public class CardController {
 
     int price = cardcartReqDto.getPrice();
 
-    String receiverPhonenum = cardcartReqDto.getReceivePhonenum();
+    String receiverPhonenum = cardcartReqDto.getReceiverPhonenum();
     String receiverName = cardcartReqDto.getReceiverName();
     String message = cardcartReqDto.getMessage();
 
@@ -139,13 +139,14 @@ public class CardController {
     cardcartEntity.setReceiverName(receiverName);
     cardcartEntity.setReceiverPhonenum(receiverPhonenum);
     cardcartEntity.setUser(principal);
+
     cardcartRepository.save(cardcartEntity);
 
     return "ok";
   }
 
   @PostMapping("/user/egift/sms")
-  public @ResponseBody String sendSms(CardcartReqDto cardcartReqDto){
+  public @ResponseBody String sendSms(@RequestBody CardcartReqDto cardcartReqDto){
 
     User principal = (User) session.getAttribute("principal");
     if (principal == null) {
@@ -157,14 +158,14 @@ public class CardController {
     Message coolsms = new Message(api_key, api_secret);
 
     String receiverName = cardcartReqDto.getReceiverName();
-    String receiverPhonenum = cardcartReqDto.getReceivePhonenum();
+    String receiverPhonenum = cardcartReqDto.getReceiverPhonenum();
     String message = cardcartReqDto.getMessage();
     int price = cardcartReqDto.getPrice();
 
      // 4 params(to, from, type, text) are mandatory. must be filled
      HashMap<String, String> params = new HashMap<String , String>();
      params.put("to", receiverPhonenum);
-     params.put("from", principal.getPhoneNum());
+     params.put("from", "01077117830"); //principal.getPhoneNum()
      params.put("type", "SMS");
      params.put("text", ""+principal.getName()+" 님께서 "+receiverName+" 님에게 eGift 카드를 보내셨습니다. 금액: "+price+", 내용: ["+message+"]");
      params.put("app_version", "test app 1.2"); // application name and version
