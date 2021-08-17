@@ -147,6 +147,7 @@ public class CardController {
     return "ok";
   }
 
+
   @PostMapping("/user/egift/sms")
   public @ResponseBody String sendSms(@RequestBody CardcartReqDto cardcartReqDto){
 
@@ -155,8 +156,8 @@ public class CardController {
       return "redirect:/auth/login";
     }
 
-    String api_key = "NCSVOC9YEFSNDT4P";
-    String api_secret = "FGR8KYYDTZWGXINUXN0BX8HG7F83W7ZK";
+    String api_key = "NCSSBMZ5QUBVJZMQ";
+    String api_secret = "UBVT7ABE5Q2GJPWCTUZUGKI7BIUW6TW8";
     Message coolsms = new Message(api_key, api_secret);
 
     String receiverName = cardcartReqDto.getReceiverName();

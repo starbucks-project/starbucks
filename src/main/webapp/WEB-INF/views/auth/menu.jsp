@@ -52,7 +52,7 @@
       <div class="menu_card_txt01">
         <img class="w_pic" src="/images/menu_main/menu_btxt4.png" alt="카드 따뜻한 커피와 마음을 전하기 가장 좋은 방법! 주는 사람도 받는 사람도 모두 행복해지는 스타벅스만의 특별함을 느껴보세요.">
       </div>
-      <div class="menu_card_btn01"><a href="#" title="스타벅스 카드 자세히 보기">자세히 보기</a>
+      <div class="menu_card_btn01"><a href="/user/cardRegi" title="스타벅스 카드 자세히 보기">자세히 보기</a>
      </div>
     </div>
   </div>

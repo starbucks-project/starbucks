@@ -131,6 +131,7 @@ public class UserController {
 
     List<Saleditems> saleditemsEntity = saleditemsRepository.mfindAllByuserId(userid);
     int saleditems = saleditemsEntity.size();
+
     model.addAttribute("saleditems", saleditems);
 
     List<Card> cardsEntity = cardRepository.mfindByAlluserId(userid);

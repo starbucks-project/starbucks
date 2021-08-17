@@ -32,7 +32,7 @@ async function myFunction(str) {
       href="javascript:void(0);"></a></i>
       <img alt="" class="cardImgUrl"
       onerror="this.src='https://image.istarbucks.co.kr/upload/common/img/icon/card_672x423.png';"
-      src="https://image.istarbucks.co.kr/cardImg/20190805/005949.png">
+      src="/images/${parseResponse.data.cardImage}">
       </figure>
       <p>
       <strong class="en cardNum">${parseResponse.data.cardNum}</strong><br>
@@ -142,6 +142,12 @@ function egiftpay() {
     return false;
   }
 
+  let numRegExp = /^[0-9]{11}$/;  //pin번호 유효성 검사
+    if (!numRegExp.test(receiverPhonenum)) {
+      alert("번호는 11자리로 입력해주세요");
+      form.receiverPhonenum.focus();
+      return false;
+    }  
 
   let cardcartreqDto = {
     price: price,
@@ -175,6 +181,8 @@ function egiftpay() {
       // 결제 성공 시 로직,
       console.log(JSON.stringify(cardcartreqDto));
       successEgift(cardcartreqDto);
+      sendSms();
+      location.href = "/user/purchaseHistory";
       } else {
         console.log("결제 실패");
         console.log(rsp);
@@ -197,7 +205,7 @@ async function  successEgift(cardcartreqDto) {
   });
 
   alert("controller완료!!!");
-  location.href = "/user/purchaseHistory";
+ //location.href = "/user/purchaseHistory";
 } //결제 성공시 실행되는 함수 end
 /*======================================================*/
 //Cart 선택된 최종 결제 금액
@@ -291,7 +299,7 @@ async function success(saledReqDto) {
 
 // coolSms
 async function sendSms(){
-  alert('문자 발송 완료!');
+  
   event.preventDefault();
 
   let receiverPhonenum = document.querySelector('#receiverPhonenum').value;
@@ -318,6 +326,88 @@ async function sendSms(){
       "Content-Type": "application/json; charset=utf-8"
     }
   });
-
+  alert('문자 발송 완료!');
+  
+}
+/*================================================================================*/
+// Cart.jsp "선택상품 결제하기"
+function cartpay2() {
+  let cardId= $("#cardNum_NORMAL_sel option:selected").val();              //결제할 카드 아이디
+  if(cardId===null || cardId==="") {
+      alert("결제할 카드를 선택해주세요");
+      return false;
+  }
+  console.log('1');
+  let length = $(".ez-checked").length;
+  let arrProductId = new Array();
+  $(".ez-check").each(function () {
+    arrProductId.push($(this).attr("id"));
+  });
+  let arrCartId = new Array();
+  $(".ez-checked").each(function () {
+    arrCartId.push($(this).attr("id"));
+  });
+  let productamount = document.querySelector(".checkedTotalAmount").textContent; //결제금액
+  let saledReqDto = {
+    arrProductId: arrProductId, //productId
+    arrCartId: arrCartId, // cartId
+    length: length,
+    productamount: productamount,
+    cardId: cardId
+  };
+  console.log("2");
+  success2(saledReqDto);
+  
+}
+async function success2(saledReqDto) {
+  console.log("확인", saledReqDto);
+  alert("결제금액:"+saledReqDto.productamount);
+  let response = await fetch("/user/purchaseHistory", {
+    method: "post",
+    body: JSON.stringify(saledReqDto),
+    headers: {
+      "Content-Type": "application/json; charset=utf-8",
+    }
+  });
+  let parseResponse = await response.json();
+console.log(parseResponse);
+if(parseResponse.code === 0){
+  alert(parseResponse.msg);
+  return false;
+}
+  
+  alert("결제 성공");
+  location.href = "/user/purchaseHistory";
+} //결제 성공시 실행되는 함수 end
+/*================================================================================*/
+// Cart.jsp "전체상품 결제하기"
+function cartpay3() {
+  let cardId= $("#cardNum_NORMAL_sel option:selected").val();              //결제할 카드 아이디
+  if(cardId===null || cardId==="") {
+      alert("결제할 카드를 선택해주세요");
+      return false;
+  }
+  console.log('1');
+  allcheck();
+  
+  let length = $(".ez-checked").length;
+  let arrProductId = new Array();
+  $(".ez-check").each(function () {
+    arrProductId.push($(this).attr("id"));
+  });
+  let arrCartId = new Array();
+  $(".ez-checked").each(function () {
+    arrCartId.push($(this).attr("id"));
+  });
+  let productamount = document.querySelector(".checkedTotalAmount").textContent; //결제금액
+  let saledReqDtoAll = {
+    arrProductId: arrProductId, //productId
+    arrCartId: arrCartId, // cartId
+    length: length,
+    productamount: productamount,
+    cardId: cardId
+  };
+  console.log("2");
+  success2(saledReqDtoAll);
   
 }
