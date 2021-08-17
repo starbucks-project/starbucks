@@ -1,4 +1,4 @@
-package com.project.starbucksproject.domain.mymenu;
+package com.project.starbucksproject.domain.myMenu;
 
 import java.sql.Timestamp;
 
@@ -19,7 +19,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Mymenu {   
+public class MyMenu {   
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; // 기본키

@@ -3854,8 +3854,9 @@ strong {
   flex: 4;
 }
 .card_header_box_two {
-  display: flex;
+  display: flex-end;
   flex: 1;
+  margin-right: 15px;
 }
 .my_ms_card header h5 {
   flex: 1;
@@ -3992,19 +3993,31 @@ strong {
   line-height: 16px;
   margin-top: 6px;
 }
+.my_ms_card_info {
+  float: right;
+  height: 100%;
+  margin-right: 80px;
+  padding-top: 45px;
+}
+.card_name {
+  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: #000;
+}
 .my_ms_card_price {
-  height: 33px;
-  line-height: 96px;
-  margin-top: 10px;
+  height: 40px;
+  line-height: 33px;
+  margin-top: 20px;
 }
 .my_ms_card_price strong {
   font-size: 30px;
   color: #0d5f34;
 }
 .my_ms_card_btns {
-  height: 30px;
-  line-height: 136px;
-  margin-top: 19px;
+  height: 30%;
+  line-height: 33px;
+  /* margin-top: 19px; */
   text-align: center;
   justify-content: center;
 }
@@ -4024,7 +4037,7 @@ strong {
 }
 .my_ms_card_btns p a {
   display: block;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: bold;
   height: 28px;
   line-height: 28px;
@@ -4035,6 +4048,12 @@ strong {
   background: #e2c383;
   border: 1px solid #bb9f65;
   margin: 0 5px;
+}
+.my_ms_card_info2 {
+
+  height: 30%;
+  /* margin-right: 80px; */
+  padding-top: 5px;
 }
 
 .my_ms_card_cont .bx-wrapper .bx-controls-direction a.bx-prev {
@@ -4128,16 +4147,17 @@ strong {
   position: absolute;
   text-align: center;
   top: 50px;
+  left: 230px;
   z-index: 99;
 }
 .ms_cont .my_ms_index_slide .header h5 {
-  color: #fff;
-  font-size: 24px;
+  color: #000000;
+  font-size: 28px;
   margin: 10px auto;
 }
 .ms_cont .my_ms_index_slide .header strong {
-  color: #fff;
-  font-size: 16px;
+  color: #1b1b1b;
+  font-size: 18px;
   margin: 0 auto;
 }
 
@@ -4281,15 +4301,16 @@ strong {
   height: 35px;
 }
 div.my_ms_slider_txt {
-  height: 70px;
+  height: 90px;
   position: absolute;
-  top: 438px;
+  top: 460px;
   width: 100%;
-  -webkit-transition: 0.7s;
-  -moz-transition: 0.7s;
-  -ms-transition: 0.7s;
-  -o-transition: 0.7s;
-  transition: 0.7s;
+
+}
+div.my_ms_slider_txt2 {
+  margin-top: 15px;
+  height: 94px;
+  background-color: rgb(238, 237, 228);
 }
 .my_ms_slider_txt_l {
   background: url("/images/my_ms_slider_sep.gif") right center no-repeat;
@@ -4328,7 +4349,8 @@ element.style {
 .my_ms_slider_txt_l p {
   color: #555;
   float: left;
-  font-size: 16px;
+  font-size: 20px;
+  font-weight: 600;
   margin-top: 10px;
   text-align: left;
   width: 100%;
@@ -4344,6 +4366,7 @@ element.style {
   position: relative;
   text-align: left;
   width: 50%;
+  margin-top: 19px;
 }
 .my_ms_slider_txt_r strong {
   color: #006541;
@@ -4362,16 +4385,16 @@ element.style {
   -o-transition: 0.7s;
   transition: 0.7s;
 }
-.my_ms_card_btns {
+/* .my_ms_card_btns {
   height: 30px;
   margin-top: 0;
-}
+} */
 .my_ms_slider_txt_r ul.op0 li.card_charge_btn {
   background: #e2c383;
-  border: 1px solid #bb9f65;
+  border: 2px solid #bb9f65;
 }
 .my_ms_slider_txt_r ul.op0 li {
-  border-radius: 3px;
+  border-radius: 4px;
   float: right;
   height: 100%;
   width: 60%;
@@ -6242,7 +6265,7 @@ table.gift_info_tbl tr td div.tbl_card_sending {
   line-height: 28px;
   padding-top: 15px;
   margin-bottom: 5px;
-  width: 100%;
+  width: 300px;
 }
 table.gift_info_tbl tr td div.tbl_card_sending p {
   float: left;
@@ -6260,8 +6283,7 @@ table.gift_info_tbl tr td div.tbl_card_sending input.sender {
 table.gift_info_tbl tr td div.sel_wrap {
   float: left;
   height: 28px;
-  margin-left: 10px;
-  width: 75px;
+  width: 300px;
 }
 .tbl_card_select {
   background: url("/images/sbox_arrow_down.png") 56px 10px no-repeat #fff;

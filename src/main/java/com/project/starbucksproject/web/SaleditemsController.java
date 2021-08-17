@@ -10,8 +10,7 @@ import com.project.starbucksproject.domain.cardcart.Cardcart;
 import com.project.starbucksproject.domain.cardcart.CardcartRepository;
 import com.project.starbucksproject.domain.cart.CartRepository;
 import com.project.starbucksproject.domain.product.ProductRepository;
-import com.project.starbucksproject.domain.saleditems.SaleditemsRepository;
-import com.project.starbucksproject.domain.saleditems.Saleditems;
+import com.project.starbucksproject.domain.saledItems.*;
 import com.project.starbucksproject.domain.user.User;
 import com.project.starbucksproject.service.SaledItemsService;
 import com.project.starbucksproject.web.dto.SaleRespDto;
@@ -32,7 +31,7 @@ public class SaleditemsController {
     // DI
   //private final UserRepository userRepository;
   private final HttpSession session;
-  private final SaleditemsRepository saledItemsRepository;
+  private final SaledItemsRepository saledItemsRepository;
   private final ProductRepository productRepository;
   private final CartRepository cartRepository;
   private final CardRepository cardRepository;
@@ -48,7 +47,7 @@ public class SaleditemsController {
     }
     int userId=principal.getId();
 
-    List<Saleditems> saleditemsEntity= saledItemsRepository.mfindAllByuserId(userId);
+    List<SaledItems> saleditemsEntity= saledItemsRepository.mfindAllByuserId(userId);
     model.addAttribute("saleditemsEntity", saleditemsEntity);
 
     List<Cardcart> cardcartsEntity=cardcartRepository.mfindAllByuserId(userId);
@@ -58,7 +57,7 @@ public class SaleditemsController {
   }
     
     @PostMapping("/user/purchaseHistory")
-    public @ResponseBody SaleRespDto<Saleditems> purchaseHistory(@RequestBody SaledReqDto<String> saledReqDto, Model model) {
+    public @ResponseBody SaleRespDto<SaledItems> purchaseHistory(@RequestBody SaledReqDto<String> saledReqDto, Model model) {
       User principal = (User) session.getAttribute("principal");
       System.out.println("결재후처리 전");
         int amount=Integer.parseInt(saledReqDto.getProductamount());

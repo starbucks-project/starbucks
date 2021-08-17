@@ -1,5 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="../layout/header.jsp"%>
+<style>
+.bx-wrapper {
+  position: relative;
+  margin-right: 20px;
+  text-align: center;
+  height: 560px;
+  *zoom: 1;
+  background-color: rgb(247, 247, 247);
+}
+.bx-wrapper img {
+  /* float: left; */
+  margin-top: 130px;
+  display: inline-block;
+  box-shadow: 1px;
+}
+  </style>
 <main id="main">
   <div class="body-inner">
 
@@ -26,88 +42,44 @@
       <div class="ms_cont">
         <section class="my_ms_index_slide">
           <div class="header">
-            <h5 class="userName">길동님의 스타벅스 카드</h5>
-            <strong>총 보유카드 : <span class="en totalCnt">1</span>장</strong>
+            <h5 class="userName">${principal.name}님의 스타벅스 카드</h5>
+            <strong>총 보유카드 : <span class="en totalCnt">${cardsize}</span>장</strong>
           </div> <!-- ms_cont .header end-->
-          <article class="my_ms_slide_wrap">
-            <i class="card_list_btn2">
-              <a href="#">
-                <img src="images/card_list_btn2.png" alt="">
-              </a>
-            </i>
-            <div class="my_ms_slider">
-              <div class="swiper-container">
-                <a class="my_ms_slider_arrow arrow-left" href="#">
-                  <img alt="" class="arrow_off" src="images/mscard_arrow_l_off.png">
-                  <img alt="" class="arrow_on" src="images/mscard_arrow_l_on.png">
-                </a>
-                <a class="my_ms_slider_arrow arrow-right" href="#">
-                  <img alt="" class="arrow_off" src="images/mscard_arrow_r_off.png">
-                  <img alt="" class="arrow_on" src="images/mscard_arrow_r_on.png">
-                </a>
-                <%-- <c:forEach var="card" items="${cardEntity.content}"> --%>
-                <div class="swiper-wrapper" style="padding-left: 0px; padding-right: 0px; width: 828px; height: 584px;">
-                  <div class="swiper-slide swiper-slide-visible swiper-slide-active" style="width: 828px;">
-                    <div class="swiper_slide_inner">
-                      <figure class="swiper-slide_img"> 
-                        <i class="representative_icon">
-                          <a href="#" class="goMycard" data-cardregnumber="34655033">
-                          </a>
-                        </i>
-                        <img alt="부산 시티 카드" src="https://image.istarbucks.co.kr/cardImg/20190805/005949.png"
-                          onerror="this.src='https://image.istarbucks.co.kr/upload/common/img/icon/card_672x423.png';">
-                      </figure>
-                      <!--카드-->
-                      <div class="my_ms_slider_txt">
-                        <div class="my_ms_slider_txt_l">
-                          <strong class="cardNickname">${card.cardName}</strong>
-                            <a class="icon_pencil_g pencil" href="#" data-cardstatus="R" data-cardnickname="부산 시티 카드">
-                              정보수정버튼
-                            </a>
-                            <div class="my_ms_card_slider_id_modify" style="display:none;">
-                              <input class="my_nick_modify_input" type="text" maxlength="20" value="부산 시티 카드">
-                              <a class="my_nick_modify" href="#" data-cardregnumber="34655033">
-                                수정
-                              </a>
-                              <a class="my_nick_cancel" href="#">
-                                취소
-                              </a>
+          <div>
+          <ul class="bxslider"> 
+                      <c:forEach var="card" items="${cardsEntity}">
+                          <li>
+                            
+                              <img src="/images/${card.cardImage}" />
+                            
+                            <div class="my_ms_slider_txt2">               
+                              <div class="my_ms_slider_txt_l">                                
+                                <strong class="cardNickname">${card.cardName}</strong>                
+                                 <p>${card.cardNum}</p>               
+                              </div>               
+                              <div class="my_ms_slider_txt_r">                잔액 
+                                <strong class="en">${card.balance}</strong>원                
+                                <ul class="op0 my_ms_card_btns">                                   
+                                  <li class="card_charge_btn">
+                                   <a href="/user/cardCharge" data-cardregnumber="16779365">카드 충전</a>
+                                  </li>                                                 
+                                </ul>               
+                              </div>              
                             </div>
-                            <p>${card.cardNum}</p>
-                        </div>
-                        
-                        <div class="my_ms_slider_txt_r">
-                          잔액
-                          <strong class="en">${card.balance}</strong>원
-                          <ul class="op0 my_ms_card_btns">
-                            <li class="card_charge_btn">
-                              <a href="/user/cardCharge" data-type="CHARGE" data-cardregnumber="34655033">
-                                카드 충전
-                              </a>
-                            </li>
-                            <!--<li class="card_manage_btn">
-                              <a href="#" data-type="MANAGEMENT" data-cardregnumber="34655033">
-                                카드 관리
-                              </a>
-                            </li>-->
-                          </ul>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <%-- </c:forEach> --%>
-                <div class="pagination-box">
-                  <ul class="pagination">
-                    <%-- <li class="page-item"><a class="page-link" href="?page=${cardEntity.number-1}">Previous</a></li>
-                    <li class="page-item"><a class="page-link" href="?page=${cardEntity.number+1}">Next</a></li> --%>
+                            <%-- <div class="my_ms_card_info2">
+                              <p class="card_name">${card.cardName}</p>
+                              <p class="my_ms_card_price"><span class="a11y">잔여금액</span>
+                                <strong class="en t_0d5f34">${card.balance}</strong>원</p> 
+                              <div class="my_ms_card_btns">
+                                <p class="my_ms_card_btn2">
+                                  <a href="/user/cardCharge">충전하기</a>
+                                </p>                          
+                             </div>
+                            </div> --%>
+                          </li>
+                      </c:forEach>
                   </ul>
                 </div>
-                <div class="card-actions" style="display:block; background:#626260;"></div>
-              </div>
-            </div>
-          </article>
         </section>
       </div>
 
@@ -178,4 +150,14 @@
   <!-- Template custom -->
   </div><!-- Body inner end -->
 </main>	
+<script>
+    $(document).ready(function(){
+
+      $('.bxslider').bxSlider({
+        slideMargin: 10,
+        slideWidth: 7000,
+        touchEnabled : (navigator.maxTouchPoints > 0)
+      });
+    });
+  </script>
 <%@include file="../layout/footer.jsp"%>

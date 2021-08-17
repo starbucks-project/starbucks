@@ -17,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 
 @RequiredArgsConstructor
 @Controller
-public class ProductController {
+public class ProductController { 
 
   // DI
   //private final UserRepository userRepository;

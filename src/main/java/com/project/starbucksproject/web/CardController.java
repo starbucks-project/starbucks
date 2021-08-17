@@ -1,5 +1,7 @@
 package com.project.starbucksproject.web;
 
+import java.io.Console;
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -14,6 +16,7 @@ import com.project.starbucksproject.web.dto.CMRespDto;
 import com.project.starbucksproject.web.dto.CardcartReqDto;
 import com.project.starbucksproject.web.dto.PayreqDto;
 
+import org.json.simple.JSONObject;
 import org.springframework.data.domain.Page;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,6 +27,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import lombok.RequiredArgsConstructor;
+import net.nurigo.java_sdk.api.Message;
+import net.nurigo.java_sdk.exceptions.CoolsmsException;
 
 @RequiredArgsConstructor
 @Controller
@@ -68,10 +73,7 @@ public class CardController {
     return "user/cardRegi";
   }
 
-  @GetMapping("/user/egift")
-  public String eGift() {
-      return "user/eGift";
-  }
+ 
 
   //보유카드
   @GetMapping("/user/inMyCard")
@@ -84,23 +86,21 @@ public class CardController {
     int userId = principal.getId();
     // List<Card> cardsEntity=cardRepository.mfindByAlluserId(userId);
     // model.addAttribute("cardsEntity", cardsEntity);
-    Card cardEntity = cardRepository.findById(1).get();
-    model.addAttribute("cardEntity", cardEntity);
+    //Card cardEntity = cardRepository.findById(1).get();
+    //model.addAttribute("cardEntity", cardEntity);
 
-    // Card cardEntity = cardRepository.findById(userId).get();
-    //Page<Card> cardEntity = cardRepository.mfindByIdPage(userId, pageRequest);
+      List<Card> cardsEntity = cardRepository.mfindByAlluserId(userId);
+      //Page<Card> cardsEntity = cardRepository.mfindByIdPage(userId, pageRequest);
     
     //System.out.println("=====================\n"+cardEntity.getContent()+"\n==================");
 
     // 등록된 카드가 없으면 카드 등록 페이지로 이동
-    if (cardEntity == null) {
-      return "redirect:/user/cardRegi";
-    } else {
-      model.addAttribute("cardEntity", cardEntity);
+      model.addAttribute("cardsEntity", cardsEntity);
+      int cardsize=cardsEntity.size();
+      model.addAttribute("cardsize", cardsize);
 
       return "user/inMyCard";
-    }
-    //return "user/inMyCard";
+    
   }
 
   @GetMapping("/user/cardCharge")
@@ -116,6 +116,10 @@ public class CardController {
     return "/user/cardCharge";
   }
 
+  @GetMapping("/user/egift")
+  public String eGift() {
+      return "user/eGift";
+  }
   // e-gift 카드 선물하기에서 '결제하기 버튼 클릭'
   @PostMapping("/user/egift/complete")
   public @ResponseBody String cardCart(@RequestBody CardcartReqDto cardcartReqDto) {
@@ -125,26 +129,63 @@ public class CardController {
       return "redirect:/auth/login";
     }
 
-    String phone1 = cardcartReqDto.getPhone1();
-    String phone2 = cardcartReqDto.getPhone2();
-    String phone3 = cardcartReqDto.getPhone3();
     int price = cardcartReqDto.getPrice();
     System.out.println(price);
 
-    String receiverPhonenum = phone1 + phone2 + phone3;
-    String receiverName = cardcartReqDto.getReceiver();
-    System.out.println(receiverName);
+    String receiverPhonenum = cardcartReqDto.getReceiverPhonenum();
+    String receiverName = cardcartReqDto.getReceiverName();
     String message = cardcartReqDto.getMessage();
 
-    Cardcart cardcart = new Cardcart();
-    cardcart.setPrice(price);
-    cardcart.setReceiverName(receiverName);
-    cardcart.setReceiverPhonenum(receiverPhonenum);
-    cardcart.setUser(principal);
-    cardcartRepository.save(cardcart);
+    Cardcart cardcartEntity = new Cardcart();
+    cardcartEntity.setPrice(price);
+    cardcartEntity.setReceiverName(receiverName);
+    cardcartEntity.setReceiverPhonenum(receiverPhonenum);
+    cardcartEntity.setUser(principal);
 
-    return "ok";    
-    
+    cardcartRepository.save(cardcartEntity);
+
+    return "ok";
+  }
+
+  @PostMapping("/user/egift/sms")
+  public @ResponseBody String sendSms(@RequestBody CardcartReqDto cardcartReqDto){
+
+    User principal = (User) session.getAttribute("principal");
+    if (principal == null) {
+      return "redirect:/auth/login";
+    }
+
+    String api_key = "NCSVOC9YEFSNDT4P";
+    String api_secret = "FGR8KYYDTZWGXINUXN0BX8HG7F83W7ZK";
+    Message coolsms = new Message(api_key, api_secret);
+
+    String receiverName = cardcartReqDto.getReceiverName();
+    String receiverPhonenum = cardcartReqDto.getReceiverPhonenum();
+    String message = cardcartReqDto.getMessage();
+    int price = cardcartReqDto.getPrice();
+
+     // 4 params(to, from, type, text) are mandatory. must be filled
+     HashMap<String, String> params = new HashMap<String , String>();
+     params.put("to", receiverPhonenum);
+     params.put("from", principal.getPhoneNum()); //principal.getPhoneNum()
+     params.put("type", "LMS");
+     params.put("text", ""+principal.getName()+" 님께서 "+receiverName+" 님에게 eGift 카드를 보내셨습니다. 금액: "+price+", 내용: ["+message+"]");
+     params.put("app_version", "test app 1.2"); // application name and version
+     
+     System.out.println("--------------------------------------");
+     System.out.println(params);
+     System.out.println("--------------------------------------");
+     try {
+      JSONObject obj = (JSONObject) coolsms.send(params);
+      System.out.println(obj.toString());
+     
+    } catch (CoolsmsException e) {
+      System.out.println(e.getMessage());
+      System.out.println(e.getCode());
+     
+    }
+  
+    return "ok";
   }
 
   @PostMapping("/user/cardCharge/complete")

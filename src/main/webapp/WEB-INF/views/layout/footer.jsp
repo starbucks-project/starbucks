@@ -111,8 +111,8 @@
     <script src="/js/script.js"></script>
     <script src="/js/drinkdetail.js"></script>
     <script src="/js/mymenupop.js"></script>
+    <script src="/js/search.js"></script>
     <script src="/js/my/payment.js"></script>
-    <script src="/js/search.js"></script>  
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Vendor JS Files -->

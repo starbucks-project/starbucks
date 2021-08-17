@@ -1,4 +1,4 @@
-package com.project.starbucksproject.domain.saleditems;
+package com.project.starbucksproject.domain.saledItems;
 
 import java.sql.Timestamp;
 
@@ -20,7 +20,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Saleditems {
+public class SaledItems {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; // 기본키
