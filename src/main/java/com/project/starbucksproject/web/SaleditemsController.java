@@ -10,7 +10,7 @@ import com.project.starbucksproject.domain.cardcart.Cardcart;
 import com.project.starbucksproject.domain.cardcart.CardcartRepository;
 import com.project.starbucksproject.domain.cart.CartRepository;
 import com.project.starbucksproject.domain.product.ProductRepository;
-import com.project.starbucksproject.domain.saledItems.*;
+import com.project.starbucksproject.domain.saleditems.*;
 import com.project.starbucksproject.domain.user.User;
 import com.project.starbucksproject.service.SaledItemsService;
 import com.project.starbucksproject.web.dto.SaleRespDto;
@@ -28,8 +28,8 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Controller
 public class SaleditemsController {
-    // DI
-  //private final UserRepository userRepository;
+  // DI
+  // private final UserRepository userRepository;
   private final HttpSession session;
   private final SaledItemsRepository saledItemsRepository;
   private final ProductRepository productRepository;
@@ -45,35 +45,35 @@ public class SaleditemsController {
     if (principal == null) {
       return "redirect:/auth/login";
     }
-    int userId=principal.getId();
+    int userId = principal.getId();
 
-    List<SaledItems> saleditemsEntity= saledItemsRepository.mfindAllByuserId(userId);
+    List<Saleditems> saleditemsEntity = saledItemsRepository.mfindAllByuserId(userId);
     model.addAttribute("saleditemsEntity", saleditemsEntity);
 
-    List<Cardcart> cardcartsEntity=cardcartRepository.mfindAllByuserId(userId);
+    List<Cardcart> cardcartsEntity = cardcartRepository.mfindAllByuserId(userId);
     model.addAttribute("cardcartsEntity", cardcartsEntity);
 
-      return "user/purchaseHistory";
+    return "user/purchaseHistory";
   }
-    
-    @PostMapping("/user/purchaseHistory")
-    public @ResponseBody SaleRespDto<SaledItems> purchaseHistory(@RequestBody SaledReqDto<String> saledReqDto, Model model) {
-      User principal = (User) session.getAttribute("principal");
-      System.out.println("결재후처리 전");
-        int amount=Integer.parseInt(saledReqDto.getProductamount());
 
-        int cardId=saledReqDto.getCardId();   //결제할 카드아이디
-        Card cardEntity=cardRepository.getById(cardId);   
-        if (cardEntity.getBalance()==0) {
-          return new SaleRespDto<>(0,"선택한 카드 충전액은 0원 입니다. ",null);
-        }
-        
-        cardEntity.setBalance(cardEntity.getBalance()-amount);    //결제금액 차감
-        cardRepository.save(cardEntity);  //차감된 결제금액으로 다시 db저장
+  @PostMapping("/user/purchaseHistory")
+  public @ResponseBody SaleRespDto<Saleditems> purchaseHistory(@RequestBody SaledReqDto<String> saledReqDto,
+      Model model) {
+    User principal = (User) session.getAttribute("principal");
+    System.out.println("결재후처리 전");
+    int amount = Integer.parseInt(saledReqDto.getProductamount());
 
-        saledItemsService.결재후처리(saledReqDto, principal);  
-      
-
-        return new SaleRespDto<>(1,"선택상품 cart삭제,구매내역에 저장",null);
+    int cardId = saledReqDto.getCardId(); // 결제할 카드아이디
+    Card cardEntity = cardRepository.getById(cardId);
+    if (cardEntity.getBalance() == 0) {
+      return new SaleRespDto<>(0, "선택한 카드 충전액은 0원 입니다. ", null);
     }
+
+    cardEntity.setBalance(cardEntity.getBalance() - amount); // 결제금액 차감
+    cardRepository.save(cardEntity); // 차감된 결제금액으로 다시 db저장
+
+    saledItemsService.결재후처리(saledReqDto, principal);
+
+    return new SaleRespDto<>(1, "선택상품 cart삭제,구매내역에 저장", null);
+  }
 }

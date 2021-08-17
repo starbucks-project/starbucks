@@ -1,4 +1,4 @@
-package com.project.starbucksproject.domain.myMenu;
+package com.project.starbucksproject.domain.mymenu;
 
 import java.sql.Timestamp;
 
@@ -19,7 +19,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class MyMenu {   
+public class Mymenu {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id; // 기본키
@@ -31,12 +31,12 @@ public class MyMenu {
     @CreationTimestamp
     private Timestamp createDate; // 등록일
 
-    @JsonIgnoreProperties({"mymenus"})	//무한참조방지
+    @JsonIgnoreProperties({ "mymenus" }) // 무한참조방지
     @ManyToOne
     @JoinColumn(name = "productId")
     private Product products; // product 조인
 
-    @JsonIgnoreProperties({"mymenus"})
+    @JsonIgnoreProperties({ "mymenus" })
     @ManyToOne
     @JoinColumn(name = "userId")
     private User user; // user 조인

@@ -46,13 +46,13 @@
                     </tr>
                 </thead>
                 <tbody id="notice">
-                    <c:forEach var="user" items="${usersEntity.content}">
+                    <c:forEach var="user" items="${usersEntity}">
                     <tr>     
                         <td>${user.id}</td>     
                         <td class="left"><a>${user.name}</a></td>     
                         <td>${user.email}</td>     
                         <td>${user.createDate}</td> 
-                        <td>0</td>
+                        <td>${user.SUM}</td>
                     </tr>
                     </c:forEach>
                 </tbody>
@@ -60,7 +60,7 @@
         </div>  <!-- end user-list-area-box-->
 
     </div> <!-- end bottom-area -->
-    <div class="pagination-box">
+    <%-- <div class="pagination-box">
         <ul class="pagination">
         <c:choose>
         <c:when test="${usersEntity.number==0 && usersEntity.totalPages == 1}">
@@ -82,7 +82,7 @@
         </c:choose>
           </ul>
           
-    </div>
+    </div> --%>
 </div> <!-- end manageUser-page-box-->
 </div> <!-- end div -contatiner-->
 </main>

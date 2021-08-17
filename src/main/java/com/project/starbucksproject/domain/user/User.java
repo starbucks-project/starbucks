@@ -12,8 +12,8 @@ import javax.persistence.Id;
 // import javax.persistence.OneToMany;
 import javax.persistence.OneToMany;
 
-import com.project.starbucksproject.domain.myMenu.*;
-import com.project.starbucksproject.domain.saledItems.*;
+import com.project.starbucksproject.domain.mymenu.*;
+import com.project.starbucksproject.domain.saleditems.*;
 
 import org.hibernate.annotations.CreationTimestamp;
 
