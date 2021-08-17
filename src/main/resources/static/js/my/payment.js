@@ -166,6 +166,30 @@ function egiftpay() {
   let phone3 = document.querySelector("#phone3").value;
   let reqMsg = document.querySelector("#reqMsg").value;
 
+  if (receiver == "") {
+    alert("받는 사람을 입력하세요");
+    form.receiverName.focus();
+    return false;
+  }
+
+  if (phone1 == "") {
+    alert("받는 사람의 번호를 정확히 입력해주세요");
+    form.phone1.focus();
+    return false;
+  }
+
+  if (phone2 == "") {
+    alert("받는 사람의 번호를 정확히 입력해주세요");
+    form.phone2.focus();
+    return false;
+  }
+
+  if (phone3 == "") {
+    alert("받는 사람의 번호를 정확히 입력해주세요");
+    form.phone3.focus();
+    return false;
+  }
+
   let cardcartreqDto = {
     price: price,
     receiver: receiver,

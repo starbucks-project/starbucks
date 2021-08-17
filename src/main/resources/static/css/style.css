@@ -3770,6 +3770,7 @@ strong {
   flex: 1;
   background: #222222;
   border: 1px solid #222222;
+  border-radius: 3px;
 }
 .ms_user_info.ms_user_add
   .ms_user_info_right
@@ -3800,10 +3801,10 @@ strong {
 
 .ms_user_stat_btns ul li a {
   display: block;
-  font-size: 12px;
+  font-size: 14px;
   font-weight: bold;
   height: 100%;
-  line-height: 28px;
+  line-height: 30px;
   text-align: center;
   width: 100%;
 }
@@ -3813,13 +3814,13 @@ strong {
   background: url("/images/card_wave_pattern.png") center bottom no-repeat;
   border: 1px solid #ddd;
   border-radius: 3px;
-  height: 350px;
+  height: 450px;
   margin-top: 40px;
   width: 800px;
 }
 .my_ms_card_inner {
   float: left;
-  height: 230px;
+  height: 400px;
   margin: 29px 0 0 29px;
   width: 770px;
 }
@@ -3907,11 +3908,11 @@ strong {
 
 .my_ms_card_cont {
   width: 100%;
-  height: 191px;
+  height: 400px;
   width: 770px;
 }
 .my_ms_card_cont ul li {
-  height: 191px;
+  height: 300px;
   position: relative;
   width: 770px;
 }
@@ -3922,12 +3923,12 @@ strong {
   top: 15px;
   width: 264px;
 }
-.bx-wrapper {
+/* .bx-wrapper {
   position: relative;
   margin: 0 auto 60px;
   padding: 40px 0 0 20px;
   *zoom: 1;
-}
+} */
 .my_ms_card_cont .representative_icon {
   position: absolute;
   top: 10px;
@@ -3982,7 +3983,7 @@ strong {
 }
 .my_ms_card_price {
   height: 33px;
-  line-height: 33px;
+  line-height: 96px;
   margin-top: 10px;
 }
 .my_ms_card_price strong {
@@ -3991,8 +3992,10 @@ strong {
 }
 .my_ms_card_btns {
   height: 30px;
+  line-height: 136px;
   margin-top: 19px;
   text-align: center;
+  justify-content: center;
 }
 
 .my_ms_card_btns p.my_ms_card_btn1 a,
@@ -5321,6 +5324,24 @@ dd {
   font-size: 14px;
   padding: 50px 0;
   text-align: center;
+}
+.egiftpay_btn {
+  float: right;
+  background: #e2c383;
+  border: 1px solid #bb9f65;
+  margin: 0 40px;
+  font-size: 15px;
+  padding: 5px 10px;
+  border-radius: 3px;
+}
+.egiftpay_btn a {
+  color: #000;
+}
+.egiftpay_btn a:hover {
+  text-decoration: underline;
+}
+.egiftpay_btn_box {
+  position: relative;
 }
 
 /*�옣諛붽뎄�땲 �궡�뿭 =========================*/

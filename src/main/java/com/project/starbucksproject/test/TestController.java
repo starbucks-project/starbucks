@@ -22,6 +22,11 @@ public class TestController {
         return "test/test";
     } 
 
+    @GetMapping("/test2")
+    public String test2() {
+        return "test/test2";
+    } 
+
     @GetMapping("/user/userinfo")
     public String userInfo() {
         return "user/userinfoUpdateForm";

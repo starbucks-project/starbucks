@@ -1,5 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="../layout/header.jsp"%>
+
+
+  <style>
+      .bx-wrapper {
+  position: relative;
+  margin-right: 20px;
+  padding-left: 10px;
+  text-align: center;
+  *zoom: 1;
+}
+.bx-wrapper img {
+  float: left;
+  display: inline-block;
+}
+  </style>
+  
 <main id="main">
   <div class="body-inner">
 
@@ -30,7 +46,7 @@
               <article class="ms_user_info_left">
                 <h5>구매한 상품 갯수</h5>
                 <figure class="ms_user_starbg">
-                  <span class="totalStar">6</span>
+                  <span class="totalStar">${saleditems}</span>
                 </figure>
               </article>
               <article class="ms_user_info_right">
@@ -63,7 +79,7 @@
                         <img alt="보유 카드 상세 정보" src="/images/card_list_btn1.png" />
                       </a>
                     </i>
-                    <aside>
+                    <%-- <aside>
                       <span>
                         <strong class="curSlideNo">1</strong>
                         /
@@ -73,12 +89,12 @@
                           <a class="forward" href="javascript:void(0);">다음카드 보기</a>
                         </p>
                       </span>
-                    </aside>
+                    </aside> --%>
                   
                   </div>
                 </header>
                 <div class="my_ms_card_cont">
-                  <div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;">
+                  <%-- <div class="bx-wrapper" style="max-width: 100%; margin: 0px auto;">
                     <div class="bx-viewport" style="width: 100%; overflow: hidden; position: relative; height: 191px;">
                       <ul class="slider" style="width: 315%; position: relative; transition-duration: 0s; transform: translate3d(-770px, 0px, 0px);">
                         <li style="float: left; list-style: none; position: relative; width: 770px;" class="bx-clone">
@@ -101,9 +117,9 @@
                               </p>                                                                      
                             </div>
                           </div>
-                        </li>
+                        </li> --%>
 
-                        <c:forEach var="card" items="${cardsEntity}">
+                        <%-- <c:forEach var="card" items="${cardsEntity}">
                         <li style="float: left; list-style: none; position: relative; width: 770px;" class="bx-clone">
                           <figure>
                             <i class="representative_icon" aria-hidden="true"></i>
@@ -127,8 +143,9 @@
                             </div>
                           </div>
                         </li>
-                        </c:forEach>
-                        <li style="float: left; list-style: none; position: relative; width: 770px;" class="bx-clone">
+                        </c:forEach> --%>
+                        
+                        <%-- <li style="float: left; list-style: none; position: relative; width: 770px;" class="bx-clone">
                           <figure>
                             <i class="representative_icon" aria-hidden="true"></i>
                             <img alt="LoveYa" src="https://image.istarbucks.co.kr/cardImg/20190822/006129.png" onerror="this.src='https://image.istarbucks.co.kr/cardImg/20190822/006129.png';" />
@@ -150,21 +167,35 @@
                               </p>                                                                      
                             </div>
                           </div>
-                        </li>
+                        </li> 
                       </ul>
-                    </div>
+                    </div>--%>
                     <!-- <div class="bx-controls bx-has-controls-direction">
                       <div class="bx-controls-direction">
                         <a class="bx-prev disabled" href="">Prev</a>
                         <a class="bx-next disabled" href="">Next</a>
                       </div>
-                    </div> -->
+                    </div> 
+                  </div>-->
+                  <ul class="bxslider"> 
+                      <c:forEach var="card" items="${cardsEntity}">
+                          <li>
+                            <img src="/images/${card.cardImage}" />
+                            <p class="my_ms_card_price"><span class="a11y">잔여금액</span>
+                              <strong class="en t_0d5f34">${card.balance}</strong>원</p> 
+                            <div class="my_ms_card_btns">
+                              <p class="my_ms_card_btn2">
+                                <a href="/user/cardCharge" data-type="CHARGE" data-cardregnumber="34655033">충전하기</a>
+                              </p>                          
+                            </div>
+                          </li>
+                      </c:forEach>
+                  </ul>
                   </div>
                 </div>
-              </div>
-            </section>
             </div><!-- 1st post end -->
           </div><!-- Content Col end -->
+            </section>
 
 
             <div class="ms_nav" id="msRnb">
@@ -236,5 +267,14 @@
   </div><!-- Body inner end -->
 </main>	
 <script type="text/javascript" src = "/js/my/myinfo.js"></script>
+<script>
+    $(document).ready(function(){
+
+      $('.bxslider').bxSlider({
+        slideMargin: 10,
+        slideWidth: 7000
+      });
+    });
+  </script>
 
 <%@include file="../layout/footer.jsp"%>

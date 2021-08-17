@@ -111,12 +111,8 @@
     <script src="/js/script.js"></script>
     <script src="/js/drinkdetail.js"></script>
     <script src="/js/mymenupop.js"></script>
-<<<<<<< HEAD
-    <script src="/js/search.js"></script>
-=======
     <script src="/js/my/payment.js"></script>
     <script src="/js/search.js"></script>  
->>>>>>> 816f419ff514c4aaaa09b0fedd49c1b7192aad9b
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- Vendor JS Files -->
@@ -128,8 +124,8 @@
 
   <!-- Template Main JS File -->
   <script src="/js/ezmark.js"></script>
-  <!--<script src="/plugins/js/main.js"></script>-->
-  <script></script>
+<script src="/plugins/js/main.js"></script>
+
 
   <!--payment-->
   <!-- jQuery -->
@@ -138,5 +134,7 @@
   <script type="text/javascript" src="https://cdn.iamport.kr/js/iamport.payment-1.1.5.js"></script>
   <script type="text/javascript" src="/js/my/payment.js"></script>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
 
   </html>

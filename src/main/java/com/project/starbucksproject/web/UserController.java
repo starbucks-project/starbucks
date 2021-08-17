@@ -7,6 +7,8 @@ import javax.servlet.http.HttpSession;
 import com.project.starbucksproject.domain.card.Card;
 import com.project.starbucksproject.domain.card.CardRepository;
 import com.project.starbucksproject.domain.manager.ManagerRepository;
+import com.project.starbucksproject.domain.saleditems.Saleditems;
+import com.project.starbucksproject.domain.saleditems.SaleditemsRepository;
 import com.project.starbucksproject.domain.user.User;
 import com.project.starbucksproject.domain.user.UserRepository;
 
@@ -29,6 +31,7 @@ public class UserController {
   private final HttpSession session;
   private final ManagerRepository managerRepository;
   private final CardRepository cardRepository;
+  private final SaleditemsRepository saleditemsRepository;
 
   // 로그인 페이지
   @GetMapping("/auth/login")
@@ -123,13 +126,13 @@ public class UserController {
   public String myPageForm(Model model) {
     User principal = (User) session.getAttribute("principal");
     if (principal == null) {
-<<<<<<< HEAD
       return "redirect:/auth/login";
-=======
-      return "auth/login";
->>>>>>> 60d3a190aaf4563449544e76fcbb7917afd60954
     }
     int userid = principal.getId();
+
+    List<Saleditems> saleditemsEntity=saleditemsRepository.mfindAllByuserId(userid);
+    int saleditems= saleditemsEntity.size();
+    model.addAttribute("saleditems", saleditems);
 
     List<Card> cardsEntity = cardRepository.mfindByAlluserId(userid);
     model.addAttribute("cardsEntity", cardsEntity);

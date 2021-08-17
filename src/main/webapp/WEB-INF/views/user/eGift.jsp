@@ -12,7 +12,7 @@
 
 			</header>
 			<section class="card_gift_info_section">
-				<form id="frmUpload" action="/user/cardcart" method="post" enctype="multipart/form-data">
+				<form name="form" id="frmUpload" action="/user/cardcart" method="post" enctype="multipart/form-data">
 					<fieldset>
 						<legend>선물할 정보 입력 및 메시지 입력을 해주세요.</legend>
 						<div class="gift_card_visual">
@@ -145,7 +145,11 @@
 					</fieldset>
 					<br />
 					<!--<button> <a href="/user/cardcart"> 결제하기</button>-->
-					<button> <a href="javascript:void(0);" onclick="egiftpay();">결제하기</a></button>
+					<div class="egiftpay_btn_box">
+					<button class="egiftpay_btn">
+						<a href="javascript:void(0);" onclick="egiftpay();">결제하기</a>
+					</button>
+					</div>
 				</form>
 			</section>
 			<div id = "principalname" value = "${principal.name}"></div>
