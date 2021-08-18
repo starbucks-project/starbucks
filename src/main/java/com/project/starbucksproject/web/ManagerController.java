@@ -216,7 +216,12 @@ public class ManagerController {
       int userId = userList.get(i).getId();
       String userName = userList.get(i).getName();
       Long userBalance = userRepository.mfindUserBalance(userId, userName);
-      userDto.setSUM(userBalance);
+      if(userBalance == null){
+        userDto.setSUM(0);
+      }else{
+        userDto.setSUM(userBalance);
+      }
+      
       userDto.setUser(userList.get(i));
       usersDto.add(userDto);
     }

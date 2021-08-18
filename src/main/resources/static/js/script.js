@@ -248,38 +248,38 @@ async function cardRegi() {
   event.preventDefault();
   alert("cardRegi");
   console.log("1");
-  let cardName=document.querySelector("#CR1").value;
+  let cardName = document.querySelector("#CR1").value;
 
   let CR2 = document.querySelector("#CR2").value;
   let CR2_2 = document.querySelector("#CR2_2").value;
   let CR2_3 = document.querySelector("#CR2_3").value;
   let CR2_4 = document.querySelector("#CR2_4").value;
-  let numRegExp = /^[0-9]{4}$/;  //pin번호 유효성 검사
-    if (!numRegExp.test(CR2)) {
-      alert("번호는 각각 4자리로 입력해야합니다!");
-      form.CR2.focus();
-      return false;
-    }  
-    if (!numRegExp.test(CR2_2)) {
-      alert("번호는 각각 4자리로 입력해야합니다!");
-      form.CR2_2.focus();
-      return false;
-    }
-    if (!numRegExp.test(CR2_3)) {
-      alert("번호는 각각 4자리로 입력해야합니다!");
-      form.CR2_3.focus();
-      return false;
-    }
-    if (!numRegExp.test(CR2_4)) {
-      alert("번호는 각각 4자리로 입력해야합니다!");
-      form.CR2_4.focus();
-      return false;
-    }
+  let numRegExp = /^[0-9]{4}$/; //pin번호 유효성 검사
+  if (!numRegExp.test(CR2)) {
+    alert("번호는 각각 4자리로 입력해야합니다!");
+    form.CR2.focus();
+    return false;
+  }
+  if (!numRegExp.test(CR2_2)) {
+    alert("번호는 각각 4자리로 입력해야합니다!");
+    form.CR2_2.focus();
+    return false;
+  }
+  if (!numRegExp.test(CR2_3)) {
+    alert("번호는 각각 4자리로 입력해야합니다!");
+    form.CR2_3.focus();
+    return false;
+  }
+  if (!numRegExp.test(CR2_4)) {
+    alert("번호는 각각 4자리로 입력해야합니다!");
+    form.CR2_4.focus();
+    return false;
+  }
 
   let cardNum = CR2 + "-" + CR2_2 + "-" + CR2_3 + "-" + CR2_4;
 
-  let pin= document.querySelector("#CR3").value;
-  let pinRegExp = /^[0-9]{8}$/;  //pin번호 유효성 검사
+  let pin = document.querySelector("#CR3").value;
+  let pinRegExp = /^[0-9]{8}$/; //pin번호 유효성 검사
   if (!pinRegExp.test(pin)) {
     alert("pin번호는 8자리로 입력해야합니다!");
     //form.pin.value = "";
@@ -320,7 +320,6 @@ async function cardRegi() {
 // 판매현황 이름 검색
 // -----------------------------
 async function saledItemByName() {
-  alert("함수 실행");
   event.preventDefault();
 
   let searchReqDto = {
@@ -349,7 +348,7 @@ async function saledItemByName() {
 
     userBoxEl.innerHTML = ""; // userBoxEl 안 html 태그 날리기
 
-    saleditems.forEach(saled => {
+    saleditems.forEach((saled) => {
       let userItem = document.createElement("tr");
       let temp = `
       <td>${saled.id}</td>     
@@ -360,14 +359,13 @@ async function saledItemByName() {
       <td>1</td>    
     `;
 
-     userItem.innerHTML = temp;
-     userBoxEl.prepend(userItem);
+      userItem.innerHTML = temp;
+      userBoxEl.prepend(userItem);
     });
-    
-  } else if(parseResponse.code == -1){
+  } else if (parseResponse.code == -1) {
     alert("해당 이름의 사용자가 존재하지 않습니다.");
     location.reload();
-  } else if(parseResponse.code == 0){
+  } else if (parseResponse.code == 0) {
     alert("세션이 만료되었습니다. 다시 로그인 해주세요.");
     location.href = "/auth/manager/loginform";
   }
@@ -376,11 +374,11 @@ async function saledItemByName() {
 // ===========================
 // category search
 // ===========================
-async function categorySearch(){
+async function categorySearch() {
   event.preventDefault();
 
   let categoryDto = {
-    category : document.querySelector("#category").value
+    category: document.querySelector("#category").value,
   };
 
   console.log(JSON.stringify(categoryDto));
@@ -389,21 +387,21 @@ async function categorySearch(){
     method: "post",
     body: JSON.stringify(categoryDto),
     headers: {
-      "Content-Type": "application/json; charset=utf-8"
-    }
+      "Content-Type": "application/json; charset=utf-8",
+    },
   });
 
   let parseRespCategory = await respCategory.json();
   console.log(parseRespCategory);
-  
-  if(parseRespCategory.code == 1){
+
+  if (parseRespCategory.code == 1) {
     let itemBoxEL = document.querySelector("#notice");
     console.log(parseRespCategory.data);
     itemBoxEL.innerHTML = "";
 
     let itemsByCategory = parseRespCategory.data;
 
-    itemsByCategory.forEach(items => {
+    itemsByCategory.forEach((items) => {
       let itemLine = document.createElement("tr");
       let innerLine = `
       <td>${items.id}</td>     
@@ -414,15 +412,14 @@ async function categorySearch(){
       <td>1</td>  
       `;
 
-      itemLine.innerHTML=innerLine;
+      itemLine.innerHTML = innerLine;
       itemBoxEL.prepend(itemLine);
     });
-
-  }else if(parseRespCategory.code == -1){
+  } else if (parseRespCategory.code == -1) {
     alert("해당 카테고리 제품이 없습니다.");
     location.reload();
-  }else{
-    alert("세션이 만료되었습니다. 다시 로그인해주세요.")
-    location.href="/auth/manager/loginform";
+  } else {
+    alert("세션이 만료되었습니다. 다시 로그인해주세요.");
+    location.href = "/auth/manager/loginform";
   }
 }
