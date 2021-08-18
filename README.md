@@ -35,6 +35,12 @@ INSERT INTO store(category,title,latitude,longtitude,content,tel) VALUES('reserv
 	<artifactId>jstl</artifactId>
 	<version>1.2</version>
 </dependency>
+
+<dependency>
+	<groupId>net.nurigo</groupId>
+	<artifactId>javaSDK</artifactId>
+	<version>2.2</version>
+</dependency>
 ```
 
 ### JSP / JSTL 태그 라이브러리
